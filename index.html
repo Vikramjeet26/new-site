@@ -1,0 +1,1611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>India Private Guide – Private Tours</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', Roboto, system-ui, sans-serif;
+      background: #f8f5f0;
+      color: #1e1e2a;
+      padding-bottom: 80px;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* ---------- HEADER ---------- */
+    header {
+      background: #1a2a3a;
+      color: #fff;
+      padding: 12px 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+    }
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .logo h1 {
+      font-size: 1.6rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+    .logo span {
+      color: #f4c542;
+    }
+    .nav-links {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .nav-links a {
+      transition: color 0.2s;
+      font-weight: 500;
+    }
+    .nav-links a:hover {
+      color: #f4c542;
+    }
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .header-actions .icon-link {
+      color: #fff;
+      font-size: 1.2rem;
+      transition: color 0.2s;
+    }
+    .header-actions .icon-link:hover {
+      color: #f4c542;
+    }
+    .btn-cta {
+      background: #f4c542;
+      color: #1a2a3a;
+      padding: 6px 16px;
+      border-radius: 30px;
+      font-weight: 700;
+      font-size: 0.85rem;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s;
+      font-family: inherit;
+      white-space: nowrap;
+    }
+    .btn-cta:hover {
+      background: #e0b034;
+    }
+    .lang-toggle {
+      background: transparent;
+      border: 2px solid #f4c542;
+      color: #f4c542;
+      padding: 4px 12px;
+      border-radius: 30px;
+      font-weight: 700;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: 0.2s;
+      font-family: inherit;
+      line-height: 1.6;
+    }
+    .lang-toggle:hover {
+      background: #f4c542;
+      color: #1a2a3a;
+    }
+
+    /* ---------- HERO ---------- */
+    .hero {
+      background: #1a2a3a;
+      color: #fff;
+      padding: 40px 0;
+      display: flex;
+      align-items: center;
+    }
+    .hero-grid {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 40px;
+    }
+    .hero-text {
+      flex: 1 1 380px;
+    }
+    .hero-text h2 {
+      font-size: 2.6rem;
+      font-weight: 300;
+      line-height: 1.2;
+    }
+    .hero-text h2 strong {
+      font-weight: 700;
+      color: #f4c542;
+    }
+    .hero-text p {
+      font-size: 1.15rem;
+      opacity: 0.9;
+      margin-top: 12px;
+    }
+    .hero-images {
+      flex: 1 1 380px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .hero-images img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+      border: 3px solid #f4c542;
+      transition: transform 0.3s;
+    }
+    .hero-images img:hover {
+      transform: scale(1.02);
+    }
+
+    /* ---------- ABOUT ---------- */
+    .about-section {
+      background: #ffffff;
+      padding: 50px 0;
+      border-bottom: 1px solid #eeeae5;
+    }
+    .about-inner {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 50px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .about-text {
+      flex: 2 1 500px;
+    }
+    .about-text h2 {
+      font-size: 2.2rem;
+      color: #1a2a3a;
+      margin-bottom: 8px;
+    }
+    .about-text h2 span {
+      color: #f4c542;
+    }
+    .about-text .divider {
+      width: 80px;
+      height: 3px;
+      background: #f4c542;
+      margin-bottom: 20px;
+      border-radius: 4px;
+    }
+    .about-text p {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: #3a3a4a;
+      margin-bottom: 10px;
+    }
+    .about-text .tagline {
+      font-weight: 700;
+      color: #1a2a3a;
+      font-size: 1.2rem;
+      margin-top: 8px;
+    }
+    .about-image {
+      flex: 1 1 220px;
+      text-align: center;
+    }
+    .about-image img {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 6px solid #f4c542;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+    }
+    .about-image .caption {
+      display: block;
+      margin-top: 10px;
+      font-weight: 600;
+      color: #1a2a3a;
+    }
+
+    /* ---------- FILTER ---------- */
+    .filter-bar {
+      background: #fff;
+      padding: 16px 0;
+      border-bottom: 1px solid #e2dcd5;
+      position: sticky;
+      top: 76px;
+      z-index: 50;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+    }
+    .filter-inner {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px 24px;
+      align-items: center;
+      justify-content: center;
+    }
+    .filter-group {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+    .filter-group label {
+      font-weight: 600;
+      color: #2b4a5f;
+      font-size: 0.9rem;
+    }
+    .filter-group select {
+      padding: 6px 12px;
+      border-radius: 30px;
+      border: 1px solid #ccc;
+      background: #faf8f6;
+      font-size: 0.9rem;
+      cursor: pointer;
+      outline: none;
+      min-width: 110px;
+    }
+    .filter-group select:focus {
+      border-color: #f4c542;
+    }
+    .reset-btn {
+      background: #e8e0d8;
+      border: none;
+      padding: 6px 18px;
+      border-radius: 30px;
+      font-weight: 600;
+      color: #2b4a5f;
+      cursor: pointer;
+      transition: 0.2s;
+      font-size: 0.9rem;
+      font-family: inherit;
+    }
+    .reset-btn:hover {
+      background: #d5ccc3;
+    }
+
+    /* ---------- TOUR CARDS ---------- */
+    .tour-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 30px;
+      padding: 40px 0;
+    }
+    .tour-card {
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+      overflow: hidden;
+      transition: 0.2s;
+      display: flex;
+      flex-direction: column;
+      border: 1px solid #eeeae5;
+    }
+    .tour-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 32px rgba(0,0,0,0.10);
+    }
+    .tour-card-header {
+      padding: 18px 20px 10px;
+      border-bottom: 1px solid #f0ebe5;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+    .tour-card-header h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #1a2a3a;
+      line-height: 1.3;
+      flex: 1;
+    }
+    .tour-days {
+      background: #f4c542;
+      color: #1a2a3a;
+      font-weight: 700;
+      padding: 2px 12px;
+      border-radius: 30px;
+      font-size: 0.85rem;
+      white-space: nowrap;
+      margin-left: 10px;
+    }
+    .tour-card-body {
+      padding: 14px 20px 20px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .tour-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px 14px;
+      font-size: 0.85rem;
+      color: #5a5a6e;
+      margin-bottom: 10px;
+    }
+    .tour-meta i {
+      width: 18px;
+      color: #f4c542;
+    }
+    .tour-meta span {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .tour-description {
+      font-size: 0.95rem;
+      color: #3a3a4a;
+      line-height: 1.5;
+      margin-bottom: 12px;
+      flex: 1;
+    }
+    .tour-highlights {
+      font-size: 0.9rem;
+      color: #2b4a5f;
+      background: #f4f1ed;
+      padding: 10px 14px;
+      border-radius: 10px;
+      margin-bottom: 12px;
+    }
+    .tour-highlights strong {
+      display: block;
+      margin-bottom: 4px;
+      font-weight: 600;
+    }
+    .tour-highlights ul {
+      list-style: none;
+      padding-left: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px 12px;
+    }
+    .tour-highlights ul li::before {
+      content: "• ";
+      color: #f4c542;
+      font-weight: 700;
+    }
+    .tour-route {
+      font-size: 0.85rem;
+      color: #6a6a7e;
+      border-top: 1px solid #eeeae5;
+      padding-top: 10px;
+      margin-top: 6px;
+    }
+    .tour-route i {
+      margin-right: 6px;
+      color: #f4c542;
+    }
+    .tour-guide {
+      font-size: 0.8rem;
+      color: #6a6a7e;
+      margin-top: 6px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .tour-guide i {
+      color: #2b4a5f;
+    }
+    .no-results {
+      grid-column: 1 / -1;
+      text-align: center;
+      padding: 60px 0;
+      font-size: 1.2rem;
+      color: #777;
+    }
+
+    /* ---------- FLOATING CONTACT ---------- */
+    .contact-float {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      z-index: 999;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 10px;
+    }
+    .contact-float .main-btn {
+      background: #f4c542;
+      color: #1a2a3a;
+      padding: 12px 22px;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 1rem;
+      box-shadow: 0 8px 24px rgba(244,197,66,0.4);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      transition: 0.2s;
+      border: none;
+      cursor: pointer;
+      font-family: inherit;
+    }
+    .contact-float .main-btn:hover {
+      background: #e0b034;
+      transform: scale(1.02);
+    }
+    .contact-float .contact-details {
+      background: #1a2a3a;
+      color: #fff;
+      padding: 14px 18px;
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+      display: none;
+      flex-direction: column;
+      gap: 6px;
+      min-width: 180px;
+      font-size: 0.9rem;
+    }
+    .contact-float .contact-details.open {
+      display: flex;
+    }
+    .contact-float .contact-details a {
+      color: #f4c542;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 4px 0;
+      transition: 0.2s;
+    }
+    .contact-float .contact-details a:hover {
+      color: #fff;
+    }
+    .contact-float .contact-details i {
+      width: 22px;
+      font-size: 1.1rem;
+      text-align: center;
+    }
+
+    /* ---------- MODAL ---------- */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.6);
+      z-index: 2000;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+    .modal-overlay.active {
+      display: flex;
+    }
+    .modal-box {
+      background: #fff;
+      border-radius: 24px;
+      max-width: 560px;
+      width: 100%;
+      padding: 36px 32px;
+      position: relative;
+      box-shadow: 0 24px 48px rgba(0,0,0,0.3);
+      animation: fadeUp 0.3s ease;
+    }
+    @keyframes fadeUp {
+      from { opacity:0; transform:translateY(30px); }
+      to { opacity:1; transform:translateY(0); }
+    }
+    .modal-close {
+      position: absolute;
+      top: 12px;
+      right: 18px;
+      font-size: 1.8rem;
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: #888;
+      transition:0.2s;
+      line-height:1;
+    }
+    .modal-close:hover { color:#1a2a3a; }
+    .modal-box h2 {
+      font-size: 2rem;
+      color: #1a2a3a;
+      margin-bottom: 4px;
+    }
+    .modal-box h2 span { color: #f4c542; }
+    .modal-box .subhead {
+      color: #6a6a7e;
+      margin-bottom: 22px;
+      font-size: 0.95rem;
+    }
+    .form-group {
+      margin-bottom: 16px;
+    }
+    .form-group label {
+      display: block;
+      font-weight: 600;
+      color: #1a2a3a;
+      font-size: 0.9rem;
+      margin-bottom: 3px;
+    }
+    .form-group label .required {
+      color: #d9534f;
+      margin-left: 2px;
+    }
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 10px 14px;
+      border: 1.5px solid #ddd;
+      border-radius: 12px;
+      font-size: 1rem;
+      font-family: inherit;
+      transition: 0.2s;
+      background: #fcfcfa;
+    }
+    .form-group input:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: #f4c542;
+      box-shadow: 0 0 0 3px rgba(244,197,66,0.15);
+    }
+    .form-group textarea {
+      min-height: 100px;
+      resize: vertical;
+    }
+    .form-group .hint {
+      font-size: 0.8rem;
+      color: #999;
+      margin-top: 2px;
+    }
+    .submit-btn {
+      background: #f4c542;
+      color: #1a2a3a;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 1.05rem;
+      cursor: pointer;
+      transition: 0.2s;
+      width: 100%;
+      font-family: inherit;
+    }
+    .submit-btn:hover {
+      background: #e0b034;
+      transform: scale(1.01);
+    }
+    .form-success {
+      display: none;
+      text-align: center;
+      padding: 20px 0;
+    }
+    .form-success i {
+      font-size: 4rem;
+      color: #28a745;
+      margin-bottom: 10px;
+    }
+    .form-success p {
+      font-size: 1.1rem;
+      color: #1a2a3a;
+    }
+
+    /* ---------- FOOTER ---------- */
+    footer {
+      background: #1a2a3a;
+      color: #ccc;
+      padding: 30px 0;
+      margin-top: 20px;
+    }
+    .footer-inner {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    .footer-inner div {
+      flex: 1;
+      min-width: 160px;
+    }
+    footer h4 {
+      color: #f4c542;
+      margin-bottom: 10px;
+    }
+    footer a {
+      color: #ddd;
+      transition: 0.2s;
+    }
+    footer a:hover {
+      color: #f4c542;
+    }
+    footer .btn-cta {
+      background: transparent;
+      padding: 0;
+      color: #ddd;
+      font-weight: 400;
+      font-size: 1rem;
+      border: none;
+      cursor: pointer;
+      font-family: inherit;
+    }
+    footer .btn-cta:hover {
+      color: #f4c542;
+    }
+
+    /* ---------- RESPONSIVE ---------- */
+    @media (max-width: 768px) {
+      .header-inner { flex-direction: column; gap: 8px; }
+      .nav-links { flex-wrap: wrap; justify-content: center; gap: 10px; }
+      .hero-text h2 { font-size: 2rem; }
+      .hero-images img { height: 150px; }
+      .about-inner { flex-direction: column-reverse; text-align: center; }
+      .about-text .divider { margin-left: auto; margin-right: auto; }
+      .filter-inner { flex-direction: column; gap: 10px; align-items: stretch; }
+      .filter-group { justify-content: center; }
+      .tour-grid { grid-template-columns: 1fr; }
+      .modal-box { padding: 28px 18px; }
+      .modal-box h2 { font-size: 1.6rem; }
+      .contact-float .main-btn { padding: 10px 16px; font-size: 0.9rem; }
+    }
+    @media (max-width: 480px) {
+      .filter-group select { min-width: 90px; }
+      .hero-images { grid-template-columns: 1fr; }
+      .hero-images img { height: 180px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="container header-inner">
+    <div class="logo">
+      <h1>India<span>PrivateGuide</span></h1>
+    </div>
+    <div class="nav-links">
+      <a href="#tours" data-i18n="nav_tours">Tours</a>
+      <a href="#about" data-i18n="nav_about">About</a>
+      <div class="header-actions">
+        <a href="https://wa.me/919711349497" target="_blank" class="icon-link" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://t.me/Vikramru" target="_blank" class="icon-link" title="Telegram"><i class="fab fa-telegram-plane"></i></a>
+        <a href="mailto:info@indiaprivateguide.com" class="icon-link" title="Email"><i class="fas fa-envelope"></i></a>
+        <button class="btn-cta" onclick="openModal()" data-i18n="nav_contact">Get in Touch</button>
+        <button class="lang-toggle" id="langToggle" onclick="toggleLanguage()">RU</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container hero-grid">
+    <div class="hero-text">
+      <h2 data-i18n="hero_title">Explore India with <strong>Your Private Guide</strong></h2>
+      <p data-i18n="hero_desc">Expert‑led, tailor‑made tours across spiritual, heritage & wildlife trails. Filter by days, type or destination.</p>
+    </div>
+    <div class="hero-images">
+      <img src="images/hero1.jpg" alt="India Tour">
+      <img src="images/hero2.jpg" alt="India Guide">
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about-section" id="about">
+  <div class="container about-inner">
+    <div class="about-text">
+      <h2 data-i18n="about_title">About <span>India Private Guide</span></h2>
+      <div class="divider"></div>
+      <p data-i18n="about_p1">India Private Guide is a private heritage travel consultancy specializing in expertly guided cultural journeys across North India.</p>
+      <p data-i18n="about_p2">Led by a Government of India approved tour guide with over 20 years of experience in Delhi, every journey is thoughtfully tailored to your interests, pace, and travel style. From iconic UNESCO World Heritage Sites to hidden cultural treasures, each itinerary combines historical insight, local knowledge, and seamless planning.</p>
+      <p data-i18n="about_p3">No group tours. No fixed schedules. Just authentic, private journeys designed to help you experience the true spirit of India.</p>
+      <p class="tagline" data-i18n="about_tagline">Thoughtfully Crafted Around You.</p>
+    </div>
+    <div class="about-image">
+      <img src="images/vikramjeet.jpg" alt="Vikramjeet Singh">
+      <span class="caption" data-i18n="guide_caption">Vikramjeet Singh – Your Guide</span>
+    </div>
+  </div>
+</section>
+
+<!-- FILTER -->
+<section class="filter-bar" id="tours">
+  <div class="container filter-inner">
+    <div class="filter-group">
+      <label for="filterDays" data-i18n="filter_days"><i class="fas fa-calendar-alt"></i> Days</label>
+      <select id="filterDays">
+        <option value="all" data-i18n="filter_all">All</option>
+        <option value="1" data-i18n="day_1">1 Day</option>
+        <option value="2" data-i18n="day_2">2 Days</option>
+        <option value="3" data-i18n="day_3">3 Days</option>
+        <option value="4" data-i18n="day_4">4 Days</option>
+        <option value="5" data-i18n="day_5">5 Days</option>
+        <option value="6" data-i18n="day_6">6 Days</option>
+        <option value="7" data-i18n="day_7">7 Days</option>
+        <option value="8" data-i18n="day_8">8 Days</option>
+        <option value="9" data-i18n="day_9">9 Days</option>
+        <option value="16" data-i18n="day_16">16 Days</option>
+      </select>
+    </div>
+    <div class="filter-group">
+      <label for="filterType" data-i18n="filter_type"><i class="fas fa-tag"></i> Type</label>
+      <select id="filterType">
+        <option value="all" data-i18n="filter_all">All</option>
+        <option value="Spiritual" data-i18n="type_Spiritual">Spiritual</option>
+        <option value="Heritage" data-i18n="type_Heritage">Heritage</option>
+        <option value="Wildlife" data-i18n="type_Wildlife">Wildlife</option>
+        <option value="Cultural" data-i18n="type_Cultural">Cultural</option>
+        <option value="Nature" data-i18n="type_Nature">Nature</option>
+      </select>
+    </div>
+    <div class="filter-group">
+      <label for="filterPlace" data-i18n="filter_destination"><i class="fas fa-map-marker-alt"></i> Destination</label>
+      <select id="filterPlace">
+        <option value="all" data-i18n="filter_all">All</option>
+        <option value="Delhi" data-i18n="place_Delhi">Delhi</option>
+        <option value="Agra" data-i18n="place_Agra">Agra</option>
+        <option value="Jaipur" data-i18n="place_Jaipur">Jaipur</option>
+        <option value="Varanasi" data-i18n="place_Varanasi">Varanasi</option>
+        <option value="Bodh Gaya" data-i18n="place_Bodh_Gaya">Bodh Gaya</option>
+        <option value="Khajuraho" data-i18n="place_Khajuraho">Khajuraho</option>
+        <option value="Udaipur" data-i18n="place_Udaipur">Udaipur</option>
+        <option value="Jodhpur" data-i18n="place_Jodhpur">Jodhpur</option>
+        <option value="Ranthambore" data-i18n="place_Ranthambore">Ranthambore</option>
+        <option value="Bharatpur" data-i18n="place_Bharatpur">Bharatpur</option>
+        <option value="Gwalior" data-i18n="place_Gwalior">Gwalior</option>
+        <option value="Orchha" data-i18n="place_Orchha">Orchha</option>
+        <option value="Kumbhalgarh" data-i18n="place_Kumbhalgarh">Kumbhalgarh</option>
+        <option value="Chittorgarh" data-i18n="place_Chittorgarh">Chittorgarh</option>
+        <option value="Jaisalmer" data-i18n="place_Jaisalmer">Jaisalmer</option>
+        <option value="Patna" data-i18n="place_Patna">Patna</option>
+        <option value="Rajgir" data-i18n="place_Rajgir">Rajgir</option>
+        <option value="Darjeeling" data-i18n="place_Darjeeling">Darjeeling</option>
+        <option value="Gangtok" data-i18n="place_Gangtok">Gangtok</option>
+        <option value="Shimla" data-i18n="place_Shimla">Shimla</option>
+        <option value="Manali" data-i18n="place_Manali">Manali</option>
+        <option value="Dharamshala" data-i18n="place_Dharamshala">Dharamshala</option>
+        <option value="Amritsar" data-i18n="place_Amritsar">Amritsar</option>
+        <!-- Newly added missing destinations -->
+        <option value="Gaya" data-i18n="place_Gaya">Gaya</option>
+        <option value="Nalanda" data-i18n="place_Nalanda">Nalanda</option>
+        <option value="Panna" data-i18n="place_Panna">Panna</option>
+        <option value="Bikaner" data-i18n="place_Bikaner">Bikaner</option>
+        <option value="Bundi" data-i18n="place_Bundi">Bundi</option>
+        <option value="Vrindavan" data-i18n="place_Vrindavan">Vrindavan</option>
+        <option value="Fatehpur Sikri" data-i18n="place_Fatehpur_Sikri">Fatehpur Sikri</option>
+        <option value="Abhaneri" data-i18n="place_Abhaneri">Abhaneri</option>
+        <option value="Morena" data-i18n="place_Morena">Morena</option>
+        <option value="Kalimpong" data-i18n="place_Kalimpong">Kalimpong</option>
+        <option value="Bagdogra" data-i18n="place_Bagdogra">Bagdogra</option>
+        <option value="Kalka" data-i18n="place_Kalka">Kalka</option>
+        <option value="Mandi" data-i18n="place_Mandi">Mandi</option>
+        <option value="Vashisht" data-i18n="place_Vashisht">Vashisht</option>
+        <option value="Bir" data-i18n="place_Bir">Bir</option>
+        <option value="Naggar" data-i18n="place_Naggar">Naggar</option>
+        <option value="Ranakpur" data-i18n="place_Ranakpur">Ranakpur</option>
+      </select>
+    </div>
+    <button class="reset-btn" id="resetFilters" data-i18n="filter_reset"><i class="fas fa-undo-alt"></i> Reset</button>
+  </div>
+</section>
+
+<!-- TOUR GRID -->
+<section class="container">
+  <div class="tour-grid" id="tourGrid"></div>
+</section>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="enquiryModal">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal()">&times;</button>
+    <h2 data-i18n="modal_title">Plan Your <span>Journey</span></h2>
+    <p class="subhead" data-i18n="modal_subhead">Fill in the details below and I'll get back to you with a tailor-made itinerary.</p>
+    <div class="form-success" id="formSuccess">
+      <i class="fas fa-check-circle"></i>
+      <p><strong data-i18n="success_title">Thank you!</strong><br><span data-i18n="success_msg">Your enquiry has been sent. I will reply within 24 hours.</span></p>
+      <button class="btn-cta" style="margin-top:16px;" onclick="closeModal()" data-i18n="modal_close">Close</button>
+    </div>
+    <form id="enquiryForm" action="https://formsubmit.co/info@indiaprivateguide.com" method="POST">
+      <input type="hidden" name="_captcha" value="true">
+      <input type="hidden" name="_subject" value="New Enquiry from India Private Guide">
+      <input type="text" name="_honey" style="display:none;">
+      <div class="form-group">
+        <label for="fullName" data-i18n="form_name">Full Name <span class="required">*</span></label>
+        <input type="text" id="fullName" name="Full Name" placeholder="Enter your name" required data-i18n-placeholder="form_name_ph">
+      </div>
+      <div class="form-group">
+        <label for="email" data-i18n="form_email">Email Address <span class="required">*</span></label>
+        <input type="email" id="email" name="Email" placeholder="Where should I send your itinerary and quotation?" required data-i18n-placeholder="form_email_ph">
+      </div>
+      <div class="form-group">
+        <label for="whatsapp" data-i18n="form_whatsapp">WhatsApp or Telegram (Optional)</label>
+        <input type="text" id="whatsapp" name="WhatsApp / Telegram" placeholder="For quicker communication, if preferred." data-i18n-placeholder="form_whatsapp_ph">
+      </div>
+      <div class="form-group">
+        <label for="message" data-i18n="form_message">Your Message <span class="required">*</span></label>
+        <textarea id="message" name="Message" placeholder="Tell me about your travel plans or ask any questions. You can request pricing, a detailed itinerary, hotel recommendations, or a completely customized journey." required data-i18n-placeholder="form_message_ph"></textarea>
+      </div>
+      <button type="submit" class="submit-btn" data-i18n="form_submit">Send Enquiry</button>
+    </form>
+  </div>
+</div>
+
+<!-- FLOATING CONTACT -->
+<div class="contact-float" id="contact">
+  <div class="contact-details" id="contactDetails">
+    <a href="mailto:info@indiaprivateguide.com"><i class="fas fa-envelope"></i> info@indiaprivateguide.com</a>
+    <a href="https://wa.me/919711349497" target="_blank"><i class="fab fa-whatsapp"></i> +91 97113 49497</a>
+    <a href="https://t.me/Vikramru" target="_blank"><i class="fab fa-telegram-plane"></i> @Vikramru</a>
+    <small style="color:#aaa; margin-top:6px; font-size:0.8rem;">Vikramjeet Singh – Owner</small>
+  </div>
+  <button class="main-btn" onclick="toggleFloatDetails()">
+    <i class="fas fa-phone-alt"></i> <span data-i18n="contact_btn">Contact Us</span>
+  </button>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container footer-inner">
+    <div>
+      <h4>India Private Guide</h4>
+      <p style="font-size:0.9rem; line-height:1.6;" data-i18n="footer_desc">Expert‑led private tours across India’s spiritual, heritage & wildlife treasures. Government‑approved guides with 17+ years experience.</p>
+    </div>
+    <div>
+      <h4 data-i18n="footer_contact">Contact</h4>
+      <p><i class="fas fa-envelope" style="color:#f4c542;"></i> <a href="mailto:info@indiaprivateguide.com">info@indiaprivateguide.com</a></p>
+      <p><i class="fab fa-whatsapp" style="color:#f4c542;"></i> <a href="https://wa.me/919711349497">+91 97113 49497</a></p>
+      <p><i class="fab fa-telegram" style="color:#f4c542;"></i> <a href="https://t.me/Vikramru">@Vikramru</a></p>
+    </div>
+    <div>
+      <h4 data-i18n="footer_quick">Quick Links</h4>
+      <p><a href="#tours" data-i18n="footer_browse">Browse Tours</a></p>
+      <p><button class="btn-cta" onclick="openModal()" data-i18n="footer_plan">Plan Your Journey</button></p>
+    </div>
+  </div>
+  <div class="container" style="border-top:1px solid #2a3a4a; margin-top:20px; padding-top:20px; text-align:center; font-size:0.85rem; color:#888;">
+    <span data-i18n="footer_rights">&copy; 2026 India Private Guide. All rights reserved.</span>
+  </div>
+</footer>
+
+<script>
+  // ============================================================
+  // 1. TRANSLATIONS (FULLY SYSTEMATIC)
+  // ============================================================
+  const translations = {
+    en: {
+      nav_tours: "Tours",
+      nav_about: "About",
+      nav_contact: "Get in Touch",
+      hero_title: 'Explore India with <strong>Your Private Guide</strong>',
+      hero_desc: 'Expert‑led, tailor‑made tours across spiritual, heritage & wildlife trails. Filter by days, type or destination.',
+      about_title: 'About <span>India Private Guide</span>',
+      about_p1: 'India Private Guide is a private heritage travel consultancy specializing in expertly guided cultural journeys across North India.',
+      about_p2: 'Led by a Government of India approved tour guide with over 20 years of experience in Delhi, every journey is thoughtfully tailored to your interests, pace, and travel style. From iconic UNESCO World Heritage Sites to hidden cultural treasures, each itinerary combines historical insight, local knowledge, and seamless planning.',
+      about_p3: 'No group tours. No fixed schedules. Just authentic, private journeys designed to help you experience the true spirit of India.',
+      about_tagline: 'Thoughtfully Crafted Around You.',
+      guide_caption: 'Vikramjeet Singh – Your Guide',
+      filter_days: 'Days',
+      filter_type: 'Type',
+      filter_destination: 'Destination',
+      filter_all: 'All',
+      filter_reset: 'Reset',
+      day_1: '1 Day',
+      day_2: '2 Days',
+      day_3: '3 Days',
+      day_4: '4 Days',
+      day_5: '5 Days',
+      day_6: '6 Days',
+      day_7: '7 Days',
+      day_8: '8 Days',
+      day_9: '9 Days',
+      day_16: '16 Days',
+      place_Delhi: 'Delhi',
+      place_Agra: 'Agra',
+      place_Jaipur: 'Jaipur',
+      place_Varanasi: 'Varanasi',
+      place_Bodh_Gaya: 'Bodh Gaya',
+      place_Khajuraho: 'Khajuraho',
+      place_Udaipur: 'Udaipur',
+      place_Jodhpur: 'Jodhpur',
+      place_Ranthambore: 'Ranthambore',
+      place_Bharatpur: 'Bharatpur',
+      place_Gwalior: 'Gwalior',
+      place_Orchha: 'Orchha',
+      place_Kumbhalgarh: 'Kumbhalgarh',
+      place_Chittorgarh: 'Chittorgarh',
+      place_Jaisalmer: 'Jaisalmer',
+      place_Patna: 'Patna',
+      place_Rajgir: 'Rajgir',
+      place_Darjeeling: 'Darjeeling',
+      place_Gangtok: 'Gangtok',
+      place_Shimla: 'Shimla',
+      place_Manali: 'Manali',
+      place_Dharamshala: 'Dharamshala',
+      place_Amritsar: 'Amritsar',
+      place_Gaya: 'Gaya',
+      place_Nalanda: 'Nalanda',
+      place_Panna: 'Panna',
+      place_Bikaner: 'Bikaner',
+      place_Bundi: 'Bundi',
+      place_Vrindavan: 'Vrindavan',
+      place_Fatehpur_Sikri: 'Fatehpur Sikri',
+      place_Abhaneri: 'Abhaneri',
+      place_Morena: 'Morena',
+      place_Kalimpong: 'Kalimpong',
+      place_Bagdogra: 'Bagdogra',
+      place_Kalka: 'Kalka',
+      place_Mandi: 'Mandi',
+      place_Vashisht: 'Vashisht',
+      place_Bir: 'Bir',
+      place_Naggar: 'Naggar',
+      place_Ranakpur: 'Ranakpur',
+      type_Spiritual: 'Spiritual',
+      type_Heritage: 'Heritage',
+      type_Wildlife: 'Wildlife',
+      type_Cultural: 'Cultural',
+      type_Nature: 'Nature',
+      tour_highlights: 'Highlights',
+      tour_route: 'Route',
+      tour_guide: 'Guide',
+      guide_government: 'Government-Approved Guide',
+      guide_ministry: 'Ministry of Tourism Approved (17 yrs exp)',
+      pace_Fast: 'Fast',
+      pace_Moderate: 'Moderate',
+      pace_Relaxed: 'Relaxed',
+      pace_Active: 'Active',
+      pace_Balanced: 'Balanced',
+      pace_Immersive: 'Immersive',
+      pace_Fast_Active: 'Fast / Active',
+      pace_Moderate_Balanced: 'Moderate / Balanced',
+      pace_Relaxed_Immersive: 'Relaxed / Immersive',
+      pace_Fast_but_Comfortable: 'Fast but Comfortable',
+      pace_Moderate_Active: 'Moderate / Active',
+      no_results: 'No tours match your filters. Try adjusting them.',
+      modal_title: 'Plan Your <span>Journey</span>',
+      modal_subhead: 'Fill in the details below and I\'ll get back to you with a tailor-made itinerary.',
+      modal_close: 'Close',
+      form_name: 'Full Name',
+      form_name_ph: 'Enter your name',
+      form_email: 'Email Address',
+      form_email_ph: 'Where should I send your itinerary and quotation?',
+      form_whatsapp: 'WhatsApp or Telegram (Optional)',
+      form_whatsapp_ph: 'For quicker communication, if preferred.',
+      form_message: 'Your Message',
+      form_message_ph: 'Tell me about your travel plans or ask any questions. You can request pricing, a detailed itinerary, hotel recommendations, or a completely customized journey.',
+      form_submit: 'Send Enquiry',
+      success_title: 'Thank you!',
+      success_msg: 'Your enquiry has been sent. I will reply within 24 hours.',
+      contact_btn: 'Contact Us',
+      footer_desc: 'Expert‑led private tours across India’s spiritual, heritage & wildlife treasures. Government‑approved guides with 17+ years experience.',
+      footer_contact: 'Contact',
+      footer_quick: 'Quick Links',
+      footer_browse: 'Browse Tours',
+      footer_plan: 'Plan Your Journey',
+      footer_rights: '© 2026 India Private Guide. All rights reserved.'
+    },
+    ru: {
+      nav_tours: 'Туры',
+      nav_about: 'О нас',
+      nav_contact: 'Связаться',
+      hero_title: 'Исследуйте Индию с <strong>Вашим частным гидом</strong>',
+      hero_desc: 'Эксклюзивные авторские туры по духовным, историческим и природным маршрутам. Фильтруйте по дням, типу или месту.',
+      about_title: 'О компании <span>India Private Guide</span>',
+      about_p1: 'India Private Guide — это частное консультационное агентство по культурному наследию, специализирующееся на авторских экскурсиях по Северной Индии.',
+      about_p2: 'Под руководством аккредитованного гида Правительства Индии с более чем 20-летним опытом в Дели, каждое путешествие адаптируется под ваши интересы, темп и стиль. От знаменитых объектов ЮНЕСКО до скрытых жемчужин — каждый маршрут сочетает историческую глубину, местные знания и безупречную организацию.',
+      about_p3: 'Никаких групповых туров. Никаких фиксированных графиков. Только аутентичные, частные путешествия, созданные для того, чтобы вы почувствовали настоящий дух Индии.',
+      about_tagline: 'Индивидуально для вас.',
+      guide_caption: 'Викрамджит Сингх – Ваш гид',
+      filter_days: 'Дни',
+      filter_type: 'Тип',
+      filter_destination: 'Место',
+      filter_all: 'Все',
+      filter_reset: 'Сбросить',
+      day_1: '1 день',
+      day_2: '2 дня',
+      day_3: '3 дня',
+      day_4: '4 дня',
+      day_5: '5 дней',
+      day_6: '6 дней',
+      day_7: '7 дней',
+      day_8: '8 дней',
+      day_9: '9 дней',
+      day_16: '16 дней',
+      place_Delhi: 'Дели',
+      place_Agra: 'Агра',
+      place_Jaipur: 'Джайпур',
+      place_Varanasi: 'Варанаси',
+      place_Bodh_Gaya: 'Бодх-Гая',
+      place_Khajuraho: 'Кхаджурахо',
+      place_Udaipur: 'Удайпур',
+      place_Jodhpur: 'Джодхпур',
+      place_Ranthambore: 'Рантхамбор',
+      place_Bharatpur: 'Бхаратпур',
+      place_Gwalior: 'Гвалиор',
+      place_Orchha: 'Орчха',
+      place_Kumbhalgarh: 'Кумбхалгарх',
+      place_Chittorgarh: 'Читторгарх',
+      place_Jaisalmer: 'Джайсалмер',
+      place_Patna: 'Патна',
+      place_Rajgir: 'Раджгир',
+      place_Darjeeling: 'Дарджилинг',
+      place_Gangtok: 'Гангток',
+      place_Shimla: 'Шимла',
+      place_Manali: 'Манали',
+      place_Dharamshala: 'Дхарамшала',
+      place_Amritsar: 'Амритсар',
+      place_Gaya: 'Гая',
+      place_Nalanda: 'Наланда',
+      place_Panna: 'Панна',
+      place_Bikaner: 'Биканер',
+      place_Bundi: 'Бунди',
+      place_Vrindavan: 'Вриндаван',
+      place_Fatehpur_Sikri: 'Фатехпур-Сикри',
+      place_Abhaneri: 'Абханери',
+      place_Morena: 'Морена',
+      place_Kalimpong: 'Калимпонг',
+      place_Bagdogra: 'Багдогра',
+      place_Kalka: 'Калка',
+      place_Mandi: 'Манди',
+      place_Vashisht: 'Вашишт',
+      place_Bir: 'Бир',
+      place_Naggar: 'Наггар',
+      place_Ranakpur: 'Ранакпур',
+      type_Spiritual: 'Духовный',
+      type_Heritage: 'Наследие',
+      type_Wildlife: 'Природа',
+      type_Cultural: 'Культурный',
+      type_Nature: 'Природный',
+      tour_highlights: 'Основные моменты',
+      tour_route: 'Маршрут',
+      tour_guide: 'Гид',
+      guide_government: 'Гид, аккредитованный правительством',
+      guide_ministry: 'Гид, аккредитованный Министерством туризма (опыт 17 лет)',
+      pace_Fast: 'Быстрый',
+      pace_Moderate: 'Умеренный',
+      pace_Relaxed: 'Спокойный',
+      pace_Active: 'Активный',
+      pace_Balanced: 'Сбалансированный',
+      pace_Immersive: 'Погружение',
+      pace_Fast_Active: 'Быстрый / Активный',
+      pace_Moderate_Balanced: 'Умеренный / Сбалансированный',
+      pace_Relaxed_Immersive: 'Спокойный / Погружение',
+      pace_Fast_but_Comfortable: 'Быстрый, но комфортный',
+      pace_Moderate_Active: 'Умеренный / Активный',
+      no_results: 'Нет туров, соответствующих фильтрам. Попробуйте изменить настройки.',
+      modal_title: 'Спланируйте <span>путешествие</span>',
+      modal_subhead: 'Заполните форму, и я свяжусь с вами с индивидуальным маршрутом.',
+      modal_close: 'Закрыть',
+      form_name: 'Полное имя',
+      form_name_ph: 'Введите ваше имя',
+      form_email: 'Электронная почта',
+      form_email_ph: 'Куда отправить маршрут и расценки?',
+      form_whatsapp: 'WhatsApp или Telegram (опционально)',
+      form_whatsapp_ph: 'Для быстрой связи, если удобнее.',
+      form_message: 'Ваше сообщение',
+      form_message_ph: 'Расскажите о ваших планах или задайте вопросы. Можно запросить цену, детальный маршрут, рекомендации по отелям или полностью индивидуальный тур.',
+      form_submit: 'Отправить',
+      success_title: 'Спасибо!',
+      success_msg: 'Ваш запрос отправлен. Я отвечу в течение 24 часов.',
+      contact_btn: 'Связаться',
+      footer_desc: 'Авторские частные туры по духовным, историческим и природным сокровищам Индии. Гиды, аккредитованные правительством, с опытом более 17 лет.',
+      footer_contact: 'Контакты',
+      footer_quick: 'Быстрые ссылки',
+      footer_browse: 'Смотреть туры',
+      footer_plan: 'Спланировать поездку',
+      footer_rights: '© 2026 India Private Guide. Все права защищены.'
+    }
+  };
+
+  // ============================================================
+  // 2. HELPERS
+  // ============================================================
+  let currentLang = 'en';
+
+  function getLang() { return currentLang; }
+
+  function t(key) {
+    return translations[currentLang]?.[key] || key;
+  }
+
+  function getPaceKey(paceStr) {
+    const map = {
+      'Fast': 'pace_Fast', 'Moderate': 'pace_Moderate', 'Relaxed': 'pace_Relaxed',
+      'Active': 'pace_Active', 'Balanced': 'pace_Balanced', 'Immersive': 'pace_Immersive',
+      'Fast / Active': 'pace_Fast_Active', 'Moderate / Balanced': 'pace_Moderate_Balanced',
+      'Relaxed / Immersive': 'pace_Relaxed_Immersive', 'Fast but Comfortable': 'pace_Fast_but_Comfortable',
+      'Moderate / Active': 'pace_Moderate_Active'
+    };
+    return map[paceStr] || paceStr;
+  }
+
+  function getGuideKey(guideStr) {
+    if (guideStr.includes('Government')) return 'guide_government';
+    if (guideStr.includes('Ministry')) return 'guide_ministry';
+    return guideStr;
+  }
+
+  function translateRoute(route, lang) {
+    if (lang === 'en') return route;
+    const placeMap = {
+      'Delhi': 'place_Delhi', 'Agra': 'place_Agra', 'Jaipur': 'place_Jaipur',
+      'Varanasi': 'place_Varanasi', 'Bodh Gaya': 'place_Bodh_Gaya', 'Khajuraho': 'place_Khajuraho',
+      'Udaipur': 'place_Udaipur', 'Jodhpur': 'place_Jodhpur', 'Ranthambore': 'place_Ranthambore',
+      'Bharatpur': 'place_Bharatpur', 'Gwalior': 'place_Gwalior', 'Orchha': 'place_Orchha',
+      'Kumbhalgarh': 'place_Kumbhalgarh', 'Chittorgarh': 'place_Chittorgarh', 'Jaisalmer': 'place_Jaisalmer',
+      'Patna': 'place_Patna', 'Rajgir': 'place_Rajgir', 'Darjeeling': 'place_Darjeeling',
+      'Gangtok': 'place_Gangtok', 'Shimla': 'place_Shimla', 'Manali': 'place_Manali',
+      'Dharamshala': 'place_Dharamshala', 'Amritsar': 'place_Amritsar', 'Gaya': 'place_Gaya',
+      'Nalanda': 'place_Nalanda', 'Panna': 'place_Panna', 'Bikaner': 'place_Bikaner',
+      'Bundi': 'place_Bundi', 'Vrindavan': 'place_Vrindavan', 'Fatehpur Sikri': 'place_Fatehpur_Sikri',
+      'Abhaneri': 'place_Abhaneri', 'Morena': 'place_Morena', 'Kalimpong': 'place_Kalimpong',
+      'Bagdogra': 'place_Bagdogra', 'Kalka': 'place_Kalka', 'Mandi': 'place_Mandi',
+      'Vashisht': 'place_Vashisht', 'Bir': 'place_Bir', 'Naggar': 'place_Naggar',
+      'Ranakpur': 'place_Ranakpur'
+    };
+    return route.split('→').map(part => {
+      const trimmed = part.trim().replace(/\(.*\)/, '').trim(); // remove brackets like (Desert/City)
+      const key = placeMap[trimmed];
+      return key ? t(key) : trimmed;
+    }).join(' → ');
+  }
+
+  // ============================================================
+  // 3. TOUR DATA (FIXED PLACES ARRAYS)
+  // ============================================================
+  const tourData = [
+    {
+      id: 1,
+      name_en: "5-Day Sacred India Express: Ganges, Buddha & Ancient Empires",
+      name_ru: "5-дневный экспресс-тур по священной Индии: Ганг, Будда и древние империи",
+      duration: 5,
+      type: "Spiritual",
+      places: ["Delhi","Varanasi","Bodh Gaya","Gaya","Rajgir","Nalanda","Patna"],
+      route_en: "Delhi → Varanasi → Bodh Gaya → Gaya → Rajgir → Nalanda → Patna → Delhi",
+      desc_en: "A deeply immersive private journey through the spiritual heartlands of Hinduism, Buddhism, and Sikhism, featuring two UNESCO sites.",
+      desc_ru: "Глубокое погружение в духовные центры индуизма, буддизма и сикхизма с посещением двух объектов ЮНЕСКО.",
+      highlights_en: ["Mahabodhi Temple","Nalanda Ruins","Ganga Aarti","Vishnupad Temple","Barabar Caves"],
+      highlights_ru: ["Храм Махабодхи","Развалины Наланды","Ганга Аарти","Храм Вишнупада","Пещеры Барабар"],
+      guide_key: "guide_ministry",
+      pace_key: "pace_Fast_Active"
+    },
+    {
+      id: 2,
+      name_en: "7-Day Temples, Ganges & Buddha Trail: Delhi to Patna",
+      name_ru: "7-дневный маршрут: храмы, Ганг и тропа Будды от Дели до Патны",
+      duration: 7,
+      type: "Spiritual",
+      places: ["Delhi","Khajuraho","Panna","Varanasi","Bodh Gaya","Rajgir","Nalanda","Patna"],
+      route_en: "Delhi → Khajuraho → Panna → Varanasi → Bodh Gaya → Rajgir → Nalanda → Patna",
+      desc_en: "Ideal for active travelers, this 7-day journey blends ancient temples, the sacred Ganges, and Buddhist heritage.",
+      desc_ru: "Идеально для активных путешественников: древние храмы, священный Ганг и буддийское наследие за 7 дней.",
+      highlights_en: ["Khajuraho Temples","Mahabodhi Temple","Nalanda","Sarnath","Ganga Aarti"],
+      highlights_ru: ["Храмы Кхаджурахо","Храм Махабодхи","Наланда","Сарнатх","Ганга Аарти"],
+      guide_key: "guide_ministry",
+      pace_key: "pace_Moderate"
+    },
+    {
+      id: 3,
+      name_en: "Taj Mahal & Agra Fort Private Day Journey",
+      name_ru: "Однодневный частный тур: Тадж-Махал и Агра-Форт",
+      duration: 1,
+      type: "Heritage",
+      places: ["Delhi","Agra"],
+      route_en: "Delhi → Agra → Delhi",
+      desc_en: "Experience the timeless beauty of the Mughal Empire on an expertly guided private day tour from Delhi.",
+      desc_ru: "Ощутите вневременную красоту империи Великих Моголов в частном туре с гидом из Дели.",
+      highlights_en: ["Taj Mahal","Agra Fort"],
+      highlights_ru: ["Тадж-Махал","Агра-Форт"],
+      guide_key: "guide_government",
+      pace_key: "pace_Fast_but_Comfortable"
+    },
+    {
+      id: 4,
+      name_en: "Imperial Delhi & Spiritual Heritage: Private Full-Day Tour",
+      name_ru: "Имперский Дели и духовное наследие: частный полнодневный тур",
+      duration: 1,
+      type: "Cultural",
+      places: ["Delhi"],
+      route_en: "Delhi → Delhi",
+      desc_en: "Comprehensive day tour covering Old Delhi's alleys, colonial New Delhi, and spiritual landmarks.",
+      desc_ru: "Полнодневный тур по старому и новому Дели, колониальной архитектуре и духовным достопримечательностям.",
+      highlights_en: ["Jama Masjid","Red Fort","Humayun's Tomb","Qutub Minar","Gurudwara Bangla Sahib"],
+      highlights_ru: ["Джама-Масджид","Красный форт","Гробница Хумаюна","Кутуб-Минар","Гурдвара Бангла Сахиб"],
+      guide_key: "guide_government",
+      pace_key: "pace_Fast_but_Comfortable"
+    },
+    {
+      id: 5,
+      name_en: "1-Day Jaipur Royal Express: Private Tour from Delhi",
+      name_ru: "Однодневный королевский экспресс в Джайпур из Дели",
+      duration: 1,
+      type: "Heritage",
+      places: ["Delhi","Jaipur"],
+      route_en: "Delhi → Jaipur → Delhi",
+      desc_en: "A highly efficient day trip to Rajasthan's Pink City, covering Amber Fort, City Palace, and Hawa Mahal.",
+      desc_ru: "Эффективный однодневный тур в Розовый город Раджастана: Амбер-Форт, Городской дворец и Хава-Махал.",
+      highlights_en: ["Amber Fort","City Palace","Hawa Mahal","Jal Mahal"],
+      highlights_ru: ["Амбер-Форт","Городской дворец","Хава-Махал","Джал-Махал"],
+      guide_key: "guide_ministry",
+      pace_key: "pace_Fast_Active"
+    },
+    {
+      id: 6,
+      name_en: "2-Day Express Golden Triangle: Agra & Jaipur Heritage",
+      name_ru: "2-дневный экспресс-тур по Золотому треугольнику: Агра и Джайпур",
+      duration: 2,
+      type: "Heritage",
+      places: ["Delhi","Agra","Jaipur"],
+      route_en: "Delhi → Agra → Jaipur → Delhi",
+      desc_en: "A whirlwind 2-day private tour covering the Taj Mahal, Agra Fort, Amber Fort, and City Palace.",
+      desc_ru: "Насыщенный 2-дневный тур: Тадж-Махал, Агра-Форт, Амбер-Форт и Городской дворец.",
+      highlights_en: ["Taj Mahal","Agra Fort","Amber Fort","City Palace"],
+      highlights_ru: ["Тадж-Махал","Агра-Форт","Амбер-Форт","Городской дворец"],
+      guide_key: "guide_ministry",
+      pace_key: "pace_Fast"
+    },
+    {
+      id: 7,
+      name_en: "3-Day Golden Triangle Expedition: Delhi, Agra & Jaipur",
+      name_ru: "3-дневная экспедиция по Золотому треугольнику: Дели, Агра, Джайпур",
+      duration: 3,
+      type: "Heritage",
+      places: ["Delhi","Agra","Jaipur"],
+      route_en: "Delhi → Agra → Jaipur → Delhi",
+      desc_en: "A comprehensive 3-day private tour through North India's iconic Golden Triangle, including UNESCO sites.",
+      desc_ru: "Полноценный 3-дневный тур по знаменитому Золотому треугольнику с объектами ЮНЕСКО.",
+      highlights_en: ["Humayun's Tomb","Akshardham","Taj Mahal","Agra Fort","Amber Fort"],
+      highlights_ru: ["Гробница Хумаюна","Акшардхам","Тадж-Махал","Агра-Форт","Амбер-Форт"],
+      guide_key: "guide_ministry",
+      pace_key: "pace_Fast_Active"
+    },
+    {
+      id: 8,
+      name_en: "4-Day Express Golden Triangle: Delhi, Jaipur & Agra",
+      name_ru: "4-дневный экспресс-тур: Дели, Джайпур, Агра",
+      duration: 4,
+      type: "Heritage",
+      places: ["Delhi","Jaipur","Agra"],
+      route_en: "Delhi → Jaipur → Agra → Delhi",
+      desc_en: "An efficient 4-day tour covering Delhi's contrasts, Jaipur's royal forts, and Agra's Mughal marvels.",
+      desc_ru: "Эффективный 4-дневный тур: контрасты Дели, королевские форты Джайпура и могольские чудеса Агры.",
+      highlights_en: ["Old Delhi Rickshaw","Amber Fort","City Palace","Taj Mahal","Agra Fort"],
+      highlights_ru: ["Рикша в старом Дели","Амбер-Форт","Городской дворец","Тадж-Махал","Агра-Форт"],
+      guide_key: "guide_ministry",
+      pace_key: "pace_Fast_Active"
+    },
+    {
+      id: 9,
+      name_en: "5-Day Classic Golden Triangle: Royal Rajput & Mughal Journey",
+      name_ru: "5-дневный классический Золотой треугольник: Раджпуты и Моголы",
+      duration: 5,
+      type: "Heritage",
+      places: ["Delhi","Jaipur","Agra"],
+      route_en: "Delhi → Jaipur → Agra → Delhi",
+      desc_en: "A balanced 5-day itinerary with extra time in Jaipur, plus a visit to the ancient Chand Baori stepwell.",
+      desc_ru: "Сбалансированный 5-дневный маршрут с дополнительным временем в Джайпуре и посещением ступенчатого колодца Чанд-Баори.",
+      highlights_en: ["Taj Mahal","Agra Fort","Amber Fort","Nahargarh Fort","Chand Baori","Baby Taj"],
+      highlights_ru: ["Тадж-Махал","Агра-Форт","Амбер-Форт","Форт Нахаргарх","Чанд-Баори","Малый Тадж"],
+      guide_key: "guide_ministry",
+      pace_key: "pace_Moderate_Balanced"
+    },
+    {
+      id: 10,
+      name_en: "6-Day Golden Triangle & Wildlife Escape: Heritage to Bharatpur",
+      name_ru: "6-дневный Золотой треугольник и природа: Бхаратпур",
+      duration: 6,
+      type: "Nature",
+      places: ["Delhi","Jaipur","Bharatpur","Agra"],
+      route_en: "Delhi → Jaipur → Bharatpur → Agra → Delhi",
+      desc_en: "Classic Golden Triangle plus a peaceful rickshaw safari in Keoladeo National Park (UNESCO).",
+      desc_ru: "Классический Золотой треугольник + спокойное сафари на рикше в национальном парке Кеоладео (ЮНЕСКО).",
+      highlights_en: ["Keoladeo Safari","Taj Mahal","Amber Fort","Chand Baori","Baby Taj"],
+      highlights_ru: ["Сафари в Кеоладео","Тадж-Махал","Амбер-Форт","Чанд-Баори","Малый Тадж"],
+      guide_key: "guide_ministry",
+      pace_key: "pace_Moderate_Balanced"
+    },
+    {
+      id: 11,
+      name_en: "2-Day Khajuraho & Panna: UNESCO Temples & Tigers Express",
+      name_ru: "2-дневный экспресс: храмы Кхаджурахо и тигры Панны",
+      duration: 2,
+      type: "Wildlife",
+      places: ["Delhi","Khajuraho","Panna"],
+      route_en: "Delhi → Khajuraho → Panna → Delhi",
+      desc_en: "A thrilling 2-day escape combining Khajuraho's sculpted temples with a tiger safari in Panna Reserve.",
+      desc_ru: "Двухдневное приключение: храмы Кхаджурахо и сафари на тигров в заповеднике Панна.",
+      highlights_en: ["Khajuraho Temples","Panna Tiger Safari","Ayurvedic Spa option"],
+      highlights_ru: ["Храмы Кхаджурахо","Сафари на тигров в Панне","Аюрведический спа-вариант"],
+      guide_key: "guide_ministry",
+      pace_key: "pace_Fast"
+    },
+    {
+      id: 12,
+      name_en: "4-Day Khajuraho & Varanasi: Temples, Tigers & Sacred Ganges",
+      name_ru: "4-дневный тур: Кхаджурахо и Варанаси – храмы, тигры и священный Ганг",
+      duration: 4,
+      type: "Spiritual",
+      places: ["Delhi","Khajuraho","Panna","Raneb Falls","Varanasi"],
+      route_en: "Delhi → Khajuraho (Panna/Raneb) → Varanasi → Delhi",
+      desc_en: "A diverse 4-day journey from temple art to tiger tracking, volcanic canyons, and Ganges rituals.",
+      desc_ru: "Разнообразный 4-дневный маршрут: храмовое искусство, сафари, вулканические каньоны и ритуалы на Ганге.",
+      highlights_en: ["Khajuraho Temples","Panna Tiger Safari","Raneb Falls","Ganga Aarti","Sarnath"],
+      highlights_ru: ["Храмы Кхаджурахо","Сафари на тигров в Панне","Водопады Ранеб","Ганга Аарти","Сарнатх"],
+      guide_key: "guide_ministry",
+      pace_key: "pace_Moderate_Active"
+    },
+    {
+      id: 13,
+      name_en: "8-Day Taj, Temples & Rajputana: The Ultimate Heritage Trail",
+      name_ru: "8-дневный маршрут: Тадж, храмы и Раджпутана – главный исторический путь",
+      duration: 8,
+      type: "Heritage",
+      places: ["Delhi","Jaipur","Abhaneri","Bharatpur","Fatehpur Sikri","Agra","Morena","Gwalior","Orchha","Khajuraho"],
+      route_en: "Delhi → Jaipur → Abhaneri → Bharatpur → Fatehpur Sikri → Agra → Morena → Gwalior → Orchha → Khajuraho",
+      desc_en: "A deep heritage trail spanning Mughal, Rajput, and Central Indian temple architecture, including hidden Tantric shrines.",
+      desc_ru: "Глубокий исторический маршрут по архитектуре Моголов, Раджпутов и Центральной Индии, включая скрытые тантрические святыни.",
+      highlights_en: ["Taj Mahal","Amber Fort","Chand Baori","Mitawali Temple","Khajuraho"],
+      highlights_ru: ["Тадж-Махал","Амбер-Форт","Чанд-Баори","Храм Митавали","Кхаджурахо"],
+      guide_key: "guide_ministry",
+      pace_key: "pace_Moderate_Active"
+    },
+    {
+      id: 14,
+      name_en: "8-Day Rajputana Citadel Quest: Delhi to Udaipur",
+      name_ru: "8-дневный поход по цитаделям Раджпутаны: от Дели до Удайпура",
+      duration: 8,
+      type: "Heritage",
+      places: ["Delhi","Jaipur","Jodhpur","Ranakpur","Kumbhalgarh","Udaipur"],
+      route_en: "Delhi → Jaipur → Jodhpur → Ranakpur → Kumbhalgarh → Udaipur → Delhi",
+      desc_en: "An immersive quest through Rajasthan's legendary hill forts, blue cities, and romantic lakes.",
+      desc_ru: "Погружение в легендарные холмистые форты, голубые города и романтические озёра Раджастана.",
+      highlights_en: ["Qutub Minar","Humayun's Tomb","Amber Fort","Kumbhalgarh Wall","Udaipur Boat Ride"],
+      highlights_ru: ["Кутуб-Минар","Гробница Хумаюна","Амбер-Форт","Стена Кумбхалгарха","Прогулка на лодке по Удайпуру"],
+      guide_key: "guide_ministry",
+      pace_key: "pace_Relaxed"
+    },
+    {
+      id: 15,
+      name_en: "16-Day Taj, Tiger & Forts: The Ultimate Indian Odyssey",
+      name_ru: "16-дневная одиссея: Тадж, тигры и форты – главное путешествие по Индии",
+      duration: 16,
+      type: "Wildlife",
+      places: ["Delhi","Jaipur","Bikaner","Jaisalmer","Jodhpur","Ranakpur","Kumbhalgarh","Udaipur","Chittorgarh","Bundi","Ranthambore","Bharatpur","Fatehpur Sikri","Agra","Vrindavan"],
+      route_en: "Delhi → Jaipur → Bikaner → Jaisalmer (Desert/City) → Jodhpur → Ranakpur → Kumbhalgarh → Udaipur → Chittorgarh → Bundi → Ranthambore → Bharatpur → Fatehpur Sikri → Agra → Vrindavan → Delhi",
+      desc_en: "The ultimate 16-day odyssey combining tiger safaris, desert camps, and all major UNESCO forts and monuments.",
+      desc_ru: "Главная 16-дневная одиссея: сафари на тигров, пустынные лагеря и все основные форты и памятники ЮНЕСКО.",
+      highlights_en: ["5 Hill Forts","Ranthambore Safaris","Desert Camp","Taj Mahal","Udaipur"],
+      highlights_ru: ["5 холмистых фортов","Сафари в Рантхамборе","Пустынный лагерь","Тадж-Махал","Удайпур"],
+      guide_key: "guide_ministry",
+      pace_key: "pace_Relaxed"
+    },
+    {
+      id: 16,
+      name_en: "5-Day Himalayan Triangle: Darjeeling, Kalimpong & Gangtok",
+      name_ru: "5-дневный Гималайский треугольник: Дарджилинг, Калимпонг и Гангток",
+      duration: 5,
+      type: "Nature",
+      places: ["Delhi","Bagdogra","Darjeeling","Kalimpong","Gangtok"],
+      route_en: "Delhi → Bagdogra → Darjeeling → Kalimpong → Gangtok → Bagdogra",
+      desc_en: "Escape to the serene foothills of the Eastern Himalayas on a curated private journey featuring tea estates, Buddhist monasteries, and mountain vistas.",
+      desc_ru: "Убежище в предгорьях Восточных Гималаев: чайные плантации, буддийские монастыри и горные пейзажи.",
+      highlights_en: ["Tiger Hill Sunrise","Kanchenjunga Views","Tea Gardens","Ghoom Monastery","Rumtek Monastery"],
+      highlights_ru: ["Восход на Тигровом холме","Виды на Канченджангу","Чайные плантации","Монастырь Гум","Монастырь Румтек"],
+      guide_key: "guide_ministry",
+      pace_key: "pace_Relaxed_Immersive"
+    },
+    {
+      id: 17,
+      name_en: "8-Day Himalayan Heritage Rail & Skyward Retreat",
+      name_ru: "8-дневный Гималайский ретро-поезд и отдых в горах",
+      duration: 8,
+      type: "Heritage",
+      places: ["Delhi","Kalka","Shimla","Mandi","Naggar","Manali","Vashisht","Bir","Dharamshala"],
+      route_en: "Delhi → Kalka → Shimla → Mandi → Naggar → Manali → Vashisht → Bir → Dharamshala",
+      desc_en: "A spectacular private journey through the Western Himalayas, featuring a historic narrow-gauge railway, mountain fortresses, and the spiritual home of the Dalai Lama.",
+      desc_ru: "Удивительное путешествие по Западным Гималаям: историческая узкоколейка, горные крепости и духовная резиденция Далай-ламы.",
+      highlights_en: ["Kalka-Shimla Toy Train (UNESCO)","Vice Regal Lodge","Roerich Estate","Naggar Castle","McLeod Ganj"],
+      highlights_ru: ["Игрушечный поезд Калка-Шимла (ЮНЕСКО)","Резиденция вице-короля","Усадьба Рериха","Замок Наггар","Мак-Леод Гандж"],
+      guide_key: "guide_ministry",
+      pace_key: "pace_Relaxed_Immersive"
+    },
+    {
+      id: 18,
+      name_en: "9-Day Himalayan Panorama & Golden Temple Traverse",
+      name_ru: "9-дневный Гималайский панорамный тур и Золотой храм",
+      duration: 9,
+      type: "Spiritual",
+      places: ["Delhi","Shimla","Mandi","Naggar","Manali","Bir","Dharamshala","Amritsar"],
+      route_en: "Delhi → Shimla → Mandi → Naggar → Manali → Bir → Dharamshala → Amritsar → Delhi",
+      desc_en: "A deeply immersive private journey through colonial mountain capitals, Tibetan spiritual enclaves, and the majestic Sikh heritage of Punjab.",
+      desc_ru: "Глубокое погружение в колониальные горные столицы, тибетские духовные анклавы и величественное сикхское наследие Пенджаба.",
+      highlights_en: ["Golden Temple","Wagah Border Ceremony","McLeod Ganj","Naggar Castle","Manali Temples"],
+      highlights_ru: ["Золотой храм","Церемония на границе Вагах","Мак-Леод Гандж","Замок Наггар","Храмы Манали"],
+      guide_key: "guide_ministry",
+      pace_key: "pace_Relaxed_Immersive"
+    }
+  ];
+
+  // ============================================================
+  // 4. RENDER TOURS
+  // ============================================================
+  const grid = document.getElementById('tourGrid');
+
+  function renderTours(filteredTours) {
+    const lang = getLang();
+    if (filteredTours.length === 0) {
+      grid.innerHTML = `<div class="no-results" data-i18n="no_results">${t('no_results')}</div>`;
+      return;
+    }
+    grid.innerHTML = filteredTours.map(tour => {
+      const name = lang === 'ru' ? tour.name_ru : tour.name_en;
+      const desc = lang === 'ru' ? tour.desc_ru : tour.desc_en;
+      const typeTrans = t('type_' + tour.type);
+      const paceTrans = t(tour.pace_key);
+      const guideTrans = t(tour.guide_key);
+      const highlights = lang === 'ru' ? tour.highlights_ru : tour.highlights_en;
+      const highlightsList = highlights.map(h => `<li>${h}</li>`).join('');
+      const route = translateRoute(tour.route_en, lang);
+
+      return `
+        <div class="tour-card">
+          <div class="tour-card-header">
+            <h3>${name}</h3>
+            <span class="tour-days">${tour.duration}D</span>
+          </div>
+          <div class="tour-card-body">
+            <div class="tour-meta">
+              <span><i class="fas fa-tag"></i> ${typeTrans}</span>
+              <span><i class="fas fa-clock"></i> ${paceTrans}</span>
+            </div>
+            <div class="tour-description">${desc}</div>
+            <div class="tour-highlights">
+              <strong><i class="fas fa-star"></i> ${t('tour_highlights')}</strong>
+              <ul>${highlightsList}</ul>
+            </div>
+            <div class="tour-route"><i class="fas fa-route"></i> ${route}</div>
+            <div class="tour-guide"><i class="fas fa-user-tie"></i> ${guideTrans}</div>
+          </div>
+        </div>
+      `;
+    }).join('');
+  }
+
+  // ============================================================
+  // 5. FILTER LOGIC
+  // ============================================================
+  const filterDays = document.getElementById('filterDays');
+  const filterType = document.getElementById('filterType');
+  const filterPlace = document.getElementById('filterPlace');
+  const resetBtn = document.getElementById('resetFilters');
+
+  function getFilteredTours() {
+    const daysVal = filterDays.value;
+    const typeVal = filterType.value;
+    const placeVal = filterPlace.value;
+    return tourData.filter(tour => {
+      const matchDays = daysVal === 'all' || tour.duration === parseInt(daysVal);
+      const matchType = typeVal === 'all' || tour.type === typeVal;
+      const matchPlace = placeVal === 'all' || tour.places.some(p => p.toLowerCase().includes(placeVal.toLowerCase()));
+      return matchDays && matchType && matchPlace;
+    });
+  }
+
+  function applyFilters() {
+    const filtered = getFilteredTours();
+    renderTours(filtered);
+  }
+
+  filterDays.addEventListener('change', applyFilters);
+  filterType.addEventListener('change', applyFilters);
+  filterPlace.addEventListener('change', applyFilters);
+  resetBtn.addEventListener('click', function() {
+    filterDays.value = 'all';
+    filterType.value = 'all';
+    filterPlace.value = 'all';
+    applyFilters();
+  });
+
+  // ============================================================
+  // 6. LANGUAGE TOGGLE
+  // ============================================================
+  function applyUITranslations() {
+    const lang = getLang();
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      const val = translations[lang]?.[key];
+      if (val !== undefined) {
+        el.innerHTML = val;
+      }
+    });
+    document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+      const key = el.getAttribute('data-i18n-placeholder');
+      const val = translations[lang]?.[key];
+      if (val !== undefined) {
+        el.placeholder = val;
+      }
+    });
+    const toggle = document.getElementById('langToggle');
+    toggle.textContent = (lang === 'en') ? 'RU' : 'EN';
+  }
+
+  function toggleLanguage() {
+    currentLang = (currentLang === 'en') ? 'ru' : 'en';
+    applyUITranslations();
+    applyFilters();
+  }
+
+  // ============================================================
+  // 7. MODAL CONTROLS
+  // ============================================================
+  const modal = document.getElementById('enquiryModal');
+  const form = document.getElementById('enquiryForm');
+  const successDiv = document.getElementById('formSuccess');
+
+  function openModal() {
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+    form.style.display = 'block';
+    successDiv.style.display = 'none';
+    form.reset();
+  }
+
+  function closeModal() {
+    modal.classList.remove('active');
+    document.body.style.overflow = 'auto';
+    form.style.display = 'block';
+    successDiv.style.display = 'none';
+  }
+
+  modal.addEventListener('click', function(e) {
+    if (e.target === modal) closeModal();
+  });
+
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    const formData = new FormData(form);
+    fetch(form.action, {
+      method: 'POST',
+      body: formData,
+      headers: { 'Accept': 'application/json' }
+    }).then(response => {
+      if (response.ok) {
+        form.style.display = 'none';
+        successDiv.style.display = 'block';
+        setTimeout(closeModal, 6000);
+      } else {
+        alert('Something went wrong. Please try again or email me directly.');
+      }
+    }).catch(() => {
+      alert('Network error. Please check your connection or email me directly at info@indiaprivateguide.com');
+    });
+  });
+
+  // ============================================================
+  // 8. FLOATING CONTACT TOGGLE
+  // ============================================================
+  function toggleFloatDetails() {
+    const details = document.getElementById('contactDetails');
+    details.classList.toggle('open');
+  }
+
+  // ============================================================
+  // 9. INIT
+  // ============================================================
+  applyUITranslations();
+  applyFilters();
+</script>
+
+</body>
+</html>
