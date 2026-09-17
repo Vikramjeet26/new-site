@@ -1,0 +1,1897 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>All Journeys – India Private Guide</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <style>
+    /* ---- Base ---- */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', 'Segoe UI', Roboto, system-ui, sans-serif;
+      background: #f8f5f0; color: #1e1e2a; padding-bottom: 80px;
+      -webkit-font-smoothing: antialiased;
+    }
+    h1, h2, h3, h4, .logo, .tour-card-header h3, .section-header h2,
+    .drawer-header h2, .modal-box h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+    }
+    a { text-decoration: none; color: inherit; }
+    .container { max-width: 1280px; margin: 0 auto; padding: 0 20px; }
+    .gold { color: #c39a4a; }
+
+    /* ---- Header ---- */
+    header {
+      background: #1a2a3a; color: #fff; padding: 10px 0;
+      position: sticky; top: 0; z-index: 100;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+    }
+    .header-inner {
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 10px;
+    }
+    .logo h1 { font-size: 1.65rem; font-weight: 600; letter-spacing: 0.02em; }
+    .logo h1 .gold { color: #c39a4a; }
+    .logo .sub {
+      display: block; font-size: 0.68rem; letter-spacing: 0.28em;
+      color: #c39a4a; font-weight: 400; margin-top: -2px;
+      font-family: 'Inter', sans-serif;
+    }
+    .nav-links { display: flex; gap: 20px; align-items: center; flex-wrap: wrap; }
+    .nav-links a { transition: color 0.2s; font-weight: 500; font-size: 0.92rem; }
+    .nav-links a:hover { color: #c39a4a; }
+    .header-actions { display: flex; align-items: center; gap: 12px; }
+    .header-actions .icon-link { color: #fff; font-size: 1.2rem; transition: color 0.2s; }
+    .header-actions .icon-link:hover { color: #c39a4a; }
+    .btn-nav-cta {
+      background: #c39a4a; color: #1a2a3a; padding: 7px 18px;
+      border-radius: 2px; font-weight: 700; border: none; cursor: pointer;
+      font-family: 'Inter', inherit; white-space: nowrap;
+      font-size: 0.85rem; letter-spacing: 0.05em; text-transform: uppercase;
+    }
+    .btn-nav-cta:hover { background: #a8853a; }
+    .lang-toggle {
+      background: transparent; border: 2px solid #c39a4a; color: #c39a4a;
+      padding: 4px 12px; border-radius: 30px; font-weight: 700; font-size: 0.88rem;
+      cursor: pointer; font-family: 'Inter', inherit; line-height: 1.6;
+    }
+    .lang-toggle:hover { background: #c39a4a; color: #1a2a3a; }
+    .hamburger {
+      display: none; flex-direction: column; gap: 5px;
+      background: none; border: none; cursor: pointer; padding: 4px;
+    }
+    .hamburger span {
+      display: block; width: 26px; height: 3px; background: #fff; border-radius: 4px;
+    }
+
+    /* ---- Page hero ---- */
+    .page-hero { background: #1a2a3a; color: #fff; padding: 60px 0 40px; text-align: center; }
+    .page-hero .eyebrow {
+      font-size: 0.82rem; letter-spacing: 0.3em; color: #c39a4a;
+      text-transform: uppercase; font-weight: 500; margin-bottom: 12px;
+    }
+    .page-hero h1 { font-size: 3rem; font-weight: 400; margin-bottom: 10px; }
+    .page-hero h1 .gold { color: #c39a4a; font-style: italic; }
+    .page-hero p { font-size: 1.05rem; opacity: 0.85; max-width: 640px; margin: 0 auto; }
+
+    /* ---- Filter bar (Minimalist) ---- */
+    .filter-bar {
+      background: #fff; padding: 18px 0;
+      border-bottom: 1px solid #e2dcd5;
+      position: sticky; top: 76px; z-index: 50;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+    }
+    .filter-inner {
+      display: flex; flex-wrap: wrap; gap: 14px 24px;
+      align-items: center; justify-content: center;
+    }
+    .filter-group { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+    .filter-group label { font-weight: 600; color: #2b4a5f; font-size: 0.88rem; }
+    .filter-group select {
+      padding: 8px 24px 8px 0;
+      border: none;
+      border-bottom: 1px solid #ccc;
+      border-radius: 0;
+      background: transparent;
+      background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 6'%3E%3Cpath fill='%231a2a3a' d='M0 0l5 6 5-6z'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 4px center;
+      background-size: 8px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: #1a2a3a;
+      outline: none;
+      cursor: pointer;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      font-family: 'Inter', inherit;
+    }
+    .filter-group select:focus { border-bottom-color: #c39a4a; }
+    .reset-btn {
+      border-radius: 2px;
+      background: transparent;
+      border: 1px solid #2b4a5f;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-size: 0.75rem;
+      padding: 8px 18px;
+      font-weight: 600;
+      color: #2b4a5f;
+      cursor: pointer;
+      font-family: 'Inter', inherit;
+    }
+    .reset-btn:hover { background: #f0ebe5; }
+
+    /* ---- Tour grid ---- */
+    .tour-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 30px; padding: 40px 0;
+    }
+    .tour-card {
+      background: #fff; border-radius: 4px; overflow: hidden;
+      box-shadow: none; border: 1px solid #e2dcd5;
+      transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+      display: flex; flex-direction: column;
+      cursor: pointer; position: relative;
+    }
+    .tour-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+      border-color: #c39a4a;
+    }
+    .tour-card .card-image {
+      width: 100%; height: 210px; object-fit: cover; display: block;
+      background: #e8e0d8;
+      border-radius: 4px 4px 0 0;
+    }
+    .tour-card-header {
+      padding: 18px 22px 12px; border-bottom: 1px solid #f0ebe5;
+      display: flex; justify-content: space-between; align-items: flex-start;
+    }
+    .tour-card-header h3 {
+      font-size: 1.15rem; font-weight: 600; color: #1a2a3a;
+      line-height: 1.35; flex: 1;
+    }
+    .tour-days {
+      background: #c39a4a; color: #1a2a3a; font-weight: 700;
+      padding: 4px 12px; border-radius: 2px; font-size: 0.72rem;
+      white-space: nowrap; margin-left: 10px;
+      letter-spacing: 0.08em; text-transform: uppercase;
+    }
+    .tour-card-body { padding: 16px 22px 22px; flex: 1; display: flex; flex-direction: column; }
+    .tour-meta {
+      display: flex; flex-wrap: wrap; gap: 6px 14px;
+      font-size: 0.82rem; color: #5a5a6e; margin-bottom: 10px;
+    }
+    .tour-meta i { width: 18px; color: #c39a4a; }
+    .tour-meta span { display: inline-flex; align-items: center; gap: 4px; }
+    .tour-description {
+      font-size: 0.93rem; color: #3a3a4a; line-height: 1.6;
+      margin-bottom: 0; flex: 1;
+    }
+    .tour-highlights, .tour-route, .tour-guide { display: none; }
+
+    .no-results {
+      grid-column: 1 / -1; text-align: center; padding: 60px 0;
+      font-size: 1.1rem; color: #777;
+    }
+
+    /* ============================================================
+       DRAWER (Right side on desktop, Bottom sheet on mobile)
+       ============================================================ */
+    .drawer-overlay {
+      display: none; position: fixed; inset: 0;
+      background: rgba(0,0,0,0.5);
+      z-index: 3000;
+      opacity: 0; transition: opacity 0.3s ease;
+      backdrop-filter: blur(3px);
+    }
+    .drawer-overlay.open { display: block; opacity: 1; }
+
+    .drawer {
+      position: fixed; top: 0; right: 0; height: 100vh;
+      width: 100%; max-width: 560px;
+      background: #fff;
+      z-index: 3001;
+      transform: translateX(100%);
+      transition: transform 0.35s cubic-bezier(0.32, 0.72, 0, 1);
+      display: flex; flex-direction: column;
+      box-shadow: -20px 0 60px rgba(0,0,0,0.18);
+      overflow: hidden;
+    }
+    .drawer.open { transform: translateX(0); }
+
+    /* Drag handle (visible on mobile only) */
+    .drawer-handle {
+      display: none;
+      width: 40px; height: 4px; background: #d5ccc3;
+      border-radius: 4px; margin: 10px auto 4px;
+      flex-shrink: 0;
+    }
+
+    .drawer-close {
+      position: absolute; top: 16px; right: 16px;
+      background: rgba(255,255,255,0.95);
+      border: none; font-size: 1.6rem; cursor: pointer;
+      color: #1a2a3a; width: 40px; height: 40px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+      z-index: 10; flex-shrink: 0;
+      transition: 0.2s;
+      line-height: 1;
+    }
+    .drawer-close:hover { background: #fff; transform: scale(1.05); }
+
+    .drawer-view {
+      display: flex; flex-direction: column;
+      height: 100%; overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+    .drawer-view[hidden] { display: none; }
+
+    /* Tour view */
+    .drawer-tour-image {
+      width: 100%; height: 260px; object-fit: cover;
+      display: block; background: #e8e0d8; flex-shrink: 0;
+    }
+    .drawer-body { padding: 24px 28px 32px; flex: 1; }
+    .drawer-header h2 {
+      font-size: 1.65rem; font-weight: 600; color: #1a2a3a;
+      line-height: 1.25; margin-bottom: 6px;
+    }
+    .drawer-meta {
+      display: flex; flex-wrap: wrap; gap: 8px 16px;
+      font-size: 0.85rem; color: #5a5a6e;
+      padding-bottom: 16px; margin-bottom: 18px;
+      border-bottom: 1px solid #eeeae5;
+    }
+    .drawer-meta i { color: #c39a4a; width: 18px; }
+    .drawer-meta span { display: inline-flex; align-items: center; gap: 4px; }
+
+    /* Tabs */
+    .drawer-tabs {
+      display: flex; gap: 0;
+      border-bottom: 2px solid #eeeae5; margin-bottom: 20px;
+      overflow-x: auto; flex-wrap: nowrap;
+    }
+    .drawer-tab-btn {
+      background: none; border: none; padding: 10px 18px 10px 0;
+      font-size: 0.82rem; font-weight: 600; color: #6a6a7e;
+      cursor: pointer; font-family: 'Inter', inherit;
+      position: relative; letter-spacing: 0.06em; text-transform: uppercase;
+      white-space: nowrap; flex-shrink: 0;
+    }
+    .drawer-tab-btn::after {
+      content: ''; position: absolute; bottom: -2px; left: 0;
+      width: 0; height: 3px; background: #c39a4a;
+      transition: width 0.25s ease; border-radius: 4px 4px 0 0;
+    }
+    .drawer-tab-btn:hover { color: #1a2a3a; }
+    .drawer-tab-btn.active { color: #c39a4a; }
+    .drawer-tab-btn.active::after { width: 100%; }
+    .drawer-tab-content { display: none; animation: qvFadeIn 0.25s ease; }
+    .drawer-tab-content.active { display: block; }
+    @keyframes qvFadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .drawer-desc {
+      font-size: 1rem; color: #3a3a4a; line-height: 1.75; margin-bottom: 16px;
+      font-style: italic;
+    }
+    .drawer-highlights h4 {
+      font-size: 0.82rem; font-weight: 700; color: #1a2a3a;
+      margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.08em;
+    }
+    .drawer-highlights ul {
+      list-style: none; display: flex; flex-wrap: wrap; gap: 6px 16px;
+      padding: 0; margin-bottom: 12px;
+    }
+    .drawer-highlights ul li { font-size: 0.92rem; color: #2b4a5f; }
+    .drawer-highlights ul li::before {
+      content: "\2022 "; color: #c39a4a; font-weight: 700;
+    }
+    .drawer-notes {
+      background: #f8f5f0; padding: 12px 16px; border-radius: 4px;
+      font-size: 0.86rem; color: #5a5a6e; display: flex;
+      align-items: flex-start; gap: 10px; margin-top: 4px;
+    }
+    .drawer-notes i { color: #c39a4a; font-size: 1.05rem; margin-top: 2px; }
+
+    /* Itinerary */
+    .drawer-timeline { display: flex; flex-direction: column; gap: 12px; }
+    .drawer-timeline .day-item {
+      display: flex; gap: 16px; padding: 12px 16px;
+      background: #f8f5f0; border-radius: 4px; border-left: 4px solid #c39a4a;
+    }
+    .drawer-timeline .day-item .day-label {
+      font-weight: 700; color: #c39a4a; min-width: 62px;
+      flex-shrink: 0; font-size: 0.85rem; letter-spacing: 0.02em;
+    }
+    .drawer-timeline .day-item .day-text {
+      font-size: 0.92rem; color: #3a3a4a; line-height: 1.55;
+    }
+    .drawer-timeline-placeholder {
+      color: #6a6a7e; font-style: italic; text-align: center; padding: 20px 0;
+    }
+
+    /* Inclusions */
+    .drawer-inc-exc-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 20px;
+    }
+    .drawer-inc-box h4 {
+      font-size: 0.82rem; font-weight: 700; color: #1a2a3a;
+      margin-bottom: 8px; display: flex; align-items: center; gap: 8px;
+      letter-spacing: 0.05em; text-transform: uppercase;
+    }
+    .drawer-inc-box ul { list-style: none; padding: 0; }
+    .drawer-inc-box ul li {
+      font-size: 0.86rem; color: #3a3a4a; padding: 4px 0;
+      display: flex; align-items: flex-start; gap: 8px;
+      line-height: 1.4;
+    }
+    .drawer-inc-box ul li::before {
+      font-family: 'Font Awesome 6 Free'; font-weight: 900; font-size: 0.78rem;
+      flex-shrink: 0; margin-top: 2px;
+    }
+    .drawer-inc-box .check-list li::before { content: "\f00c"; color: #28a745; }
+    .drawer-inc-box .cross-list li::before { content: "\f00d"; color: #d9534f; }
+
+    /* Sticky CTA footer inside drawer */
+    .drawer-actions {
+      padding: 18px 28px 24px;
+      border-top: 1px solid #eeeae5;
+      background: #fff; position: sticky; bottom: 0;
+      z-index: 5;
+      box-shadow: 0 -8px 24px rgba(0,0,0,0.04);
+    }
+    .drawer-primary-cta {
+      width: 100%; padding: 15px 24px;
+      background: #c39a4a; color: #1a2a3a;
+      border: none; border-radius: 2px; cursor: pointer;
+      font-family: 'Inter', inherit;
+      font-weight: 700; font-size: 0.9rem;
+      letter-spacing: 0.06em; text-transform: uppercase;
+      transition: 0.2s;
+      margin-bottom: 10px;
+    }
+    .drawer-primary-cta:hover { background: #a8853a; }
+    .drawer-secondary-row {
+      display: flex; gap: 10px;
+    }
+    .drawer-secondary-btn {
+      flex: 1; padding: 10px 14px;
+      background: transparent;
+      border: 1px solid #d5ccc3;
+      border-radius: 2px; cursor: pointer;
+      font-family: 'Inter', inherit;
+      font-weight: 600; font-size: 0.78rem;
+      letter-spacing: 0.05em; text-transform: uppercase;
+      color: #2b4a5f;
+      display: inline-flex; align-items: center; justify-content: center;
+      gap: 6px;
+      transition: 0.2s;
+    }
+    .drawer-secondary-btn:hover { border-color: #1a2a3a; color: #1a2a3a; }
+    .drawer-secondary-btn i { font-size: 1rem; }
+
+    /* ============================================================
+       INQUIRY FORM VIEW (inside drawer)
+       ============================================================ */
+    .form-view-header {
+      padding: 24px 28px 0;
+      position: relative;
+    }
+    .form-back-btn {
+      background: none; border: none; cursor: pointer;
+      color: #2b4a5f; font-size: 0.85rem; font-weight: 600;
+      padding: 8px 0; display: inline-flex; align-items: center; gap: 8px;
+      letter-spacing: 0.04em; text-transform: uppercase;
+      font-family: 'Inter', inherit;
+      margin-bottom: 12px;
+    }
+    .form-back-btn:hover { color: #c39a4a; }
+    .form-view-header h2 {
+      font-size: 1.5rem; font-weight: 500; color: #1a2a3a;
+      line-height: 1.3; margin-bottom: 6px;
+    }
+    .form-view-header p {
+      font-size: 0.92rem; color: #6a6a7e; line-height: 1.55;
+    }
+
+    .drawer-form { padding: 20px 28px 32px; }
+    .form-row { margin-bottom: 16px; }
+    .form-row label {
+      display: block; font-weight: 600; color: #1a2a3a;
+      font-size: 0.82rem; margin-bottom: 6px;
+      letter-spacing: 0.02em;
+    }
+    .form-row label .required { color: #d9534f; margin-left: 2px; }
+    .form-row input[type="text"],
+    .form-row input[type="email"],
+    .form-row input[type="tel"],
+    .form-row select,
+    .form-row textarea {
+      width: 100%; padding: 11px 14px;
+      border: 1.5px solid #ddd; border-radius: 4px;
+      font-size: 0.95rem; font-family: 'Inter', inherit;
+      transition: 0.2s; background: #fff;
+      color: #1a2a3a;
+    }
+    .form-row input:focus,
+    .form-row select:focus,
+    .form-row textarea:focus {
+      outline: none; border-color: #c39a4a;
+      box-shadow: 0 0 0 3px rgba(195,154,74,0.12);
+    }
+    .form-row textarea { min-height: 90px; resize: vertical; }
+    .form-row select {
+      -webkit-appearance: none; -moz-appearance: none; appearance: none;
+      background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 6'%3E%3Cpath fill='%236a6a7e' d='M0 0l5 6 5-6z'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 14px center;
+      background-size: 9px;
+      padding-right: 36px;
+    }
+
+    .form-radio-group {
+      display: flex; gap: 8px; flex-wrap: wrap;
+    }
+    .form-radio {
+      flex: 1; min-width: 90px;
+      position: relative;
+    }
+    .form-radio input {
+      position: absolute; opacity: 0; pointer-events: none;
+    }
+    .form-radio label {
+      display: flex; align-items: center; justify-content: center;
+      gap: 6px;
+      padding: 10px 12px;
+      border: 1.5px solid #ddd;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: 0.2s;
+      font-size: 0.85rem; font-weight: 600;
+      color: #5a5a6e; margin: 0;
+    }
+    .form-radio input:checked + label {
+      border-color: #c39a4a;
+      background: rgba(195,154,74,0.08);
+      color: #1a2a3a;
+    }
+    .form-radio label i { font-size: 0.95rem; }
+
+    .form-submit-btn {
+      width: 100%; padding: 15px 24px;
+      background: #c39a4a; color: #1a2a3a;
+      border: none; border-radius: 2px; cursor: pointer;
+      font-family: 'Inter', inherit;
+      font-weight: 700; font-size: 0.9rem;
+      letter-spacing: 0.06em; text-transform: uppercase;
+      transition: 0.2s;
+      margin-top: 8px;
+    }
+    .form-submit-btn:hover { background: #a8853a; }
+    .form-privacy-note {
+      font-size: 0.78rem; color: #999; text-align: center;
+      margin-top: 12px; line-height: 1.5;
+    }
+
+    /* Form success state */
+    .form-success-state {
+      display: none; text-align: center; padding: 60px 28px;
+    }
+    .form-success-state.show { display: block; }
+    .form-success-state i {
+      font-size: 4rem; color: #28a745; margin-bottom: 16px;
+    }
+    .form-success-state h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem; color: #1a2a3a; margin-bottom: 10px;
+      font-weight: 500;
+    }
+    .form-success-state p {
+      font-size: 0.95rem; color: #5a5a6e; line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    /* ---- Floating contact ---- */
+    .contact-float {
+      position: fixed; bottom: 30px; right: 30px; z-index: 999;
+      display: flex; flex-direction: column; align-items: flex-end; gap: 10px;
+    }
+    .contact-float .main-btn {
+      background: #c39a4a; color: #1a2a3a; padding: 12px 22px;
+      border-radius: 50px; font-weight: 700; font-size: 0.95rem;
+      box-shadow: 0 8px 24px rgba(195,154,74,0.4);
+      display: flex; align-items: center; gap: 10px;
+      border: none; cursor: pointer; font-family: 'Inter', inherit;
+    }
+    .contact-float .main-btn:hover { background: #a8853a; }
+    .contact-float .contact-details {
+      background: #1a2a3a; color: #fff; padding: 14px 18px;
+      border-radius: 16px; display: none; flex-direction: column;
+      gap: 6px; min-width: 180px; font-size: 0.88rem;
+    }
+    .contact-float .contact-details.open { display: flex; }
+    .contact-float .contact-details a {
+      color: #c39a4a; display: flex; align-items: center;
+      gap: 10px; padding: 4px 0;
+    }
+    .contact-float .contact-details a:hover { color: #fff; }
+    .contact-float .contact-details i { width: 22px; text-align: center; }
+
+    /* ---- Footer ---- */
+    footer {
+      background: #1a2a3a; color: #ccc; padding: 40px 0 20px; margin-top: 40px;
+    }
+    .footer-inner {
+      display: flex; flex-wrap: wrap; justify-content: space-between; gap: 24px;
+    }
+    .footer-inner div { flex: 1; min-width: 160px; }
+    footer h4 {
+      color: #c39a4a; margin-bottom: 12px;
+      font-family: 'Playfair Display', serif; font-weight: 500; font-size: 1.05rem;
+    }
+    footer a { color: #ddd; font-size: 0.9rem; }
+    footer a:hover { color: #c39a4a; }
+    footer p { font-size: 0.9rem; line-height: 1.7; }
+
+    /* ---- Responsive ---- */
+    @media (max-width: 768px) {
+      .header-inner { flex-direction: row; flex-wrap: wrap; justify-content: space-between; }
+      .nav-links {
+        display: none; flex-direction: column; width: 100%;
+        gap: 12px; padding: 16px 0 8px;
+        border-top: 1px solid rgba(255,255,255,0.08);
+      }
+      .nav-links.open { display: flex; }
+      .hamburger { display: flex; }
+      .header-actions { flex-wrap: wrap; justify-content: center; gap: 10px; }
+      .page-hero h1 { font-size: 2.2rem; }
+      .filter-inner { flex-direction: column; gap: 10px; align-items: stretch; }
+      .filter-group { justify-content: center; }
+      .tour-grid { grid-template-columns: 1fr; }
+
+      /* Mobile: bottom sheet */
+      .drawer {
+        top: auto; bottom: 0; right: 0; left: 0;
+        width: 100%; max-width: 100%;
+        height: 92vh;
+        transform: translateY(100%);
+        border-radius: 16px 16px 0 0;
+      }
+      .drawer.open { transform: translateY(0); }
+      .drawer-handle { display: block; }
+      .drawer-close { top: 14px; right: 14px; }
+
+      .drawer-tour-image { height: 180px; border-radius: 16px 16px 0 0; }
+      .drawer-body { padding: 16px 20px 24px; }
+      .drawer-header h2 { font-size: 1.3rem; }
+      .drawer-meta { font-size: 0.8rem; }
+      .drawer-tab-btn { font-size: 0.75rem; padding: 8px 14px 8px 0; }
+      .drawer-inc-exc-grid { grid-template-columns: 1fr; gap: 16px; }
+      .drawer-timeline .day-item { flex-direction: column; gap: 4px; }
+      .drawer-timeline .day-item .day-label { min-width: auto; }
+      .drawer-actions { padding: 14px 20px 20px; }
+      .drawer-primary-cta { padding: 14px 20px; font-size: 0.85rem; }
+      .form-view-header { padding: 16px 20px 0; }
+      .form-view-header h2 { font-size: 1.25rem; }
+      .drawer-form { padding: 16px 20px 24px; }
+    }
+    @media (max-width: 480px) {
+      .filter-group select { font-size: 0.82rem; }
+      .page-hero h1 { font-size: 1.8rem; }
+      .drawer-tour-image { height: 150px; }
+      .form-radio { min-width: 80px; }
+    }
+    @media (min-width: 769px) {
+      .hamburger { display: none !important; }
+      .nav-links {
+        display: flex !important; flex-direction: row !important;
+        width: auto !important; border-top: none !important; padding: 0 !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="container header-inner">
+    <div class="logo">
+      <h1><a href="index.html" style="color:inherit;">India<span class="gold">PrivateGuide</span></a></h1>
+      <span class="sub">PRIVATE JOURNEYS</span>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-links" id="navLinks">
+      <a href="journeys.html" data-i18n="nav_tours">Journeys</a>
+      <a href="index.html#discovery" data-i18n="nav_destinations">Destinations</a>
+      <a href="index.html#about" data-i18n="nav_about">About</a>
+      <a href="index.html#about" data-i18n="nav_reviews">Reviews</a>
+      <div class="header-actions">
+        <a href="https://wa.me/919711349497" target="_blank" class="icon-link" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://t.me/Vikramru" target="_blank" class="icon-link" title="Telegram"><i class="fab fa-telegram-plane"></i></a>
+        <a href="mailto:info@indiaprivateguide.com" class="icon-link" title="Email"><i class="fas fa-envelope"></i></a>
+        <button class="btn-nav-cta" data-i18n="nav_plan">Plan Your Journey</button>
+        <button class="lang-toggle" id="langToggle">RU</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="container">
+    <div class="eyebrow" data-i18n="page_eyebrow">Curated Private Journeys</div>
+    <h1 data-i18n="page_title">All <span class="gold">Journeys</span></h1>
+    <p data-i18n="page_sub">Filter by duration, type, or destination to find your perfect match.</p>
+  </div>
+</section>
+
+<!-- FILTER BAR -->
+<div class="filter-bar">
+  <div class="container filter-inner">
+    <div class="filter-group">
+      <label for="filterDays" data-i18n="filter_days"><i class="fas fa-calendar-alt"></i> Days</label>
+      <select id="filterDays">
+        <option value="all" data-i18n="filter_all">All</option>
+        <option value="1" data-i18n="day_1">1 Day</option>
+        <option value="2" data-i18n="day_2">2 Days</option>
+        <option value="3" data-i18n="day_3">3 Days</option>
+        <option value="4" data-i18n="day_4">4 Days</option>
+        <option value="5" data-i18n="day_5">5 Days</option>
+        <option value="6" data-i18n="day_6">6 Days</option>
+        <option value="7" data-i18n="day_7">7 Days</option>
+        <option value="8" data-i18n="day_8">8 Days</option>
+        <option value="9" data-i18n="day_9">9 Days</option>
+        <option value="16" data-i18n="day_16">16 Days</option>
+      </select>
+    </div>
+    <div class="filter-group">
+      <label for="filterType" data-i18n="filter_type"><i class="fas fa-tag"></i> Type</label>
+      <select id="filterType">
+        <option value="all" data-i18n="filter_all">All</option>
+        <option value="Spiritual" data-i18n="type_Spiritual">Spiritual</option>
+        <option value="Heritage" data-i18n="type_Heritage">Heritage</option>
+        <option value="Wildlife" data-i18n="type_Wildlife">Wildlife</option>
+        <option value="Cultural" data-i18n="type_Cultural">Cultural</option>
+        <option value="Nature" data-i18n="type_Nature">Nature</option>
+      </select>
+    </div>
+    <div class="filter-group">
+      <label for="filterPlace" data-i18n="filter_destination"><i class="fas fa-map-marker-alt"></i> Destination</label>
+      <select id="filterPlace">
+        <option value="all" data-i18n="filter_all">All</option>
+        <option value="Delhi" data-i18n="place_Delhi">Delhi</option>
+        <option value="Agra" data-i18n="place_Agra">Agra</option>
+        <option value="Jaipur" data-i18n="place_Jaipur">Jaipur</option>
+        <option value="Varanasi" data-i18n="place_Varanasi">Varanasi</option>
+        <option value="Bodh Gaya" data-i18n="place_Bodh_Gaya">Bodh Gaya</option>
+        <option value="Khajuraho" data-i18n="place_Khajuraho">Khajuraho</option>
+        <option value="Udaipur" data-i18n="place_Udaipur">Udaipur</option>
+        <option value="Jodhpur" data-i18n="place_Jodhpur">Jodhpur</option>
+        <option value="Ranthambore" data-i18n="place_Ranthambore">Ranthambore</option>
+        <option value="Bharatpur" data-i18n="place_Bharatpur">Bharatpur</option>
+        <option value="Gwalior" data-i18n="place_Gwalior">Gwalior</option>
+        <option value="Orchha" data-i18n="place_Orchha">Orchha</option>
+        <option value="Kumbhalgarh" data-i18n="place_Kumbhalgarh">Kumbhalgarh</option>
+        <option value="Chittorgarh" data-i18n="place_Chittorgarh">Chittorgarh</option>
+        <option value="Jaisalmer" data-i18n="place_Jaisalmer">Jaisalmer</option>
+        <option value="Patna" data-i18n="place_Patna">Patna</option>
+        <option value="Rajgir" data-i18n="place_Rajgir">Rajgir</option>
+        <option value="Darjeeling" data-i18n="place_Darjeeling">Darjeeling</option>
+        <option value="Gangtok" data-i18n="place_Gangtok">Gangtok</option>
+        <option value="Shimla" data-i18n="place_Shimla">Shimla</option>
+        <option value="Manali" data-i18n="place_Manali">Manali</option>
+        <option value="Dharamshala" data-i18n="place_Dharamshala">Dharamshala</option>
+        <option value="Amritsar" data-i18n="place_Amritsar">Amritsar</option>
+        <option value="Gaya" data-i18n="place_Gaya">Gaya</option>
+        <option value="Nalanda" data-i18n="place_Nalanda">Nalanda</option>
+        <option value="Panna" data-i18n="place_Panna">Panna</option>
+        <option value="Bikaner" data-i18n="place_Bikaner">Bikaner</option>
+        <option value="Bundi" data-i18n="place_Bundi">Bundi</option>
+        <option value="Vrindavan" data-i18n="place_Vrindavan">Vrindavan</option>
+        <option value="Fatehpur Sikri" data-i18n="place_Fatehpur_Sikri">Fatehpur Sikri</option>
+        <option value="Abhaneri" data-i18n="place_Abhaneri">Abhaneri</option>
+        <option value="Morena" data-i18n="place_Morena">Morena</option>
+        <option value="Kalimpong" data-i18n="place_Kalimpong">Kalimpong</option>
+        <option value="Bagdogra" data-i18n="place_Bagdogra">Bagdogra</option>
+        <option value="Kalka" data-i18n="place_Kalka">Kalka</option>
+        <option value="Mandi" data-i18n="place_Mandi">Mandi</option>
+        <option value="Vashisht" data-i18n="place_Vashisht">Vashisht</option>
+        <option value="Bir" data-i18n="place_Bir">Bir</option>
+        <option value="Naggar" data-i18n="place_Naggar">Naggar</option>
+        <option value="Ranakpur" data-i18n="place_Ranakpur">Ranakpur</option>
+      </select>
+    </div>
+    <button class="reset-btn" id="resetFilters" data-i18n="filter_reset"><i class="fas fa-undo-alt"></i> Reset</button>
+  </div>
+</div>
+
+<!-- TOUR GRID -->
+<section class="container">
+  <div class="tour-grid" id="tourGrid"></div>
+</section>
+
+<!-- ============================================================
+     DRAWER (Tour details + Inquiry form)
+     ============================================================ -->
+<div class="drawer-overlay" id="drawerOverlay"></div>
+<aside class="drawer" id="drawer" role="dialog" aria-modal="true">
+  <div class="drawer-handle"></div>
+  <button class="drawer-close" id="drawerClose" aria-label="Close">&times;</button>
+
+  <!-- VIEW 1: Tour details -->
+  <div class="drawer-view" id="drawerViewTour">
+    <img class="drawer-tour-image" id="drawerImage" src="" alt="" />
+    <div class="drawer-body">
+      <div class="drawer-header">
+        <h2 id="drawerName"></h2>
+      </div>
+      <div class="drawer-meta" id="drawerMeta"></div>
+
+      <div class="drawer-tabs">
+        <button class="drawer-tab-btn active" data-tab="overview" data-i18n="tab_overview">Overview</button>
+        <button class="drawer-tab-btn" data-tab="itinerary" data-i18n="tab_itinerary">Itinerary</button>
+        <button class="drawer-tab-btn" data-tab="inclusions" data-i18n="tab_inclusions">Inclusions</button>
+      </div>
+
+      <div class="drawer-tab-content active" data-content="overview">
+        <div class="drawer-desc" id="drawerDesc"></div>
+        <div class="drawer-highlights">
+          <h4 data-i18n="qv_highlights">Highlights</h4>
+          <ul id="drawerHighlights"></ul>
+        </div>
+        <div class="drawer-notes" id="drawerNotesWrapper" style="display:none;">
+          <i class="fas fa-info-circle"></i> <span id="drawerNotesText"></span>
+        </div>
+      </div>
+
+      <div class="drawer-tab-content" data-content="itinerary">
+        <div class="drawer-timeline" id="drawerItinerary"></div>
+      </div>
+
+      <div class="drawer-tab-content" data-content="inclusions">
+        <div class="drawer-inc-exc-grid">
+          <div class="drawer-inc-box">
+            <h4><i class="fas fa-check-circle" style="color:#28a745;"></i> <span data-i18n="qv_included">Included</span></h4>
+            <ul id="drawerInclusions" class="check-list"></ul>
+          </div>
+          <div class="drawer-inc-box">
+            <h4><i class="fas fa-times-circle" style="color:#d9534f;"></i> <span data-i18n="qv_excluded">Not Included</span></h4>
+            <ul id="drawerExclusions" class="cross-list"></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="drawer-actions">
+      <button class="drawer-primary-cta" id="drawerGetQuote" data-i18n="cta_get_quote">
+        Get Itinerary &amp; Price
+      </button>
+      <div class="drawer-secondary-row">
+        <button class="drawer-secondary-btn" id="drawerWhatsApp">
+          <i class="fab fa-whatsapp" style="color:#25d366;"></i> WhatsApp
+        </button>
+        <button class="drawer-secondary-btn" id="drawerTelegram">
+          <i class="fab fa-telegram-plane" style="color:#0088cc;"></i> Telegram
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- VIEW 2: Inquiry form -->
+  <div class="drawer-view" id="drawerViewForm" hidden>
+    <div class="form-view-header">
+      <button class="form-back-btn" id="formBackBtn">
+        <i class="fas fa-arrow-left"></i> <span data-i18n="form_back">Back to tour</span>
+      </button>
+      <h2 data-i18n="form_title">Request Itinerary &amp; Price</h2>
+      <p data-i18n="form_subtitle">Tell us a little about your trip and we'll send a tailor-made itinerary with pricing.</p>
+    </div>
+
+    <div class="form-success-state" id="formSuccessState">
+      <i class="fas fa-check-circle"></i>
+      <h3 data-i18n="form_success_title">Thank you!</h3>
+      <p data-i18n="form_success_msg">Your request has been sent. We'll reply within 24 hours.</p>
+    </div>
+
+    <form class="drawer-form" id="inquiryForm" action="https://formsubmit.co/info@indiaprivateguide.com" method="POST">
+      <input type="hidden" name="_captcha" value="true">
+      <input type="hidden" name="_subject" value="New Tour Inquiry – India Private Guide">
+      <input type="text" name="_honey" style="display:none;">
+      <input type="hidden" name="Tour" id="formTourName" value="">
+
+      <div class="form-row">
+        <label for="fName" data-i18n="form_name">Name <span class="required">*</span></label>
+        <input type="text" id="fName" name="Name" required data-i18n-placeholder="form_name_ph" placeholder="Your name">
+      </div>
+
+      <div class="form-row">
+        <label for="fCountry" data-i18n="form_country">Country <span class="required">*</span></label>
+        <input type="text" id="fCountry" name="Country" required data-i18n-placeholder="form_country_ph" placeholder="Your country">
+      </div>
+
+      <div class="form-row">
+        <label for="fTravelers" data-i18n="form_travelers">Number of travelers</label>
+        <select id="fTravelers" name="Travelers">
+          <option value="1" data-i18n="trav_1">1</option>
+          <option value="2" selected data-i18n="trav_2">2</option>
+          <option value="3-4" data-i18n="trav_3_4">3–4</option>
+          <option value="5+" data-i18n="trav_5_plus">5+</option>
+        </select>
+      </div>
+
+      <div class="form-row">
+        <label for="fDates" data-i18n="form_dates">Preferred travel dates</label>
+        <input type="text" id="fDates" name="Dates" data-i18n-placeholder="form_dates_ph" placeholder="e.g. March 2026">
+      </div>
+
+      <div class="form-row">
+        <label data-i18n="form_contact_method">Preferred contact method <span class="required">*</span></label>
+        <div class="form-radio-group">
+          <div class="form-radio">
+            <input type="radio" id="cmWhatsApp" name="Contact Method" value="WhatsApp" checked>
+            <label for="cmWhatsApp"><i class="fab fa-whatsapp"></i> WhatsApp</label>
+          </div>
+          <div class="form-radio">
+            <input type="radio" id="cmTelegram" name="Contact Method" value="Telegram">
+            <label for="cmTelegram"><i class="fab fa-telegram-plane"></i> Telegram</label>
+          </div>
+          <div class="form-radio">
+            <input type="radio" id="cmEmail" name="Contact Method" value="Email">
+            <label for="cmEmail"><i class="fas fa-envelope"></i> Email</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <label for="fContact" id="fContactLabel" data-i18n="form_whatsapp_label">WhatsApp number <span class="required">*</span></label>
+        <input type="text" id="fContact" name="Contact" required data-i18n-placeholder="form_whatsapp_ph" placeholder="+7 ...">
+      </div>
+
+      <div class="form-row">
+        <label for="fMessage" data-i18n="form_message">Additional wishes</label>
+        <textarea id="fMessage" name="Message" data-i18n-placeholder="form_message_ph" placeholder="Optional – tell us about your interests, pace, or special requests."></textarea>
+      </div>
+
+      <button type="submit" class="form-submit-btn" data-i18n="form_submit">Send Request</button>
+      <p class="form-privacy-note" data-i18n="form_privacy">We reply within 24 hours. Your details are never shared.</p>
+    </form>
+  </div>
+</aside>
+
+<!-- FLOATING CONTACT -->
+<div class="contact-float">
+  <div class="contact-details" id="contactDetails">
+    <a href="mailto:info@indiaprivateguide.com"><i class="fas fa-envelope"></i> info@indiaprivateguide.com</a>
+    <a href="https://wa.me/919711349497" target="_blank"><i class="fab fa-whatsapp"></i> +91 97113 49497</a>
+    <a href="https://t.me/Vikramru" target="_blank"><i class="fab fa-telegram-plane"></i> @Vikramru</a>
+  </div>
+  <button class="main-btn" onclick="toggleFloatDetails()">
+    <i class="fas fa-phone-alt"></i> <span data-i18n="contact_btn">Contact Us</span>
+  </button>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container footer-inner">
+    <div>
+      <h4>India Private Guide</h4>
+      <p data-i18n="footer_desc">Expert‑led private tours with 20+ years experience.</p>
+    </div>
+    <div>
+      <h4 data-i18n="footer_contact">Contact</h4>
+      <p><i class="fas fa-envelope" style="color:#c39a4a;"></i> <a href="mailto:info@indiaprivateguide.com">info@indiaprivateguide.com</a></p>
+      <p><i class="fab fa-whatsapp" style="color:#c39a4a;"></i> <a href="https://wa.me/919711349497">+91 97113 49497</a></p>
+    </div>
+    <div>
+      <h4 data-i18n="footer_quick">Quick Links</h4>
+      <p><a href="index.html" data-i18n="footer_home">Home</a></p>
+      <p><a href="index.html#about" data-i18n="footer_about">About</a></p>
+    </div>
+  </div>
+  <div class="container" style="border-top:1px solid #2a3a4a; margin-top:24px; padding-top:20px; text-align:center; font-size:0.82rem; color:#888;">
+    <span data-i18n="footer_rights">&copy; 2026 India Private Guide. All rights reserved.</span>
+  </div>
+</footer>
+
+<script>
+/* ============================================================
+   1. TRANSLATIONS
+   ============================================================ */
+const translations = {
+  en: {
+    nav_tours: "Journeys", nav_destinations: "Destinations", nav_about: "About",
+    nav_reviews: "Reviews", nav_plan: "Plan Your Journey",
+    page_eyebrow: "Curated Private Journeys",
+    page_title: 'All <span class="gold">Journeys</span>',
+    page_sub: 'Filter by duration, type, or destination to find your perfect match.',
+    filter_days: 'Days', filter_type: 'Type', filter_destination: 'Destination',
+    filter_all: 'All', filter_reset: 'Reset',
+    day_1: '1 Day', day_2: '2 Days', day_3: '3 Days', day_4: '4 Days', day_5: '5 Days',
+    day_6: '6 Days', day_7: '7 Days', day_8: '8 Days', day_9: '9 Days', day_16: '16 Days',
+    type_Spiritual: 'Spiritual', type_Heritage: 'Heritage', type_Wildlife: 'Wildlife',
+    type_Cultural: 'Cultural', type_Nature: 'Nature',
+    place_Delhi: 'Delhi', place_Agra: 'Agra', place_Jaipur: 'Jaipur', place_Varanasi: 'Varanasi',
+    place_Bodh_Gaya: 'Bodh Gaya', place_Khajuraho: 'Khajuraho', place_Udaipur: 'Udaipur',
+    place_Jodhpur: 'Jodhpur', place_Ranthambore: 'Ranthambore', place_Bharatpur: 'Bharatpur',
+    place_Gwalior: 'Gwalior', place_Orchha: 'Orchha', place_Kumbhalgarh: 'Kumbhalgarh',
+    place_Chittorgarh: 'Chittorgarh', place_Jaisalmer: 'Jaisalmer', place_Patna: 'Patna',
+    place_Rajgir: 'Rajgir', place_Darjeeling: 'Darjeeling', place_Gangtok: 'Gangtok',
+    place_Shimla: 'Shimla', place_Manali: 'Manali', place_Dharamshala: 'Dharamshala',
+    place_Amritsar: 'Amritsar', place_Gaya: 'Gaya', place_Nalanda: 'Nalanda',
+    place_Panna: 'Panna', place_Bikaner: 'Bikaner', place_Bundi: 'Bundi',
+    place_Vrindavan: 'Vrindavan', place_Fatehpur_Sikri: 'Fatehpur Sikri',
+    place_Abhaneri: 'Abhaneri', place_Morena: 'Morena', place_Kalimpong: 'Kalimpong',
+    place_Bagdogra: 'Bagdogra', place_Kalka: 'Kalka', place_Mandi: 'Mandi',
+    place_Vashisht: 'Vashisht', place_Bir: 'Bir', place_Naggar: 'Naggar', place_Ranakpur: 'Ranakpur',
+    guide_government: 'Government-Approved Guide',
+    guide_ministry: 'Ministry of Tourism Approved (20+ yrs exp)',
+    pace_Fast: 'Fast', pace_Moderate: 'Moderate', pace_Relaxed: 'Relaxed',
+    pace_Active: 'Active', pace_Balanced: 'Balanced', pace_Immersive: 'Immersive',
+    pace_Fast_Active: 'Fast / Active', pace_Moderate_Balanced: 'Moderate / Balanced',
+    pace_Relaxed_Immersive: 'Relaxed / Immersive',
+    pace_Fast_but_Comfortable: 'Fast but Comfortable',
+    pace_Moderate_Active: 'Moderate / Active',
+    no_results: 'No tours match your filters. Try adjusting them.',
+    tab_overview: 'Overview', tab_itinerary: 'Itinerary', tab_inclusions: 'Inclusions',
+    qv_highlights: 'Highlights',
+    qv_included: 'Included', qv_excluded: 'Not Included',
+    cta_get_quote: 'Get Itinerary & Price',
+    contact_btn: 'Contact Us',
+    footer_desc: 'Expert‑led private tours with 20+ years experience.',
+    footer_contact: 'Contact', footer_quick: 'Quick Links',
+    footer_home: 'Home', footer_about: 'About',
+    footer_rights: '© 2026 India Private Guide. All rights reserved.',
+    /* Form */
+    form_back: 'Back to tour',
+    form_title: 'Request Itinerary & Price',
+    form_subtitle: 'Tell us a little about your trip and we\'ll send a tailor-made itinerary with pricing.',
+    form_name: 'Name',
+    form_name_ph: 'Your name',
+    form_country: 'Country',
+    form_country_ph: 'Your country',
+    form_travelers: 'Number of travelers',
+    trav_1: '1', trav_2: '2', trav_3_4: '3–4', trav_5_plus: '5+',
+    form_dates: 'Preferred travel dates',
+    form_dates_ph: 'e.g. March 2026',
+    form_contact_method: 'Preferred contact method',
+    form_whatsapp_label: 'WhatsApp number',
+    form_whatsapp_ph: '+7 ...',
+    form_telegram_label: 'Telegram username',
+    form_telegram_ph: '@username',
+    form_email_label: 'Email address',
+    form_email_ph: 'you@example.com',
+    form_message: 'Additional wishes',
+    form_message_ph: 'Optional – tell us about your interests, pace, or special requests.',
+    form_submit: 'Send Request',
+    form_privacy: 'We reply within 24 hours. Your details are never shared.',
+    form_success_title: 'Thank you!',
+    form_success_msg: 'Your request has been sent. We\'ll reply within 24 hours.'
+  },
+  ru: {
+    nav_tours: 'Путешествия', nav_destinations: 'Направления', nav_about: 'О нас',
+    nav_reviews: 'Отзывы', nav_plan: 'Спланировать поездку',
+    page_eyebrow: 'Отобранные частные путешествия',
+    page_title: 'Все <span class="gold">туры</span>',
+    page_sub: 'Фильтруйте по длительности, типу или месту, чтобы найти идеальный вариант.',
+    filter_days: 'Дни', filter_type: 'Тип', filter_destination: 'Место',
+    filter_all: 'Все', filter_reset: 'Сбросить',
+    day_1: '1 день', day_2: '2 дня', day_3: '3 дня', day_4: '4 дня', day_5: '5 дней',
+    day_6: '6 дней', day_7: '7 дней', day_8: '8 дней', day_9: '9 дней', day_16: '16 дней',
+    type_Spiritual: 'Духовный', type_Heritage: 'Наследие', type_Wildlife: 'Природа',
+    type_Cultural: 'Культурный', type_Nature: 'Природный',
+    place_Delhi: 'Дели', place_Agra: 'Агра', place_Jaipur: 'Джайпур', place_Varanasi: 'Варанаси',
+    place_Bodh_Gaya: 'Бодх-Гая', place_Khajuraho: 'Кхаджурахо', place_Udaipur: 'Удайпур',
+    place_Jodhpur: 'Джодхпур', place_Ranthambore: 'Рантхамбор', place_Bharatpur: 'Бхаратпур',
+    place_Gwalior: 'Гвалиор', place_Orchha: 'Орчха', place_Kumbhalgarh: 'Кумбхалгарх',
+    place_Chittorgarh: 'Читторгарх', place_Jaisalmer: 'Джайсалмер', place_Patna: 'Патна',
+    place_Rajgir: 'Раджгир', place_Darjeeling: 'Дарджилинг', place_Gangtok: 'Гангток',
+    place_Shimla: 'Шимла', place_Manali: 'Манали', place_Dharamshala: 'Дхарамшала',
+    place_Amritsar: 'Амритсар', place_Gaya: 'Гая', place_Nalanda: 'Наланда',
+    place_Panna: 'Панна', place_Bikaner: 'Биканер', place_Bundi: 'Бунди',
+    place_Vrindavan: 'Вриндаван', place_Fatehpur_Sikri: 'Фатехпур-Сикри',
+    place_Abhaneri: 'Абханери', place_Morena: 'Морена', place_Kalimpong: 'Калимпонг',
+    place_Bagdogra: 'Багдогра', place_Kalka: 'Калка', place_Mandi: 'Манди',
+    place_Vashisht: 'Вашишт', place_Bir: 'Бир', place_Naggar: 'Наггар', place_Ranakpur: 'Ранакпур',
+    guide_government: 'Гид, аккредитованный правительством',
+    guide_ministry: 'Гид, аккредитованный Министерством туризма (опыт 20+ лет)',
+    pace_Fast: 'Быстрый', pace_Moderate: 'Умеренный', pace_Relaxed: 'Спокойный',
+    pace_Active: 'Активный', pace_Balanced: 'Сбалансированный', pace_Immersive: 'Погружение',
+    pace_Fast_Active: 'Быстрый / Активный', pace_Moderate_Balanced: 'Умеренный / Сбалансированный',
+    pace_Relaxed_Immersive: 'Спокойный / Погружение',
+    pace_Fast_but_Comfortable: 'Быстрый, но комфортный',
+    pace_Moderate_Active: 'Умеренный / Активный',
+    no_results: 'Нет туров, соответствующих фильтрам. Попробуйте изменить настройки.',
+    tab_overview: 'Обзор', tab_itinerary: 'Маршрут', tab_inclusions: 'Включено',
+    qv_highlights: 'Основные моменты',
+    qv_included: 'Включено', qv_excluded: 'Не включено',
+    cta_get_quote: 'Получить программу и цену',
+    contact_btn: 'Связаться',
+    footer_desc: 'Авторские частные туры с опытом более 20 лет.',
+    footer_contact: 'Контакты', footer_quick: 'Быстрые ссылки',
+    footer_home: 'Главная', footer_about: 'О нас',
+    footer_rights: '© 2026 India Private Guide. Все права защищены.',
+    /* Form */
+    form_back: 'Назад к туру',
+    form_title: 'Запросить программу и стоимость',
+    form_subtitle: 'Расскажите немного о вашей поездке — и мы пришлём индивидуальный маршрут с ценами.',
+    form_name: 'Имя',
+    form_name_ph: 'Ваше имя',
+    form_country: 'Страна',
+    form_country_ph: 'Ваша страна',
+    form_travelers: 'Количество путешественников',
+    trav_1: '1', trav_2: '2', trav_3_4: '3–4', trav_5_plus: '5+',
+    form_dates: 'Предпочтительные даты поездки',
+    form_dates_ph: 'например, март 2026',
+    form_contact_method: 'Предпочтительный способ связи',
+    form_whatsapp_label: 'Номер WhatsApp',
+    form_whatsapp_ph: '+7 ...',
+    form_telegram_label: 'Имя пользователя Telegram',
+    form_telegram_ph: '@username',
+    form_email_label: 'Адрес электронной почты',
+    form_email_ph: 'you@example.com',
+    form_message: 'Дополнительные пожелания',
+    form_message_ph: 'Необязательно — расскажите о ваших интересах, темпе или особых пожеланиях.',
+    form_submit: 'Отправить запрос',
+    form_privacy: 'Мы отвечаем в течение 24 часов. Ваши данные не передаются третьим лицам.',
+    form_success_title: 'Спасибо!',
+    form_success_msg: 'Ваш запрос отправлен. Мы ответим в течение 24 часов.'
+  }
+};
+
+/* ============================================================
+   2. HELPERS
+   ============================================================ */
+let currentLang = 'en';
+function getLang() { return currentLang; }
+function t(key) { return translations[currentLang]?.[key] || key; }
+
+function generatePlaceholderSVG(name, id) {
+  const colors = ['#2a4a5f','#a87a4a','#b55a3a','#4a6a5a','#3a6a7a',
+                  '#3a7a3a','#7a5a3a','#5a3a7a','#7a3a5a','#3a5a7a'];
+  const bg = colors[id % colors.length];
+  const nameShort = name.length > 40 ? name.substring(0, 36) + '…' : name;
+  return `data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='400' viewBox='0 0 600 400'%3E%3Crect width='600' height='400' fill='%23${bg.replace('#','')}'/%3E%3Ctext x='50%25' y='50%25' font-family='Georgia,serif' font-size='26' fill='%23c39a4a' text-anchor='middle' dy='.3em'%3E${encodeURIComponent(nameShort)}%3C/text%3E%3C/svg%3E`;
+}
+function getTourImageSrc(tour, name) {
+  if (tour.image && tour.image.trim() !== '') return tour.image;
+  return generatePlaceholderSVG(name, tour.id);
+}
+function handleImageError(img, id, name) {
+  img.onerror = null;
+  img.src = generatePlaceholderSVG(name, id);
+}
+
+/* Translate a route string to Russian (or back) */
+function translateRoute(route, lang) {
+  if (!route) return '';
+  if (lang === 'en') return route;
+  const placeMap = {
+    'Delhi':'place_Delhi','Agra':'place_Agra','Jaipur':'place_Jaipur','Varanasi':'place_Varanasi',
+    'Bodh Gaya':'place_Bodh_Gaya','Khajuraho':'place_Khajuraho','Udaipur':'place_Udaipur',
+    'Jodhpur':'place_Jodhpur','Ranthambore':'place_Ranthambore','Bharatpur':'place_Bharatpur',
+    'Gwalior':'place_Gwalior','Orchha':'place_Orchha','Kumbhalgarh':'place_Kumbhalgarh',
+    'Chittorgarh':'place_Chittorgarh','Jaisalmer':'place_Jaisalmer','Patna':'place_Patna',
+    'Rajgir':'place_Rajgir','Darjeeling':'place_Darjeeling','Gangtok':'place_Gangtok',
+    'Shimla':'place_Shimla','Manali':'place_Manali','Dharamshala':'place_Dharamshala',
+    'Amritsar':'place_Amritsar','Gaya':'place_Gaya','Nalanda':'place_Nalanda','Panna':'place_Panna',
+    'Bikaner':'place_Bikaner','Bundi':'place_Bundi','Vrindavan':'place_Vrindavan',
+    'Fatehpur Sikri':'place_Fatehpur_Sikri','Abhaneri':'place_Abhaneri','Morena':'place_Morena',
+    'Kalimpong':'place_Kalimpong','Bagdogra':'place_Bagdogra','Kalka':'place_Kalka',
+    'Mandi':'place_Mandi','Vashisht':'place_Vashisht','Bir':'place_Bir','Naggar':'place_Naggar',
+    'Ranakpur':'place_Ranakpur'
+  };
+  const parts = route.split('→').map(part => {
+    const trimmed = part.trim().replace(/\(.*\)/, '').trim();
+    const key = placeMap[trimmed];
+    return key ? (translations[lang][key] || trimmed) : trimmed;
+  });
+  return parts.join(' • ');
+}
+
+/* ============================================================
+   3. TOUR DATA (18 tours)
+   ============================================================ */
+const tourData = [
+  {
+    id: 1,
+    name_en: "5-Day Sacred India Express: Ganges, Buddha & Ancient Empires",
+    name_ru: "5-дневный экспресс-тур по священной Индии: Ганг, Будда и древние империи",
+    duration: 5, type: "Spiritual",
+    places: ["Delhi","Varanasi","Bodh Gaya","Gaya","Rajgir","Nalanda","Patna"],
+    route_en: "Delhi → Varanasi → Bodh Gaya → Gaya → Rajgir → Nalanda → Patna → Delhi",
+    desc_en: "A deeply immersive private journey through the spiritual heartlands of Hinduism, Buddhism, and Sikhism, featuring two UNESCO sites.",
+    desc_ru: "Глубокое погружение в духовные центры индуизма, буддизма и сикхизма с посещением двух объектов ЮНЕСКО.",
+    highlights_en: ["Mahabodhi Temple","Nalanda Ruins","Ganga Aarti","Vishnupad Temple","Barabar Caves"],
+    highlights_ru: ["Храм Махабодхи","Развалины Наланды","Ганга Аарти","Храм Вишнупада","Пещеры Барабар"],
+    guide_key: "guide_ministry", pace_key: "pace_Fast_Active",
+    image: "images/tours/tour-1.jpg",
+    itinerary_en: ["Day 1: Delhi – Fly to Varanasi. Evening Ganga Aarti at Dasashwamedh Ghat.","Day 2: Varanasi – Morning boat ride on the Ganges, visit Sarnath.","Day 3: Varanasi – Bodh Gaya. Visit Mahabodhi Temple and surrounding monasteries.","Day 4: Bodh Gaya – Rajgir – Nalanda – Patna. Explore the ruins of Nalanda University.","Day 5: Patna – Delhi. Departure transfer."],
+    itinerary_ru: ["День 1: Дели – перелёт в Варанаси. Вечерняя Ганга Аарти на гхате Дашашвамедх.","День 2: Варанаси – утренняя лодочная прогулка по Гангу, посещение Сарнатха.","День 3: Варанаси – Бодх-Гая. Посещение храма Махабодхи и окрестных монастырей.","День 4: Бодх-Гая – Раджгир – Наланда – Патна. Изучение руин университета Наланда.","День 5: Патна – Дели. Трансфер на вылет."],
+    inclusions_en: ["Private air-conditioned vehicle","Expert English-speaking guide","All monument entry fees","Bottled water","Hotel pickup and drop-off"],
+    inclusions_ru: ["Частный автомобиль с кондиционером","Гид, говорящий на английском","Входные билеты во все памятники","Бутилированная вода","Трансфер из отеля и обратно"],
+    exclusions_en: ["Flights","Lunch and dinner","Tips and gratuities","Travel insurance","Personal expenses"],
+    exclusions_ru: ["Авиабилеты","Обеды и ужины","Чаевые","Страховка","Личные расходы"],
+    notes_en: "Early morning departure recommended for sunrise Ganga boat ride.",
+    notes_ru: "Рекомендуется ранний выезд для утренней лодочной прогулки по Гангу на рассвете."
+  },
+  {
+    id: 2,
+    name_en: "7-Day Temples, Ganges & Buddha Trail: Delhi to Patna",
+    name_ru: "7-дневный маршрут: храмы, Ганг и тропа Будды от Дели до Патны",
+    duration: 7, type: "Spiritual",
+    places: ["Delhi","Khajuraho","Panna","Varanasi","Bodh Gaya","Rajgir","Nalanda","Patna"],
+    route_en: "Delhi → Khajuraho → Panna → Varanasi → Bodh Gaya → Rajgir → Nalanda → Patna",
+    desc_en: "Ideal for active travelers, this 7-day journey blends ancient temples, the sacred Ganges, and Buddhist heritage.",
+    desc_ru: "Идеально для активных путешественников: древние храмы, священный Ганг и буддийское наследие за 7 дней.",
+    highlights_en: ["Khajuraho Temples","Mahabodhi Temple","Nalanda","Sarnath","Ganga Aarti"],
+    highlights_ru: ["Храмы Кхаджурахо","Храм Махабодхи","Наланда","Сарнатх","Ганга Аарти"],
+    guide_key: "guide_ministry", pace_key: "pace_Moderate",
+    image: "images/tours/tour-2.jpg",
+    itinerary_en: ["Day 1: Delhi – Drive to Khajuraho (flight optional).","Day 2: Khajuraho – Explore the Western and Eastern temple groups.","Day 3: Khajuraho – Panna Tiger Reserve. Afternoon safari.","Day 4: Panna – Varanasi. Evening Ganga Aarti.","Day 5: Varanasi – Bodh Gaya. Visit Mahabodhi Temple.","Day 6: Bodh Gaya – Rajgir – Nalanda – Patna.","Day 7: Patna – Delhi. Departure."],
+    itinerary_ru: ["День 1: Дели – переезд в Кхаджурахо (возможен перелёт).","День 2: Кхаджурахо – осмотр западной и восточной групп храмов.","День 3: Кхаджурахо – заповедник Панна. Сафари во второй половине дня.","День 4: Панна – Варанаси. Вечерняя Ганга Аарти.","День 5: Варанаси – Бодх-Гая. Посещение храма Махабодхи.","День 6: Бодх-Гая – Раджгир – Наланда – Патна.","День 7: Патна – Дели. Вылет."],
+    inclusions_en: ["Private AC vehicle","English-speaking guide","Entry fees to monuments","Jeep safari in Panna","Hotel accommodation"],
+    inclusions_ru: ["Частный автомобиль с кондиционером","Гид на английском","Входные билеты","Сафари на джипе в Панне","Проживание в отелях"],
+    exclusions_en: ["Flights","Meals","Tips","Insurance","Personal expenses"],
+    exclusions_ru: ["Авиабилеты","Питание","Чаевые","Страховка","Личные расходы"],
+    notes_en: "Panna Tiger Reserve safari availability depends on park schedules.",
+    notes_ru: "Наличие сафари в заповеднике Панна зависит от графика работы парка."
+  },
+  {
+    id: 3,
+    name_en: "Taj Mahal & Agra Fort Private Day Journey",
+    name_ru: "Однодневный частный тур: Тадж-Махал и Агра-Форт",
+    duration: 1, type: "Heritage",
+    places: ["Delhi","Agra"],
+    route_en: "Delhi → Agra → Delhi",
+    desc_en: "Experience the timeless beauty of the Mughal Empire on an expertly guided private day tour from Delhi.",
+    desc_ru: "Ощутите вневременную красоту империи Великих Моголов в частном туре с гидом из Дели.",
+    highlights_en: ["Taj Mahal","Agra Fort"],
+    highlights_ru: ["Тадж-Махал","Агра-Форт"],
+    guide_key: "guide_government", pace_key: "pace_Fast_but_Comfortable",
+    image: "images/tours/tour-3.jpg",
+    itinerary_en: ["Day 1: Delhi – Agra (approx. 3.5 hrs drive). Visit the Taj Mahal at sunrise, then Agra Fort. Return to Delhi in the evening."],
+    itinerary_ru: ["День 1: Дели – Агра (около 3,5 часов в пути). Посещение Тадж-Махала на рассвете, затем Агра-Форт. Возвращение в Дели вечером."],
+    inclusions_en: ["Private AC vehicle","English-speaking guide","Entry fees to Taj Mahal and Agra Fort","Bottled water"],
+    inclusions_ru: ["Частный автомобиль с кондиционером","Гид на английском","Входные билеты в Тадж-Махал и Агра-Форт","Бутилированная вода"],
+    exclusions_en: ["Meals","Tips","Insurance","Personal expenses"],
+    exclusions_ru: ["Питание","Чаевые","Страховка","Личные расходы"],
+    notes_en: "Departure at 5:00 AM to catch the sunrise at the Taj Mahal.",
+    notes_ru: "Выезд в 5:00 утра, чтобы застать рассвет у Тадж-Махала."
+  },
+  {
+    id: 4,
+    name_en: "Imperial Delhi & Spiritual Heritage: Private Full-Day Tour",
+    name_ru: "Имперский Дели и духовное наследие: частный полнодневный тур",
+    duration: 1, type: "Cultural",
+    places: ["Delhi"],
+    route_en: "Delhi → Delhi",
+    desc_en: "Comprehensive day tour covering Old Delhi's alleys, colonial New Delhi, and spiritual landmarks.",
+    desc_ru: "Полнодневный тур по старому и новому Дели, колониальной архитектуре и духовным достопримечательностям.",
+    highlights_en: ["Jama Masjid","Red Fort","Humayun's Tomb","Qutub Minar","Gurudwara Bangla Sahib"],
+    highlights_ru: ["Джама-Масджид","Красный форт","Гробница Хумаюна","Кутуб-Минар","Гурдвара Бангла Сахиб"],
+    guide_key: "guide_government", pace_key: "pace_Fast_but_Comfortable",
+    image: "images/tours/tour-4.jpg",
+    itinerary_en: ["Day 1: Old Delhi rickshaw ride through Chandni Chowk. Visit Jama Masjid and Red Fort. Afternoon: Humayun's Tomb, Qutub Minar, and Gurudwara Bangla Sahib."],
+    itinerary_ru: ["День 1: Поездка на рикше по Чандни-Чоук в старом Дели. Посещение Джама-Масджид и Красного форта. Днём: гробница Хумаюна, Кутуб-Минар и Гурдвара Бангла Сахиб."],
+    inclusions_en: ["Private AC vehicle","English-speaking guide","Entry fees to monuments","Rickshaw ride","Bottled water"],
+    inclusions_ru: ["Частный автомобиль с кондиционером","Гид на английском","Входные билеты","Поездка на рикше","Бутилированная вода"],
+    exclusions_en: ["Meals","Tips","Insurance","Personal expenses"],
+    exclusions_ru: ["Питание","Чаевые","Страховка","Личные расходы"],
+    notes_en: "Comfortable walking shoes recommended.",
+    notes_ru: "Рекомендуется удобная обувь для ходьбы."
+  },
+  {
+    id: 5,
+    name_en: "1-Day Jaipur Royal Express: Private Tour from Delhi",
+    name_ru: "Однодневный королевский экспресс в Джайпур из Дели",
+    duration: 1, type: "Heritage",
+    places: ["Delhi","Jaipur"],
+    route_en: "Delhi → Jaipur → Delhi",
+    desc_en: "A highly efficient day trip to Rajasthan's Pink City, covering Amber Fort, City Palace, and Hawa Mahal.",
+    desc_ru: "Эффективный однодневный тур в Розовый город Раджастана: Амбер-Форт, Городской дворец и Хава-Махал.",
+    highlights_en: ["Amber Fort","City Palace","Hawa Mahal","Jal Mahal"],
+    highlights_ru: ["Амбер-Форт","Городской дворец","Хава-Махал","Джал-Махал"],
+    guide_key: "guide_ministry", pace_key: "pace_Fast_Active",
+    image: "images/tours/tour-5.jpg",
+    itinerary_en: ["Day 1: Delhi – Jaipur (approx. 4 hrs drive). Visit Amber Fort, City Palace, Hawa Mahal, and Jal Mahal. Return to Delhi in the evening."],
+    itinerary_ru: ["День 1: Дели – Джайпур (около 4 часов в пути). Посещение Амбер-Форта, Городского дворца, Хава-Махала и Джал-Махала. Возвращение в Дели вечером."],
+    inclusions_en: ["Private AC vehicle","English-speaking guide","Entry fees to monuments","Bottled water"],
+    inclusions_ru: ["Частный автомобиль с кондиционером","Гид на английском","Входные билеты","Бутилированная вода"],
+    exclusions_en: ["Meals","Tips","Insurance","Personal expenses"],
+    exclusions_ru: ["Питание","Чаевые","Страховка","Личные расходы"],
+    notes_en: "Long day – departure at 5:30 AM recommended.",
+    notes_ru: "Долгий день – рекомендуется выезд в 5:30 утра."
+  },
+  {
+    id: 6,
+    name_en: "2-Day Express Golden Triangle: Agra & Jaipur Heritage",
+    name_ru: "2-дневный экспресс-тур по Золотому треугольнику: Агра и Джайпур",
+    duration: 2, type: "Heritage",
+    places: ["Delhi","Agra","Jaipur"],
+    route_en: "Delhi → Agra → Jaipur → Delhi",
+    desc_en: "A whirlwind 2-day private tour covering the Taj Mahal, Agra Fort, Amber Fort, and City Palace.",
+    desc_ru: "Насыщенный 2-дневный тур: Тадж-Махал, Агра-Форт, Амбер-Форт и Городской дворец.",
+    highlights_en: ["Taj Mahal","Agra Fort","Amber Fort","City Palace"],
+    highlights_ru: ["Тадж-Махал","Агра-Форт","Амбер-Форт","Городской дворец"],
+    guide_key: "guide_ministry", pace_key: "pace_Fast",
+    image: "images/tours/tour-6.jpg",
+    itinerary_en: ["Day 1: Delhi – Agra. Visit Taj Mahal and Agra Fort. Overnight in Agra.","Day 2: Agra – Jaipur – Delhi. Visit Amber Fort and City Palace in Jaipur, then drive to Delhi."],
+    itinerary_ru: ["День 1: Дели – Агра. Посещение Тадж-Махала и Агра-Форта. Ночь в Агре.","День 2: Агра – Джайпур – Дели. Посещение Амбер-Форта и Городского дворца в Джайпуре, затем переезд в Дели."],
+    inclusions_en: ["Private AC vehicle","English-speaking guide","Entry fees","Hotel accommodation (1 night)","Bottled water"],
+    inclusions_ru: ["Частный автомобиль с кондиционером","Гид на английском","Входные билеты","Проживание в отеле (1 ночь)","Бутилированная вода"],
+    exclusions_en: ["Meals","Tips","Insurance","Personal expenses"],
+    exclusions_ru: ["Питание","Чаевые","Страховка","Личные расходы"],
+    notes_en: "Overnight hotel in Agra is included.",
+    notes_ru: "Проживание в отеле в Агре включено."
+  },
+  {
+    id: 7,
+    name_en: "3-Day Golden Triangle Expedition: Delhi, Agra & Jaipur",
+    name_ru: "3-дневная экспедиция по Золотому треугольнику: Дели, Агра, Джайпур",
+    duration: 3, type: "Heritage",
+    places: ["Delhi","Agra","Jaipur"],
+    route_en: "Delhi → Agra → Jaipur → Delhi",
+    desc_en: "A comprehensive 3-day private tour through North India's iconic Golden Triangle, including UNESCO sites.",
+    desc_ru: "Полноценный 3-дневный тур по знаменитому Золотому треугольнику с объектами ЮНЕСКО.",
+    highlights_en: ["Humayun's Tomb","Akshardham","Taj Mahal","Agra Fort","Amber Fort"],
+    highlights_ru: ["Гробница Хумаюна","Акшардхам","Тадж-Махал","Агра-Форт","Амбер-Форт"],
+    guide_key: "guide_ministry", pace_key: "pace_Fast_Active",
+    image: "images/tours/tour-7.jpg",
+    itinerary_en: ["Day 1: Delhi – Visit Humayun's Tomb, Qutub Minar, and Akshardham Temple.","Day 2: Delhi – Agra. Visit Taj Mahal and Agra Fort. Overnight in Agra.","Day 3: Agra – Jaipur – Delhi. Visit Amber Fort and City Palace in Jaipur, then return to Delhi."],
+    itinerary_ru: ["День 1: Дели – посещение гробницы Хумаюна, Кутуб-Минара и храма Акшардхам.","День 2: Дели – Агра. Посещение Тадж-Махала и Агра-Форта. Ночь в Агре.","День 3: Агра – Джайпур – Дели. Посещение Амбер-Форта и Городского дворца в Джайпуре, возвращение в Дели."],
+    inclusions_en: ["Private AC vehicle","English-speaking guide","Entry fees","Hotel accommodation (2 nights)","Bottled water"],
+    inclusions_ru: ["Частный автомобиль с кондиционером","Гид на английском","Входные билеты","Проживание в отеле (2 ночи)","Бутилированная вода"],
+    exclusions_en: ["Meals","Tips","Insurance","Personal expenses"],
+    exclusions_ru: ["Питание","Чаевые","Страховка","Личные расходы"],
+    notes_en: "Akshardham Temple closed on Mondays.",
+    notes_ru: "Храм Акшардхам закрыт по понедельникам."
+  },
+  {
+    id: 8,
+    name_en: "4-Day Express Golden Triangle: Delhi, Jaipur & Agra",
+    name_ru: "4-дневный экспресс-тур: Дели, Джайпур, Агра",
+    duration: 4, type: "Heritage",
+    places: ["Delhi","Jaipur","Agra"],
+    route_en: "Delhi → Jaipur → Agra → Delhi",
+    desc_en: "An efficient 4-day tour covering Delhi's contrasts, Jaipur's royal forts, and Agra's Mughal marvels.",
+    desc_ru: "Эффективный 4-дневный тур: контрасты Дели, королевские форты Джайпура и могольские чудеса Агры.",
+    highlights_en: ["Old Delhi Rickshaw","Amber Fort","City Palace","Taj Mahal","Agra Fort"],
+    highlights_ru: ["Рикша в старом Дели","Амбер-Форт","Городской дворец","Тадж-Махал","Агра-Форт"],
+    guide_key: "guide_ministry", pace_key: "pace_Fast_Active",
+    image: "images/tours/tour-8.jpg",
+    itinerary_en: ["Day 1: Delhi – Old Delhi rickshaw ride, Jama Masjid, Red Fort, Qutub Minar.","Day 2: Delhi – Jaipur. Visit Amber Fort and City Palace. Overnight in Jaipur.","Day 3: Jaipur – Agra. Visit Hawa Mahal and Jal Mahal en route. Arrive Agra.","Day 4: Agra – Delhi. Visit Taj Mahal at sunrise and Agra Fort, then return to Delhi."],
+    itinerary_ru: ["День 1: Дели – поездка на рикше по старому Дели, Джама-Масджид, Красный форт, Кутуб-Минар.","День 2: Дели – Джайпур. Посещение Амбер-Форта и Городского дворца. Ночь в Джайпуре.","День 3: Джайпур – Агра. Посещение Хава-Махала и Джал-Махала по пути. Прибытие в Агру.","День 4: Агра – Дели. Посещение Тадж-Махала на рассвете и Агра-Форта, возвращение в Дели."],
+    inclusions_en: ["Private AC vehicle","English-speaking guide","Entry fees","Hotel accommodation (3 nights)","Bottled water"],
+    inclusions_ru: ["Частный автомобиль с кондиционером","Гид на английском","Входные билеты","Проживание в отеле (3 ночи)","Бутилированная вода"],
+    exclusions_en: ["Meals","Tips","Insurance","Personal expenses"],
+    exclusions_ru: ["Питание","Чаевые","Страховка","Личные расходы"],
+    notes_en: "Sunrise visit to Taj Mahal on Day 4.",
+    notes_ru: "Посещение Тадж-Махала на рассвете в день 4."
+  },
+  {
+    id: 9,
+    name_en: "5-Day Classic Golden Triangle: Royal Rajput & Mughal Journey",
+    name_ru: "5-дневный классический Золотой треугольник: Раджпуты и Моголы",
+    duration: 5, type: "Heritage",
+    places: ["Delhi","Jaipur","Agra"],
+    route_en: "Delhi → Jaipur → Agra → Delhi",
+    desc_en: "A balanced 5-day itinerary with extra time in Jaipur, plus a visit to the ancient Chand Baori stepwell.",
+    desc_ru: "Сбалансированный 5-дневный маршрут с дополнительным временем в Джайпуре и посещением ступенчатого колодца Чанд-Баори.",
+    highlights_en: ["Taj Mahal","Agra Fort","Amber Fort","Nahargarh Fort","Chand Baori","Baby Taj"],
+    highlights_ru: ["Тадж-Махал","Агра-Форт","Амбер-Форт","Форт Нахаргарх","Чанд-Баори","Малый Тадж"],
+    guide_key: "guide_ministry", pace_key: "pace_Moderate_Balanced",
+    image: "images/tours/tour-9.jpg",
+    itinerary_en: ["Day 1: Delhi – Explore Old and New Delhi.","Day 2: Delhi – Jaipur. Visit Amber Fort and City Palace.","Day 3: Jaipur – Visit Nahargarh Fort, then drive to Abhaneri for Chand Baori stepwell.","Day 4: Jaipur – Agra. En route visit Fatehpur Sikri.","Day 5: Agra – Delhi. Taj Mahal sunrise, Agra Fort, Baby Taj, return to Delhi."],
+    itinerary_ru: ["День 1: Дели – знакомство со старым и новым Дели.","День 2: Дели – Джайпур. Посещение Амбер-Форта и Городского дворца.","День 3: Джайпур – посещение форта Нахаргарх, затем переезд в Абханери к ступенчатому колодцу Чанд-Баори.","День 4: Джайпур – Агра. По пути посещение Фатехпур-Сикри.","День 5: Агра – Дели. Тадж-Махал на рассвете, Агра-Форт, Малый Тадж, возвращение в Дели."],
+    inclusions_en: ["Private AC vehicle","English-speaking guide","Entry fees","Hotel accommodation (4 nights)","Bottled water"],
+    inclusions_ru: ["Частный автомобиль с кондиционером","Гид на английском","Входные билеты","Проживание в отеле (4 ночи)","Бутилированная вода"],
+    exclusions_en: ["Meals","Tips","Insurance","Personal expenses"],
+    exclusions_ru: ["Питание","Чаевые","Страховка","Личные расходы"],
+    notes_en: "Chand Baori stepwell is located in Abhaneri, about 1.5 hrs from Jaipur.",
+    notes_ru: "Ступенчатый колодец Чанд-Баори находится в Абханери, примерно в 1,5 часах от Джайпура."
+  },
+  {
+    id: 10,
+    name_en: "6-Day Golden Triangle & Wildlife Escape: Heritage to Bharatpur",
+    name_ru: "6-дневный Золотой треугольник и природа: Бхаратпур",
+    duration: 6, type: "Nature",
+    places: ["Delhi","Jaipur","Bharatpur","Agra"],
+    route_en: "Delhi → Jaipur → Bharatpur → Agra → Delhi",
+    desc_en: "Classic Golden Triangle plus a peaceful rickshaw safari in Keoladeo National Park (UNESCO).",
+    desc_ru: "Классический Золотой треугольник + спокойное сафари на рикше в национальном парке Кеоладео (ЮНЕСКО).",
+    highlights_en: ["Keoladeo Safari","Taj Mahal","Amber Fort","Chand Baori","Baby Taj"],
+    highlights_ru: ["Сафари в Кеоладео","Тадж-Махал","Амбер-Форт","Чанд-Баори","Малый Тадж"],
+    guide_key: "guide_ministry", pace_key: "pace_Moderate_Balanced",
+    image: "images/tours/tour-10.jpg",
+    itinerary_en: ["Day 1: Delhi – Old and New Delhi.","Day 2: Delhi – Jaipur. Amber Fort and City Palace.","Day 3: Jaipur – Abhaneri (Chand Baori) – Bharatpur.","Day 4: Bharatpur – Keoladeo National Park rickshaw safari.","Day 5: Bharatpur – Agra. Visit Fatehpur Sikri and Taj Mahal sunset.","Day 6: Agra – Delhi. Taj Mahal sunrise, Agra Fort, Baby Taj, return."],
+    itinerary_ru: ["День 1: Дели – старый и новый Дели.","День 2: Дели – Джайпур. Амбер-Форт и Городской дворец.","День 3: Джайпур – Абханери (Чанд-Баори) – Бхаратпур.","День 4: Бхаратпур – сафари на рикше в национальном парке Кеоладео.","День 5: Бхаратпур – Агра. Посещение Фатехпур-Сикри и Тадж-Махала на закате.","День 6: Агра – Дели. Тадж-Махал на рассвете, Агра-Форт, Малый Тадж, возвращение."],
+    inclusions_en: ["Private AC vehicle","English-speaking guide","Entry fees","Rickshaw safari in Keoladeo","Hotel accommodation (5 nights)","Bottled water"],
+    inclusions_ru: ["Частный автомобиль с кондиционером","Гид на английском","Входные билеты","Сафари на рикше в Кеоладео","Проживание в отеле (5 ночей)","Бутилированная вода"],
+    exclusions_en: ["Meals","Tips","Insurance","Personal expenses"],
+    exclusions_ru: ["Питание","Чаевые","Страховка","Личные расходы"],
+    notes_en: "Keoladeo National Park is a UNESCO World Heritage site.",
+    notes_ru: "Национальный парк Кеоладео является объектом Всемирного наследия ЮНЕСКО."
+  },
+  {
+    id: 11,
+    name_en: "2-Day Khajuraho & Panna: UNESCO Temples & Tigers Express",
+    name_ru: "2-дневный экспресс: храмы Кхаджурахо и тигры Панны",
+    duration: 2, type: "Wildlife",
+    places: ["Delhi","Khajuraho","Panna"],
+    route_en: "Delhi → Khajuraho → Panna → Delhi",
+    desc_en: "A thrilling 2-day escape combining Khajuraho's sculpted temples with a tiger safari in Panna Reserve.",
+    desc_ru: "Двухдневное приключение: храмы Кхаджурахо и сафари на тигров в заповеднике Панна.",
+    highlights_en: ["Khajuraho Temples","Panna Tiger Safari","Ayurvedic Spa option"],
+    highlights_ru: ["Храмы Кхаджурахо","Сафари на тигров в Панне","Аюрведический спа-вариант"],
+    guide_key: "guide_ministry", pace_key: "pace_Fast",
+    image: "images/tours/tour-11.jpg",
+    itinerary_en: ["Day 1: Delhi – Fly to Khajuraho. Explore Western and Eastern temple groups.","Day 2: Khajuraho – Panna Tiger Reserve. Morning safari, afternoon return to Delhi."],
+    itinerary_ru: ["День 1: Дели – перелёт в Кхаджурахо. Осмотр западной и восточной групп храмов.","День 2: Кхаджурахо – заповедник Панна. Утреннее сафари, днём возвращение в Дели."],
+    inclusions_en: ["Private AC vehicle","English-speaking guide","Entry fees to temples","Jeep safari in Panna","Bottled water"],
+    inclusions_ru: ["Частный автомобиль с кондиционером","Гид на английском","Входные билеты в храмы","Сафари на джипе в Панне","Бутилированная вода"],
+    exclusions_en: ["Flights","Meals","Tips","Insurance","Personal expenses"],
+    exclusions_ru: ["Авиабилеты","Питание","Чаевые","Страховка","Личные расходы"],
+    notes_en: "Flights to Khajuraho are not included but can be arranged.",
+    notes_ru: "Авиабилеты в Кхаджурахо не включены, но могут быть организованы."
+  },
+  {
+    id: 12,
+    name_en: "4-Day Khajuraho & Varanasi: Temples, Tigers & Sacred Ganges",
+    name_ru: "4-дневный тур: Кхаджурахо и Варанаси – храмы, тигры и священный Ганг",
+    duration: 4, type: "Spiritual",
+    places: ["Delhi","Khajuraho","Panna","Raneb Falls","Varanasi"],
+    route_en: "Delhi → Khajuraho (Panna/Raneb) → Varanasi → Delhi",
+    desc_en: "A diverse 4-day journey from temple art to tiger tracking, volcanic canyons, and Ganges rituals.",
+    desc_ru: "Разнообразный 4-дневный маршрут: храмовое искусство, сафари, вулканические каньоны и ритуалы на Ганге.",
+    highlights_en: ["Khajuraho Temples","Panna Tiger Safari","Raneb Falls","Ganga Aarti","Sarnath"],
+    highlights_ru: ["Храмы Кхаджурахо","Сафари на тигров в Панне","Водопады Ранеб","Ганга Аарти","Сарнатх"],
+    guide_key: "guide_ministry", pace_key: "pace_Moderate_Active",
+    image: "images/tours/tour-12.jpg",
+    itinerary_en: ["Day 1: Delhi – Khajuraho. Temple tour.","Day 2: Khajuraho – Panna Tiger Reserve. Morning safari, visit Raneb Falls.","Day 3: Khajuraho – Varanasi. Evening Ganga Aarti.","Day 4: Varanasi – Sarnath – Delhi. Morning boat ride, Sarnath visit, fly to Delhi."],
+    itinerary_ru: ["День 1: Дели – Кхаджурахо. Осмотр храмов.","День 2: Кхаджурахо – заповедник Панна. Утреннее сафари, посещение водопадов Ранеб.","День 3: Кхаджурахо – Варанаси. Вечерняя Ганга Аарти.","День 4: Варанаси – Сарнатх – Дели. Утренняя лодочная прогулка, посещение Сарнатха, перелёт в Дели."],
+    inclusions_en: ["Private AC vehicle","English-speaking guide","Entry fees","Jeep safari in Panna","Bottled water"],
+    inclusions_ru: ["Частный автомобиль с кондиционером","Гид на английском","Входные билеты","Сафари на джипе в Панне","Бутилированная вода"],
+    exclusions_en: ["Flights","Meals","Tips","Insurance","Personal expenses"],
+    exclusions_ru: ["Авиабилеты","Питание","Чаевые","Страховка","Личные расходы"],
+    notes_en: "Flights between Khajuraho and Varanasi are not included.",
+    notes_ru: "Авиабилеты между Кхаджурахо и Варанаси не включены."
+  },
+  {
+    id: 13,
+    name_en: "8-Day Taj, Temples & Rajputana: The Ultimate Heritage Trail",
+    name_ru: "8-дневный маршрут: Тадж, храмы и Раджпутана – главный исторический путь",
+    duration: 8, type: "Heritage",
+    places: ["Delhi","Jaipur","Abhaneri","Bharatpur","Fatehpur Sikri","Agra","Morena","Gwalior","Orchha","Khajuraho"],
+    route_en: "Delhi → Jaipur → Abhaneri → Bharatpur → Fatehpur Sikri → Agra → Morena → Gwalior → Orchha → Khajuraho",
+    desc_en: "A deep heritage trail spanning Mughal, Rajput, and Central Indian temple architecture, including hidden Tantric shrines.",
+    desc_ru: "Глубокий исторический маршрут по архитектуре Моголов, Раджпутов и Центральной Индии, включая скрытые тантрические святыни.",
+    highlights_en: ["Taj Mahal","Amber Fort","Chand Baori","Mitawali Temple","Khajuraho"],
+    highlights_ru: ["Тадж-Махал","Амбер-Форт","Чанд-Баори","Храм Митавали","Кхаджурахо"],
+    guide_key: "guide_ministry", pace_key: "pace_Moderate_Active",
+    image: "images/tours/tour-13.jpg",
+    itinerary_en: ["Day 1: Delhi – Jaipur. Amber Fort.","Day 2: Jaipur – Abhaneri – Bharatpur. Chand Baori.","Day 3: Bharatpur – Fatehpur Sikri – Agra.","Day 4: Agra – Taj Mahal sunrise, Agra Fort, Baby Taj.","Day 5: Agra – Morena – Gwalior. Visit Gwalior Fort.","Day 6: Gwalior – Orchha. Explore Orchha's palaces and temples.","Day 7: Orchha – Khajuraho. Temple tour.","Day 8: Khajuraho – Delhi. Departure."],
+    itinerary_ru: ["День 1: Дели – Джайпур. Амбер-Форт.","День 2: Джайпур – Абханери – Бхаратпур. Чанд-Баори.","День 3: Бхаратпур – Фатехпур-Сикри – Агра.","День 4: Агра – Тадж-Махал на рассвете, Агра-Форт, Малый Тадж.","День 5: Агра – Морена – Гвалиор. Посещение форта Гвалиор.","День 6: Гвалиор – Орчха. Осмотр дворцов и храмов Орчхи.","День 7: Орчха – Кхаджурахо. Осмотр храмов.","День 8: Кхаджурахо – Дели. Вылет."],
+    inclusions_en: ["Private AC vehicle","English-speaking guide","Entry fees to all monuments","Hotel accommodation (7 nights)","Bottled water"],
+    inclusions_ru: ["Частный автомобиль с кондиционером","Гид на английском","Входные билеты во все памятники","Проживание в отеле (7 ночей)","Бутилированная вода"],
+    exclusions_en: ["Meals","Tips","Insurance","Personal expenses"],
+    exclusions_ru: ["Питание","Чаевые","Страховка","Личные расходы"],
+    notes_en: "Mitawali Temple is a lesser-known Tantric site near Morena.",
+    notes_ru: "Храм Митавали – малоизвестное тантрическое место близ Морены."
+  },
+  {
+    id: 14,
+    name_en: "8-Day Rajputana Citadel Quest: Delhi to Udaipur",
+    name_ru: "8-дневный поход по цитаделям Раджпутаны: от Дели до Удайпура",
+    duration: 8, type: "Heritage",
+    places: ["Delhi","Jaipur","Jodhpur","Ranakpur","Kumbhalgarh","Udaipur"],
+    route_en: "Delhi → Jaipur → Jodhpur → Ranakpur → Kumbhalgarh → Udaipur → Delhi",
+    desc_en: "An immersive quest through Rajasthan's legendary hill forts, blue cities, and romantic lakes.",
+    desc_ru: "Погружение в легендарные холмистые форты, голубые города и романтические озёра Раджастана.",
+    highlights_en: ["Qutub Minar","Humayun's Tomb","Amber Fort","Kumbhalgarh Wall","Udaipur Boat Ride"],
+    highlights_ru: ["Кутуб-Минар","Гробница Хумаюна","Амбер-Форт","Стена Кумбхалгарха","Прогулка на лодке по Удайпуру"],
+    guide_key: "guide_ministry", pace_key: "pace_Relaxed",
+    image: "images/tours/tour-14.jpg",
+    itinerary_en: ["Day 1: Delhi – Qutub Minar, Humayun's Tomb.","Day 2: Delhi – Jaipur. Amber Fort, City Palace.","Day 3: Jaipur – Jodhpur. Visit Mehrangarh Fort.","Day 4: Jodhpur – Ranakpur – Kumbhalgarh. Jain temples and fort.","Day 5: Kumbhalgarh – Udaipur. Explore the wall and lake.","Day 6: Udaipur – City Palace, Lake Pichola boat ride.","Day 7: Udaipur – Free day or optional excursion.","Day 8: Udaipur – Delhi. Flight."],
+    itinerary_ru: ["День 1: Дели – Кутуб-Минар, гробница Хумаюна.","День 2: Дели – Джайпур. Амбер-Форт, Городской дворец.","День 3: Джайпур – Джодхпур. Посещение форта Мехрангарх.","День 4: Джодхпур – Ранакпур – Кумбхалгарх. Джайнские храмы и форт.","День 5: Кумбхалгарх – Удайпур. Осмотр стены и озера.","День 6: Удайпур – Городской дворец, прогулка на лодке по озеру Пичола.","День 7: Удайпур – свободный день или дополнительная экскурсия.","День 8: Удайпур – Дели. Перелёт."],
+    inclusions_en: ["Private AC vehicle","English-speaking guide","Entry fees","Hotel accommodation (7 nights)","Boat ride in Udaipur","Bottled water"],
+    inclusions_ru: ["Частный автомобиль с кондиционером","Гид на английском","Входные билеты","Проживание в отеле (7 ночей)","Прогулка на лодке в Удайпуре","Бутилированная вода"],
+    exclusions_en: ["Flights","Meals","Tips","Insurance","Personal expenses"],
+    exclusions_ru: ["Авиабилеты","Питание","Чаевые","Страховка","Личные расходы"],
+    notes_en: "Flight from Udaipur to Delhi not included.",
+    notes_ru: "Авиабилет из Удайпура в Дели не включён."
+  },
+  {
+    id: 15,
+    name_en: "16-Day Taj, Tiger & Forts: The Ultimate Indian Odyssey",
+    name_ru: "16-дневная одиссея: Тадж, тигры и форты – главное путешествие по Индии",
+    duration: 16, type: "Wildlife",
+    places: ["Delhi","Jaipur","Bikaner","Jaisalmer","Jodhpur","Ranakpur","Kumbhalgarh","Udaipur","Chittorgarh","Bundi","Ranthambore","Bharatpur","Fatehpur Sikri","Agra","Vrindavan"],
+    route_en: "Delhi → Jaipur → Bikaner → Jaisalmer (Desert/City) → Jodhpur → Ranakpur → Kumbhalgarh → Udaipur → Chittorgarh → Bundi → Ranthambore → Bharatpur → Fatehpur Sikri → Agra → Vrindavan → Delhi",
+    desc_en: "The ultimate 16-day odyssey combining tiger safaris, desert camps, and all major UNESCO forts and monuments.",
+    desc_ru: "Главная 16-дневная одиссея: сафари на тигров, пустынные лагеря и все основные форты и памятники ЮНЕСКО.",
+    highlights_en: ["5 Hill Forts","Ranthambore Safaris","Desert Camp","Taj Mahal","Udaipur"],
+    highlights_ru: ["5 холмистых фортов","Сафари в Рантхамборе","Пустынный лагерь","Тадж-Махал","Удайпур"],
+    guide_key: "guide_ministry", pace_key: "pace_Relaxed",
+    image: "images/tours/tour-15.jpg",
+    itinerary_en: ["Day 1-2: Delhi – Jaipur. Amber Fort, City Palace.","Day 3: Jaipur – Bikaner. Visit Junagarh Fort.","Day 4: Bikaner – Jaisalmer. Desert camp experience.","Day 5: Jaisalmer – City tour and desert safari.","Day 6: Jaisalmer – Jodhpur. Mehrangarh Fort.","Day 7: Jodhpur – Ranakpur – Kumbhalgarh.","Day 8: Kumbhalgarh – Udaipur.","Day 9: Udaipur – City Palace, boat ride.","Day 10: Udaipur – Chittorgarh – Bundi.","Day 11: Bundi – Ranthambore. Afternoon safari.","Day 12: Ranthambore – Morning and afternoon safaris.","Day 13: Ranthambore – Bharatpur. Keoladeo safari.","Day 14: Bharatpur – Fatehpur Sikri – Agra.","Day 15: Agra – Taj Mahal, Agra Fort, Baby Taj.","Day 16: Agra – Vrindavan – Delhi. Departure."],
+    itinerary_ru: ["День 1-2: Дели – Джайпур. Амбер-Форт, Городской дворец.","День 3: Джайпур – Биканер. Посещение форта Джунагарх.","День 4: Биканер – Джайсалмер. Опыт пустынного лагеря.","День 5: Джайсалмер – обзор города и сафари по пустыне.","День 6: Джайсалмер – Джодхпур. Форт Мехрангарх.","День 7: Джодхпур – Ранакпур – Кумбхалгарх.","День 8: Кумбхалгарх – Удайпур.","День 9: Удайпур – Городской дворец, прогулка на лодке.","День 10: Удайпур – Читторгарх – Бунди.","День 11: Бунди – Рантхамбор. Сафари во второй половине дня.","День 12: Рантхамбор – утреннее и вечернее сафари.","День 13: Рантхамбор – Бхаратпур. Сафари в Кеоладео.","День 14: Бхаратпур – Фатехпур-Сикри – Агра.","День 15: Агра – Тадж-Махал, Агра-Форт, Малый Тадж.","День 16: Агра – Вриндаван – Дели. Вылет."],
+    inclusions_en: ["Private AC vehicle","English-speaking guide","Entry fees to all monuments","Ranthambore safaris (2 jeep safaris)","Desert camp in Jaisalmer","Hotel accommodation (15 nights)","Bottled water"],
+    inclusions_ru: ["Частный автомобиль с кондиционером","Гид на английском","Входные билеты во все памятники","Сафари в Рантхамборе (2 сафари на джипе)","Пустынный лагерь в Джайсалмере","Проживание в отеле (15 ночей)","Бутилированная вода"],
+    exclusions_en: ["Flights","Meals","Tips","Insurance","Personal expenses"],
+    exclusions_ru: ["Авиабилеты","Питание","Чаевые","Страховка","Личные расходы"],
+    notes_en: "This is a comprehensive odyssey covering most of Rajasthan and the Golden Triangle.",
+    notes_ru: "Это комплексная одиссея, охватывающая большую часть Раджастана и Золотого треугольника."
+  },
+  {
+    id: 16,
+    name_en: "5-Day Himalayan Triangle: Darjeeling, Kalimpong & Gangtok",
+    name_ru: "5-дневный Гималайский треугольник: Дарджилинг, Калимпонг и Гангток",
+    duration: 5, type: "Nature",
+    places: ["Delhi","Bagdogra","Darjeeling","Kalimpong","Gangtok"],
+    route_en: "Delhi → Bagdogra → Darjeeling → Kalimpong → Gangtok → Bagdogra",
+    desc_en: "Escape to the serene foothills of the Eastern Himalayas on a curated private journey featuring tea estates, Buddhist monasteries, and mountain vistas.",
+    desc_ru: "Убежище в предгорьях Восточных Гималаев: чайные плантации, буддийские монастыри и горные пейзажи.",
+    highlights_en: ["Tiger Hill Sunrise","Kanchenjunga Views","Tea Gardens","Ghoom Monastery","Rumtek Monastery"],
+    highlights_ru: ["Восход на Тигровом холме","Виды на Канченджангу","Чайные плантации","Монастырь Гум","Монастырь Румтек"],
+    guide_key: "guide_ministry", pace_key: "pace_Relaxed_Immersive",
+    image: "images/tours/tour-16.jpg",
+    itinerary_en: ["Day 1: Delhi – Fly to Bagdogra, drive to Darjeeling.","Day 2: Darjeeling – Tiger Hill sunrise, Ghoom Monastery, tea gardens.","Day 3: Darjeeling – Kalimpong. Visit local monasteries and flower nurseries.","Day 4: Kalimpong – Gangtok. Explore Rumtek Monastery.","Day 5: Gangtok – Bagdogra – Delhi. Departure."],
+    itinerary_ru: ["День 1: Дели – перелёт в Багдогра, переезд в Дарджилинг.","День 2: Дарджилинг – восход на Тигровом холме, монастырь Гум, чайные плантации.","День 3: Дарджилинг – Калимпонг. Посещение местных монастырей и цветочных питомников.","День 4: Калимпонг – Гангток. Осмотр монастыря Румтек.","День 5: Гангток – Багдогра – Дели. Вылет."],
+    inclusions_en: ["Private AC vehicle","English-speaking guide","Entry fees to monasteries and gardens","Hotel accommodation (4 nights)","Bottled water"],
+    inclusions_ru: ["Частный автомобиль с кондиционером","Гид на английском","Входные билеты в монастыри и сады","Проживание в отеле (4 ночи)","Бутилированная вода"],
+    exclusions_en: ["Flights","Meals","Tips","Insurance","Personal expenses"],
+    exclusions_ru: ["Авиабилеты","Питание","Чаевые","Страховка","Личные расходы"],
+    notes_en: "Flights to Bagdogra are not included. Mountain weather can be unpredictable.",
+    notes_ru: "Авиабилеты в Багдогра не включены. Горная погода может быть непредсказуемой."
+  },
+  {
+    id: 17,
+    name_en: "8-Day Himalayan Heritage Rail & Skyward Retreat",
+    name_ru: "8-дневный Гималайский ретро-поезд и отдых в горах",
+    duration: 8, type: "Heritage",
+    places: ["Delhi","Kalka","Shimla","Mandi","Naggar","Manali","Vashisht","Bir","Dharamshala"],
+    route_en: "Delhi → Kalka → Shimla → Mandi → Naggar → Manali → Vashisht → Bir → Dharamshala",
+    desc_en: "A spectacular private journey through the Western Himalayas, featuring a historic narrow-gauge railway, mountain fortresses, and the spiritual home of the Dalai Lama.",
+    desc_ru: "Удивительное путешествие по Западным Гималаям: историческая узкоколейка, горные крепости и духовная резиденция Далай-ламы.",
+    highlights_en: ["Kalka-Shimla Toy Train (UNESCO)","Vice Regal Lodge","Roerich Estate","Naggar Castle","McLeod Ganj"],
+    highlights_ru: ["Игрушечный поезд Калка-Шимла (ЮНЕСКО)","Резиденция вице-короля","Усадьба Рериха","Замок Наггар","Мак-Леод Гандж"],
+    guide_key: "guide_ministry", pace_key: "pace_Relaxed_Immersive",
+    image: "images/tours/tour-17.jpg",
+    itinerary_en: ["Day 1: Delhi – Kalka. Overnight in Kalka.","Day 2: Kalka – Shimla on the Toy Train (UNESCO).","Day 3: Shimla – Visit Vice Regal Lodge and local sights.","Day 4: Shimla – Mandi – Naggar – Manali.","Day 5: Manali – Naggar Castle, Roerich Estate, Vashisht hot springs.","Day 6: Manali – Bir – Billing. Paragliding optional.","Day 7: Bir – Dharamshala – McLeod Ganj. Tibetan culture.","Day 8: Dharamshala – Delhi. Departure."],
+    itinerary_ru: ["День 1: Дели – Калка. Ночь в Калке.","День 2: Калка – Шимла на игрушечном поезде (ЮНЕСКО).","День 3: Шимла – посещение резиденции вице-короля и местных достопримечательностей.","День 4: Шимла – Манди – Наггар – Манали.","День 5: Манали – замок Наггар, усадьба Рериха, горячие источники Вашишт.","День 6: Манали – Бир – Биллинг. Опционально парапланеризм.","День 7: Бир – Дхарамшала – Мак-Леод Гандж. Тибетская культура.","День 8: Дхарамшала – Дели. Вылет."],
+    inclusions_en: ["Private AC vehicle","English-speaking guide","Toy Train tickets (Kalka–Shimla)","Entry fees","Hotel accommodation (7 nights)","Bottled water"],
+    inclusions_ru: ["Частный автомобиль с кондиционером","Гид на английском","Билеты на игрушечный поезд (Калка–Шимла)","Входные билеты","Проживание в отеле (7 ночей)","Бутилированная вода"],
+    exclusions_en: ["Flights","Meals","Tips","Insurance","Personal expenses","Paragliding"],
+    exclusions_ru: ["Авиабилеты","Питание","Чаевые","Страховка","Личные расходы","Парапланеризм"],
+    notes_en: "The Toy Train is a UNESCO World Heritage route. Bookings must be made in advance.",
+    notes_ru: "Игрушечный поезд – маршрут ЮНЕСКО. Бронирование необходимо осуществлять заранее."
+  },
+  {
+    id: 18,
+    name_en: "9-Day Himalayan Panorama & Golden Temple Traverse",
+    name_ru: "9-дневный Гималайский панорамный тур и Золотой храм",
+    duration: 9, type: "Spiritual",
+    places: ["Delhi","Shimla","Mandi","Naggar","Manali","Bir","Dharamshala","Amritsar"],
+    route_en: "Delhi → Shimla → Mandi → Naggar → Manali → Bir → Dharamshala → Amritsar → Delhi",
+    desc_en: "A deeply immersive private journey through colonial mountain capitals, Tibetan spiritual enclaves, and the majestic Sikh heritage of Punjab.",
+    desc_ru: "Глубокое погружение в колониальные горные столицы, тибетские духовные анклавы и величественное сикхское наследие Пенджаба.",
+    highlights_en: ["Golden Temple","Wagah Border Ceremony","McLeod Ganj","Naggar Castle","Manali Temples"],
+    highlights_ru: ["Золотой храм","Церемония на границе Вагах","Мак-Леод Гандж","Замок Наггар","Храмы Манали"],
+    guide_key: "guide_ministry", pace_key: "pace_Relaxed_Immersive",
+    image: "images/tours/tour-18.jpg",
+    itinerary_en: ["Day 1: Delhi – Shimla. Visit the Mall Road and Vice Regal Lodge.","Day 2: Shimla – Mandi – Naggar – Manali.","Day 3: Manali – Visit Naggar Castle and Roerich Estate.","Day 4: Manali – Vashisht hot springs and local temples.","Day 5: Manali – Bir – Dharamshala.","Day 6: Dharamshala – McLeod Ganj. Dalai Lama Temple.","Day 7: Dharamshala – Amritsar. Visit the Golden Temple at night.","Day 8: Amritsar – Wagah Border ceremony, Golden Temple, Jallianwala Bagh.","Day 9: Amritsar – Delhi. Departure."],
+    itinerary_ru: ["День 1: Дели – Шимла. Посещение Молл-Роуд и резиденции вице-короля.","День 2: Шимла – Манди – Наггар – Манали.","День 3: Манали – посещение замка Наггар и усадьбы Рериха.","День 4: Манали – горячие источники Вашишт и местные храмы.","День 5: Манали – Бир – Дхарамшала.","День 6: Дхарамшала – Мак-Леод Гандж. Храм Далай-ламы.","День 7: Дхарамшала – Амритсар. Посещение Золотого храма ночью.","День 8: Амритсар – церемония на границе Вагах, Золотой храм, Джаллианвала Багх.","День 9: Амритсар – Дели. Вылет."],
+    inclusions_en: ["Private AC vehicle","English-speaking guide","Entry fees","Hotel accommodation (8 nights)","Bottled water"],
+    inclusions_ru: ["Частный автомобиль с кондиционером","Гид на английском","Входные билеты","Проживание в отеле (8 ночей)","Бутилированная вода"],
+    exclusions_en: ["Flights","Meals","Tips","Insurance","Personal expenses"],
+    exclusions_ru: ["Авиабилеты","Питание","Чаевые","Страховка","Личные расходы"],
+    notes_en: "Wagah Border ceremony is subject to weather and schedule. Golden Temple visit requires head covering.",
+    notes_ru: "Церемония на границе Вагах зависит от погоды и расписания. Посещение Золотого храма требует покрытия головы."
+  }
+];
+
+/* ============================================================
+   4. RENDER TOURS
+   ============================================================ */
+const grid = document.getElementById('tourGrid');
+
+function renderTours(filteredTours) {
+  const lang = getLang();
+  if (filteredTours.length === 0) {
+    grid.innerHTML = `<div class="no-results">${t('no_results')}</div>`;
+    return;
+  }
+  grid.innerHTML = filteredTours.map(tour => {
+    const name = lang === 'ru' ? tour.name_ru : tour.name_en;
+    const desc = lang === 'ru' ? tour.desc_ru : tour.desc_en;
+    const typeTrans = t('type_' + tour.type);
+    const paceTrans = t(tour.pace_key);
+    const imgSrc = getTourImageSrc(tour, name);
+
+    return `
+      <div class="tour-card" id="tour-${tour.id}" data-tour-id="${tour.id}"
+           role="button" tabindex="0" aria-label="Open: ${name}">
+        <img class="card-image" src="${imgSrc}" alt="${name}" loading="lazy"
+             onerror="handleImageError(this, ${tour.id}, '${name.replace(/'/g,"\\'")}')" />
+        <div class="tour-card-header">
+          <h3>${name}</h3>
+          <span class="tour-days">${tour.duration}D</span>
+        </div>
+        <div class="tour-card-body">
+          <div class="tour-meta">
+            <span><i class="fas fa-tag"></i> ${typeTrans}</span>
+            <span><i class="fas fa-clock"></i> ${paceTrans}</span>
+          </div>
+          <div class="tour-description">${desc}</div>
+        </div>
+      </div>
+    `;
+  }).join('');
+
+  document.querySelectorAll('.tour-card').forEach(card => {
+    const id = parseInt(card.dataset.tourId);
+    const tour = tourData.find(x => x.id === id);
+    if (!tour) return;
+
+    card.addEventListener('mouseenter', function() {
+      if (window.innerWidth > 768 && !drawer.classList.contains('open')) {
+        openDrawer(tour);
+      }
+    });
+    card.addEventListener('click', function(e) {
+      if (window.innerWidth <= 768) {
+        e.stopPropagation();
+        openDrawer(tour);
+      }
+    });
+    card.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        openDrawer(tour);
+      }
+    });
+  });
+
+  const hash = window.location.hash;
+  if (hash && hash.startsWith('#tour-')) {
+    const id = parseInt(hash.replace('#tour-', ''));
+    const tour = tourData.find(x => x.id === id);
+    if (tour) setTimeout(() => openDrawer(tour), 300);
+  }
+}
+
+/* ============================================================
+   5. DRAWER LOGIC
+   ============================================================ */
+const drawer = document.getElementById('drawer');
+const drawerOverlay = document.getElementById('drawerOverlay');
+const drawerClose = document.getElementById('drawerClose');
+const drawerViewTour = document.getElementById('drawerViewTour');
+const drawerViewForm = document.getElementById('drawerViewForm');
+
+const drawerImage = document.getElementById('drawerImage');
+const drawerName = document.getElementById('drawerName');
+const drawerMeta = document.getElementById('drawerMeta');
+const drawerDesc = document.getElementById('drawerDesc');
+const drawerHighlights = document.getElementById('drawerHighlights');
+const drawerNotesWrapper = document.getElementById('drawerNotesWrapper');
+const drawerNotesText = document.getElementById('drawerNotesText');
+const drawerItinerary = document.getElementById('drawerItinerary');
+const drawerInclusions = document.getElementById('drawerInclusions');
+const drawerExclusions = document.getElementById('drawerExclusions');
+const drawerWhatsApp = document.getElementById('drawerWhatsApp');
+const drawerTelegram = document.getElementById('drawerTelegram');
+const drawerGetQuote = document.getElementById('drawerGetQuote');
+const formBackBtn = document.getElementById('formBackBtn');
+const inquiryForm = document.getElementById('inquiryForm');
+const formSuccessState = document.getElementById('formSuccessState');
+const formTourName = document.getElementById('formTourName');
+
+let currentTour = null;
+
+function openDrawer(tour) {
+  currentTour = tour;
+  const lang = getLang();
+  const name = lang === 'ru' ? tour.name_ru : tour.name_en;
+  const desc = lang === 'ru' ? tour.desc_ru : tour.desc_en;
+  const highlights = lang === 'ru' ? tour.highlights_ru : tour.highlights_en;
+  const pace = t(tour.pace_key);
+  const type = t('type_' + tour.type);
+  const imgSrc = getTourImageSrc(tour, name);
+  const route = translateRoute(tour.route_en, lang);
+
+  drawerImage.src = imgSrc;
+  drawerImage.alt = name;
+  drawerImage.onerror = () => handleImageError(drawerImage, tour.id, name);
+
+  drawerName.textContent = name;
+
+  drawerMeta.innerHTML = `
+    <span><i class="fas fa-clock"></i> ${pace}</span>
+    <span><i class="fas fa-tag"></i> ${type}</span>
+    <span><i class="fas fa-calendar-alt"></i> ${tour.duration} ${lang === 'ru' ? 'дней' : 'Days'}</span>
+    <span><i class="fas fa-route"></i> ${route}</span>
+  `;
+
+  drawerDesc.textContent = desc;
+  drawerHighlights.innerHTML = highlights.map(h => `<li>${h}</li>`).join('');
+
+  const notes = lang === 'ru' ? tour.notes_ru : tour.notes_en;
+  if (notes) {
+    drawerNotesWrapper.style.display = 'flex';
+    drawerNotesText.textContent = notes;
+  } else {
+    drawerNotesWrapper.style.display = 'none';
+  }
+
+  const itinerary = lang === 'ru' ? tour.itinerary_ru : tour.itinerary_en;
+  if (itinerary && itinerary.length > 0) {
+    drawerItinerary.innerHTML = itinerary.map(day => {
+      const idx = day.indexOf(':');
+      const label = idx > -1 ? day.substring(0, idx) : '';
+      const text = idx > -1 ? day.substring(idx + 1).trim() : day;
+      return `<div class="day-item"><div class="day-label">${label}</div><div class="day-text">${text}</div></div>`;
+    }).join('');
+  } else {
+    drawerItinerary.innerHTML = `<div class="drawer-timeline-placeholder">—</div>`;
+  }
+
+  const inclusions = lang === 'ru' ? tour.inclusions_ru : tour.inclusions_en;
+  const exclusions = lang === 'ru' ? tour.exclusions_ru : tour.exclusions_en;
+  drawerInclusions.innerHTML = (inclusions || []).map(x => `<li>${x}</li>`).join('');
+  drawerExclusions.innerHTML = (exclusions || []).map(x => `<li>${x}</li>`).join('');
+
+  // WhatsApp message
+  const waMsg = lang === 'en'
+    ? `Hello Vikramjeet, I am interested in the "${name}" tour.`
+    : `Здравствуйте, Викрамджит! Я заинтересован(а) в туре «${name}».`;
+  drawerWhatsApp.onclick = function() {
+    window.open(`https://wa.me/919711349497?text=${encodeURIComponent(waMsg)}`, '_blank');
+  };
+
+  // Telegram
+  drawerTelegram.onclick = function() {
+    window.open('https://t.me/Vikramru', '_blank');
+  };
+
+  // Primary CTA → switch to form view
+  drawerGetQuote.onclick = function() {
+    switchToFormView();
+  };
+
+  // Reset to tour view (form success state cleared)
+  formSuccessState.classList.remove('show');
+  inquiryForm.style.display = '';
+  drawerViewTour.hidden = false;
+  drawerViewForm.hidden = true;
+
+  // Reset tab to overview
+  switchDrawerTab('overview');
+
+  // Show drawer
+  drawerOverlay.classList.add('open');
+  drawer.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeDrawer() {
+  drawer.classList.remove('open');
+  drawerOverlay.classList.remove('open');
+  document.body.style.overflow = 'auto';
+  currentTour = null;
+}
+
+function switchDrawerTab(tab) {
+  document.querySelectorAll('.drawer-tab-btn').forEach(btn => btn.classList.toggle('active', btn.dataset.tab === tab));
+  document.querySelectorAll('.drawer-tab-content').forEach(el => el.classList.toggle('active', el.dataset.content === tab));
+}
+
+function switchToFormView() {
+  if (!currentTour) return;
+  const lang = getLang();
+  const name = lang === 'ru' ? currentTour.name_ru : currentTour.name_en;
+  formTourName.value = name;
+  drawerViewTour.hidden = true;
+  drawerViewForm.hidden = false;
+  drawerViewForm.scrollTop = 0;
+  // Focus first field
+  setTimeout(() => document.getElementById('fName').focus(), 300);
+}
+
+function switchToTourView() {
+  drawerViewForm.hidden = true;
+  drawerViewTour.hidden = false;
+  drawerViewTour.scrollTop = 0;
+}
+
+/* Event listeners */
+drawerClose.addEventListener('click', closeDrawer);
+drawerOverlay.addEventListener('click', closeDrawer);
+
+document.querySelectorAll('.drawer-tab-btn').forEach(btn => {
+  btn.addEventListener('click', () => switchDrawerTab(btn.dataset.tab));
+});
+
+formBackBtn.addEventListener('click', switchToTourView);
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape' && drawer.classList.contains('open')) closeDrawer();
+});
+
+/* Dynamic contact field label/placeholder based on radio */
+const contactRadios = document.querySelectorAll('input[name="Contact Method"]');
+const fContactLabel = document.getElementById('fContactLabel');
+const fContact = document.getElementById('fContact');
+
+function updateContactField() {
+  const selected = document.querySelector('input[name="Contact Method"]:checked').value;
+  const lang = getLang();
+  if (selected === 'WhatsApp') {
+    fContactLabel.innerHTML = `${t('form_whatsapp_label')} <span class="required">*</span>`;
+    fContact.placeholder = t('form_whatsapp_ph');
+    fContact.type = 'tel';
+  } else if (selected === 'Telegram') {
+    fContactLabel.innerHTML = `${t('form_telegram_label')} <span class="required">*</span>`;
+    fContact.placeholder = t('form_telegram_ph');
+    fContact.type = 'text';
+  } else {
+    fContactLabel.innerHTML = `${t('form_email_label')} <span class="required">*</span>`;
+    fContact.placeholder = t('form_email_ph');
+    fContact.type = 'email';
+  }
+}
+contactRadios.forEach(r => r.addEventListener('change', updateContactField));
+
+/* Form submission */
+inquiryForm.addEventListener('submit', e => {
+  e.preventDefault();
+  const formData = new FormData(inquiryForm);
+  fetch(inquiryForm.action, {
+    method: 'POST', body: formData, headers: { 'Accept': 'application/json' }
+  }).then(r => {
+    if (r.ok) {
+      inquiryForm.style.display = 'none';
+      formSuccessState.classList.add('show');
+    } else {
+      alert('Something went wrong. Please try again.');
+    }
+  }).catch(() => {
+    alert('Network error. Please check your connection.');
+  });
+});
+
+/* ============================================================
+   Swipe-down-to-close on mobile
+   ============================================================ */
+let touchStartY = 0;
+let touchCurrentY = 0;
+let isDragging = false;
+
+drawer.addEventListener('touchstart', e => {
+  if (window.innerWidth > 768) return;
+  if (!drawer.classList.contains('open')) return;
+  const touch = e.touches[0];
+  const rect = drawer.getBoundingClientRect();
+  // Only allow drag from top area (handle or close button zone)
+  if (touch.clientY - rect.top > 80) return;
+  touchStartY = touch.clientY;
+  isDragging = true;
+  drawer.style.transition = 'none';
+}, { passive: true });
+
+drawer.addEventListener('touchmove', e => {
+  if (!isDragging) return;
+  touchCurrentY = e.touches[0].clientY;
+  const delta = touchCurrentY - touchStartY;
+  if (delta > 0) {
+    drawer.style.transform = `translateY(${delta}px)`;
+  }
+}, { passive: true });
+
+drawer.addEventListener('touchend', () => {
+  if (!isDragging) return;
+  isDragging = false;
+  drawer.style.transition = '';
+  const delta = touchCurrentY - touchStartY;
+  drawer.style.transform = '';
+  if (delta > 100) closeDrawer();
+});
+
+/* ============================================================
+   6. FILTERS
+   ============================================================ */
+const filterDays  = document.getElementById('filterDays');
+const filterType  = document.getElementById('filterType');
+const filterPlace = document.getElementById('filterPlace');
+const resetBtn    = document.getElementById('resetFilters');
+
+function getFilteredTours() {
+  const d = filterDays.value, ty = filterType.value, pl = filterPlace.value;
+  return tourData.filter(tour => {
+    const mD = d === 'all' || tour.duration === parseInt(d);
+    const mT = ty === 'all' || tour.type === ty;
+    const mP = pl === 'all' || tour.places.some(p => p.toLowerCase().includes(pl.toLowerCase()));
+    return mD && mT && mP;
+  });
+}
+function applyFilters() { renderTours(getFilteredTours()); }
+
+filterDays.addEventListener('change', applyFilters);
+filterType.addEventListener('change', applyFilters);
+filterPlace.addEventListener('change', applyFilters);
+resetBtn.addEventListener('click', () => {
+  filterDays.value = 'all';
+  filterType.value = 'all';
+  filterPlace.value = 'all';
+  applyFilters();
+});
+
+/* ============================================================
+   7. LANGUAGE
+   ============================================================ */
+function applyUITranslations() {
+  const lang = getLang();
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    const val = translations[lang]?.[key];
+    if (val !== undefined) {
+      if (['page_title'].includes(key)) el.innerHTML = val;
+      else el.textContent = val;
+    }
+  });
+  document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+    const key = el.getAttribute('data-i18n-placeholder');
+    const val = translations[lang]?.[key];
+    if (val !== undefined) el.placeholder = val;
+  });
+  document.getElementById('langToggle').textContent = (lang === 'en') ? 'RU' : 'EN';
+  applyFilters();
+  // Update dynamic contact field label
+  if (document.querySelector('input[name="Contact Method"]:checked')) updateContactField();
+  // If drawer is open, re-render with new language
+  if (drawer.classList.contains('open') && currentTour) {
+    openDrawer(currentTour);
+  }
+}
+document.getElementById('langToggle').addEventListener('click', () => {
+  currentLang = (currentLang === 'en') ? 'ru' : 'en';
+  applyUITranslations();
+});
+
+/* ============================================================
+   8. HAMBURGER
+   ============================================================ */
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.getElementById('navLinks');
+hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
+navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+
+/* ============================================================
+   9. FLOATING CONTACT
+   ============================================================ */
+function toggleFloatDetails() {
+  document.getElementById('contactDetails').classList.toggle('open');
+}
+window.toggleFloatDetails = toggleFloatDetails;
+
+/* ============================================================
+   10. INIT
+   ============================================================ */
+applyUITranslations();
+updateContactField();
+</script>
+</body>
+</html>
