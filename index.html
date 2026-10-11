@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>India Private Guide – Authentic Private Journeys</title>
+<title>Journeys – India Private Guide</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -42,8 +42,8 @@ header { background: #1a2a3a; color: #fff; padding: 10px 0; position: sticky; to
 .btn-secondary { padding: 10px 14px; background: transparent; border: 1px solid #d5ccc3; border-radius: 2px; font-weight: 600; font-size: 0.76rem; letter-spacing: 0.05em; text-transform: uppercase; color: #2b4a5f; display: inline-flex; align-items: center; justify-content: center; gap: 6px; transition: 0.2s; }
 .btn-secondary:hover { border-color: #1a2a3a; color: #1a2a3a; }
 
-.hero { position: relative; min-height: 78vh; display: flex; align-items: center; justify-content: center; color: #fff; text-align: center; background: #1a2a3a; background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxsaW5lYXJHcmFkaWVudCBpZD0iZyIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3R5bGU9InN0b3AtY29sb3I6IzFhMmEzYTsgc3RvcC1vcGFjaXR5OjAuOTAiIC8+PHN0b3Agb2Zmc2V0PSIxMDAlIiBzdHlsZT0ic3RvcC1jb2xvcjojMDAwOyBzdG9wLW9wYWNpdHk6MC43MCIgLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjMWEyYTNhIiAvPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZykiIC8+PC9zdmc+'); background-size: cover; background-position: center; }
-.hero-overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.35); }
+.hero { position: relative; min-height: 78vh; display: flex; align-items: center; justify-content: center; color: #fff; text-align: center; background: #1a2a3a; background-image: url('images/hero1.jpeg'); background-size: cover; background-position: center; }
+.hero-overlay { position: absolute; inset: 0; background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.35)); }
 .hero-content { position: relative; z-index: 2; max-width: 900px; padding: 40px 20px; }
 .hero-content .eyebrow { font-size: 0.82rem; letter-spacing: 0.32em; font-weight: 500; color: #c39a4a; text-transform: uppercase; margin-bottom: 14px; }
 .hero-content h1 { font-size: 3.6rem; font-weight: 400; line-height: 1.15; margin-bottom: 12px; }
@@ -115,7 +115,19 @@ header { background: #1a2a3a; color: #fff; padding: 10px 0; position: sticky; to
 .reset-btn { background: transparent; border: 1px solid #d5ccc3; color: #2b4a5f; padding: 7px 16px; border-radius: 2px; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; }
 .reset-btn:hover { background: #f0ebe5; }
 
-.journey-hero { width: 100%; height: 380px; object-fit: cover; display: block; background: #e8e0d8; }
+/* ============ JOURNEY HERO SLIDESHOW ============ */
+.journey-hero-slides { position: relative; width: 100%; height: 440px; overflow: hidden; background: #1a2a3a; }
+.journey-hero-slide { position: absolute; inset: 0; opacity: 0; transition: opacity 1.1s ease, transform 8s ease-out; transform: scale(1.06); will-change: opacity, transform; }
+.journey-hero-slide.is-active { opacity: 1; transform: scale(1); }
+.journey-hero-slide img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.journey-hero-slide::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(26,42,58,0.20) 0%, rgba(26,42,58,0.05) 40%, rgba(26,42,58,0.78) 100%); pointer-events: none; }
+.journey-hero-dots { position: absolute; bottom: 22px; left: 50%; transform: translateX(-50%); display: flex; gap: 8px; z-index: 4; }
+.journey-hero-dot { width: 9px; height: 9px; border-radius: 50%; background: rgba(255,255,255,0.45); border: none; cursor: pointer; transition: background 0.25s, transform 0.25s; padding: 0; }
+.journey-hero-dot:hover { background: rgba(255,255,255,0.8); }
+.journey-hero-dot.is-active { background: #c39a4a; transform: scale(1.4); }
+.journey-hero-caption { position: absolute; bottom: 52px; left: 0; right: 0; text-align: center; color: #fff; font-family: 'Playfair Display', serif; font-size: 1.15rem; font-style: italic; text-shadow: 0 2px 14px rgba(0,0,0,0.7); z-index: 3; padding: 0 20px; pointer-events: none; opacity: 0; transition: opacity 0.6s; }
+.journey-hero-caption.is-visible { opacity: 1; }
+
 .journey-body { padding: 40px 0 60px; }
 .journey-title { font-size: 2.4rem; font-weight: 600; color: #1a2a3a; line-height: 1.2; margin-bottom: 10px; }
 .journey-meta { display: flex; flex-wrap: wrap; gap: 10px 20px; font-size: 0.88rem; color: #5a5a6e; padding-bottom: 20px; border-bottom: 1px solid #eeeae5; margin-bottom: 24px; }
@@ -162,6 +174,41 @@ header { background: #1a2a3a; color: #fff; padding: 10px 0; position: sticky; to
 .connected-coll-mini .mini-title { font-family: 'Playfair Display',serif; font-size: 0.98rem; font-weight: 600; color: #1a2a3a; margin-bottom: 4px; }
 .connected-coll-mini .mini-count { font-size: 0.72rem; color: #c39a4a; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; }
 
+/* ============ FLOATING MONUMENT GRID ============ */
+.monument-float-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 22px; padding: 10px 0 40px; }
+.monument-float-card { position: relative; border-radius: 6px; overflow: hidden; min-height: 240px; background: #1a2a3a; border: 1px solid #e2dcd5; display: block; animation: floatBob 6s ease-in-out infinite; transition: transform 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease; }
+.monument-float-card:nth-child(2n) { animation-delay: -1.5s; }
+.monument-float-card:nth-child(3n) { animation-delay: -3s; }
+.monument-float-card:nth-child(5n) { animation-delay: -4.5s; }
+.monument-float-card:hover { animation-play-state: paused; transform: translateY(-8px) scale(1.02); border-color: #c39a4a; box-shadow: 0 16px 44px rgba(0,0,0,0.16); }
+.monument-float-card img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
+.monument-float-card:hover img { transform: scale(1.08); }
+.monument-float-card .float-gradient { position: absolute; inset: 0; background: linear-gradient(0deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.05) 62%); z-index: 1; }
+.monument-float-card .float-info { position: relative; z-index: 2; height: 100%; min-height: 240px; padding: 18px 20px 20px; display: flex; flex-direction: column; justify-content: flex-end; color: #fff; }
+.monument-float-card .float-info h3 { font-family: 'Playfair Display', serif; font-size: 1.15rem; font-weight: 500; margin-bottom: 4px; line-height: 1.25; }
+.monument-float-card .float-info p { font-size: 0.72rem; opacity: 0.9; letter-spacing: 0.08em; text-transform: uppercase; color: #c39a4a; margin: 0; font-weight: 600; }
+
+@keyframes floatBob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-9px); } }
+@media (prefers-reduced-motion: reduce) {
+  .monument-float-card { animation: none; }
+  .journey-hero-slide { transform: none !important; }
+}
+@media (max-width: 900px) {
+  .journey-hero-slides { height: 320px; }
+  .journey-hero-caption { font-size: 0.95rem; bottom: 46px; }
+  .monument-float-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
+  .monument-float-card, .monument-float-card .float-info { min-height: 200px; }
+}
+@media (max-width: 600px) {
+  .journey-hero-slides { height: 250px; }
+  .journey-hero-caption { font-size: 0.85rem; bottom: 40px; }
+  .monument-float-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+  .monument-float-card, .monument-float-card .float-info { min-height: 155px; }
+  .monument-float-card .float-info { padding: 12px 12px 14px; }
+  .monument-float-card .float-info h3 { font-size: 0.92rem; }
+  .monument-float-card .float-info p { font-size: 0.62rem; }
+}
+
 .form-view { padding: 40px 0 60px; max-width: 780px; margin: 0 auto; }
 .form-view h2 { font-size: 2rem; font-weight: 500; color: #1a2a3a; margin-bottom: 10px; line-height: 1.2; }
 .form-view .subtitle { font-size: 0.98rem; color: #6a6a7e; line-height: 1.6; margin-bottom: 26px; }
@@ -186,6 +233,7 @@ header { background: #1a2a3a; color: #fff; padding: 10px 0; position: sticky; to
 .form-radio input:checked + label { border-color: #c39a4a; background: rgba(195,154,74,0.08); color: #1a2a3a; }
 .form-submit { width: 100%; padding: 15px 24px; background: #c39a4a; color: #1a2a3a; border: none; border-radius: 2px; font-weight: 700; font-size: 0.85rem; letter-spacing: 0.06em; text-transform: uppercase; margin-top: 8px; }
 .form-submit:hover { background: #a8853a; }
+.form-submit:disabled { opacity: 0.65; cursor: not-allowed; }
 .form-privacy { font-size: 0.75rem; color: #999; text-align: center; margin-top: 10px; line-height: 1.5; }
 .form-success { display: none; text-align: center; padding: 60px 0; }
 .form-success.show { display: block; }
@@ -225,7 +273,7 @@ footer p { font-size: 0.88rem; line-height: 1.7; }
 .empty-state h3 { font-family: 'Playfair Display',serif; color: #1a2a3a; font-size: 1.4rem; margin-bottom: 8px; font-weight: 500; }
 
 @media (max-width: 1024px) { .category-grid { grid-template-columns: repeat(2, 1fr); } }
-@media (max-width: 900px) { .hero-content h1 { font-size: 2.8rem; } .journey-hero { height: 280px; } }
+@media (max-width: 900px) { .hero-content h1 { font-size: 2.8rem; } }
 @media (max-width: 768px) {
   .header-inner { flex-direction: row; flex-wrap: wrap; justify-content: space-between; }
   .nav-links { display: none; flex-direction: column; width: 100%; gap: 12px; padding: 14px 0 8px; border-top: 1px solid rgba(255,255,255,0.08); }
@@ -242,7 +290,6 @@ footer p { font-size: 0.88rem; line-height: 1.7; }
   .category-grid { grid-template-columns: 1fr; gap: 16px; }
   .category-card { min-height: 260px; }
   .section-header h2 { font-size: 1.7rem; }
-  .journey-hero { height: 220px; }
   .journey-title { font-size: 1.5rem; }
   .journey-meta { font-size: 0.82rem; }
   .inc-exc { grid-template-columns: 1fr; gap: 16px; }
@@ -265,7 +312,7 @@ footer p { font-size: 0.88rem; line-height: 1.7; }
 <header>
   <div class="header-inner">
     <div class="logo">
-      <h1><a href="#/" style="color:inherit;">India<span class="gold">PrivateGuide</span></a></h1>
+      <h1><a href="#/journeys" style="color:inherit;">India<span class="gold">PrivateGuide</span></a></h1>
       <span class="sub">PRIVATE JOURNEYS</span>
     </div>
     <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
@@ -323,6 +370,9 @@ footer p { font-size: 0.88rem; line-height: 1.7; }
 </footer>
 
 <script>
+/* ============================================================
+   TRANSLATIONS
+   ============================================================ */
 const translations = {
   en: {
     nav_journeys: "Journeys", nav_collections: "Collections", nav_destinations: "Destinations",
@@ -353,6 +403,8 @@ const translations = {
     connected_collections: "Connected Collections",
     connected_collections_sub: "Collections that frequently appear together with this journey's themes.",
     back_to_journeys: "Back to All Journeys",
+    monuments_gallery: "Monuments Along This Journey",
+    monuments_gallery_sub: "A visual sequence of the sites visited.",
     filter_days: "Days", filter_destination: "Destination",
     filter_collection: "Collection", filter_all: "All", filter_reset: "Reset",
     tab_overview: "Overview", tab_itinerary: "Itinerary", tab_inclusions: "Inclusions",
@@ -424,6 +476,8 @@ const translations = {
     connected_collections: "Связанные коллекции",
     connected_collections_sub: "Коллекции, часто встречающиеся вместе с темами этого тура.",
     back_to_journeys: "Все туры",
+    monuments_gallery: "Памятники этого путешествия",
+    monuments_gallery_sub: "Визуальная последовательность посещаемых мест.",
     filter_days: "Дни", filter_destination: "Место",
     filter_collection: "Коллекция", filter_all: "Все", filter_reset: "Сбросить",
     tab_overview: "Обзор", tab_itinerary: "Маршрут", tab_inclusions: "Включено",
@@ -470,6 +524,240 @@ const translations = {
 let currentLang = 'en';
 function t(k) { return translations[currentLang]?.[k] || translations.en[k] || k; }
 
+/* ============================================================
+   MONUMENTS DATA
+   ============================================================ */
+const MONUMENTS = {
+  "delhi": [
+    { id: "red-fort", name: "Red Fort", nameRu: "Красный форт", image: "images/monuments/delhi_red_fort_01.jpeg" },
+    { id: "qutub-minar", name: "Qutub Minar", nameRu: "Кутуб-Минар", image: "images/monuments/delhi_qutub_minar_01.jpeg" },
+    { id: "humayuns-tomb", name: "Humayun's Tomb", nameRu: "Гробница Хумаюна", image: "images/monuments/delhi_humayuns_tomb_01.jpeg" },
+    { id: "jama-masjid", name: "Jama Masjid", nameRu: "Джама-Масджид", image: "images/monuments/delhi_jama_masjid_01.jpeg" },
+    { id: "lotus-temple", name: "Lotus Temple", nameRu: "Храм Лотоса", image: "images/monuments/delhi_lotus_temple_01.jpeg" },
+    { id: "bangla-sahib", name: "Gurudwara Bangla Sahib", nameRu: "Гурдвара Бангла Сахиб", image: "images/monuments/delhi_bangla_sahib_01.jpeg" }
+  ],
+  "agra": [
+    { id: "taj-mahal", name: "Taj Mahal", nameRu: "Тадж-Махал", image: "images/monuments/agra_taj_mahal_01.jpeg" },
+    { id: "agra-fort", name: "Agra Fort", nameRu: "Агра-Форт", image: "images/monuments/agra_agra_fort_01.jpeg" },
+    { id: "baby-taj", name: "Itmad-ud-Daulah (Baby Taj)", nameRu: "Малый Тадж", image: "images/monuments/agra_itmad_ud_daulah_01.jpeg" }
+  ],
+  "jaipur": [
+    { id: "amber-fort", name: "Amber Fort", nameRu: "Амбер-Форт", image: "images/monuments/jaipur_amber_fort_01.jpeg" },
+    { id: "hawa-mahal", name: "Hawa Mahal", nameRu: "Хава-Махал", image: "images/monuments/jaipur_hawa_mahal_01.jpeg" },
+    { id: "jal-mahal", name: "Jal Mahal", nameRu: "Джал-Махал", image: "images/monuments/jaipur_jal_mahal_01.jpeg" }
+  ],
+  "abhaneri": [
+    { id: "chand-baori", name: "Chand Baori Stepwell", nameRu: "Ступенчатый колодец Чанд-Баори", image: "images/monuments/abhaneri_chand_baori_01.jpeg" }
+  ],
+  "fatehpur-sikri": [
+    { id: "buland-darwaza", name: "Buland Darwaza", nameRu: "Буланд Дарваза", image: "images/monuments/fatehpur_sikri_buland_darwaza_01.jpeg" }
+  ],
+  "varanasi": [
+    { id: "ghats", name: "Varanasi Ghats", nameRu: "Гхаты Варанаси", image: "images/monuments/varanasi_manikarnika_ghat_01.jpeg" }
+  ],
+  "sarnath": [
+    { id: "dhamek-stupa", name: "Dhamek Stupa", nameRu: "Ступа Дхамек", image: "images/monuments/sarnath_dhamek_stupa_01.jpeg" }
+  ],
+  "bodh-gaya": [
+    { id: "mahabodhi", name: "Mahabodhi Temple", nameRu: "Храм Махабодхи", image: "images/monuments/bodhgaya_mahabodhi_01.jpeg" }
+  ],
+  "rajgir": [
+    { id: "griddhakuta", name: "Griddhakuta Hill", nameRu: "Холм Гриддхакута", image: "images/monuments/rajgir_griddhakuta_01.jpeg" }
+  ],
+  "nalanda": [
+    { id: "nalanda-ruins", name: "Nalanda Ruins", nameRu: "Руины Наланды", image: "images/monuments/nalanda_nalanda_ruins_01.jpeg" }
+  ],
+  "khajuraho": [
+    { id: "kandariya-mahadev", name: "Kandariya Mahadev Temple", nameRu: "Храм Кандария Махадев", image: "images/monuments/khajuraho_kandariya_mahadeva_01.jpeg" }
+  ],
+  "panna": [
+    { id: "panna-tiger", name: "Panna Tiger Reserve", nameRu: "Заповедник Панна", image: "images/monuments/panna_panna_tiger_01.jpeg" }
+  ],
+  "bharatpur": [
+    { id: "keoladeo", name: "Keoladeo National Park", nameRu: "Национальный парк Кеоладео", image: "images/monuments/bharatpur_keoladeo_01.jpeg" }
+  ],
+  "ranthambore": [
+    { id: "bengal-tiger", name: "Bengal Tiger Safari", nameRu: "Сафари на бенгальского тигра", image: "images/monuments/ranthambore_bengal_tiger_01.jpeg" }
+  ],
+  "jodhpur": [
+    { id: "mehrangarh", name: "Mehrangarh Fort", nameRu: "Форт Мехрангарх", image: "images/monuments/jodhpur_mehrangarh_01.jpeg" },
+    { id: "jaswant-thada", name: "Jaswant Thada", nameRu: "Джасвант Тада", image: "images/monuments/jodhpur_jaswant_thada_01.jpeg" }
+  ],
+  "jaisalmer": [
+    { id: "jaisalmer-fort", name: "Jaisalmer Fort", nameRu: "Форт Джайсалмер", image: "images/monuments/jaisalmer_fort_01.jpeg" },
+    { id: "thar-desert", name: "Sam Sand Dunes (Thar Desert)", nameRu: "Дюны Сам (пустыня Тар)", image: "images/monuments/jaisalmer_sam_sand_dunes_01.jpeg" }
+  ],
+  "udaipur": [
+    { id: "city-palace", name: "City Palace Udaipur", nameRu: "Городской дворец Удайпура", image: "images/monuments/udaipur_city_palace_01.jpeg" },
+    { id: "lake-pichola", name: "Lake Pichola", nameRu: "Озеро Пичола", image: "images/monuments/udaipur_city_palace_02.jpeg" }
+  ],
+  "kumbhalgarh": [
+    { id: "kumbhalgarh-fort", name: "Kumbhalgarh Fort", nameRu: "Форт Кумбхалгарх", image: "images/monuments/kumbhalgarh_kumbhalgarh_fort_01.jpeg" }
+  ],
+  "ranakpur": [
+    { id: "ranakpur-temple", name: "Ranakpur Jain Temple", nameRu: "Джайнский храм Ранакпур", image: "images/monuments/ranakpur_ranakpur_temple_01.jpeg" }
+  ],
+  "chittorgarh": [
+    { id: "chittorgarh-fort", name: "Chittorgarh Fort", nameRu: "Форт Читторгарх", image: "images/monuments/chittorgarh_chittorgarh_fort_01.jpeg" }
+  ],
+  "bikaner": [
+    { id: "junagarh-fort", name: "Junagarh Fort", nameRu: "Форт Джунагарх", image: "images/monuments/bikaner_junagarh_fort_01.jpeg" },
+    { id: "karni-mata", name: "Karni Mata Temple", nameRu: "Храм Карни Мата", image: "images/monuments/bikaner_karni_mata_01.jpeg" },
+    { id: "rampura-havelis", name: "Rampuria Havelis", nameRu: "Хавели Рампурия", image: "images/monuments/bikaner_rampura_havelis_01.jpeg" }
+  ],
+  "amritsar": [
+    { id: "golden-temple", name: "Golden Temple", nameRu: "Золотой храм", image: "images/monuments/amritsar_golden_temple_01.jpeg" }
+  ],
+  "shimla": [
+    { id: "christ-church", name: "Christ Church", nameRu: "Церковь Христа", image: "images/monuments/shimla_christ_church_01.jpeg" }
+  ],
+  "manali": [
+    { id: "hadimba", name: "Hadimba Temple", nameRu: "Храм Хадимба", image: "images/monuments/manali_hadimba_temple_01.jpeg" }
+  ],
+  "dharamshala": [
+    { id: "mcleod-ganj", name: "McLeod Ganj Monastery", nameRu: "Монастырь Мак-Леод Гандж", image: "images/monuments/dharamshala_mcleod_ganj_01.jpeg" }
+  ],
+  "darjeeling": [
+    { id: "ghoom-monastery", name: "Ghoom Monastery", nameRu: "Монастырь Гум", image: "images/monuments/darjeeling_ghoom_monastery_01.jpeg" }
+  ],
+  "gangtok": [
+    { id: "rumtek-monastery", name: "Rumtek Monastery", nameRu: "Монастырь Румтек", image: "images/monuments/gangtok_rumtek_monastery_01.jpeg" }
+  ],
+  "nashik": [
+    { id: "trimbakeshwar", name: "Trimbakeshwar Temple", nameRu: "Храм Тримбакешвар", image: "images/monuments/nashik_trimbakeshwar_01.jpeg" }
+  ],
+  "aurangabad": [
+    { id: "bibi-ka-maqbara", name: "Bibi Ka Maqbara", nameRu: "Биби Ка Макбара", image: "images/monuments/aurangabad_bibi_ka_maqbara_01.jpeg" }
+  ],
+  "ellora": [
+    { id: "kailash-temple", name: "Kailash Temple Ellora", nameRu: "Храм Кайлаш Эллора", image: "images/monuments/ellora_kailash_temple_01.jpeg" }
+  ],
+  "ajanta": [
+    { id: "ajanta-caves", name: "Ajanta Caves", nameRu: "Пещеры Аджанты", image: "images/monuments/ajanta_ajanta_caves_01.jpeg" }
+  ],
+  "mumbai": [
+    { id: "gateway-of-india", name: "Gateway of India", nameRu: "Ворота Индии", image: "images/monuments/mumbai_gateway_of_india_01.jpeg" }
+  ],
+  "pune": [
+    { id: "shaniwar-wada", name: "Shaniwar Wada", nameRu: "Шанивар Вада", image: "images/monuments/pune_shaniwar_wada_01.jpeg" }
+  ],
+  "daulatabad": [
+    { id: "daulatabad-fort", name: "Daulatabad Fort", nameRu: "Форт Даулатабад", image: "images/monuments/daulatabad_daulatabad_fort_01.jpeg" }
+  ],
+  "lonavala": [
+    { id: "karla-caves", name: "Karla Caves", nameRu: "Пещеры Карла", image: "images/monuments/lonavala_karla_caves_01.jpeg" }
+  ],
+  "raigad": [
+    { id: "raigad-fort", name: "Raigad Fort", nameRu: "Форт Райгад", image: "images/monuments/raigad_raigad_fort_01.jpeg" }
+  ],
+  "alibaug": [
+    { id: "murud-janjira", name: "Murud-Janjira Sea Fort", nameRu: "Морской форт Муруд-Джанджира", image: "images/monuments/alibaug_murud_janjira_01.jpeg" }
+  ],
+  "lonar": [
+    { id: "lonar-crater", name: "Lonar Meteorite Crater", nameRu: "Метеоритный кратер Лонар", image: "images/monuments/lonar_lonar_crater_01.jpeg" }
+  ],
+  "vrindavan": [
+    { id: "prem-mandir", name: "Prem Mandir", nameRu: "Прем Мандир", image: "images/monuments/vrindavan_prem_mandir_01.jpeg" }
+  ],
+  "bundi": [
+    { id: "taragarh-fort", name: "Taragarh Fort Bundi", nameRu: "Форт Тарагарх Бунди", image: "images/monuments/bundi_taragarh_fort_01.jpeg" }
+  ],
+  "orchha": [
+    { id: "orchha-palace", name: "Orchha Palace", nameRu: "Дворец Орчха", image: "images/monuments/orchha_orchha_palace_01.jpeg" }
+  ],
+  "gwalior": [
+    { id: "gwalior-fort", name: "Gwalior Fort", nameRu: "Форт Гвалиор", image: "images/monuments/gwalior_gwalior_fort_01.jpeg" }
+  ],
+  "morena": [
+    { id: "mitawali", name: "Mitawali Temple", nameRu: "Храм Митавали", image: "images/monuments/morena_mitawali_01.jpeg" }
+  ],
+  "patna": [
+    { id: "patna-sahib", name: "Takht Sri Patna Sahib", nameRu: "Патна Сахиб", image: "images/monuments/patna_patna_sahib_01.jpeg" }
+  ],
+  "gaya": [
+    { id: "vishnupad", name: "Vishnupad Temple", nameRu: "Храм Вишнупада", image: "images/monuments/gaya_vishnupad_temple_01.jpeg" }
+  ],
+  "sikandra": [
+    { id: "akbars-tomb", name: "Akbar's Tomb Sikandra", nameRu: "Гробница Акбара", image: "images/monuments/sikandra_akbars_tomb_01.jpeg" }
+  ],
+  "mehtab-bagh": [
+    { id: "mehtab-bagh", name: "Mehtab Bagh", nameRu: "Мехтаб-Багх", image: "images/monuments/mehtab_bagh_mehtab_bagh_01.jpeg" }
+  ]
+};
+
+/* ============================================================
+   MONUMENT HELPERS
+   ============================================================ */
+function monumentImage(m) { return m && m.image ? m.image : ''; }
+
+function getMonumentsForJourney(journey) {
+  const seen = new Set();
+  const list = [];
+  (journey.destinationIds || []).forEach(destId => {
+    (MONUMENTS[destId] || []).forEach(m => {
+      const key = destId + '/' + m.id;
+      if (!seen.has(key)) { seen.add(key); list.push({ ...m, destinationId: destId }); }
+    });
+  });
+  return list;
+}
+
+/* ---- PART A: hand-picked hero image per journey ---- */
+const JOURNEY_HEROES = {
+  "taj-mahal-agra-fort-day":           "images/monuments/agra_taj_mahal_01.jpeg",
+  "imperial-delhi-spiritual-heritage": "images/monuments/delhi_jama_masjid_01.jpeg",
+  "jaipur-royal-express":              "images/monuments/jaipur_hawa_mahal_01.jpeg",
+  "express-golden-triangle-2d":        "images/monuments/agra_taj_mahal_01.jpeg",
+  "khajuraho-panna-2d":                "images/monuments/khajuraho_kandariya_mahadeva_01.jpeg",
+  "golden-triangle-expedition-3d":     "images/monuments/delhi_humayuns_tomb_01.jpeg",
+  "express-golden-triangle-4d":        "images/monuments/jaipur_amber_fort_01.jpeg",
+  "khajuraho-varanasi-4d":             "images/monuments/varanasi_manikarnika_ghat_01.jpeg",
+  "sacred-india-express-5d":           "images/monuments/bodhgaya_mahabodhi_01.jpeg",
+  "classic-golden-triangle-5d":        "images/monuments/jaipur_amber_fort_01.jpeg",
+  "himalayan-triangle-5d":             "images/monuments/shimla_christ_church_01.jpeg",
+  "golden-triangle-wildlife-6d":       "images/monuments/bharatpur_keoladeo_01.jpeg",
+  "temples-ganges-buddha-trail-7d":    "images/monuments/khajuraho_kandariya_mahadeva_01.jpeg",
+  "taj-temples-rajputana-8d":          "images/monuments/agra_taj_mahal_01.jpeg",
+  "rajputana-citadel-quest-8d":        "images/monuments/jodhpur_mehrangarh_01.jpeg",
+  "himalayan-heritage-rail-8d":        "images/monuments/shimla_christ_church_01.jpeg",
+  "himalayan-panorama-9d":             "images/monuments/manali_hadimba_temple_01.jpeg",
+  "taj-tiger-forts-16d":               "images/monuments/jaisalmer_fort_01.jpeg",
+  "agra-fatehpur-sikri-2d":            "images/monuments/fatehpur_sikri_buland_darwaza_01.jpeg",
+  "jaipur-pink-city-abhaneri-2d":      "images/monuments/abhaneri_chand_baori_01.jpeg",
+  "deccan-citadel-caves-9d":           "images/monuments/ellora_kailash_temple_01.jpeg",
+  "sahyadri-empires-13d":              "images/monuments/mumbai_gateway_of_india_01.jpeg"
+};
+
+function getJourneyHeroImage(journey) {
+  if (journey.slug && JOURNEY_HEROES[journey.slug]) return JOURNEY_HEROES[journey.slug];
+  const list = getMonumentsForJourney(journey);
+  const withImg = list.find(m => m.image && m.image.trim() !== '');
+  return withImg ? withImg.image : '';
+}
+
+function getMonumentsForCollection(collectionId) {
+  const seen = new Set();
+  const list = [];
+  getJourneysByCollection(collectionId).forEach(j => {
+    getMonumentsForJourney(j).forEach(m => {
+      const key = m.destinationId + '/' + m.id;
+      if (!seen.has(key)) { seen.add(key); list.push(m); }
+    });
+  });
+  return list;
+}
+
+function getMonumentsForDestination(destId) { return MONUMENTS[destId] || []; }
+
+function getDestinationHeroImage(destId) {
+  const list = getMonumentsForDestination(destId);
+  const withImg = list.find(m => m.image && m.image.trim() !== '');
+  return withImg ? withImg.image : '';
+}
+
+/* ============================================================
+   COLLECTIONS
+   ============================================================ */
 const COLLECTIONS = [
   { id: "unesco-heritage", title: "UNESCO World Heritage Trail", titleRu: "Маршрут Всемирного наследия ЮНЕСКО", description: "Masterpieces of Mughal, Rajput, Chandela, Buddhist and Deccan civilization recognized globally.", descriptionRu: "Шедевры могольской, раджпутской и буддийской цивилизаций, признанные ЮНЕСКО.", image: "" },
   { id: "royal-fortresses", title: "Royal Fortresses & Citadels", titleRu: "Королевские крепости и цитадели", description: "Regal bastions, desert palaces, coastal sea forts, and historic dynastic seats.", descriptionRu: "Королевские бастионы, пустынные дворцы и морские форты.", image: "" },
@@ -539,31 +827,37 @@ const DESTINATIONS = [
   { id: "mehtab-bagh", title: "Mehtab Bagh", titleRu: "Мехтаб-Багх", description: "Moonlight garden facing the Taj Mahal." }
 ];
 
+/* ============================================================
+   JOURNEYS
+   ============================================================ */
 const JOURNEYS = [
-  { slug:"taj-mahal-agra-fort-day", tourCode:"IND-01", title:"Taj Mahal & Agra Fort Private Day Journey", titleRu:"Однодневный частный тур: Тадж-Махал и Агра-Форт", days:1, nights:0, type:"Heritage", destinationIds:["delhi","agra"], collectionIds:["express-escapes","unesco-heritage","royal-fortresses"], featured:true, image:"images/tours/tour-1.jpg", shortDescription:"Two UNESCO World Heritage monuments in one efficient private day trip from Delhi.", shortDescriptionRu:"Два объекта ЮНЕСКО за одну однодневную поездку из Дели.", overview:"Experience the timeless beauty of the Mughal Empire on an expertly guided private day tour from Delhi covering the Taj Mahal and Agra Fort.", overviewRu:"Ощутите вневременную красоту империи Великих Моголов в частном туре из Дели.", highlights:["Taj Mahal","Agra Fort","Mughal Architecture","Sunrise at Taj"], highlightsRu:["Тадж-Махал","Агра-Форт","Могольская архитектура","Рассвет у Таджа"], itinerary:["Day 1: Delhi – Agra (approx. 3.5 hrs). Visit the Taj Mahal at sunrise, then Agra Fort. Return to Delhi in the evening."], itineraryRu:["День 1: Дели – Агра. Тадж-Махал на рассвете, Агра-Форт. Возвращение в Дели."], included:["Private AC vehicle","English-speaking guide","Entry fees","Bottled water"], includedRu:["Автомобиль с кондиционером","Гид","Входные билеты","Вода"], notIncluded:["Meals","Tips","Insurance"], notIncludedRu:["Питание","Чаевые","Страховка"], notes:"Departure at 5:00 AM for sunrise at the Taj.", notesRu:"Выезд в 5:00 утра.", pace:"Fast but Comfortable" },
-  { slug:"imperial-delhi-spiritual-heritage", tourCode:"IND-02", title:"Imperial Delhi & Spiritual Heritage: Private Full-Day Tour", titleRu:"Имперский Дели и духовное наследие", days:1, nights:0, type:"Cultural", destinationIds:["delhi"], collectionIds:["express-escapes","unesco-heritage","spiritual-multifaith"], featured:false, image:"images/tours/tour-2.jpg", shortDescription:"Old Delhi alleys, colonial New Delhi, and spiritual landmarks across Islam, Sikhism, and Hinduism.", shortDescriptionRu:"Старый и новый Дели, духовные достопримечательности.", overview:"A comprehensive day tour covering Old Delhi's alleys, colonial New Delhi, and spiritual landmarks across multiple faiths.", overviewRu:"Полнодневный тур по старому и новому Дели.", highlights:["Jama Masjid","Red Fort","Humayun's Tomb","Qutub Minar","Gurudwara Bangla Sahib","Akshardham"], highlightsRu:["Джама-Масджид","Красный форт","Гробница Хумаюна","Кутуб-Минар","Гурдвара Бангла Сахиб","Акшардхам"], itinerary:["Day 1: Old Delhi rickshaw through Chandni Chowk. Jama Masjid, Red Fort. Afternoon: Humayun's Tomb, Qutub Minar, Bangla Sahib, Akshardham."], itineraryRu:["День 1: Поездка на рикше. Джама-Масджид, Красный форт. Днём: гробница Хумаюна, Кутуб-Минар."], included:["Private AC vehicle","Guide","Entry fees","Rickshaw ride"], includedRu:["Автомобиль","Гид","Входные билеты","Поездка на рикше"], notIncluded:["Meals","Tips"], notIncludedRu:["Питание","Чаевые"], notes:"Akshardham closed on Mondays.", notesRu:"Акшардхам закрыт по понедельникам.", pace:"Fast but Comfortable" },
-  { slug:"jaipur-royal-express", tourCode:"IND-03", title:"1-Day Jaipur Royal Express: Private Tour from Delhi", titleRu:"Однодневный королевский экспресс в Джайпур", days:1, nights:0, type:"Heritage", destinationIds:["delhi","jaipur"], collectionIds:["express-escapes","unesco-heritage","royal-fortresses"], featured:false, image:"images/tours/tour-3.jpg", shortDescription:"UNESCO Amber Fort and Jaipur's walled city in one efficient day trip.", shortDescriptionRu:"Амбер-Форт и стены Джайпура за один день.", overview:"A highly efficient day trip to Rajasthan's Pink City, covering Amber Fort, City Palace, and Hawa Mahal.", overviewRu:"Эффективный однодневный тур в Розовый город.", highlights:["Amber Fort","City Palace","Hawa Mahal","Jal Mahal"], highlightsRu:["Амбер-Форт","Городской дворец","Хава-Махал","Джал-Махал"], itinerary:["Day 1: Delhi – Jaipur. Amber Fort, City Palace, Hawa Mahal, Jal Mahal. Return to Delhi."], itineraryRu:["День 1: Дели – Джайпур. Амбер-Форт, Городской дворец, Хава-Махал."], included:["Private AC vehicle","Guide","Entry fees"], includedRu:["Автомобиль","Гид","Входные билеты"], notIncluded:["Meals","Tips"], notIncludedRu:["Питание","Чаевые"], notes:"Long day – 5:30 AM departure recommended.", notesRu:"Долгий день – выезд в 5:30.", pace:"Fast / Active" },
-  { slug:"express-golden-triangle-2d", tourCode:"IND-04", title:"2-Day Express Golden Triangle: Agra & Jaipur Heritage", titleRu:"2-дневный экспресс-тур: Агра и Джайпур", days:2, nights:1, type:"Heritage", destinationIds:["delhi","agra","jaipur"], collectionIds:["express-escapes","unesco-heritage","royal-fortresses"], featured:false, image:"images/tours/tour-4.jpg", shortDescription:"Multiple UNESCO sites across Agra and Jaipur in one whirlwind private tour.", shortDescriptionRu:"Несколько объектов ЮНЕСКО в одном туре.", overview:"A whirlwind 2-day private tour covering the Taj Mahal, Agra Fort, Amber Fort, and City Palace.", overviewRu:"Насыщенный 2-дневный тур: Тадж-Махал, Агра-Форт, Амбер-Форт, Городской дворец.", highlights:["Taj Mahal","Agra Fort","Amber Fort","City Palace"], highlightsRu:["Тадж-Махал","Агра-Форт","Амбер-Форт","Городской дворец"], itinerary:["Day 1: Delhi – Agra. Taj Mahal, Agra Fort.","Day 2: Agra – Jaipur – Delhi. Amber Fort, City Palace."], itineraryRu:["День 1: Дели – Агра.","День 2: Агра – Джайпур – Дели."], included:["Private AC vehicle","Guide","Entry fees","Hotel (1 night)"], includedRu:["Автомобиль","Гид","Входные билеты","Отель (1 ночь)"], notIncluded:["Meals","Tips"], notIncludedRu:["Питание","Чаевые"], notes:"Overnight hotel in Agra included.", notesRu:"Отель в Агре включён.", pace:"Fast" },
-  { slug:"khajuraho-panna-2d", tourCode:"IND-05", title:"2-Day Khajuraho & Panna: UNESCO Temples & Tigers Express", titleRu:"2-дневный экспресс: Кхаджурахо и Панна", days:2, nights:1, type:"Wildlife", destinationIds:["khajuraho","panna"], collectionIds:["express-escapes","unesco-heritage","wildlife-eco-safaris"], featured:true, image:"images/tours/tour-5.jpg", shortDescription:"UNESCO Khajuraho temples plus tiger safari in Panna Tiger Reserve.", shortDescriptionRu:"Храмы Кхаджурахо и тигры Панны.", overview:"A thrilling 2-day escape combining Khajuraho's sculpted temples with a tiger safari in Panna Reserve.", overviewRu:"Двухдневное приключение: храмы Кхаджурахо и сафари в Панне.", highlights:["Khajuraho Western/Eastern Temples","Panna Tiger Safari","Raneh Falls"], highlightsRu:["Храмы Кхаджурахо","Сафари в Панне","Водопады Ранех"], itinerary:["Day 1: Fly to Khajuraho. Explore temple groups.","Day 2: Panna Tiger Reserve morning safari, Raneh Falls. Return."], itineraryRu:["День 1: Перелёт в Кхаджурахо. Храмы.","День 2: Сафари в Панне, водопады Ранех."], included:["Private AC vehicle","Guide","Entry fees","Jeep safari"], includedRu:["Автомобиль","Гид","Входные билеты","Сафари"], notIncluded:["Flights","Meals"], notIncludedRu:["Авиабилеты","Питание"], notes:"Flights not included but can be arranged.", notesRu:"Авиабилеты могут быть организованы.", pace:"Fast" },
-  { slug:"golden-triangle-expedition-3d", tourCode:"IND-06", title:"3-Day Golden Triangle Expedition: Delhi, Agra & Jaipur", titleRu:"3-дневная экспедиция по Золотому треугольнику", days:3, nights:2, type:"Heritage", destinationIds:["delhi","agra","jaipur"], collectionIds:["express-escapes","unesco-heritage","royal-fortresses"], featured:false, image:"images/tours/tour-6.jpg", shortDescription:"Comprehensive Golden Triangle tour through North India's iconic cities.", shortDescriptionRu:"Комплексный тур по Золотому треугольнику.", overview:"A comprehensive 3-day private tour through North India's iconic Golden Triangle, including UNESCO sites.", overviewRu:"Полноценный 3-дневный тур по Золотому треугольнику.", highlights:["Humayun's Tomb","Akshardham","Taj Mahal","Agra Fort","Amber Fort"], highlightsRu:["Гробница Хумаюна","Акшардхам","Тадж-Махал","Агра-Форт","Амбер-Форт"], itinerary:["Day 1: Delhi sightseeing.","Day 2: Delhi – Agra. Taj Mahal, Agra Fort.","Day 3: Agra – Jaipur – Delhi."], itineraryRu:["День 1: Дели.","День 2: Дели – Агра.","День 3: Агра – Джайпур – Дели."], included:["Private AC vehicle","Guide","Entry fees","Hotel (2 nights)"], includedRu:["Автомобиль","Гид","Входные билеты","Отель (2 ночи)"], notIncluded:["Meals","Tips"], notIncludedRu:["Питание","Чаевые"], notes:"Akshardham closed Mondays.", notesRu:"Акшардхам закрыт по понедельникам.", pace:"Fast / Active" },
-  { slug:"express-golden-triangle-4d", tourCode:"IND-07", title:"4-Day Express Golden Triangle: Delhi, Jaipur & Agra", titleRu:"4-дневный экспресс-тур: Дели, Джайпур, Агра", days:4, nights:3, type:"Heritage", destinationIds:["delhi","jaipur","agra"], collectionIds:["express-escapes","unesco-heritage","royal-fortresses"], featured:true, image:"images/tours/tour-7.jpg", shortDescription:"UNESCO highlights across Delhi, Jaipur and Agra in a balanced 4-day format.", shortDescriptionRu:"ЮНЕСКО в Дели, Джайпуре и Агре за 4 дня.", overview:"An efficient 4-day tour covering Delhi's contrasts, Jaipur's royal forts, and Agra's Mughal marvels.", overviewRu:"Эффективный 4-дневный тур: контрасты Дели, форты Джайпура и чудеса Агры.", highlights:["Old Delhi Rickshaw","Amber Fort","City Palace","Taj Mahal","Agra Fort"], highlightsRu:["Старый Дели","Амбер-Форт","Городской дворец","Тадж-Махал","Агра-Форт"], itinerary:["Day 1: Delhi sightseeing.","Day 2: Delhi – Jaipur.","Day 3: Jaipur – Agra.","Day 4: Agra – Delhi."], itineraryRu:["День 1: Дели.","День 2: Дели – Джайпур.","День 3: Джайпур – Агра.","День 4: Агра – Дели."], included:["Private AC vehicle","Guide","Entry fees","Hotel (3 nights)"], includedRu:["Автомобиль","Гид","Входные билеты","Отель (3 ночи)"], notIncluded:["Meals","Tips"], notIncludedRu:["Питание","Чаевые"], notes:"Sunrise Taj on Day 4.", notesRu:"Тадж-Махал на рассвете в день 4.", pace:"Fast / Active" },
-  { slug:"khajuraho-varanasi-4d", tourCode:"IND-08", title:"4-Day Khajuraho & Varanasi: Temples, Tigers & Sacred Ganges", titleRu:"4-дневный тур: Кхаджурахо и Варанаси", days:4, nights:3, type:"Spiritual", destinationIds:["delhi","khajuraho","panna","varanasi","sarnath"], collectionIds:["spiritual-multifaith","unesco-heritage","wildlife-eco-safaris"], featured:true, image:"images/tours/tour-8.jpg", shortDescription:"UNESCO Khajuraho temples, Panna tiger safari, Ganges Aarti, and Sarnath.", shortDescriptionRu:"Храмы Кхаджурахо, сафари в Панне, Ганга Аарти и Сарнатх.", overview:"A diverse 4-day journey from temple art to tiger tracking, volcanic canyons, and Ganges rituals.", overviewRu:"Разнообразный 4-дневный маршрут: храмы, сафари и ритуалы на Ганге.", highlights:["Khajuraho Temples","Panna Tiger Safari","Raneh Falls Canyon","Ganga Aarti","Sarnath"], highlightsRu:["Храмы Кхаджурахо","Сафари в Панне","Каньон Ранех","Ганга Аарти","Сарнатх"], itinerary:["Day 1: Delhi – Khajuraho. Temples.","Day 2: Panna tiger safari, Raneh Falls.","Day 3: Khajuraho – Varanasi. Evening Ganga Aarti.","Day 4: Varanasi sunrise boat ride – Sarnath – Delhi."], itineraryRu:["День 1: Дели – Кхаджурахо.","День 2: Сафари Панна.","День 3: Кхаджурахо – Варанаси.","День 4: Варанаси – Сарнатх – Дели."], included:["Private AC vehicle","Guide","Entry fees","Jeep safari"], includedRu:["Автомобиль","Гид","Входные билеты","Сафари"], notIncluded:["Flights","Meals"], notIncludedRu:["Авиабилеты","Питание"], notes:"Flights between Khajuraho and Varanasi not included.", notesRu:"Авиабилеты не включены.", pace:"Moderate / Active" },
-  { slug:"sacred-india-express-5d", tourCode:"IND-09", title:"5-Day Sacred India Express: Ganges, Buddha & Ancient Empires", titleRu:"5-дневный экспресс-тур по священной Индии", days:5, nights:4, type:"Spiritual", destinationIds:["delhi","varanasi","sarnath","bodh-gaya","gaya","rajgir","nalanda","patna"], collectionIds:["spiritual-multifaith","unesco-heritage"], featured:false, image:"images/tours/tour-9.jpg", shortDescription:"Hindu, Buddhist and Sikh spiritual heartlands with two UNESCO sites.", shortDescriptionRu:"Духовные центры индуизма, буддизма и сикхизма.", overview:"A deeply immersive private journey through the spiritual heartlands of Hinduism, Buddhism, and Sikhism, featuring two UNESCO sites.", overviewRu:"Глубокое погружение в духовные центры индуизма и буддизма.", highlights:["Kashi Vishwanath","Ganga Aarti","Mahabodhi Temple","Vishnupad Temple","Griddhakuta Hill","Nalanda Ruins","Barabar Caves","Patna Sahib"], highlightsRu:["Каши Вишванатх","Ганга Аарти","Храм Махабодхи","Наланда","Патна Сахиб"], itinerary:["Day 1: Delhi – Varanasi. Evening Ganga Aarti.","Day 2: Varanasi – Sarnath – Bodh Gaya.","Day 3: Bodh Gaya – Rajgir – Nalanda.","Day 4: Nalanda – Patna.","Day 5: Patna – Delhi."], itineraryRu:["День 1: Дели – Варанаси.","День 2: Варанаси – Бодх-Гая.","День 3: Бодх-Гая – Наланда.","День 4: Наланда – Патна.","День 5: Патна – Дели."], included:["Private AC vehicle","Guide","Entry fees","Bottled water"], includedRu:["Автомобиль","Гид","Входные билеты","Вода"], notIncluded:["Flights","Meals"], notIncludedRu:["Авиабилеты","Питание"], notes:"Early morning departure recommended.", notesRu:"Рекомендуется ранний выезд.", pace:"Fast / Active" },
-  { slug:"classic-golden-triangle-5d", tourCode:"IND-10", title:"5-Day Classic Golden Triangle: Royal Rajput & Mughal Journey", titleRu:"5-дневный классический Золотой треугольник", days:5, nights:4, type:"Heritage", destinationIds:["delhi","jaipur","abhaneri","agra"], collectionIds:["royal-fortresses","unesco-heritage","express-escapes"], featured:false, image:"images/tours/tour-10.jpg", shortDescription:"Five UNESCO landmarks including Chand Baori stepwell and Nahargarh Fort.", shortDescriptionRu:"Пять объектов ЮНЕСКО, включая Чанд-Баори и Нахаргарх.", overview:"A balanced 5-day itinerary with extra time in Jaipur, plus a visit to the ancient Chand Baori stepwell.", overviewRu:"Сбалансированный 5-дневный маршрут с Чанд-Баори.", highlights:["Humayun's Tomb","Amber Fort","Nahargarh Fort","Jaigarh Fort","Chand Baori","Taj Mahal","Agra Fort","Baby Taj"], highlightsRu:["Гробница Хумаюна","Амбер-Форт","Нахаргарх","Чанд-Баори","Тадж-Махал"], itinerary:["Day 1: Delhi.","Day 2: Delhi – Jaipur.","Day 3: Jaipur forts, Chand Baori.","Day 4: Jaipur – Agra.","Day 5: Agra – Delhi."], itineraryRu:["День 1: Дели.","День 2: Дели – Джайпур.","День 3: Форт Джайпура, Чанд-Баори.","День 4: Джайпур – Агра.","День 5: Агра – Дели."], included:["Private AC vehicle","Guide","Entry fees","Hotel (4 nights)"], includedRu:["Автомобиль","Гид","Входные билеты","Отель (4 ночи)"], notIncluded:["Meals","Tips"], notIncludedRu:["Питание","Чаевые"], notes:"Chand Baori is 1.5 hrs from Jaipur.", notesRu:"Чанд-Баори в 1,5 часах от Джайпура.", pace:"Moderate / Balanced" },
-  { slug:"himalayan-triangle-5d", tourCode:"IND-11", title:"5-Day Himalayan Triangle: Darjeeling, Kalimpong & Gangtok", titleRu:"5-дневный Гималайский треугольник", days:5, nights:4, type:"Nature", destinationIds:["delhi","bagdogra","darjeeling","kalimpong","gangtok"], collectionIds:["himalayan-escapes","wildlife-eco-safaris"], featured:false, image:"images/tours/tour-11.jpg", shortDescription:"Eastern Himalayas: tea estates, Buddhist monasteries, and Kanchenjunga vistas.", shortDescriptionRu:"Восточные Гималаи: чай, монастыри и Канченджанга.", overview:"Escape to the serene foothills of the Eastern Himalayas featuring tea estates, Buddhist monasteries, and mountain vistas.", overviewRu:"Убежище в предгорьях Восточных Гималаев.", highlights:["Tiger Hill Sunrise","Kanchenjunga Views","Tea Gardens","Ghoom Monastery","Rumtek Monastery"], highlightsRu:["Тигровый холм","Канченджанга","Чайные плантации","Монастырь Гум","Румтек"], itinerary:["Day 1: Delhi – Bagdogra – Darjeeling.","Day 2: Tiger Hill, tea gardens.","Day 3: Darjeeling – Kalimpong.","Day 4: Kalimpong – Gangtok.","Day 5: Gangtok – Bagdogra – Delhi."], itineraryRu:["День 1: Дели – Багдогра – Дарджилинг.","День 2: Тигровый холм.","День 3: Калимпонг.","День 4: Гангток.","День 5: Дели."], included:["Private AC vehicle","Guide","Entry fees","Hotel (4 nights)"], includedRu:["Автомобиль","Гид","Входные билеты","Отель (4 ночи)"], notIncluded:["Flights","Meals"], notIncludedRu:["Авиабилеты","Питание"], notes:"Mountain weather can be unpredictable.", notesRu:"Горная погода непредсказуема.", pace:"Relaxed / Immersive" },
-  { slug:"golden-triangle-wildlife-6d", tourCode:"IND-12", title:"6-Day Golden Triangle & Wildlife Escape: Heritage to Bharatpur", titleRu:"6-дневный Золотой треугольник и дикая природа", days:6, nights:5, type:"Nature", destinationIds:["delhi","jaipur","abhaneri","bharatpur","agra"], collectionIds:["wildlife-eco-safaris","unesco-heritage","royal-fortresses"], featured:true, image:"images/tours/tour-12.jpg", shortDescription:"Keoladeo UNESCO bird sanctuary + Amber Fort, Agra Fort, and Taj Mahal.", shortDescriptionRu:"Птичий заповедник Кеоладео + форты и Тадж-Махал.", overview:"Classic Golden Triangle plus a peaceful rickshaw safari in Keoladeo National Park (UNESCO).", overviewRu:"Золотой треугольник + сафари в Кеоладео.", highlights:["Chand Baori Stepwell","Keoladeo Safari","Taj Mahal","Agra Fort","Amber Fort"], highlightsRu:["Чанд-Баори","Сафари Кеоладео","Тадж-Махал","Агра-Форт","Амбер-Форт"], itinerary:["Day 1: Delhi.","Day 2: Jaipur.","Day 3: Abhaneri – Bharatpur.","Day 4: Keoladeo safari.","Day 5: Bharatpur – Agra.","Day 6: Agra – Delhi."], itineraryRu:["День 1: Дели.","День 2: Джайпур.","День 3: Абханери – Бхаратпур.","День 4: Сафари.","День 5: Бхаратпур – Агра.","День 6: Агра – Дели."], included:["Private AC vehicle","Guide","Entry fees","Rickshaw safari","Hotel (5 nights)"], includedRu:["Автомобиль","Гид","Входные билеты","Сафари","Отель (5 ночей)"], notIncluded:["Meals","Tips"], notIncludedRu:["Питание","Чаевые"], notes:"Keoladeo is a UNESCO World Heritage site.", notesRu:"Кеоладео — объект ЮНЕСКО.", pace:"Moderate / Balanced" },
-  { slug:"temples-ganges-buddha-trail-7d", tourCode:"IND-13", title:"7-Day Temples, Ganges & Buddha Trail: Delhi to Patna", titleRu:"7-дневный маршрут: храмы, Ганг и тропа Будды", days:7, nights:6, type:"Spiritual", destinationIds:["delhi","khajuraho","panna","varanasi","bodh-gaya","rajgir","nalanda","patna"], collectionIds:["spiritual-multifaith","unesco-heritage"], featured:false, image:"images/tours/tour-13.jpg", shortDescription:"UNESCO Khajuraho, Mahabodhi Temple, and Nalanda University across North India.", shortDescriptionRu:"Храмы Кхаджурахо, Махабодхи и Наланда.", overview:"Ideal for active travelers — ancient temples, sacred Ganges, and Buddhist heritage.", overviewRu:"Древние храмы, священный Ганг и буддийское наследие.", highlights:["Khajuraho Temples","Panna Safari","Varanasi Ganga Aarti","Mahabodhi Temple","Nalanda Ruins","Patna Sahib"], highlightsRu:["Кхаджурахо","Панна","Ганга Аарти","Махабодхи","Наланда"], itinerary:["Day 1: Delhi – Khajuraho.","Day 2: Panna Tiger Reserve.","Day 3: Varanasi.","Day 4: Varanasi – Bodh Gaya.","Day 5: Bodh Gaya – Rajgir – Nalanda.","Day 6: Nalanda – Patna.","Day 7: Patna – Delhi."], itineraryRu:["День 1: Дели – Кхаджурахо.","День 2: Панна.","День 3: Варанаси.","День 4: Бодх-Гая.","День 5: Наланда.","День 6: Патна.","День 7: Дели."], included:["Private AC vehicle","Guide","Entry fees","Jeep safari"], includedRu:["Автомобиль","Гид","Входные билеты","Сафари"], notIncluded:["Flights","Meals"], notIncludedRu:["Авиабилеты","Питание"], notes:"Panna safari depends on park schedule.", notesRu:"Сафари в Панне зависит от графика парка.", pace:"Moderate" },
-  { slug:"taj-temples-rajputana-8d", tourCode:"IND-14", title:"8-Day Taj, Temples & Rajputana: The Ultimate Heritage Trail", titleRu:"8-дневный маршрут: Тадж, храмы и Раджпутана", days:8, nights:7, type:"Heritage", destinationIds:["delhi","agra","khajuraho","orchha","jaipur"], collectionIds:["royal-fortresses","unesco-heritage"], featured:false, image:"images/tours/tour-14.jpg", shortDescription:"Multi-state cultural corridor connecting Agra, Khajuraho and Jaipur UNESCO monuments.", shortDescriptionRu:"Культурный коридор между Агрой, Кхаджурахо и Джайпуром.", overview:"A deep heritage trail spanning Mughal, Rajput, and Central Indian temple architecture, including hidden Tantric shrines.", overviewRu:"Глубокий исторический маршрут по архитектуре Моголов и Раджпутов.", highlights:["Taj Mahal","Amber Fort","Chand Baori","Mitawali Temple","Khajuraho","Orchha"], highlightsRu:["Тадж-Махал","Амбер-Форт","Чанд-Баори","Митавали","Кхаджурахо","Орчха"], itinerary:["Day 1-2: Delhi – Jaipur.","Day 3-4: Jaipur – Agra.","Day 5-6: Agra – Orchha.","Day 7-8: Orchha – Khajuraho – Delhi."], itineraryRu:["День 1-2: Дели – Джайпур.","День 3-4: Джайпур – Агра.","День 5-6: Агра – Орчха.","День 7-8: Орчха – Кхаджурахо – Дели."], included:["Private AC vehicle","Guide","Entry fees","Hotel (7 nights)"], includedRu:["Автомобиль","Гид","Входные билеты","Отель (7 ночей)"], notIncluded:["Meals","Tips"], notIncludedRu:["Питание","Чаевые"], notes:"Mitawali is a Tantric site near Morena.", notesRu:"Митавали — тантрическое место близ Морены.", pace:"Moderate / Active" },
-  { slug:"rajputana-citadel-quest-8d", tourCode:"IND-15", title:"8-Day Rajputana Citadel Quest: Delhi to Udaipur", titleRu:"8-дневный поход по цитаделям Раджпутаны", days:8, nights:7, type:"Heritage", destinationIds:["delhi","jaipur","jodhpur","ranakpur","kumbhalgarh","chittorgarh","udaipur"], collectionIds:["royal-fortresses","unesco-heritage"], featured:true, image:"images/tours/tour-15.jpg", shortDescription:"Multiple UNESCO Hill Forts of Rajasthan: Amber, Kumbhalgarh, Chittorgarh.", shortDescriptionRu:"Форты Раджастана ЮНЕСКО: Амбер, Кумбхалгарх, Читторгарх.", overview:"An immersive quest through Rajasthan's legendary hill forts, blue cities, and romantic lakes.", overviewRu:"Погружение в форты, города и озёра Раджастана.", highlights:["Amber Fort","Kumbhalgarh Fort","Chittorgarh Fort","Mehrangarh Fort","Ranakpur Jain Temples","Udaipur Lake Pichola"], highlightsRu:["Амбер-Форт","Кумбхалгарх","Читторгарх","Мехрангарх","Ранакпур","Удайпур"], itinerary:["Day 1-2: Delhi – Jaipur.","Day 3: Jaipur – Jodhpur.","Day 4: Jodhpur – Ranakpur – Kumbhalgarh.","Day 5-6: Kumbhalgarh – Udaipur.","Day 7-8: Udaipur – Chittorgarh – Delhi."], itineraryRu:["День 1-2: Дели – Джайпур.","День 3: Джодхпур.","День 4: Ранакпур – Кумбхалгарх.","День 5-6: Удайпур.","День 7-8: Читторгарх."], included:["Private AC vehicle","Guide","Entry fees","Boat ride","Hotel (7 nights)"], includedRu:["Автомобиль","Гид","Входные билеты","Лодка","Отель (7 ночей)"], notIncluded:["Flights","Meals"], notIncludedRu:["Авиабилеты","Питание"], notes:"Udaipur to Delhi flight not included.", notesRu:"Перелёт Удайпур–Дели не включён.", pace:"Relaxed" },
-  { slug:"himalayan-heritage-rail-8d", tourCode:"IND-16", title:"8-Day Himalayan Heritage Rail & Skyward Retreat", titleRu:"8-дневный Гималайский ретро-поезд", days:8, nights:7, type:"Heritage", destinationIds:["kalka","shimla","mandi","naggar","manali","bir","dharamshala"], collectionIds:["himalayan-escapes","unesco-heritage","spiritual-multifaith"], featured:true, image:"images/tours/tour-16.jpg", shortDescription:"UNESCO Kalka-Shimla Toy Train + Tibetan Buddhist culture in McLeod Ganj.", shortDescriptionRu:"Игрушечный поезд ЮНЕСКО и тибетская культура.", overview:"A spectacular journey through the Western Himalayas featuring a UNESCO narrow-gauge railway, mountain fortresses, and the spiritual home of the Dalai Lama.", overviewRu:"Путешествие по Западным Гималаям: узкоколейка, крепости, Далай-лама.", highlights:["Kalka-Shimla Toy Train (UNESCO)","Vice Regal Lodge","Roerich Estate","Naggar Castle","Hadimba Temple","Bir Paragliding","McLeod Ganj"], highlightsRu:["Поезд Калка-Шимла","Резиденция вице-короля","Рерих","Наггар","Хадимба","Бир","Мак-Леод Гандж"], itinerary:["Day 1: Delhi – Kalka.","Day 2: Toy Train to Shimla.","Day 3: Shimla.","Day 4: Shimla – Manali.","Day 5: Manali.","Day 6: Manali – Bir.","Day 7: Bir – Dharamshala.","Day 8: Dharamshala – Delhi."], itineraryRu:["День 1: Дели – Калка.","День 2: Шимла на поезде.","День 3: Шимла.","День 4: Манали.","День 5: Манали.","День 6: Бир.","День 7: Дхарамшала.","День 8: Дели."], included:["Private AC vehicle","Guide","Toy Train tickets","Entry fees","Hotel (7 nights)"], includedRu:["Автомобиль","Гид","Билеты на поезд","Входные билеты","Отель (7 ночей)"], notIncluded:["Flights","Meals","Paragliding"], notIncludedRu:["Авиабилеты","Питание","Парапланеризм"], notes:"Toy Train is UNESCO. Book ahead.", notesRu:"Поезд ЮНЕСКО. Бронировать заранее.", pace:"Relaxed / Immersive" },
-  { slug:"himalayan-panorama-9d", tourCode:"IND-17", title:"9-Day Himalayan Panorama & Golden Temple Traverse", titleRu:"9-дневный Гималайский панорамный тур и Золотой храм", days:9, nights:8, type:"Spiritual", destinationIds:["shimla","naggar","manali","bir","dharamshala","amritsar"], collectionIds:["himalayan-escapes","spiritual-multifaith"], featured:false, image:"images/tours/tour-17.jpg", shortDescription:"Sikhism's holiest shrine, Tibetan monasteries, and Himalayan towns.", shortDescriptionRu:"Золотой храм, тибетские монастыри и Гималаи.", overview:"A deeply immersive journey through colonial mountain capitals, Tibetan spiritual enclaves, and the majestic Sikh heritage of Punjab.", overviewRu:"Горные столицы, тибетские анклавы и сикхское наследие.", highlights:["Golden Temple","Wagah Border Ceremony","McLeod Ganj","Naggar Castle","Manali Temples"], highlightsRu:["Золотой храм","Вагах","Мак-Леод Гандж","Наггар","Храмы Манали"], itinerary:["Day 1: Delhi – Shimla.","Day 2: Shimla – Manali.","Day 3-4: Manali.","Day 5: Bir – Dharamshala.","Day 6: McLeod Ganj.","Day 7: Amritsar.","Day 8: Wagah Border.","Day 9: Amritsar – Delhi."], itineraryRu:["День 1: Дели – Шимла.","День 2: Шимла – Манали.","День 3-4: Манали.","День 5: Дхарамшала.","День 6: Мак-Леод Гандж.","День 7: Амритсар.","День 8: Вагах.","День 9: Дели."], included:["Private AC vehicle","Guide","Entry fees","Hotel (8 nights)"], includedRu:["Автомобиль","Гид","Входные билеты","Отель (8 ночей)"], notIncluded:["Flights","Meals"], notIncludedRu:["Авиабилеты","Питание"], notes:"Golden Temple requires head covering.", notesRu:"В Золотом храме нужно покрыть голову.", pace:"Relaxed / Immersive" },
-  { slug:"taj-tiger-forts-16d", tourCode:"IND-18", title:"16-Day Taj, Tiger & Forts: The Ultimate Indian Odyssey", titleRu:"16-дневная одиссея: Тадж, тигры и форты", days:16, nights:15, type:"Wildlife", destinationIds:["delhi","abhaneri","jaipur","bikaner","jaisalmer","jodhpur","ranakpur","kumbhalgarh","udaipur","chittorgarh","bundi","ranthambore","bharatpur","fatehpur-sikri","agra","vrindavan"], collectionIds:["royal-fortresses","unesco-heritage","wildlife-eco-safaris"], featured:false, image:"images/tours/tour-18.jpg", shortDescription:"7+ UNESCO monuments, Ranthambore tiger safaris, Keoladeo wetland, Thar Desert camp.", shortDescriptionRu:"ЮНЕСКО, тигры в Рантхамборе, Кеоладео и пустыня Тар.", overview:"The ultimate 16-day odyssey combining tiger safaris, desert camps, and all major UNESCO forts and monuments.", overviewRu:"Главная 16-дневная одиссея: сафари, пустыня и ЮНЕСКО.", highlights:["5 UNESCO Hill Forts","Thar Desert Camp","Ranthambore Tiger Safaris","Keoladeo Bird Sanctuary","Taj Mahal","Lake Pichola"], highlightsRu:["5 фортов ЮНЕСКО","Пустыня Тар","Сафари Рантхамбор","Кеоладео","Тадж-Махал","Пичола"], itinerary:["Day 1-16: Comprehensive Rajasthan + Golden Triangle odyssey."], itineraryRu:["День 1-16: Полная одиссея по Раджастану и Золотому треугольнику."], included:["Private AC vehicle","Guide","Entry fees","Safaris","Desert camp","Hotel (15 nights)"], includedRu:["Автомобиль","Гид","Входные билеты","Сафари","Лагерь","Отель (15 ночей)"], notIncluded:["Flights","Meals","Tips"], notIncludedRu:["Авиабилеты","Питание","Чаевые"], notes:"Comprehensive Rajasthan + Golden Triangle journey.", notesRu:"Комплексная одиссея по Раджастану и Золотому треугольнику.", pace:"Relaxed" },
-  { slug:"agra-fatehpur-sikri-2d", tourCode:"IND-19", title:"2-Day Agra, Fatehpur Sikri & Imperial Mughal Retreat", titleRu:"2-дневный имперский Могольский тур: Агра и Фатехпур-Сикри", days:2, nights:1, type:"Heritage", destinationIds:["delhi","sikandra","agra","mehtab-bagh","fatehpur-sikri"], collectionIds:["express-escapes","unesco-heritage","royal-fortresses"], featured:false, image:"images/tours/tour-19.jpg", shortDescription:"Four UNESCO & imperial Mughal monuments: Taj, Agra Fort, Fatehpur Sikri, Sikandra.", shortDescriptionRu:"Четыре могольских памятника: Тадж, Агра-Форт, Фатехпур-Сикри, Сикандра.", overview:"Features four UNESCO World Heritage & imperial Mughal monuments (Taj Mahal, Agra Fort, Fatehpur Sikri, Sikandra) in an unhurried 2-day private retreat.", overviewRu:"Четыре объекта ЮНЕСКО за неторопливый 2-дневный тур.", highlights:["Taj Mahal at Sunrise & Sunset","Agra Fort","Fatehpur Sikri (Buland Darwaza)","Akbar's Tomb at Sikandra","Itmad-ud-Daulah (Baby Taj)"], highlightsRu:["Тадж-Махал на рассвете и закате","Агра-Форт","Фатехпур-Сикри","Гробница Акбара","Малый Тадж"], itinerary:["Day 1: Delhi – Sikandra – Agra. Taj at sunset.","Day 2: Taj at sunrise, Agra Fort, Fatehpur Sikri – Delhi."], itineraryRu:["День 1: Дели – Сикандра – Агра. Тадж на закате.","День 2: Тадж на рассвете, Агра-Форт, Фатехпур-Сикри – Дели."], included:["Private AC vehicle","Guide","Entry fees","Hotel (1 night)"], includedRu:["Автомобиль","Гид","Входные билеты","Отель (1 ночь)"], notIncluded:["Meals","Tips"], notIncludedRu:["Питание","Чаевые"], notes:"Taj closed Fridays.", notesRu:"Тадж закрыт по пятницам.", pace:"Relaxed" },
-  { slug:"jaipur-pink-city-abhaneri-2d", tourCode:"IND-20", title:"2-Day Jaipur Royal Pink City & Abhaneri Stepwell Escape", titleRu:"2-дневный тур: Джайпур и Чанд-Баори", days:2, nights:1, type:"Heritage", destinationIds:["delhi","abhaneri","jaipur"], collectionIds:["express-escapes","unesco-heritage","royal-fortresses"], featured:false, image:"images/tours/tour-20.jpg", shortDescription:"Chand Baori stepwell + UNESCO Jantar Mantar, Amber Fort, Jaigarh & Nahargarh.", shortDescriptionRu:"Чанд-Баори + ЮНЕСКО Джантар-Мантар, Амбер, Джайгарх и Нахаргарх.", overview:"Connects the ancient 1,000-year-old stepwell of Abhaneri with Jaipur's UNESCO World Heritage sites, hilltop fortresses, and royal palace quarter.", overviewRu:"Соединяет древний колодец Абханери с объектами ЮНЕСКО Джайпура.", highlights:["Chand Baori Stepwell","Amber Fort","Jaigarh Fort","Nahargarh Fort","City Palace","Jantar Mantar (UNESCO)","Hawa Mahal"], highlightsRu:["Чанд-Баори","Амбер-Форт","Джайгарх","Нахаргарх","Городской дворец","Джантар-Мантар","Хава-Махал"], itinerary:["Day 1: Delhi – Abhaneri – Jaipur. Chand Baori.","Day 2: Amber Fort, Jaigarh, Nahargarh, City Palace, Jantar Mantar – Delhi."], itineraryRu:["День 1: Дели – Абханери – Джайпур.","День 2: Форты Джайпура – Дели."], included:["Private AC vehicle","Guide","Entry fees","Hotel (1 night)"], includedRu:["Автомобиль","Гид","Входные билеты","Отель (1 ночь)"], notIncluded:["Meals","Tips"], notIncludedRu:["Питание","Чаевые"], notes:"Abhaneri is 1.5 hrs from Jaipur.", notesRu:"Абханери в 1,5 часах от Джайпура.", pace:"Moderate" },
-  { slug:"deccan-citadel-caves-9d", tourCode:"IND-21", title:"9-Day Deccan Citadel & Cave Odyssey: Rock-Cut Caves & Deccan Forts", titleRu:"9-дневная одиссея по Декану: пещеры и форты", days:9, nights:8, type:"Heritage", destinationIds:["mumbai","lonavala","pune","nashik","daulatabad","khuldabad","aurangabad","ellora","ajanta"], collectionIds:["deccan-rock-cut","unesco-heritage","royal-fortresses","spiritual-multifaith"], featured:true, image:"images/tours/tour-21.jpg", shortDescription:"UNESCO Ajanta & Ellora caves, Kailash Temple, Daulatabad Fort, Karla & Bhaja caves.", shortDescriptionRu:"Пещеры ЮНЕСКО Аджанта и Эллора, храм Кайлаш, форт Даулатабад.", overview:"Highlights premier UNESCO rock-cut cave sanctuaries (Ajanta & Ellora) combined with formidable Deccan fortresses and sacred pilgrimage shrines across Maharashtra.", overviewRu:"Пещерные святилища ЮНЕСКО (Аджанта и Эллора), форты Декана и храмы Махараштры.", highlights:["Ajanta Caves (UNESCO)","Ellora Caves (UNESCO)","Kailash Temple","Daulatabad Fort","Bibi Ka Maqbara","Trimbakeshwar Shiva Temple","Karla & Bhaja Caves"], highlightsRu:["Аджанта","Эллора","Храм Кайлаш","Даулатабад","Биби Ка Макбара","Тримбакешвар","Карла и Бхаджа"], itinerary:["Day 1: Mumbai arrival.","Day 2: Mumbai – Lonavala. Karla & Bhaja caves.","Day 3: Lonavala – Pune.","Day 4: Pune – Nashik. Trimbakeshwar.","Day 5: Nashik – Aurangabad.","Day 6: Ellora Caves.","Day 7: Ajanta Caves.","Day 8: Daulatabad Fort, Bibi Ka Maqbara.","Day 9: Aurangabad – Mumbai departure."], itineraryRu:["День 1: Прибытие в Мумбаи.","День 2: Лонавала. Карла и Бхаджа.","День 3: Пуна.","День 4: Нашик. Тримбакешвар.","День 5: Аурангабад.","День 6: Эллора.","День 7: Аджанта.","День 8: Даулатабад.","День 9: Отъезд."], included:["Private AC vehicle","Guide","Entry fees","Hotel (8 nights)"], includedRu:["Автомобиль","Гид","Входные билеты","Отель (8 ночей)"], notIncluded:["Flights","Meals"], notIncludedRu:["Авиабилеты","Питание"], notes:"Ajanta closed Mondays; Ellora closed Tuesdays.", notesRu:"Аджанта закрыта по понедельникам, Эллора по вторникам.", pace:"Moderate" },
-  { slug:"sahyadri-empires-13d", tourCode:"IND-22", title:"13-Day Empires of the Sahyadri: Marine Forts, Cave Temples & Meteor Crater", titleRu:"13-дневная империя Сахьядри: морские форты и пещеры", days:13, nights:12, type:"Heritage", destinationIds:["mumbai","alibaug","murud","raigad","lonavala","pune","nashik","daulatabad","khuldabad","aurangabad","ellora","ajanta","lonar"], collectionIds:["deccan-rock-cut","unesco-heritage","royal-fortresses","wildlife-eco-safaris"], featured:false, image:"images/tours/tour-22.jpg", shortDescription:"Murud-Janjira Sea Fort, Raigad Citadel, UNESCO Ajanta & Ellora, Lonar Meteor Crater.", shortDescriptionRu:"Морской форт Муруд-Джанджира, Райгад, Аджанта и Эллора, кратер Лонар.", overview:"Unites coastal island sea forts, Shivaji's Maratha mountain capital, UNESCO rock-cut cave complexes, and the rare geological Lonar crater into an expansive Sahyadri odyssey.", overviewRu:"Морские форты, столица Шиваджи, пещеры ЮНЕСКО и кратер Лонар.", highlights:["Murud-Janjira Sea Fort","Raigad Citadel","Ajanta Caves (UNESCO)","Ellora Caves (UNESCO)","Lonar Meteorite Crater Lake","Daulatabad Fort","Bibi Ka Maqbara"], highlightsRu:["Муруд-Джанджира","Райгад","Аджанта","Эллора","Кратер Лонар","Даулатабад","Биби Ка Макбара"], itinerary:["Day 1-13: Comprehensive Maharashtra odyssey: sea forts, Maratha citadels, UNESCO caves, wildlife crater."], itineraryRu:["День 1-13: Полная одиссея по Махараштре."], included:["Private AC vehicle","Guide","Entry fees","Hotel (12 nights)"], includedRu:["Автомобиль","Гид","Входные билеты","Отель (12 ночей)"], notIncluded:["Flights","Meals"], notIncludedRu:["Авиабилеты","Питание"], notes:"Includes optional Lonar crater wildlife viewing.", notesRu:"Включает просмотр кратера Лонар.", pace:"Relaxed" }
+  { slug:"taj-mahal-agra-fort-day", tourCode:"IND-01", title:"Taj Mahal & Agra Fort Private Day Journey", titleRu:"Однодневный частный тур: Тадж-Махал и Агра-Форт", days:1, nights:0, type:"Heritage", destinationIds:["delhi","agra"], collectionIds:["express-escapes","unesco-heritage","royal-fortresses"], featured:true, shortDescription:"Two UNESCO World Heritage monuments in one efficient private day trip from Delhi.", shortDescriptionRu:"Два объекта ЮНЕСКО за одну однодневную поездку из Дели.", overview:"Experience the timeless beauty of the Mughal Empire on an expertly guided private day tour from Delhi covering the Taj Mahal and Agra Fort.", overviewRu:"Ощутите вневременную красоту империи Великих Моголов в частном туре из Дели.", highlights:["Taj Mahal","Agra Fort","Mughal Architecture","Sunrise at Taj"], highlightsRu:["Тадж-Махал","Агра-Форт","Могольская архитектура","Рассвет у Таджа"], itinerary:["Day 1: Delhi – Agra (approx. 3.5 hrs). Visit the Taj Mahal at sunrise, then Agra Fort. Return to Delhi in the evening."], itineraryRu:["День 1: Дели – Агра. Тадж-Махал на рассвете, Агра-Форт. Возвращение в Дели."], included:["Private AC vehicle","English-speaking guide","Entry fees","Bottled water"], includedRu:["Автомобиль с кондиционером","Гид","Входные билеты","Вода"], notIncluded:["Meals","Tips","Insurance"], notIncludedRu:["Питание","Чаевые","Страховка"], notes:"Departure at 5:00 AM for sunrise at the Taj.", notesRu:"Выезд в 5:00 утра.", pace:"Fast but Comfortable" },
+  { slug:"imperial-delhi-spiritual-heritage", tourCode:"IND-02", title:"Imperial Delhi & Spiritual Heritage: Private Full-Day Tour", titleRu:"Имперский Дели и духовное наследие", days:1, nights:0, type:"Cultural", destinationIds:["delhi"], collectionIds:["express-escapes","unesco-heritage","spiritual-multifaith"], featured:false, shortDescription:"Old Delhi alleys, colonial New Delhi, and spiritual landmarks across Islam, Sikhism, and Hinduism.", shortDescriptionRu:"Старый и новый Дели, духовные достопримечательности.", overview:"A comprehensive day tour covering Old Delhi's alleys, colonial New Delhi, and spiritual landmarks across multiple faiths.", overviewRu:"Полнодневный тур по старому и новому Дели.", highlights:["Jama Masjid","Red Fort","Humayun's Tomb","Qutub Minar","Gurudwara Bangla Sahib","Akshardham"], highlightsRu:["Джама-Масджид","Красный форт","Гробница Хумаюна","Кутуб-Минар","Гурдвара Бангла Сахиб","Акшардхам"], itinerary:["Day 1: Old Delhi rickshaw through Chandni Chowk. Jama Masjid, Red Fort. Afternoon: Humayun's Tomb, Qutub Minar, Bangla Sahib, Akshardham."], itineraryRu:["День 1: Поездка на рикше. Джама-Масджид, Красный форт. Днём: гробница Хумаюна, Кутуб-Минар."], included:["Private AC vehicle","Guide","Entry fees","Rickshaw ride"], includedRu:["Автомобиль","Гид","Входные билеты","Поездка на рикше"], notIncluded:["Meals","Tips"], notIncludedRu:["Питание","Чаевые"], notes:"Akshardham closed on Mondays.", notesRu:"Акшардхам закрыт по понедельникам.", pace:"Fast but Comfortable" },
+  { slug:"jaipur-royal-express", tourCode:"IND-03", title:"1-Day Jaipur Royal Express: Private Tour from Delhi", titleRu:"Однодневный королевский экспресс в Джайпур", days:1, nights:0, type:"Heritage", destinationIds:["delhi","jaipur"], collectionIds:["express-escapes","unesco-heritage","royal-fortresses"], featured:false, shortDescription:"UNESCO Amber Fort and Jaipur's walled city in one efficient day trip.", shortDescriptionRu:"Амбер-Форт и стены Джайпура за один день.", overview:"A highly efficient day trip to Rajasthan's Pink City, covering Amber Fort, City Palace, and Hawa Mahal.", overviewRu:"Эффективный однодневный тур в Розовый город.", highlights:["Amber Fort","City Palace","Hawa Mahal","Jal Mahal"], highlightsRu:["Амбер-Форт","Городской дворец","Хава-Махал","Джал-Махал"], itinerary:["Day 1: Delhi – Jaipur. Amber Fort, City Palace, Hawa Mahal, Jal Mahal. Return to Delhi."], itineraryRu:["День 1: Дели – Джайпур. Амбер-Форт, Городской дворец, Хава-Махал."], included:["Private AC vehicle","Guide","Entry fees"], includedRu:["Автомобиль","Гид","Входные билеты"], notIncluded:["Meals","Tips"], notIncludedRu:["Питание","Чаевые"], notes:"Long day – 5:30 AM departure recommended.", notesRu:"Долгий день – выезд в 5:30.", pace:"Fast / Active" },
+  { slug:"express-golden-triangle-2d", tourCode:"IND-04", title:"2-Day Express Golden Triangle: Agra & Jaipur Heritage", titleRu:"2-дневный экспресс-тур: Агра и Джайпур", days:2, nights:1, type:"Heritage", destinationIds:["delhi","agra","jaipur"], collectionIds:["express-escapes","unesco-heritage","royal-fortresses"], featured:false, shortDescription:"Multiple UNESCO sites across Agra and Jaipur in one whirlwind private tour.", shortDescriptionRu:"Несколько объектов ЮНЕСКО в одном туре.", overview:"A whirlwind 2-day private tour covering the Taj Mahal, Agra Fort, Amber Fort, and City Palace.", overviewRu:"Насыщенный 2-дневный тур: Тадж-Махал, Агра-Форт, Амбер-Форт, Городской дворец.", highlights:["Taj Mahal","Agra Fort","Amber Fort","City Palace"], highlightsRu:["Тадж-Махал","Агра-Форт","Амбер-Форт","Городской дворец"], itinerary:["Day 1: Delhi – Agra. Taj Mahal, Agra Fort.","Day 2: Agra – Jaipur – Delhi. Amber Fort, City Palace."], itineraryRu:["День 1: Дели – Агра.","День 2: Агра – Джайпур – Дели."], included:["Private AC vehicle","Guide","Entry fees","Hotel (1 night)"], includedRu:["Автомобиль","Гид","Входные билеты","Отель (1 ночь)"], notIncluded:["Meals","Tips"], notIncludedRu:["Питание","Чаевые"], notes:"Overnight hotel in Agra included.", notesRu:"Отель в Агре включён.", pace:"Fast" },
+  { slug:"khajuraho-panna-2d", tourCode:"IND-05", title:"2-Day Khajuraho & Panna: UNESCO Temples & Tigers Express", titleRu:"2-дневный экспресс: Кхаджурахо и Панна", days:2, nights:1, type:"Wildlife", destinationIds:["khajuraho","panna"], collectionIds:["express-escapes","unesco-heritage","wildlife-eco-safaris"], featured:true, shortDescription:"UNESCO Khajuraho temples plus tiger safari in Panna Tiger Reserve.", shortDescriptionRu:"Храмы Кхаджурахо и тигры Панны.", overview:"A thrilling 2-day escape combining Khajuraho's sculpted temples with a tiger safari in Panna Reserve.", overviewRu:"Двухдневное приключение: храмы Кхаджурахо и сафари в Панне.", highlights:["Khajuraho Western/Eastern Temples","Panna Tiger Safari","Raneh Falls"], highlightsRu:["Храмы Кхаджурахо","Сафари в Панне","Водопады Ранех"], itinerary:["Day 1: Fly to Khajuraho. Explore temple groups.","Day 2: Panna Tiger Reserve morning safari, Raneh Falls. Return."], itineraryRu:["День 1: Перелёт в Кхаджурахо. Храмы.","День 2: Сафари в Панне, водопады Ранех."], included:["Private AC vehicle","Guide","Entry fees","Jeep safari"], includedRu:["Автомобиль","Гид","Входные билеты","Сафари"], notIncluded:["Flights","Meals"], notIncludedRu:["Авиабилеты","Питание"], notes:"Flights not included but can be arranged.", notesRu:"Авиабилеты могут быть организованы.", pace:"Fast" },
+  { slug:"golden-triangle-expedition-3d", tourCode:"IND-06", title:"3-Day Golden Triangle Expedition: Delhi, Agra & Jaipur", titleRu:"3-дневная экспедиция по Золотому треугольнику", days:3, nights:2, type:"Heritage", destinationIds:["delhi","agra","jaipur"], collectionIds:["express-escapes","unesco-heritage","royal-fortresses"], featured:false, shortDescription:"Comprehensive Golden Triangle tour through North India's iconic cities.", shortDescriptionRu:"Комплексный тур по Золотому треугольнику.", overview:"A comprehensive 3-day private tour through North India's iconic Golden Triangle, including UNESCO sites.", overviewRu:"Полноценный 3-дневный тур по Золотому треугольнику.", highlights:["Humayun's Tomb","Akshardham","Taj Mahal","Agra Fort","Amber Fort"], highlightsRu:["Гробница Хумаюна","Акшардхам","Тадж-Махал","Агра-Форт","Амбер-Форт"], itinerary:["Day 1: Delhi sightseeing.","Day 2: Delhi – Agra. Taj Mahal, Agra Fort.","Day 3: Agra – Jaipur – Delhi."], itineraryRu:["День 1: Дели.","День 2: Дели – Агра.","День 3: Агра – Джайпур – Дели."], included:["Private AC vehicle","Guide","Entry fees","Hotel (2 nights)"], includedRu:["Автомобиль","Гид","Входные билеты","Отель (2 ночи)"], notIncluded:["Meals","Tips"], notIncludedRu:["Питание","Чаевые"], notes:"Akshardham closed Mondays.", notesRu:"Акшардхам закрыт по понедельникам.", pace:"Fast / Active" },
+  { slug:"express-golden-triangle-4d", tourCode:"IND-07", title:"4-Day Express Golden Triangle: Delhi, Jaipur & Agra", titleRu:"4-дневный экспресс-тур: Дели, Джайпур, Агра", days:4, nights:3, type:"Heritage", destinationIds:["delhi","jaipur","agra"], collectionIds:["express-escapes","unesco-heritage","royal-fortresses"], featured:true, shortDescription:"UNESCO highlights across Delhi, Jaipur and Agra in a balanced 4-day format.", shortDescriptionRu:"ЮНЕСКО в Дели, Джайпуре и Агре за 4 дня.", overview:"An efficient 4-day tour covering Delhi's contrasts, Jaipur's royal forts, and Agra's Mughal marvels.", overviewRu:"Эффективный 4-дневный тур: контрасты Дели, форты Джайпура и чудеса Агры.", highlights:["Old Delhi Rickshaw","Amber Fort","City Palace","Taj Mahal","Agra Fort"], highlightsRu:["Старый Дели","Амбер-Форт","Городской дворец","Тадж-Махал","Агра-Форт"], itinerary:["Day 1: Delhi sightseeing.","Day 2: Delhi – Jaipur.","Day 3: Jaipur – Agra.","Day 4: Agra – Delhi."], itineraryRu:["День 1: Дели.","День 2: Дели – Джайпур.","День 3: Джайпур – Агра.","День 4: Агра – Дели."], included:["Private AC vehicle","Guide","Entry fees","Hotel (3 nights)"], includedRu:["Автомобиль","Гид","Входные билеты","Отель (3 ночи)"], notIncluded:["Meals","Tips"], notIncludedRu:["Питание","Чаевые"], notes:"Sunrise Taj on Day 4.", notesRu:"Тадж-Махал на рассвете в день 4.", pace:"Fast / Active" },
+  { slug:"khajuraho-varanasi-4d", tourCode:"IND-08", title:"4-Day Khajuraho & Varanasi: Temples, Tigers & Sacred Ganges", titleRu:"4-дневный тур: Кхаджурахо и Варанаси", days:4, nights:3, type:"Spiritual", destinationIds:["delhi","khajuraho","panna","varanasi","sarnath"], collectionIds:["spiritual-multifaith","unesco-heritage","wildlife-eco-safaris"], featured:true, shortDescription:"UNESCO Khajuraho temples, Panna tiger safari, Ganges Aarti, and Sarnath.", shortDescriptionRu:"Храмы Кхаджурахо, сафари в Панне, Ганга Аарти и Сарнатх.", overview:"A diverse 4-day journey from temple art to tiger tracking, volcanic canyons, and Ganges rituals.", overviewRu:"Разнообразный 4-дневный маршрут: храмы, сафари и ритуалы на Ганге.", highlights:["Khajuraho Temples","Panna Tiger Safari","Raneh Falls Canyon","Ganga Aarti","Sarnath"], highlightsRu:["Храмы Кхаджурахо","Сафари в Панне","Каньон Ранех","Ганга Аарти","Сарнатх"], itinerary:["Day 1: Delhi – Khajuraho. Temples.","Day 2: Panna tiger safari, Raneh Falls.","Day 3: Khajuraho – Varanasi. Evening Ganga Aarti.","Day 4: Varanasi sunrise boat ride – Sarnath – Delhi."], itineraryRu:["День 1: Дели – Кхаджурахо.","День 2: Сафари Панна.","День 3: Кхаджурахо – Варанаси.","День 4: Варанаси – Сарнатх – Дели."], included:["Private AC vehicle","Guide","Entry fees","Jeep safari"], includedRu:["Автомобиль","Гид","Входные билеты","Сафари"], notIncluded:["Flights","Meals"], notIncludedRu:["Авиабилеты","Питание"], notes:"Flights between Khajuraho and Varanasi not included.", notesRu:"Авиабилеты не включены.", pace:"Moderate / Active" },
+  { slug:"sacred-india-express-5d", tourCode:"IND-09", title:"5-Day Sacred India Express: Ganges, Buddha & Ancient Empires", titleRu:"5-дневный экспресс-тур по священной Индии", days:5, nights:4, type:"Spiritual", destinationIds:["delhi","varanasi","sarnath","bodh-gaya","gaya","rajgir","nalanda","patna"], collectionIds:["spiritual-multifaith","unesco-heritage"], featured:false, shortDescription:"Hindu, Buddhist and Sikh spiritual heartlands with two UNESCO sites.", shortDescriptionRu:"Духовные центры индуизма, буддизма и сикхизма.", overview:"A deeply immersive private journey through the spiritual heartlands of Hinduism, Buddhism, and Sikhism, featuring two UNESCO sites.", overviewRu:"Глубокое погружение в духовные центры индуизма и буддизма.", highlights:["Kashi Vishwanath","Ganga Aarti","Mahabodhi Temple","Vishnupad Temple","Griddhakuta Hill","Nalanda Ruins","Barabar Caves","Patna Sahib"], highlightsRu:["Каши Вишванатх","Ганга Аарти","Храм Махабодхи","Наланда","Патна Сахиб"], itinerary:["Day 1: Delhi – Varanasi. Evening Ganga Aarti.","Day 2: Varanasi – Sarnath – Bodh Gaya.","Day 3: Bodh Gaya – Rajgir – Nalanda.","Day 4: Nalanda – Patna.","Day 5: Patna – Delhi."], itineraryRu:["День 1: Дели – Варанаси.","День 2: Варанаси – Бодх-Гая.","День 3: Бодх-Гая – Наланда.","День 4: Наланда – Патна.","День 5: Патна – Дели."], included:["Private AC vehicle","Guide","Entry fees","Bottled water"], includedRu:["Автомобиль","Гид","Входные билеты","Вода"], notIncluded:["Flights","Meals"], notIncludedRu:["Авиабилеты","Питание"], notes:"Early morning departure recommended.", notesRu:"Рекомендуется ранний выезд.", pace:"Fast / Active" },
+  { slug:"classic-golden-triangle-5d", tourCode:"IND-10", title:"5-Day Classic Golden Triangle: Royal Rajput & Mughal Journey", titleRu:"5-дневный классический Золотой треугольник", days:5, nights:4, type:"Heritage", destinationIds:["delhi","jaipur","abhaneri","agra"], collectionIds:["royal-fortresses","unesco-heritage","express-escapes"], featured:false, shortDescription:"Five UNESCO landmarks including Chand Baori stepwell and Nahargarh Fort.", shortDescriptionRu:"Пять объектов ЮНЕСКО, включая Чанд-Баори и Нахаргарх.", overview:"A balanced 5-day itinerary with extra time in Jaipur, plus a visit to the ancient Chand Baori stepwell.", overviewRu:"Сбалансированный 5-дневный маршрут с Чанд-Баори.", highlights:["Humayun's Tomb","Amber Fort","Nahargarh Fort","Jaigarh Fort","Chand Baori","Taj Mahal","Agra Fort","Baby Taj"], highlightsRu:["Гробница Хумаюна","Амбер-Форт","Нахаргарх","Чанд-Баори","Тадж-Махал"], itinerary:["Day 1: Delhi.","Day 2: Delhi – Jaipur.","Day 3: Jaipur forts, Chand Baori.","Day 4: Jaipur – Agra.","Day 5: Agra – Delhi."], itineraryRu:["День 1: Дели.","День 2: Дели – Джайпур.","День 3: Форт Джайпура, Чанд-Баори.","День 4: Джайпур – Агра.","День 5: Агра – Дели."], included:["Private AC vehicle","Guide","Entry fees","Hotel (4 nights)"], includedRu:["Автомобиль","Гид","Входные билеты","Отель (4 ночи)"], notIncluded:["Meals","Tips"], notIncludedRu:["Питание","Чаевые"], notes:"Chand Baori is 1.5 hrs from Jaipur.", notesRu:"Чанд-Баори в 1,5 часах от Джайпура.", pace:"Moderate / Balanced" },
+  { slug:"himalayan-triangle-5d", tourCode:"IND-11", title:"5-Day Himalayan Triangle: Darjeeling, Kalimpong & Gangtok", titleRu:"5-дневный Гималайский треугольник", days:5, nights:4, type:"Nature", destinationIds:["delhi","bagdogra","darjeeling","kalimpong","gangtok"], collectionIds:["himalayan-escapes","wildlife-eco-safaris"], featured:false, shortDescription:"Eastern Himalayas: tea estates, Buddhist monasteries, and Kanchenjunga vistas.", shortDescriptionRu:"Восточные Гималаи: чай, монастыри и Канченджанга.", overview:"Escape to the serene foothills of the Eastern Himalayas featuring tea estates, Buddhist monasteries, and mountain vistas.", overviewRu:"Убежище в предгорьях Восточных Гималаев.", highlights:["Tiger Hill Sunrise","Kanchenjunga Views","Tea Gardens","Ghoom Monastery","Rumtek Monastery"], highlightsRu:["Тигровый холм","Канченджанга","Чайные плантации","Монастырь Гум","Румтек"], itinerary:["Day 1: Delhi – Bagdogra – Darjeeling.","Day 2: Tiger Hill, tea gardens.","Day 3: Darjeeling – Kalimpong.","Day 4: Kalimpong – Gangtok.","Day 5: Gangtok – Bagdogra – Delhi."], itineraryRu:["День 1: Дели – Багдогра – Дарджилинг.","День 2: Тигровый холм.","День 3: Калимпонг.","День 4: Гангток.","День 5: Дели."], included:["Private AC vehicle","Guide","Entry fees","Hotel (4 nights)"], includedRu:["Автомобиль","Гид","Входные билеты","Отель (4 ночи)"], notIncluded:["Flights","Meals"], notIncludedRu:["Авиабилеты","Питание"], notes:"Mountain weather can be unpredictable.", notesRu:"Горная погода непредсказуема.", pace:"Relaxed / Immersive" },
+  { slug:"golden-triangle-wildlife-6d", tourCode:"IND-12", title:"6-Day Golden Triangle & Wildlife Escape: Heritage to Bharatpur", titleRu:"6-дневный Золотой треугольник и дикая природа", days:6, nights:5, type:"Nature", destinationIds:["delhi","jaipur","abhaneri","bharatpur","agra"], collectionIds:["wildlife-eco-safaris","unesco-heritage","royal-fortresses"], featured:true, shortDescription:"Keoladeo UNESCO bird sanctuary + Amber Fort, Agra Fort, and Taj Mahal.", shortDescriptionRu:"Птичий заповедник Кеоладео + форты и Тадж-Махал.", overview:"Classic Golden Triangle plus a peaceful rickshaw safari in Keoladeo National Park (UNESCO).", overviewRu:"Золотой треугольник + сафари в Кеоладео.", highlights:["Chand Baori Stepwell","Keoladeo Safari","Taj Mahal","Agra Fort","Amber Fort"], highlightsRu:["Чанд-Баори","Сафари Кеоладео","Тадж-Махал","Агра-Форт","Амбер-Форт"], itinerary:["Day 1: Delhi.","Day 2: Jaipur.","Day 3: Abhaneri – Bharatpur.","Day 4: Keoladeo safari.","Day 5: Bharatpur – Agra.","Day 6: Agra – Delhi."], itineraryRu:["День 1: Дели.","День 2: Джайпур.","День 3: Абханери – Бхаратпур.","День 4: Сафари.","День 5: Бхаратпур – Агра.","День 6: Агра – Дели."], included:["Private AC vehicle","Guide","Entry fees","Rickshaw safari","Hotel (5 nights)"], includedRu:["Автомобиль","Гид","Входные билеты","Сафари","Отель (5 ночей)"], notIncluded:["Meals","Tips"], notIncludedRu:["Питание","Чаевые"], notes:"Keoladeo is a UNESCO World Heritage site.", notesRu:"Кеоладео — объект ЮНЕСКО.", pace:"Moderate / Balanced" },
+  { slug:"temples-ganges-buddha-trail-7d", tourCode:"IND-13", title:"7-Day Temples, Ganges & Buddha Trail: Delhi to Patna", titleRu:"7-дневный маршрут: храмы, Ганг и тропа Будды", days:7, nights:6, type:"Spiritual", destinationIds:["delhi","khajuraho","panna","varanasi","bodh-gaya","rajgir","nalanda","patna"], collectionIds:["spiritual-multifaith","unesco-heritage"], featured:false, shortDescription:"UNESCO Khajuraho, Mahabodhi Temple, and Nalanda University across North India.", shortDescriptionRu:"Храмы Кхаджурахо, Махабодхи и Наланда.", overview:"Ideal for active travelers — ancient temples, sacred Ganges, and Buddhist heritage.", overviewRu:"Древние храмы, священный Ганг и буддийское наследие.", highlights:["Khajuraho Temples","Panna Safari","Varanasi Ganga Aarti","Mahabodhi Temple","Nalanda Ruins","Patna Sahib"], highlightsRu:["Кхаджурахо","Панна","Ганга Аарти","Махабодхи","Наланда"], itinerary:["Day 1: Delhi – Khajuraho.","Day 2: Panna Tiger Reserve.","Day 3: Varanasi.","Day 4: Varanasi – Bodh Gaya.","Day 5: Bodh Gaya – Rajgir – Nalanda.","Day 6: Nalanda – Patna.","Day 7: Patna – Delhi."], itineraryRu:["День 1: Дели – Кхаджурахо.","День 2: Панна.","День 3: Варанаси.","День 4: Бодх-Гая.","День 5: Наланда.","День 6: Патна.","День 7: Дели."], included:["Private AC vehicle","Guide","Entry fees","Jeep safari"], includedRu:["Автомобиль","Гид","Входные билеты","Сафари"], notIncluded:["Flights","Meals"], notIncludedRu:["Авиабилеты","Питание"], notes:"Panna safari depends on park schedule.", notesRu:"Сафари в Панне зависит от графика парка.", pace:"Moderate" },
+  { slug:"taj-temples-rajputana-8d", tourCode:"IND-14", title:"8-Day Taj, Temples & Rajputana: The Ultimate Heritage Trail", titleRu:"8-дневный маршрут: Тадж, храмы и Раджпутана", days:8, nights:7, type:"Heritage", destinationIds:["delhi","agra","khajuraho","orchha","jaipur"], collectionIds:["royal-fortresses","unesco-heritage"], featured:false, shortDescription:"Multi-state cultural corridor connecting Agra, Khajuraho and Jaipur UNESCO monuments.", shortDescriptionRu:"Культурный коридор между Агрой, Кхаджурахо и Джайпуром.", overview:"A deep heritage trail spanning Mughal, Rajput, and Central Indian temple architecture, including hidden Tantric shrines.", overviewRu:"Глубокий исторический маршрут по архитектуре Моголов и Раджпутов.", highlights:["Taj Mahal","Amber Fort","Chand Baori","Mitawali Temple","Khajuraho","Orchha"], highlightsRu:["Тадж-Махал","Амбер-Форт","Чанд-Баори","Митавали","Кхаджурахо","Орчха"], itinerary:["Day 1-2: Delhi – Jaipur.","Day 3-4: Jaipur – Agra.","Day 5-6: Agra – Orchha.","Day 7-8: Orchha – Khajuraho – Delhi."], itineraryRu:["День 1-2: Дели – Джайпур.","День 3-4: Джайпур – Агра.","День 5-6: Агра – Орчха.","День 7-8: Орчха – Кхаджурахо – Дели."], included:["Private AC vehicle","Guide","Entry fees","Hotel (7 nights)"], includedRu:["Автомобиль","Гид","Входные билеты","Отель (7 ночей)"], notIncluded:["Meals","Tips"], notIncludedRu:["Питание","Чаевые"], notes:"Mitawali is a Tantric site near Morena.", notesRu:"Митавали — тантрическое место близ Морены.", pace:"Moderate / Active" },
+  { slug:"rajputana-citadel-quest-8d", tourCode:"IND-15", title:"8-Day Rajputana Citadel Quest: Delhi to Udaipur", titleRu:"8-дневный поход по цитаделям Раджпутаны", days:8, nights:7, type:"Heritage", destinationIds:["delhi","jaipur","jodhpur","ranakpur","kumbhalgarh","chittorgarh","udaipur"], collectionIds:["royal-fortresses","unesco-heritage"], featured:true, shortDescription:"Multiple UNESCO Hill Forts of Rajasthan: Amber, Kumbhalgarh, Chittorgarh.", shortDescriptionRu:"Форты Раджастана ЮНЕСКО: Амбер, Кумбхалгарх, Читторгарх.", overview:"An immersive quest through Rajasthan's legendary hill forts, blue cities, and romantic lakes.", overviewRu:"Погружение в форты, города и озёра Раджастана.", highlights:["Amber Fort","Kumbhalgarh Fort","Chittorgarh Fort","Mehrangarh Fort","Ranakpur Jain Temples","Udaipur Lake Pichola"], highlightsRu:["Амбер-Форт","Кумбхалгарх","Читторгарх","Мехрангарх","Ранакпур","Удайпур"], itinerary:["Day 1-2: Delhi – Jaipur.","Day 3: Jaipur – Jodhpur.","Day 4: Jodhpur – Ranakpur – Kumbhalgarh.","Day 5-6: Kumbhalgarh – Udaipur.","Day 7-8: Udaipur – Chittorgarh – Delhi."], itineraryRu:["День 1-2: Дели – Джайпур.","День 3: Джодхпур.","День 4: Ранакпур – Кумбхалгарх.","День 5-6: Удайпур.","День 7-8: Читторгарх."], included:["Private AC vehicle","Guide","Entry fees","Boat ride","Hotel (7 nights)"], includedRu:["Автомобиль","Гид","Входные билеты","Лодка","Отель (7 ночей)"], notIncluded:["Flights","Meals"], notIncludedRu:["Авиабилеты","Питание"], notes:"Udaipur to Delhi flight not included.", notesRu:"Перелёт Удайпур–Дели не включён.", pace:"Relaxed" },
+  { slug:"himalayan-heritage-rail-8d", tourCode:"IND-16", title:"8-Day Himalayan Heritage Rail & Skyward Retreat", titleRu:"8-дневный Гималайский ретро-поезд", days:8, nights:7, type:"Heritage", destinationIds:["kalka","shimla","mandi","naggar","manali","bir","dharamshala"], collectionIds:["himalayan-escapes","unesco-heritage","spiritual-multifaith"], featured:true, shortDescription:"UNESCO Kalka-Shimla Toy Train + Tibetan Buddhist culture in McLeod Ganj.", shortDescriptionRu:"Игрушечный поезд ЮНЕСКО и тибетская культура.", overview:"A spectacular journey through the Western Himalayas featuring a UNESCO narrow-gauge railway, mountain fortresses, and the spiritual home of the Dalai Lama.", overviewRu:"Путешествие по Западным Гималаям: узкоколейка, крепости, Далай-лама.", highlights:["Kalka-Shimla Toy Train (UNESCO)","Vice Regal Lodge","Roerich Estate","Naggar Castle","Hadimba Temple","Bir Paragliding","McLeod Ganj"], highlightsRu:["Поезд Калка-Шимла","Резиденция вице-короля","Рерих","Наггар","Хадимба","Бир","Мак-Леод Гандж"], itinerary:["Day 1: Delhi – Kalka.","Day 2: Toy Train to Shimla.","Day 3: Shimla.","Day 4: Shimla – Manali.","Day 5: Manali.","Day 6: Manali – Bir.","Day 7: Bir – Dharamshala.","Day 8: Dharamshala – Delhi."], itineraryRu:["День 1: Дели – Калка.","День 2: Шимла на поезде.","День 3: Шимла.","День 4: Манали.","День 5: Манали.","День 6: Бир.","День 7: Дхарамшала.","День 8: Дели."], included:["Private AC vehicle","Guide","Toy Train tickets","Entry fees","Hotel (7 nights)"], includedRu:["Автомобиль","Гид","Билеты на поезд","Входные билеты","Отель (7 ночей)"], notIncluded:["Flights","Meals","Paragliding"], notIncludedRu:["Авиабилеты","Питание","Парапланеризм"], notes:"Toy Train is UNESCO. Book ahead.", notesRu:"Поезд ЮНЕСКО. Бронировать заранее.", pace:"Relaxed / Immersive" },
+  { slug:"himalayan-panorama-9d", tourCode:"IND-17", title:"9-Day Himalayan Panorama & Golden Temple Traverse", titleRu:"9-дневный Гималайский панорамный тур и Золотой храм", days:9, nights:8, type:"Spiritual", destinationIds:["shimla","naggar","manali","bir","dharamshala","amritsar"], collectionIds:["himalayan-escapes","spiritual-multifaith"], featured:false, shortDescription:"Sikhism's holiest shrine, Tibetan monasteries, and Himalayan towns.", shortDescriptionRu:"Золотой храм, тибетские монастыри и Гималаи.", overview:"A deeply immersive journey through colonial mountain capitals, Tibetan spiritual enclaves, and the majestic Sikh heritage of Punjab.", overviewRu:"Горные столицы, тибетские анклавы и сикхское наследие.", highlights:["Golden Temple","Wagah Border Ceremony","McLeod Ganj","Naggar Castle","Manali Temples"], highlightsRu:["Золотой храм","Вагах","Мак-Леод Гандж","Наггар","Храмы Манали"], itinerary:["Day 1: Delhi – Shimla.","Day 2: Shimla – Manali.","Day 3-4: Manali.","Day 5: Bir – Dharamshala.","Day 6: McLeod Ganj.","Day 7: Amritsar.","Day 8: Wagah Border.","Day 9: Amritsar – Delhi."], itineraryRu:["День 1: Дели – Шимла.","День 2: Шимла – Манали.","День 3-4: Манали.","День 5: Дхарамшала.","День 6: Мак-Леод Гандж.","День 7: Амритсар.","День 8: Вагах.","День 9: Дели."], included:["Private AC vehicle","Guide","Entry fees","Hotel (8 nights)"], includedRu:["Автомобиль","Гид","Входные билеты","Отель (8 ночей)"], notIncluded:["Flights","Meals"], notIncludedRu:["Авиабилеты","Питание"], notes:"Golden Temple requires head covering.", notesRu:"В Золотом храме нужно покрыть голову.", pace:"Relaxed / Immersive" },
+  { slug:"taj-tiger-forts-16d", tourCode:"IND-18", title:"16-Day Taj, Tiger & Forts: The Ultimate Indian Odyssey", titleRu:"16-дневная одиссея: Тадж, тигры и форты", days:16, nights:15, type:"Wildlife", destinationIds:["delhi","abhaneri","jaipur","bikaner","jaisalmer","jodhpur","ranakpur","kumbhalgarh","udaipur","chittorgarh","bundi","ranthambore","bharatpur","fatehpur-sikri","agra","vrindavan"], collectionIds:["royal-fortresses","unesco-heritage","wildlife-eco-safaris"], featured:false, shortDescription:"7+ UNESCO monuments, Ranthambore tiger safaris, Keoladeo wetland, Thar Desert camp.", shortDescriptionRu:"ЮНЕСКО, тигры в Рантхамборе, Кеоладео и пустыня Тар.", overview:"The ultimate 16-day odyssey combining tiger safaris, desert camps, and all major UNESCO forts and monuments.", overviewRu:"Главная 16-дневная одиссея: сафари, пустыня и ЮНЕСКО.", highlights:["5 UNESCO Hill Forts","Thar Desert Camp","Ranthambore Tiger Safaris","Keoladeo Bird Sanctuary","Taj Mahal","Lake Pichola"], highlightsRu:["5 фортов ЮНЕСКО","Пустыня Тар","Сафари Рантхамбор","Кеоладео","Тадж-Махал","Пичола"], itinerary:["Day 1-16: Comprehensive Rajasthan + Golden Triangle odyssey."], itineraryRu:["День 1-16: Полная одиссея по Раджастану и Золотому треугольнику."], included:["Private AC vehicle","Guide","Entry fees","Safaris","Desert camp","Hotel (15 nights)"], includedRu:["Автомобиль","Гид","Входные билеты","Сафари","Лагерь","Отель (15 ночей)"], notIncluded:["Flights","Meals","Tips"], notIncludedRu:["Авиабилеты","Питание","Чаевые"], notes:"Comprehensive Rajasthan + Golden Triangle journey.", notesRu:"Комплексная одиссея по Раджастану и Золотому треугольнику.", pace:"Relaxed" },
+  { slug:"agra-fatehpur-sikri-2d", tourCode:"IND-19", title:"2-Day Agra, Fatehpur Sikri & Imperial Mughal Retreat", titleRu:"2-дневный имперский Могольский тур: Агра и Фатехпур-Сикри", days:2, nights:1, type:"Heritage", destinationIds:["delhi","sikandra","agra","mehtab-bagh","fatehpur-sikri"], collectionIds:["express-escapes","unesco-heritage","royal-fortresses"], featured:false, shortDescription:"Four UNESCO & imperial Mughal monuments: Taj, Agra Fort, Fatehpur Sikri, Sikandra.", shortDescriptionRu:"Четыре могольских памятника: Тадж, Агра-Форт, Фатехпур-Сикри, Сикандра.", overview:"Features four UNESCO World Heritage & imperial Mughal monuments (Taj Mahal, Agra Fort, Fatehpur Sikri, Sikandra) in an unhurried 2-day private retreat.", overviewRu:"Четыре объекта ЮНЕСКО за неторопливый 2-дневный тур.", highlights:["Taj Mahal at Sunrise & Sunset","Agra Fort","Fatehpur Sikri (Buland Darwaza)","Akbar's Tomb at Sikandra","Itmad-ud-Daulah (Baby Taj)"], highlightsRu:["Тадж-Махал на рассвете и закате","Агра-Форт","Фатехпур-Сикри","Гробница Акбара","Малый Тадж"], itinerary:["Day 1: Delhi – Sikandra – Agra. Taj at sunset.","Day 2: Taj at sunrise, Agra Fort, Fatehpur Sikri – Delhi."], itineraryRu:["День 1: Дели – Сикандра – Агра. Тадж на закате.","День 2: Тадж на рассвете, Агра-Форт, Фатехпур-Сикри – Дели."], included:["Private AC vehicle","Guide","Entry fees","Hotel (1 night)"], includedRu:["Автомобиль","Гид","Входные билеты","Отель (1 ночь)"], notIncluded:["Meals","Tips"], notIncludedRu:["Питание","Чаевые"], notes:"Taj closed Fridays.", notesRu:"Тадж закрыт по пятницам.", pace:"Relaxed" },
+  { slug:"jaipur-pink-city-abhaneri-2d", tourCode:"IND-20", title:"2-Day Jaipur Royal Pink City & Abhaneri Stepwell Escape", titleRu:"2-дневный тур: Джайпур и Чанд-Баори", days:2, nights:1, type:"Heritage", destinationIds:["delhi","abhaneri","jaipur"], collectionIds:["express-escapes","unesco-heritage","royal-fortresses"], featured:false, shortDescription:"Chand Baori stepwell + UNESCO Jantar Mantar, Amber Fort, Jaigarh & Nahargarh.", shortDescriptionRu:"Чанд-Баори + ЮНЕСКО Джантар-Мантар, Амбер, Джайгарх и Нахаргарх.", overview:"Connects the ancient 1,000-year-old stepwell of Abhaneri with Jaipur's UNESCO World Heritage sites, hilltop fortresses, and royal palace quarter.", overviewRu:"Соединяет древний колодец Абханери с объектами ЮНЕСКО Джайпура.", highlights:["Chand Baori Stepwell","Amber Fort","Jaigarh Fort","Nahargarh Fort","City Palace","Jantar Mantar (UNESCO)","Hawa Mahal"], highlightsRu:["Чанд-Баори","Амбер-Форт","Джайгарх","Нахаргарх","Городской дворец","Джантар-Мантар","Хава-Махал"], itinerary:["Day 1: Delhi – Abhaneri – Jaipur. Chand Baori.","Day 2: Amber Fort, Jaigarh, Nahargarh, City Palace, Jantar Mantar – Delhi."], itineraryRu:["День 1: Дели – Абханери – Джайпур.","День 2: Форты Джайпура – Дели."], included:["Private AC vehicle","Guide","Entry fees","Hotel (1 night)"], includedRu:["Автомобиль","Гид","Входные билеты","Отель (1 ночь)"], notIncluded:["Meals","Tips"], notIncludedRu:["Питание","Чаевые"], notes:"Abhaneri is 1.5 hrs from Jaipur.", notesRu:"Абханери в 1,5 часах от Джайпура.", pace:"Moderate" },
+  { slug:"deccan-citadel-caves-9d", tourCode:"IND-21", title:"9-Day Deccan Citadel & Cave Odyssey: Rock-Cut Caves & Deccan Forts", titleRu:"9-дневная одиссея по Декану: пещеры и форты", days:9, nights:8, type:"Heritage", destinationIds:["mumbai","lonavala","pune","nashik","daulatabad","khuldabad","aurangabad","ellora","ajanta"], collectionIds:["deccan-rock-cut","unesco-heritage","royal-fortresses","spiritual-multifaith"], featured:true, shortDescription:"UNESCO Ajanta & Ellora caves, Kailash Temple, Daulatabad Fort, Karla & Bhaja caves.", shortDescriptionRu:"Пещеры ЮНЕСКО Аджанта и Эллора, храм Кайлаш, форт Даулатабад.", overview:"Highlights premier UNESCO rock-cut cave sanctuaries (Ajanta & Ellora) combined with formidable Deccan fortresses and sacred pilgrimage shrines across Maharashtra.", overviewRu:"Пещерные святилища ЮНЕСКО (Аджанта и Эллора), форты Декана и храмы Махараштры.", highlights:["Ajanta Caves (UNESCO)","Ellora Caves (UNESCO)","Kailash Temple","Daulatabad Fort","Bibi Ka Maqbara","Trimbakeshwar Shiva Temple","Karla & Bhaja Caves"], highlightsRu:["Аджанта","Эллора","Храм Кайлаш","Даулатабад","Биби Ка Макбара","Тримбакешвар","Карла и Бхаджа"], itinerary:["Day 1: Mumbai arrival.","Day 2: Mumbai – Lonavala. Karla & Bhaja caves.","Day 3: Lonavala – Pune.","Day 4: Pune – Nashik. Trimbakeshwar.","Day 5: Nashik – Aurangabad.","Day 6: Ellora Caves.","Day 7: Ajanta Caves.","Day 8: Daulatabad Fort, Bibi Ka Maqbara.","Day 9: Aurangabad – Mumbai departure."], itineraryRu:["День 1: Прибытие в Мумбаи.","День 2: Лонавала. Карла и Бхаджа.","День 3: Пуна.","День 4: Нашик. Тримбакешвар.","День 5: Аурангабад.","День 6: Эллора.","День 7: Аджанта.","День 8: Даулатабад.","День 9: Отъезд."], included:["Private AC vehicle","Guide","Entry fees","Hotel (8 nights)"], includedRu:["Автомобиль","Гид","Входные билеты","Отель (8 ночей)"], notIncluded:["Flights","Meals"], notIncludedRu:["Авиабилеты","Питание"], notes:"Ajanta closed Mondays; Ellora closed Tuesdays.", notesRu:"Аджанта закрыта по понедельникам, Эллора по вторникам.", pace:"Moderate" },
+  { slug:"sahyadri-empires-13d", tourCode:"IND-22", title:"13-Day Empires of the Sahyadri: Marine Forts, Cave Temples & Meteor Crater", titleRu:"13-дневная империя Сахьядри: морские форты и пещеры", days:13, nights:12, type:"Heritage", destinationIds:["mumbai","alibaug","murud","raigad","lonavala","pune","nashik","daulatabad","khuldabad","aurangabad","ellora","ajanta","lonar"], collectionIds:["deccan-rock-cut","unesco-heritage","royal-fortresses","wildlife-eco-safaris"], featured:false, shortDescription:"Murud-Janjira Sea Fort, Raigad Citadel, UNESCO Ajanta & Ellora, Lonar Meteor Crater.", shortDescriptionRu:"Морской форт Муруд-Джанджира, Райгад, Аджанта и Эллора, кратер Лонар.", overview:"Unites coastal island sea forts, Shivaji's Maratha mountain capital, UNESCO rock-cut cave complexes, and the rare geological Lonar crater into an expansive Sahyadri odyssey.", overviewRu:"Морские форты, столица Шиваджи, пещеры ЮНЕСКО и кратер Лонар.", highlights:["Murud-Janjira Sea Fort","Raigad Citadel","Ajanta Caves (UNESCO)","Ellora Caves (UNESCO)","Lonar Meteorite Crater Lake","Daulatabad Fort","Bibi Ka Maqbara"], highlightsRu:["Муруд-Джанджира","Райгад","Аджанта","Эллора","Кратер Лонар","Даулатабад","Биби Ка Макбара"], itinerary:["Day 1-13: Comprehensive Maharashtra odyssey: sea forts, Maratha citadels, UNESCO caves, wildlife crater."], itineraryRu:["День 1-13: Полная одиссея по Махараштре."], included:["Private AC vehicle","Guide","Entry fees","Hotel (12 nights)"], includedRu:["Автомобиль","Гид","Входные билеты","Отель (12 ночей)"], notIncluded:["Flights","Meals"], notIncludedRu:["Авиабилеты","Питание"], notes:"Includes optional Lonar crater wildlife viewing.", notesRu:"Включает просмотр кратера Лонар.", pace:"Relaxed" }
 ];
 
+/* ============================================================
+   DATA ACCESSORS
+   ============================================================ */
 function getCollection(id) { return COLLECTIONS.find(c => c.id === id); }
 function getDestination(id) { return DESTINATIONS.find(d => d.id === id); }
 function getJourney(slug) { return JOURNEYS.find(j => j.slug === slug); }
@@ -592,15 +886,18 @@ function getRelatedJourneysFromConnected(journey, excludeSlugs = [], limit = 3) 
   return JOURNEYS.filter(j => j.slug !== journey.slug && !excludeSlugs.includes(j.slug)).map(j => ({ j, score: j.collectionIds.filter(c => connected.includes(c)).length })).filter(x => x.score > 0).sort((a,b) => b.score - a.score).slice(0, limit).map(x => x.j);
 }
 
+/* ============================================================
+   HELPERS
+   ============================================================ */
 function generatePlaceholderSVG(name, seed) {
   const colors = ['#2a4a5f','#a87a4a','#b55a3a','#4a6a5a','#3a6a7a','#3a7a3a','#7a5a3a','#5a3a7a','#7a3a5a','#3a5a7a'];
-  const bg = colors[(seed || 0) % colors.length];
+  const bg = colors[Math.abs(seed || 0) % colors.length];
   const nameShort = name.length > 40 ? name.substring(0, 36) + '…' : name;
   return `data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='400' viewBox='0 0 600 400'%3E%3Crect width='600' height='400' fill='%23${bg.replace('#','')}'/%3E%3Ctext x='50%25' y='50%25' font-family='Georgia,serif' font-size='24' fill='%23c39a4a' text-anchor='middle' dy='.3em'%3E${encodeURIComponent(nameShort)}%3C/text%3E%3C/svg%3E`;
 }
 function imgSrc(obj, name) {
   if (obj && obj.image && obj.image.trim() !== '') return obj.image;
-  const seed = (obj && obj.slug || obj && obj.id || name).split('').reduce((a,c)=>a+c.charCodeAt(0),0);
+  const seed = String(obj && (obj.slug || obj.id) || name).split('').reduce((a,c)=>a+c.charCodeAt(0),0);
   return generatePlaceholderSVG(name, seed);
 }
 function esc(s) { return String(s || '').replace(/'/g, "\\'").replace(/"/g, '&quot;'); }
@@ -615,15 +912,23 @@ function journeyNotes(j) { return currentLang === 'ru' && j.notesRu ? j.notesRu 
 function collectionTitle(c) { return currentLang === 'ru' && c.titleRu ? c.titleRu : c.title; }
 function collectionDesc(c) { return currentLang === 'ru' && c.descriptionRu ? c.descriptionRu : c.description; }
 function destTitle(d) { return currentLang === 'ru' && d.titleRu ? d.titleRu : d.title; }
+function monumentName(m) { return currentLang === 'ru' && m.nameRu ? m.nameRu : m.name; }
 function routeString(journey) {
   return journey.destinationIds.map(id => { const d = getDestination(id); return d ? destTitle(d) : id; }).join(' • ');
 }
 function collectionBadgeHTML(c) { return `<span class="collection-badge ${c.id}">${collectionTitle(c)}</span>`; }
 
+const TYPE_TRANSLATIONS = { Spiritual: { en: "Spiritual", ru: "Духовный" }, Heritage: { en: "Heritage", ru: "Наследие" }, Wildlife: { en: "Wildlife", ru: "Природа" }, Cultural: { en: "Cultural", ru: "Культурный" }, Nature: { en: "Nature", ru: "Природный" } };
+function typeLabel(type) { return TYPE_TRANSLATIONS[type]?.[currentLang] || type; }
+
+/* ============================================================
+   CARD COMPONENTS
+   ============================================================ */
 function journeyCardHTML(j) {
   const title = journeyTitle(j);
   const route = routeString(j);
-  const img = imgSrc(j, title);
+  const heroImage = getJourneyHeroImage(j);
+  const img = heroImage || generatePlaceholderSVG(title, j.slug.length);
   const colls = j.collectionIds.map(id => getCollection(id)).filter(Boolean);
   const badges = colls.map(collectionBadgeHTML).join('');
   return `
@@ -648,11 +953,16 @@ function journeyCardHTML(j) {
 }
 function collectionCardHTML(c) {
   const title = collectionTitle(c);
-  const img = imgSrc(c, title);
+  const fallback = generatePlaceholderSVG(title, c.id.length);
+  let img = c.image && c.image.trim() !== '' ? c.image : '';
+  if (!img) {
+    const monuments = getMonumentsForCollection(c.id);
+    img = monuments.length > 0 && monuments[0].image ? monuments[0].image : fallback;
+  }
   const count = getJourneysByCollection(c.id).length;
   return `
     <a class="category-card" href="#/collections/${c.id}">
-      <img src="${img}" alt="${esc(title)}" loading="lazy" onerror="this.onerror=null;this.src='${generatePlaceholderSVG(title, c.id.length)}'">
+      <img src="${img}" alt="${esc(title)}" loading="lazy" onerror="this.onerror=null;this.src='${fallback}'">
       <div class="gradient"></div>
       <span class="count-pill">${count} ${count === 1 ? 'journey' : 'journeys'}</span>
       <div class="info">
@@ -664,9 +974,55 @@ function collectionCardHTML(c) {
   `;
 }
 
-const TYPE_TRANSLATIONS = { Spiritual: { en: "Spiritual", ru: "Духовный" }, Heritage: { en: "Heritage", ru: "Наследие" }, Wildlife: { en: "Wildlife", ru: "Природа" }, Cultural: { en: "Cultural", ru: "Культурный" }, Nature: { en: "Nature", ru: "Природный" } };
-function typeLabel(type) { return TYPE_TRANSLATIONS[type]?.[currentLang] || type; }
+/* ============================================================
+   JOURNEY HERO SLIDESHOW
+   ============================================================ */
+let journeySlideshowTimer = null;
+function buildJourneySlideshow(images, captions) {
+  if (journeySlideshowTimer) { clearInterval(journeySlideshowTimer); journeySlideshowTimer = null; }
+  const wrap = document.getElementById('journeyHeroSlides');
+  if (!wrap || !images.length) return;
 
+  wrap.innerHTML = `
+    ${images.map((src, i) => `
+      <div class="journey-hero-slide ${i === 0 ? 'is-active' : ''}" data-idx="${i}">
+        <img src="${src}" alt="" loading="${i === 0 ? 'eager' : 'lazy'}">
+      </div>`).join('')}
+    ${images.length > 1 ? `<div class="journey-hero-caption is-visible" id="jHeroCaption">${captions[0] || ''}</div>` : ''}
+    ${images.length > 1 ? `<div class="journey-hero-dots">
+      ${images.map((_, i) => `<button class="journey-hero-dot ${i === 0 ? 'is-active' : ''}" data-idx="${i}" aria-label="Image ${i+1}"></button>`).join('')}
+    </div>` : ''}
+  `;
+
+  if (images.length < 2) return;
+
+  let idx = 0;
+  const slides = wrap.querySelectorAll('.journey-hero-slide');
+  const dots = wrap.querySelectorAll('.journey-hero-dot');
+  const caption = document.getElementById('jHeroCaption');
+
+  const show = (n) => {
+    slides[idx].classList.remove('is-active');
+    dots[idx].classList.remove('is-active');
+    idx = (n + slides.length) % slides.length;
+    slides[idx].classList.add('is-active');
+    dots[idx].classList.add('is-active');
+    if (caption) {
+      caption.classList.remove('is-visible');
+      setTimeout(() => {
+        caption.textContent = captions[idx] || '';
+        caption.classList.add('is-visible');
+      }, 250);
+    }
+  };
+
+  dots.forEach(d => d.addEventListener('click', () => show(parseInt(d.dataset.idx, 10))));
+  journeySlideshowTimer = setInterval(() => show(idx + 1), 4500);
+}
+
+/* ============================================================
+   VIEWS
+   ============================================================ */
 function renderHome() {
   const featured = getFeaturedJourneys().slice(0, 6);
   document.getElementById('app').innerHTML = `
@@ -777,17 +1133,17 @@ function renderJourneyDetail(slug) {
   const j = getJourney(slug);
   if (!j) { document.getElementById('app').innerHTML = `<div class="empty-state"><h3>Journey not found</h3></div>`; return; }
   const title = journeyTitle(j);
-  const img = imgSrc(j, title);
   const collections = j.collectionIds.map(id => getCollection(id)).filter(Boolean);
   const destinations = j.destinationIds.map(id => getDestination(id)).filter(Boolean);
   const sameCollectionJourneys = getSameCollectionJourneys(j, 4);
   const connectedColls = getConnectedCollections(j);
   const excludeSlugs = sameCollectionJourneys.map(x => x.slug);
   const relatedFromConnected = getRelatedJourneysFromConnected(j, excludeSlugs, 3);
+  const monuments = getMonumentsForJourney(j);
 
   document.getElementById('app').innerHTML = `
     <section>
-      <img class="journey-hero" src="${img}" alt="${esc(title)}" onerror="this.onerror=null;this.src='${generatePlaceholderSVG(title, j.slug.length)}'">
+      <div class="journey-hero-slides" id="journeyHeroSlides"></div>
       <div class="container journey-body">
         <h1 class="journey-title">${title}</h1>
         <div class="journey-meta">
@@ -824,18 +1180,57 @@ function renderJourneyDetail(slug) {
           </div>
         </div>
         <div class="cta-row">
-          <button class="btn-primary-lg" onclick="window.location.hash='#/plan?tour=${j.slug}'">${t('cta_get_quote')}</button>
+          <button class="btn-primary-lg" onclick="window.location.hash='#/plan/${j.slug}'">${t('cta_get_quote')}</button>
           <button class="btn-secondary" onclick="waTour('${esc(title)}')"><i class="fab fa-whatsapp" style="color:#25d366;"></i> WhatsApp</button>
           <button class="btn-secondary" onclick="window.open('https://t.me/indiaprivateguide','_blank')"><i class="fab fa-telegram-plane" style="color:#0088cc;"></i> Telegram</button>
         </div>
         ${collections.length ? `<div class="info-strip"><h4><i class="fas fa-layer-group"></i> ${t('part_of_collection')}</h4><div class="chip-row">${collections.map(c => `<a class="chip" href="#/collections/${c.id}"><i class="fas fa-bookmark"></i> ${collectionTitle(c)}</a>`).join('')}</div></div>` : ''}
         ${destinations.length ? `<div class="info-strip"><h4><i class="fas fa-map-marker-alt"></i> ${t('destinations_visited')}</h4><div class="chip-row">${destinations.map(d => `<a class="chip" href="#/destinations/${d.id}"><i class="fas fa-location-dot"></i> ${destTitle(d)}</a>`).join('')}</div></div>` : ''}
       </div>
+
+      ${monuments.length ? `
+      <section class="container" style="padding:20px 0 40px; border-top:1px solid #eeeae5;">
+        <div class="section-header" style="padding-top:30px;">
+          <h2>${t('monuments_gallery')}</h2>
+          <p>${t('monuments_gallery_sub')}</p>
+        </div>
+        <div class="monument-float-grid">
+          ${monuments.map((m, i) => {
+            const d = getDestination(m.destinationId);
+            const fallback = generatePlaceholderSVG(monumentName(m), i);
+            return `
+            <a class="monument-float-card" href="#/destinations/${m.destinationId}">
+              <img src="${m.image}" alt="${esc(monumentName(m))}" loading="lazy"
+                   onerror="this.onerror=null;this.src='${fallback}'">
+              <div class="float-gradient"></div>
+              <div class="float-info">
+                <h3>${monumentName(m)}</h3>
+                <p>${d ? destTitle(d) : ''}</p>
+              </div>
+            </a>`;
+          }).join('')}
+        </div>
+      </section>` : ''}
+
       ${sameCollectionJourneys.length ? `<section class="container" style="padding:40px 0; border-top:1px solid #eeeae5;"><div class="section-header" style="padding-top:0;"><h2>${t('more_from_collection')}</h2><p>${t('more_from_collection_sub')}</p></div><div class="journey-grid" style="padding-bottom:0;">${sameCollectionJourneys.map(journeyCardHTML).join('')}</div></section>` : ''}
       ${connectedColls.length ? `<section class="container" style="padding:40px 0; border-top:1px solid #eeeae5;"><div class="section-header" style="padding-top:0;"><h2>${t('connected_collections')}</h2><p>${t('connected_collections_sub')}</p></div><div class="connected-colls">${connectedColls.slice(0,6).map(x => `<a class="connected-coll-mini" href="#/collections/${x.collection.id}"><div class="mini-title">${collectionTitle(x.collection)}</div><div class="mini-count">${x.count} overlap${x.count > 1 ? 's' : ''}</div></a>`).join('')}</div></section>` : ''}
       ${relatedFromConnected.length ? `<section class="container" style="padding:40px 0 80px; border-top:1px solid #eeeae5;"><div class="section-header" style="padding-top:0;"><h2>${t('related_journeys')}</h2><p>${t('related_journeys_sub')}</p></div><div class="journey-grid" style="padding-bottom:0;">${relatedFromConnected.map(journeyCardHTML).join('')}</div></section>` : ''}
     </section>
   `;
+
+  /* Build hero slideshow */
+  const heroImgs = [];
+  const heroCaptions = [];
+  const heroSrc = getJourneyHeroImage(j);
+  if (heroSrc) { heroImgs.push(heroSrc); heroCaptions.push(title); }
+  monuments.forEach(m => {
+    if (m.image && m.image !== heroSrc) {
+      heroImgs.push(m.image);
+      heroCaptions.push(monumentName(m));
+    }
+  });
+  buildJourneySlideshow(heroImgs, heroCaptions);
+
   document.querySelectorAll('.tab-btn').forEach(btn => {
     btn.addEventListener('click', () => {
       document.querySelectorAll('.tab-btn').forEach(b => b.classList.toggle('active', b === btn));
@@ -885,7 +1280,8 @@ function renderDestinationsIndex() {
           const journeys = getJourneysByDestination(d.id);
           if (journeys.length === 0) return '';
           const title = destTitle(d);
-          const img = imgSrc(d, title);
+          const heroImage = getDestinationHeroImage(d.id);
+          const img = heroImage || generatePlaceholderSVG(title, d.id.length);
           return `<a class="category-card" href="#/destinations/${d.id}" style="min-height:260px;"><img src="${img}" alt="${esc(title)}" loading="lazy" onerror="this.onerror=null;this.src='${generatePlaceholderSVG(title, d.id.length)}'"><div class="gradient"></div><span class="count-pill">${journeys.length} ${journeys.length === 1 ? 'journey' : 'journeys'}</span><div class="info"><h3>${title}</h3><p>${d.description}</p></div></a>`;
         }).filter(Boolean).join('')}
       </div>
@@ -899,8 +1295,29 @@ function renderDestination(destId) {
   if (!d) { document.getElementById('app').innerHTML = `<div class="empty-state"><h3>Destination not found</h3></div>`; return; }
   const journeys = getJourneysByDestination(destId);
   const title = destTitle(d);
+  const monuments = getMonumentsForDestination(destId);
+
   document.getElementById('app').innerHTML = `
     <section class="page-hero"><div class="container"><div class="eyebrow">${t('nav_destinations')}</div><h1>${title}</h1><p>${d.description}</p><div class="breadcrumb"><a href="#/journeys">${t('back_to_journeys')}</a> · <a href="#/destinations">${t('nav_destinations')}</a> · ${title}</div></div></section>
+    ${monuments.length ? `
+    <section class="container" style="padding:30px 0 0;">
+      <div class="section-header" style="padding-bottom:20px;"><h2>${t('monuments_gallery')}</h2><p>${t('monuments_gallery_sub')}</p></div>
+      <div class="monument-float-grid">
+        ${monuments.map((m, i) => {
+          const fallback = generatePlaceholderSVG(monumentName(m), i);
+          return `
+          <div class="monument-float-card" style="cursor:default;">
+            <img src="${m.image}" alt="${esc(monumentName(m))}" loading="lazy"
+                 onerror="this.onerror=null;this.src='${fallback}'">
+            <div class="float-gradient"></div>
+            <div class="float-info">
+              <h3>${monumentName(m)}</h3>
+              <p>${title}</p>
+            </div>
+          </div>`;
+        }).join('')}
+      </div>
+    </section>` : ''}
     <section class="container" style="padding: 20px 0 60px;">
       <div class="section-header" style="padding-top:20px;"><h2>${t('journeys_visiting')} ${title}</h2><p>${journeys.length} ${journeys.length === 1 ? 'journey' : 'journeys'}</p></div>
       <div class="journey-grid">${journeys.map(journeyCardHTML).join('')}</div>
@@ -910,30 +1327,61 @@ function renderDestination(destId) {
   scrollTopIfRouteChange();
 }
 
+/* ============================================================
+   FORM ENDPOINT — FormSubmit alias (email hidden from source)
+   ============================================================ */
+const FORM_ENDPOINT_HTML = 'https://formsubmit.co/bd2cc032ca8e1304063b4c5c457ffd2d';
+const FORM_ENDPOINT_AJAX = 'https://formsubmit.co/ajax/bd2cc032ca8e1304063b4c5c457ffd2d';
+
 function renderPlanForm(prefillTourSlug) {
   const prefillTour = prefillTourSlug ? getJourney(prefillTourSlug) : null;
   const prefillName = prefillTour ? journeyTitle(prefillTour) : '';
+
   document.getElementById('app').innerHTML = `
     <section class="page-hero"><div class="container"><div class="eyebrow">${t('nav_plan')}</div><h1>${t('form_title')}</h1><p>${t('form_subtitle')}</p></div></section>
     <section class="container">
       <div class="form-view" id="formWrap">
-        <form id="planForm" action="https://formsubmit.co/info@indiaprivateguide.com" method="POST">
-          <input type="hidden" name="_captcha" value="true">
-          <input type="hidden" name="_subject" value="Plan My Journey – India Private Guide">
-          <input type="text" name="_honey" style="display:none;">
+        <form id="planForm" action="${FORM_ENDPOINT_HTML}" method="POST" novalidate>
+
+          <!-- FormSubmit control fields -->
+          <input type="hidden" name="_subject"  id="fsSubject" value="New Journey Request – India Private Guide">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_captcha"  value="false">
+          <input type="hidden" name="_replyto"  id="fsReplyTo" value="">
+          <input type="text"   name="_honey"    style="display:none" tabindex="-1" autocomplete="off">
+
+          <!-- Prefilled tour -->
           <input type="hidden" name="Selected Tour" value="${esc(prefillName)}">
+
           <div class="form-section">
             <span class="form-section-label">${t('form_step1')}</span>
             <div class="form-row">
               <div class="form-field"><label>${t('form_name')} <span class="required">*</span></label><input type="text" name="Name" required placeholder="${t('form_name_ph')}"></div>
               <div class="form-field"><label>${t('form_country')} <span class="required">*</span></label><input type="text" name="Country" required placeholder="${t('form_country_ph')}"></div>
             </div>
-            <div class="form-field"><label>${t('form_travelers')}</label><select name="Travelers"><option value="1">${t('trav_1')}</option><option value="2" selected>${t('trav_2')}</option><option value="3-4">${t('trav_3_4')}</option><option value="5-8">${t('trav_5_8')}</option><option value="9+">${t('trav_9_plus')}</option></select></div>
+            <div class="form-field"><label>${t('form_travelers')}</label>
+              <select name="Travelers">
+                <option value="1">${t('trav_1')}</option>
+                <option value="2" selected>${t('trav_2')}</option>
+                <option value="3-4">${t('trav_3_4')}</option>
+                <option value="5-8">${t('trav_5_8')}</option>
+                <option value="9+">${t('trav_9_plus')}</option>
+              </select>
+            </div>
           </div>
+
           <div class="form-section">
             <span class="form-section-label">${t('form_step2')}</span>
-            <div class="form-field"><label>${t('form_dates')}</label><select name="Dates"><option>${t('dates_soon')}</option><option>${t('dates_1_3')}</option><option>${t('dates_3_6')}</option><option>${t('dates_deciding')}</option></select></div>
+            <div class="form-field"><label>${t('form_dates')}</label>
+              <select name="Travel Dates">
+                <option>${t('dates_soon')}</option>
+                <option>${t('dates_1_3')}</option>
+                <option>${t('dates_3_6')}</option>
+                <option>${t('dates_deciding')}</option>
+              </select>
+            </div>
           </div>
+
           <div class="form-section">
             <span class="form-section-label">${t('form_step3')}</span>
             <div class="form-checks">
@@ -941,49 +1389,124 @@ function renderPlanForm(prefillTourSlug) {
               <label class="form-check"><input type="checkbox" name="Interests" value="Rajasthan"><span>${t('int_rajasthan')}</span></label>
               <label class="form-check"><input type="checkbox" name="Interests" value="Varanasi"><span>${t('int_varanasi')}</span></label>
               <label class="form-check"><input type="checkbox" name="Interests" value="Khajuraho"><span>${t('int_khajuraho')}</span></label>
-              <label class="form-check"><input type="checkbox" name="Interests" value="Culture"><span>${t('int_culture')}</span></label>
+              <label class="form-check"><input type="checkbox" name="Interests" value="Culture & History"><span>${t('int_culture')}</span></label>
               <label class="form-check"><input type="checkbox" name="Interests" value="Photography"><span>${t('int_photo')}</span></label>
               <label class="form-check"><input type="checkbox" name="Interests" value="Spiritual"><span>${t('int_spiritual')}</span></label>
               <label class="form-check"><input type="checkbox" name="Interests" value="Luxury"><span>${t('int_luxury')}</span></label>
               <label class="form-check"><input type="checkbox" name="Interests" value="Family"><span>${t('int_family')}</span></label>
             </div>
           </div>
+
           <div class="form-section">
             <span class="form-section-label">${t('form_step4')}</span>
             <div class="form-radios">
-              <div class="form-radio"><input type="radio" id="cmTG" name="Contact Method" value="Telegram"><label for="cmTG"><i class="fab fa-telegram-plane"></i> Telegram</label></div>
-              <div class="form-radio"><input type="radio" id="cmWA" name="Contact Method" value="WhatsApp" checked><label for="cmWA"><i class="fab fa-whatsapp"></i> WhatsApp</label></div>
-              <div class="form-radio"><input type="radio" id="cmEM" name="Contact Method" value="Email"><label for="cmEM"><i class="fas fa-envelope"></i> Email</label></div>
+              <div class="form-radio"><input type="radio" id="cmTG" name="ContactMethod" value="Telegram"><label for="cmTG"><i class="fab fa-telegram-plane"></i> Telegram</label></div>
+              <div class="form-radio"><input type="radio" id="cmWA" name="ContactMethod" value="WhatsApp" checked><label for="cmWA"><i class="fab fa-whatsapp"></i> WhatsApp</label></div>
+              <div class="form-radio"><input type="radio" id="cmEM" name="ContactMethod" value="Email"><label for="cmEM"><i class="fas fa-envelope"></i> Email</label></div>
             </div>
           </div>
+
           <div class="form-field">
             <label id="contactLabel">${t('form_whatsapp_label')} <span class="required">*</span></label>
-            <input type="text" id="contactInput" name="Contact" required placeholder="${t('form_whatsapp_ph')}">
+            <input type="text" id="contactInput" required placeholder="${t('form_whatsapp_ph')}">
           </div>
-          <div class="form-field"><label>${t('form_message')}</label><textarea name="Message" placeholder="${t('form_message_ph')}">${prefillName ? (currentLang==='ru' ? `Меня интересует тур «${prefillName}». Пришлите программу и стоимость.` : `I'm interested in the "${prefillName}" tour. Please send the full itinerary and price.`) : ''}</textarea></div>
-          <button type="submit" class="form-submit">${t('form_submit')}</button>
+
+          <div class="form-field">
+            <label>${t('form_message')}</label>
+            <textarea name="Message" placeholder="${t('form_message_ph')}">${prefillName ? (currentLang === 'ru' ? `Меня интересует тур «${prefillName}». Пришлите программу и стоимость.` : `I'm interested in the "${prefillName}" tour. Please send the full itinerary and price.`) : ''}</textarea>
+          </div>
+
+          <button type="submit" class="form-submit" id="planSubmitBtn">${t('form_submit')}</button>
           <p class="form-privacy">${t('form_privacy')}</p>
+          <p id="formError" style="display:none; color:#d9534f; text-align:center; margin-top:12px; font-size:0.85rem; line-height:1.5;"></p>
         </form>
       </div>
-      <div class="form-success" id="formSuccess"><i class="fas fa-check-circle"></i><h3>${t('form_success_title')}</h3><p>${t('form_success_msg')}</p></div>
+      <div class="form-success" id="formSuccess">
+        <i class="fas fa-check-circle"></i>
+        <h3>${t('form_success_title')}</h3>
+        <p>${t('form_success_msg')}</p>
+      </div>
     </section>
   `;
-  const label = document.getElementById('contactLabel');
-  const input = document.getElementById('contactInput');
-  document.querySelectorAll('input[name="Contact Method"]').forEach(r => {
+
+  /* Contact-method switcher */
+  const labelEl = document.getElementById('contactLabel');
+  const inputEl = document.getElementById('contactInput');
+  const fsSubj  = document.getElementById('fsSubject');
+
+  document.querySelectorAll('input[name="ContactMethod"]').forEach(r => {
     r.addEventListener('change', () => {
-      if (r.value === 'Telegram' && r.checked) { label.innerHTML = t('form_telegram_label') + ' <span class="required">*</span>'; input.placeholder = t('form_telegram_ph'); input.type = 'text'; }
-      else if (r.value === 'WhatsApp' && r.checked) { label.innerHTML = t('form_whatsapp_label') + ' <span class="required">*</span>'; input.placeholder = t('form_whatsapp_ph'); input.type = 'tel'; }
-      else if (r.value === 'Email' && r.checked) { label.innerHTML = t('form_email_label') + ' <span class="required">*</span>'; input.placeholder = t('form_email_ph'); input.type = 'email'; }
+      const v = document.querySelector('input[name="ContactMethod"]:checked').value;
+      if (v === 'Telegram') {
+        labelEl.innerHTML = t('form_telegram_label') + ' <span class="required">*</span>';
+        inputEl.placeholder = t('form_telegram_ph');
+        inputEl.type = 'text';
+      } else if (v === 'WhatsApp') {
+        labelEl.innerHTML = t('form_whatsapp_label') + ' <span class="required">*</span>';
+        inputEl.placeholder = t('form_whatsapp_ph');
+        inputEl.type = 'tel';
+      } else {
+        labelEl.innerHTML = t('form_email_label') + ' <span class="required">*</span>';
+        inputEl.placeholder = t('form_email_ph');
+        inputEl.type = 'email';
+      }
+      inputEl.value = '';
     });
   });
-  document.getElementById('planForm').addEventListener('submit', e => {
+
+  /* Submit */
+  document.getElementById('planForm').addEventListener('submit', async (e) => {
     e.preventDefault();
-    const fd = new FormData(e.target);
-    fetch(e.target.action, { method: 'POST', body: fd, headers: { 'Accept': 'application/json' } })
-      .then(r => { if (r.ok) { document.getElementById('formWrap').style.display = 'none'; document.getElementById('formSuccess').classList.add('show'); } else alert('Something went wrong.'); })
-      .catch(() => alert('Network error.'));
+    const form  = e.target;
+    const errEl = document.getElementById('formError');
+    errEl.style.display = 'none';
+
+    if (!form.checkValidity()) { form.reportValidity(); return; }
+
+    const method     = document.querySelector('input[name="ContactMethod"]:checked').value;
+    const contactVal = inputEl.value.trim();
+
+    fsSubj.value = prefillName
+      ? `Journey Request · ${prefillName} · ${method}`
+      : `New Journey Request · ${method}`;
+
+    if (method === 'Email') document.getElementById('fsReplyTo').value = contactVal;
+
+    const fd = new FormData(form);
+    fd.delete('ContactMethod');
+    fd.append('Contact Method', method);
+    fd.append(method + ' ID', contactVal);
+
+    const btn      = document.getElementById('planSubmitBtn');
+    const original = btn.textContent;
+    btn.textContent = currentLang === 'ru' ? 'Отправка…' : 'Sending…';
+    btn.disabled    = true;
+
+    try {
+      const res = await fetch(FORM_ENDPOINT_AJAX, {
+        method: 'POST',
+        body: fd,
+        headers: { 'Accept': 'application/json' }
+      });
+      if (!res.ok) throw new Error('HTTP ' + res.status);
+
+      document.getElementById('formWrap').style.display = 'none';
+      document.getElementById('formSuccess').classList.add('show');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } catch (err) {
+      btn.textContent = original;
+      btn.disabled    = false;
+      errEl.innerHTML =
+        (currentLang === 'ru'
+          ? 'Не удалось отправить форму. Напишите нам напрямую:'
+          : 'Could not send the form. Please reach us directly:')
+        + ' <a href="https://wa.me/919711349497" target="_blank" style="color:#c39a4a;text-decoration:underline;">WhatsApp</a>'
+        + ' · <a href="https://t.me/indiaprivateguide" target="_blank" style="color:#c39a4a;text-decoration:underline;">Telegram</a>'
+        + ' · <a href="mailto:info@indiaprivateguide.com" style="color:#c39a4a;text-decoration:underline;">Email</a>';
+      errEl.style.display = 'block';
+    }
   });
+
   scrollTopIfRouteChange();
 }
 
@@ -994,24 +1517,34 @@ function waTour(title) {
 window.waTour = waTour;
 window.resetFilters = resetFilters;
 
+/* ============================================================
+   ROUTER — supports #/plan and #/plan/{slug}
+   ============================================================ */
 let lastRoute = '';
 
 function router() {
-  const hash = window.location.hash || '#/';
+  if (!window.location.hash) { window.location.hash = '#/journeys'; return; }
+  const hash = window.location.hash || '#/journeys';
   const parts = hash.replace('#/', '').split('/').filter(Boolean);
-  const queryIndex = parts[parts.length-1]?.indexOf('?') || -1;
+  const queryIndex = parts[parts.length-1]?.indexOf('?') ?? -1;
   let query = '';
   if (queryIndex > -1) { query = parts[parts.length-1].substring(queryIndex+1); parts[parts.length-1] = parts[parts.length-1].substring(0, queryIndex); }
-  if (parts.length === 0) renderHome();
+
+  if (parts.length === 0) renderJourneysCatalogue();
   else if (parts[0] === 'journeys' && parts.length === 1) renderJourneysCatalogue();
   else if (parts[0] === 'journeys' && parts.length === 2) renderJourneyDetail(parts[1]);
   else if (parts[0] === 'collections' && parts.length === 1) renderCollectionsIndex();
   else if (parts[0] === 'collections' && parts.length === 2) renderCollection(parts[1]);
   else if (parts[0] === 'destinations' && parts.length === 1) renderDestinationsIndex();
   else if (parts[0] === 'destinations' && parts.length === 2) renderDestination(parts[1]);
+  else if (parts[0] === 'home') renderHome();
   else if (parts[0] === 'about') { renderHome(); setTimeout(() => document.getElementById('about')?.scrollIntoView({behavior:'smooth'}), 100); }
-  else if (parts[0] === 'plan') { const tourMatch = query.match(/tour=([^&]+)/); renderPlanForm(tourMatch ? tourMatch[1] : null); }
-  else renderHome();
+  else if (parts[0] === 'plan') {
+    const tourSlug = parts[1] || (query.match(/tour=([^&]+)/) || [])[1] || null;
+    renderPlanForm(tourSlug);
+  }
+  else renderJourneysCatalogue();
+
   document.querySelectorAll('[data-i18n]').forEach(el => { const key = el.dataset.i18n; if (translations[currentLang][key]) el.textContent = translations[currentLang][key]; });
   document.getElementById('navLinks')?.classList.remove('open');
 }
