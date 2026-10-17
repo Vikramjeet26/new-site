@@ -28,19 +28,24 @@ header { background: #1a2a3a; color: #fff; padding: 10px 0; position: sticky; to
 .header-actions { display: flex; align-items: center; gap: 12px; }
 .header-actions .icon-link { color: #fff; font-size: 1.15rem; }
 .header-actions .icon-link:hover { color: #c39a4a; }
-.btn-nav-cta { background: #c39a4a; color: #1a2a3a; padding: 7px 16px; border-radius: 2px; font-weight: 700; border: none; font-size: 0.78rem; letter-spacing: 0.05em; text-transform: uppercase; white-space: nowrap; }
-.btn-nav-cta:hover { background: #a8853a; }
+.btn-nav-cta { background: #c39a4a; color: #1a2a3a; padding: 7px 16px; border-radius: 2px; font-weight: 700; border: none; font-size: 0.78rem; letter-spacing: 0.05em; text-transform: uppercase; white-space: nowrap; transition: 0.2s; }
+.btn-nav-cta:hover, .btn-nav-cta:focus { background: #a8853a; outline: 2px solid #fff; outline-offset: 2px; }
 .lang-toggle { background: transparent; border: 2px solid #c39a4a; color: #c39a4a; padding: 4px 10px; border-radius: 30px; font-weight: 700; font-size: 0.82rem; }
 .lang-toggle:hover { background: #c39a4a; color: #1a2a3a; }
 .hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; padding: 4px; }
 .hamburger span { display: block; width: 24px; height: 3px; background: #fff; border-radius: 4px; }
 
 .btn-gold { background: #c39a4a; color: #1a2a3a; padding: 12px 28px; border-radius: 2px; font-weight: 700; border: none; font-size: 0.82rem; letter-spacing: 0.06em; text-transform: uppercase; display: inline-block; text-align: center; transition: 0.2s; }
-.btn-gold:hover { background: #a8853a; }
+.btn-gold:hover, .btn-gold:focus { background: #a8853a; transform: translateY(-2px); box-shadow: 0 4px 12px rgba(195,154,74,0.3); outline: none; }
 .btn-outline-gold { background: transparent; color: #c39a4a; padding: 12px 28px; border-radius: 2px; font-weight: 700; border: 2px solid #c39a4a; font-size: 0.82rem; letter-spacing: 0.06em; text-transform: uppercase; display: inline-block; text-align: center; transition: 0.2s; }
-.btn-outline-gold:hover { background: #c39a4a; color: #1a2a3a; }
+.btn-outline-gold:hover, .btn-outline-gold:focus { background: #c39a4a; color: #1a2a3a; outline: none; }
 .btn-secondary { padding: 10px 14px; background: transparent; border: 1px solid #d5ccc3; border-radius: 2px; font-weight: 600; font-size: 0.76rem; letter-spacing: 0.05em; text-transform: uppercase; color: #2b4a5f; display: inline-flex; align-items: center; justify-content: center; gap: 6px; transition: 0.2s; }
 .btn-secondary:hover { border-color: #1a2a3a; color: #1a2a3a; }
+
+.btn-whatsapp { background: #25d366; color: #fff; padding: 12px 24px; border-radius: 2px; font-weight: 700; border: none; font-size: 0.82rem; letter-spacing: 0.06em; text-transform: uppercase; display: inline-flex; align-items: center; gap: 8px; transition: 0.2s; }
+.btn-whatsapp:hover, .btn-whatsapp:focus { background: #1ebd58; transform: translateY(-2px); box-shadow: 0 4px 12px rgba(37,211,102,0.3); outline: none; }
+.btn-telegram { background: #229ed9; color: #fff; padding: 12px 24px; border-radius: 2px; font-weight: 700; border: none; font-size: 0.82rem; letter-spacing: 0.06em; text-transform: uppercase; display: inline-flex; align-items: center; gap: 8px; transition: 0.2s; }
+.btn-telegram:hover, .btn-telegram:focus { background: #1c8cbf; transform: translateY(-2px); box-shadow: 0 4px 12px rgba(34,158,217,0.3); outline: none; }
 
 .hero { position: relative; min-height: 82vh; display: flex; align-items: center; justify-content: center; color: #fff; text-align: center; background: #1a2a3a; background-image: url('images/hero1.jpeg'); background-size: cover; background-position: center; }
 .hero-overlay { position: absolute; inset: 0; background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.4)); }
@@ -260,14 +265,15 @@ header { background: #1a2a3a; color: #fff; padding: 10px 0; position: sticky; to
 .value-card h4 { font-family: 'Inter', sans-serif; font-size: 0.95rem; font-weight: 700; color: #1a2a3a; margin-bottom: 8px; }
 .value-card p { font-size: 0.85rem; color: #6a6a7e; line-height: 1.55; margin: 0; }
 
-.final-cta { background: #1a2a3a; color: #fff; padding: 70px 0; text-align: center; }
+.final-cta { background: #1a2a3a; color: #fff; padding: 80px 0; text-align: center; }
 .final-cta-inner { max-width: 800px; margin: 0 auto; padding: 0 20px; }
 .final-cta .eyebrow { color: #c39a4a; margin-bottom: 14px; display: inline-block; letter-spacing: 0.3em; font-size: 0.75rem; font-weight: 500; text-transform: uppercase; }
-.final-cta h2 { font-family: 'Playfair Display', serif; font-size: 2.4rem; font-weight: 400; color: #fff; margin-bottom: 14px; line-height: 1.2; }
-.final-cta p { font-size: 1rem; color: rgba(255,255,255,0.85); line-height: 1.7; margin-bottom: 30px; }
-.final-cta-buttons { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
-.final-cta .btn-outline-gold { color: #c39a4a; border: 2px solid #c39a4a; padding: 12px 26px; font-size: 0.82rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; display: inline-flex; align-items: center; gap: 8px; border-radius: 2px; transition: 0.2s; background: transparent; }
-.final-cta .btn-outline-gold:hover { background: #c39a4a; color: #1a2a3a; }
+.final-cta h2 { font-family: 'Playfair Display', serif; font-size: 2.6rem; font-weight: 400; color: #fff; margin-bottom: 18px; line-height: 1.2; }
+.final-cta p { font-size: 1.05rem; color: rgba(255,255,255,0.85); line-height: 1.7; margin-bottom: 36px; max-width: 650px; margin-left: auto; margin-right: auto; }
+.final-cta-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; align-items: center; }
+.final-cta-contact { margin-top: 40px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.85rem; color: rgba(255,255,255,0.6); display: flex; justify-content: center; gap: 24px; flex-wrap: wrap; }
+.final-cta-contact a { color: #c39a4a; transition: color 0.2s; }
+.final-cta-contact a:hover { color: #fff; }
 
 .about-section { background: #fff; padding: 60px 0; border-top: 1px solid #eeeae5; }
 .about-inner { display: flex; flex-wrap: wrap; align-items: center; gap: 50px; max-width: 1100px; margin: 0 auto; padding: 0 20px; }
@@ -362,7 +368,9 @@ footer p { font-size: 0.88rem; line-height: 1.7; }
   .filter-inner { flex-direction: column; gap: 10px; align-items: stretch; }
   .filter-group { justify-content: center; }
   .connected-colls { grid-template-columns: 1fr 1fr; }
-  .final-cta h2 { font-size: 1.8rem; }
+  .final-cta h2 { font-size: 2rem; }
+  .final-cta-buttons { flex-direction: column; width: 100%; max-width: 300px; margin: 0 auto; }
+  .final-cta-buttons a, .final-cta-buttons button { width: 100%; justify-content: center; }
 }
 @media (max-width: 480px) { .form-checks { grid-template-columns: 1fr; } .connected-colls { grid-template-columns: 1fr; } }
 </style>
@@ -383,11 +391,11 @@ footer p { font-size: 0.88rem; line-height: 1.7; }
       <a href="#/about" data-i18n="nav_about">About</a>
       <a href="#/reviews" data-i18n="nav_reviews">Reviews</a>
       <div class="header-actions">
-        <a href="https://wa.me/919711349497" target="_blank" class="icon-link" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-        <a href="https://t.me/indiaprivateguide" target="_blank" class="icon-link" title="Telegram"><i class="fab fa-telegram-plane"></i></a>
-        <a href="mailto:info@indiaprivateguide.com" class="icon-link" title="Email"><i class="fas fa-envelope"></i></a>
-        <button class="btn-nav-cta" onclick="window.location.hash='#/plan'"><span data-i18n="nav_plan">Plan Your Journey</span></button>
-        <button class="lang-toggle" id="langToggle">RU</button>
+        <a href="https://wa.me/919711349497" target="_blank" class="icon-link" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://t.me/indiaprivateguide" target="_blank" class="icon-link" aria-label="Telegram"><i class="fab fa-telegram-plane"></i></a>
+        <a href="mailto:info@indiaprivateguide.com" class="icon-link" aria-label="Email"><i class="fas fa-envelope"></i></a>
+        <button class="btn-nav-cta" onclick="window.location.hash='#/plan'"><span data-i18n="nav_plan">Plan Your Private Journey</span></button>
+        <button class="lang-toggle" id="langToggle" aria-label="Toggle language">RU</button>
       </div>
     </div>
   </div>
@@ -401,7 +409,7 @@ footer p { font-size: 0.88rem; line-height: 1.7; }
     <a href="https://wa.me/919711349497" target="_blank"><i class="fab fa-whatsapp"></i> +91 97113 49497</a>
     <a href="https://t.me/indiaprivateguide" target="_blank"><i class="fab fa-telegram-plane"></i> @indiaprivateguide</a>
   </div>
-  <button class="main-btn" onclick="document.getElementById('contactDetails').classList.toggle('open')">
+  <button class="main-btn" onclick="document.getElementById('contactDetails').classList.toggle('open')" aria-label="Contact options">
     <i class="fas fa-phone-alt"></i> <span data-i18n="contact_btn">Contact Us</span>
   </button>
 </div>
@@ -439,12 +447,12 @@ const translations = {
   en: {
     nav_home: "Home",
     nav_journeys: "Journeys", nav_collections: "Journey Themes", nav_destinations: "Destinations",
-    nav_about: "About", nav_reviews: "Reviews", nav_plan: "Plan Your Journey",
+    nav_about: "About", nav_reviews: "Reviews", nav_plan: "Plan Your Private Journey",
     hero_eyebrow: "Private Guided Journeys",
     hero_title: "Private Guided Journeys <strong>Across India</strong>",
     hero_subtitle: "Bespoke itineraries crafted by Vikramjeet Singh.",
     hero_desc: "Twenty years of private guiding, hundreds of journeys, one trusted expert. Every itinerary designed around you — in English or Russian.",
-    hero_cta_primary: "Plan Your Custom Journey", hero_cta_secondary: "Explore Destinations",
+    hero_cta_primary: "Plan Your Private Journey", hero_cta_secondary: "Explore Destinations",
     trust_guide: "Government Approved Guide", trust_exp: "20+ Years Experience",
     trust_lang: "Fluent English & Russian", trust_private: "100% Private Journeys",
     trust_guide_desc: "Ministry of Tourism certified private guide",
@@ -473,7 +481,7 @@ const translations = {
     filter_collection: "Theme", filter_all: "All", filter_reset: "Reset",
     tab_overview: "Overview", tab_itinerary: "Itinerary", tab_inclusions: "Inclusions",
     qv_highlights: "Highlights", qv_included: "Included", qv_excluded: "Not Included",
-    cta_get_quote: "Get Itinerary & Price",
+    cta_get_quote: "Plan Your Private Journey",
     explore_journey: "View Journey",
     meet_eyebrow: "Your Private Guide",
     meet_title: "Namaste, I'm Vikramjeet Singh",
@@ -508,10 +516,10 @@ const translations = {
     footer_all_journeys: "All Journeys", footer_collections: "Journey Themes",
     footer_destinations: "Destinations",
     footer_rights: "© 2026 India Private Guide. All rights reserved.",
-    final_cta_eyebrow: "Plan Your Journey",
-    final_cta_title: "Let's design your private India journey",
-    final_cta_desc: "Tell me your dates and interests — I'll reply personally within 24 hours with a custom itinerary and quotation.",
-    form_title: "Plan My Journey",
+    final_cta_eyebrow: "Plan Your Private Journey",
+    final_cta_title: "Let's Plan Your Private India Journey",
+    final_cta_desc: "Tell me your travel dates, interests, and preferred travel style. I will personally create a custom itinerary and quotation for your trip.",
+    form_title: "Plan Your Private Journey",
     form_subtitle: "Tell us about your trip and we'll prepare a personal itinerary and price.",
     form_step1: "Step 1 · Trip basics", form_step2: "Step 2 · Travel dates",
     form_step3: "Step 3 · Interests", form_step4: "Step 4 · Contact method",
@@ -530,7 +538,7 @@ const translations = {
     form_email_label: "Email address", form_email_ph: "you@example.com",
     form_message: "Special requests",
     form_message_ph: "E.g. we want to visit Delhi, Agra and Khajuraho; interested in 4–5 star hotels.",
-    form_submit: "Get Itinerary & Price",
+    form_submit: "Request Itinerary & Price",
     form_privacy: "We reply within 24 hours. Your details are never shared.",
     form_success_title: "Thank you!",
     form_success_msg: "Your request has been sent. We'll reply within 24 hours."
@@ -538,12 +546,12 @@ const translations = {
   ru: {
     nav_home: "Главная",
     nav_journeys: "Путешествия", nav_collections: "Темы путешествий", nav_destinations: "Направления",
-    nav_about: "О нас", nav_reviews: "Отзывы", nav_plan: "Спланировать поездку",
+    nav_about: "О нас", nav_reviews: "Отзывы", nav_plan: "Спланировать частное путешествие",
     hero_eyebrow: "Частные путешествия с гидом",
     hero_title: "Частные путешествия по Индии <strong>с личным гидом</strong>",
     hero_subtitle: "Индивидуальные маршруты от Викрамджита Сингха.",
     hero_desc: "Двадцать лет частного сопровождения, сотни путешествий, один надёжный эксперт. Каждый маршрут — вокруг вас, на английском или русском.",
-    hero_cta_primary: "Спланировать маршрут", hero_cta_secondary: "Выбрать направление",
+    hero_cta_primary: "Спланировать частное путешествие", hero_cta_secondary: "Выбрать направление",
     trust_guide: "Гид, аккредитованный правительством", trust_exp: "Опыт 20+ лет",
     trust_lang: "Свободный английский и русский", trust_private: "100% частные туры",
     trust_guide_desc: "Аккредитация Министерства туризма Индии",
@@ -571,7 +579,7 @@ const translations = {
     filter_collection: "Тема", filter_all: "Все", filter_reset: "Сбросить",
     tab_overview: "Обзор", tab_itinerary: "Маршрут", tab_inclusions: "Включено",
     qv_highlights: "Основные моменты", qv_included: "Включено", qv_excluded: "Не включено",
-    cta_get_quote: "Получить программу и цену",
+    cta_get_quote: "Спланировать частное путешествие",
     explore_journey: "Смотреть тур",
     meet_eyebrow: "Ваш частный гид",
     meet_title: "Намасте, меня зовут Викрамджит Сингх",
@@ -606,10 +614,10 @@ const translations = {
     footer_all_journeys: "Все туры", footer_collections: "Темы путешествий",
     footer_destinations: "Направления",
     footer_rights: "© 2026 India Private Guide. Все права защищены.",
-    final_cta_eyebrow: "Спланировать поездку",
-    final_cta_title: "Давайте создадим ваше частное путешествие по Индии",
-    final_cta_desc: "Расскажите даты и интересы — я лично отвечу в течение 24 часов с индивидуальным маршрутом и стоимостью.",
-    form_title: "Спланировать путешествие",
+    final_cta_eyebrow: "Спланировать частное путешествие",
+    final_cta_title: "Давайте спланируем ваше частное путешествие по Индии",
+    final_cta_desc: "Расскажите мне даты поездки, интересы и предпочтения. Я лично подготовлю индивидуальный маршрут и стоимость.",
+    form_title: "Спланировать частное путешествие",
     form_subtitle: "Расскажите о поездке, и мы подготовим программу и стоимость.",
     form_step1: "Шаг 1 · Основное", form_step2: "Шаг 2 · Даты поездки",
     form_step3: "Шаг 3 · Интересы", form_step4: "Шаг 4 · Способ связи",
@@ -628,7 +636,7 @@ const translations = {
     form_email_label: "Адрес электронной почты", form_email_ph: "you@example.com",
     form_message: "Особые пожелания",
     form_message_ph: "Например: хотим посетить Дели, Агру и Кхаджурахо.",
-    form_submit: "Получить программу и стоимость",
+    form_submit: "Запросить маршрут и цену",
     form_privacy: "Мы отвечаем в течение 24 часов.",
     form_success_title: "Спасибо!",
     form_success_msg: "Ваш запрос отправлен. Мы ответим в течение 24 часов."
@@ -638,7 +646,7 @@ let currentLang = 'en';
 function t(k) { return translations[currentLang]?.[k] || translations.en[k] || k; }
 
 /* ============================================================
-   MONUMENTS
+   MONUMENTS 
    ============================================================ */
 const MONUMENTS = {
   "delhi": [
@@ -647,90 +655,202 @@ const MONUMENTS = {
     { id: "humayuns-tomb", name: "Humayun's Tomb", nameRu: "Гробница Хумаюна", image: "images/monuments/delhi_humayuns_tomb_01.jpeg" },
     { id: "jama-masjid", name: "Jama Masjid", nameRu: "Джама-Масджид", image: "images/monuments/delhi_jama_masjid_01.jpeg" },
     { id: "lotus-temple", name: "Lotus Temple", nameRu: "Храм Лотоса", image: "images/monuments/delhi_lotus_temple_01.jpeg" },
-    { id: "bangla-sahib", name: "Gurudwara Bangla Sahib", nameRu: "Гурдвара Бангла Сахиб", image: "images/monuments/delhi_bangla_sahib_01.jpeg" }
+    { id: "bangla-sahib", name: "Gurudwara Bangla Sahib", nameRu: "Гурдвара Бангла Сахиб", image: "images/monuments/delhi_bangla_sahib_01.jpeg" },
+    { id: "akshardham", name: "Swaminarayan Akshardham", nameRu: "Акшардхам", image: "images/monuments/delhi_akshardham_01.jpeg" },
+    { id: "india-gate", name: "India Gate", nameRu: "Ворота Индии", image: "images/monuments/delhi_india_gate_01.jpeg" }
   ],
   "agra": [
     { id: "taj-mahal", name: "Taj Mahal", nameRu: "Тадж-Махал", image: "images/monuments/agra_taj_mahal_01.jpeg" },
     { id: "agra-fort", name: "Agra Fort", nameRu: "Агра-Форт", image: "images/monuments/agra_agra_fort_01.jpeg" },
     { id: "baby-taj", name: "Itmad-ud-Daulah (Baby Taj)", nameRu: "Малый Тадж", image: "images/monuments/agra_itmad_ud_daulah_01.jpeg" }
   ],
+  "sikandra": [
+    { id: "akbars-tomb", name: "Akbar's Tomb", nameRu: "Гробница Акбара", image: "images/monuments/sikandra_akbars_tomb_01.jpeg" }
+  ],
+  "mehtab-bagh": [
+    { id: "mehtab-bagh", name: "Mehtab Bagh", nameRu: "Мехтаб-Багх", image: "images/monuments/mehtab_bagh_taj_view_01.jpeg" }
+  ],
+  "fatehpur-sikri": [
+    { id: "buland-darwaza", name: "Buland Darwaza", nameRu: "Буланд Дарваза", image: "images/monuments/fatehpur_sikri_buland_darwaza_01.jpeg" }
+  ],
   "jaipur": [
     { id: "amber-fort", name: "Amber Fort", nameRu: "Амбер-Форт", image: "images/monuments/jaipur_amber_fort_01.jpeg" },
     { id: "hawa-mahal", name: "Hawa Mahal", nameRu: "Хава-Махал", image: "images/monuments/jaipur_hawa_mahal_01.jpeg" },
-    { id: "jal-mahal", name: "Jal Mahal", nameRu: "Джал-Махал", image: "images/monuments/jaipur_jal_mahal_01.jpeg" }
+    { id: "jal-mahal", name: "Jal Mahal", nameRu: "Джал-Махал", image: "images/monuments/jaipur_jal_mahal_01.jpeg" },
+    { id: "city-palace", name: "City Palace", nameRu: "Городской дворец", image: "images/monuments/jaipur_city_palace_01.jpeg" },
+    { id: "jantar-mantar", name: "Jantar Mantar", nameRu: "Джантар-Мантар", image: "images/monuments/jaipur_jantar_mantar_01.jpeg" }
   ],
-  "abhaneri": [ { id: "chand-baori", name: "Chand Baori Stepwell", nameRu: "Ступенчатый колодец Чанд-Баори", image: "images/monuments/abhaneri_chand_baori_01.jpeg" } ],
-  "fatehpur-sikri": [ { id: "buland-darwaza", name: "Buland Darwaza", nameRu: "Буланд Дарваза", image: "images/monuments/fatehpur_sikri_buland_darwaza_01.jpeg" } ],
+  "abhaneri": [
+    { id: "chand-baori", name: "Chand Baori Stepwell", nameRu: "Ступенчатый колодец Чанд-Баори", image: "images/monuments/abhaneri_chand_baori_01.jpeg" }
+  ],
   "varanasi": [
     { id: "dashashwamedh", name: "Dashashwamedh Ghat", nameRu: "Гхат Дашашвамедх", image: "images/monuments/varanasi_dashashwamedh_ghat_01.jpeg" },
-    { id: "manikarnika", name: "Manikarnika Ghat", nameRu: "Гхат Маникарника", image: "images/monuments/varanasi_manikarnika_ghat_01.jpeg" }
+    { id: "manikarnika", name: "Manikarnika Ghat", nameRu: "Гхат Маникарника", image: "images/monuments/varanasi_manikarnika_ghat_01.jpeg" },
+    { id: "ganga-aarti", name: "Ganga Aarti", nameRu: "Ганга Аарти", image: "images/monuments/varanasi_ganga_aarti_01.jpeg" },
+    { id: "sunrise-boat", name: "Sunrise Boat Ride", nameRu: "Рассветная прогулка на лодке", image: "images/monuments/varanasi_sunrise_boat_01.jpeg" }
   ],
-  "sarnath": [ { id: "dhamek-stupa", name: "Dhamek Stupa", nameRu: "Ступа Дхамек", image: "images/monuments/sarnath_dhamek_stupa_01.jpeg" } ],
-  "bodh-gaya": [ { id: "mahabodhi", name: "Mahabodhi Temple", nameRu: "Храм Махабодхи", image: "images/monuments/bodhgaya_mahabodhi_01.jpeg" } ],
-  "rajgir": [ { id: "griddhakuta", name: "Griddhakuta Hill", nameRu: "Холм Гриддхакута", image: "images/monuments/rajgir_griddhakuta_01.jpeg" } ],
-  "nalanda": [ { id: "nalanda-ruins", name: "Nalanda Ruins", nameRu: "Руины Наланды", image: "images/monuments/nalanda_nalanda_ruins_01.jpeg" } ],
-  "khajuraho": [ { id: "kandariya-mahadev", name: "Kandariya Mahadev Temple", nameRu: "Храм Кандария Махадев", image: "images/monuments/khajuraho_kandariya_mahadeva_01.jpeg" } ],
-  "panna": [ { id: "panna-tiger", name: "Panna Tiger Reserve", nameRu: "Заповедник Панна", image: "images/monuments/panna_panna_tiger_01.jpeg" } ],
-  "bharatpur": [ { id: "keoladeo", name: "Keoladeo National Park", nameRu: "Национальный парк Кеоладео", image: "images/monuments/bharatpur_keoladeo_01.jpeg" } ],
-  "ranthambore": [ { id: "bengal-tiger", name: "Bengal Tiger Safari", nameRu: "Сафари на бенгальского тигра", image: "images/monuments/ranthambore_tiger_01.jpeg" } ],
+  "sarnath": [
+    { id: "dhamek-stupa", name: "Dhamek Stupa", nameRu: "Ступа Дхамек", image: "images/monuments/sarnath_dhamek_stupa_01.jpeg" }
+  ],
+  "bodh-gaya": [
+    { id: "mahabodhi", name: "Mahabodhi Temple", nameRu: "Храм Махабодхи", image: "images/monuments/bodhgaya_mahabodhi_01.jpeg" }
+  ],
+  "gaya": [
+    { id: "vishnupad", name: "Vishnupad Temple", nameRu: "Храм Вишнупада", image: "images/monuments/gaya_vishnupad_temple_01.jpeg" }
+  ],
+  "rajgir": [
+    { id: "griddhakuta", name: "Griddhakuta Hill", nameRu: "Холм Гриддхакута", image: "images/monuments/rajgir_griddhakuta_01.jpeg" }
+  ],
+  "nalanda": [
+    { id: "nalanda-ruins", name: "Nalanda Ruins", nameRu: "Руины Наланды", image: "images/monuments/nalanda_nalanda_ruins_01.jpeg" }
+  ],
+  "patna": [
+    { id: "patna-sahib", name: "Takht Sri Patna Sahib", nameRu: "Патна Сахиб", image: "images/monuments/patna_patna_sahib_01.jpeg" }
+  ],
+  "khajuraho": [
+    { id: "kandariya-mahadev", name: "Kandariya Mahadev Temple", nameRu: "Храм Кандария Махадев", image: "images/monuments/khajuraho_kandariya_mahadeva_01.jpeg" },
+    { id: "lakshmana", name: "Lakshmana Temple", nameRu: "Храм Лакшмана", image: "images/monuments/khajuraho_lakshmana_temple_01.jpeg" }
+  ],
+  "panna": [
+    { id: "panna-tiger", name: "Panna Tiger Reserve", nameRu: "Заповедник Панна", image: "images/monuments/panna_panna_tiger_01.jpeg" },
+    { id: "raneh-falls", name: "Raneh Falls", nameRu: "Водопады Ранех", image: "images/monuments/panna_raneh_falls_01.jpeg" }
+  ],
+  "orchha": [
+    { id: "orchha-palace", name: "Orchha Palace", nameRu: "Дворец Орчха", image: "images/monuments/orchha_orchha_palace_01.jpeg" },
+    { id: "jahangir-mahal", name: "Jahangir Mahal", nameRu: "Джахангир Махал", image: "images/monuments/orchha_jahangir_mahal_01.jpeg" }
+  ],
+  "bharatpur": [
+    { id: "keoladeo", name: "Keoladeo National Park", nameRu: "Национальный парк Кеоладео", image: "images/monuments/bharatpur_keoladeo_01.jpeg" }
+  ],
+  "ranthambore": [
+    { id: "bengal-tiger", name: "Bengal Tiger Safari", nameRu: "Сафари на бенгальского тигра", image: "images/monuments/ranthambore_tiger_01.jpeg" },
+    { id: "ranthambore-fort", name: "Ranthambore Fort", nameRu: "Форт Рантхамбор", image: "images/monuments/ranthambore_fort_01.jpeg" }
+  ],
+  "bundi": [
+    { id: "taragarh-fort", name: "Taragarh Fort", nameRu: "Форт Тарагарх", image: "images/monuments/bundi_taragarh_fort_01.jpeg" }
+  ],
   "jodhpur": [
     { id: "mehrangarh", name: "Mehrangarh Fort", nameRu: "Форт Мехрангарх", image: "images/monuments/jodhpur_mehrangarh_01.jpeg" },
-    { id: "jaswant-thada", name: "Jaswant Thada", nameRu: "Джасвант Тада", image: "images/monuments/jodhpur_jaswant_thada_01.jpeg" }
+    { id: "jaswant-thada", name: "Jaswant Thada", nameRu: "Джасвант Тада", image: "images/monuments/jodhpur_jaswant_thada_01.jpeg" },
+    { id: "blue-city", name: "The Blue City", nameRu: "Голубой город", image: "images/monuments/jodhpur_blue_city_01.jpeg" }
   ],
   "jaisalmer": [
     { id: "jaisalmer-fort", name: "Jaisalmer Fort", nameRu: "Форт Джайсалмер", image: "images/monuments/jaisalmer_fort_01.jpeg" },
-    { id: "thar-desert", name: "Sam Sand Dunes", nameRu: "Дюны Сам (пустыня Тар)", image: "images/monuments/jaisalmer_sam_sand_dunes_01.jpeg" }
+    { id: "thar-desert", name: "Sam Sand Dunes", nameRu: "Дюны Сам (пустыня Тар)", image: "images/monuments/jaisalmer_sam_sand_dunes_01.jpeg" },
+    { id: "patwon-haveli", name: "Patwon Ki Haveli", nameRu: "Хавели Патвон", image: "images/monuments/jaisalmer_patwon_ki_haveli_01.jpeg" }
   ],
-  "udaipur": [
-    { id: "city-palace", name: "City Palace Udaipur", nameRu: "Городской дворец Удайпура", image: "images/monuments/udaipur_city_palace_01.jpeg" },
-    { id: "lake-pichola", name: "Lake Pichola", nameRu: "Озеро Пичола", image: "images/monuments/udaipur_lake_pichola_01.jpeg" }
-  ],
-  "kumbhalgarh": [ { id: "kumbhalgarh-fort", name: "Kumbhalgarh Fort", nameRu: "Форт Кумбхалгарх", image: "images/monuments/kumbhalgarh_fort_01.jpeg" } ],
-  "ranakpur": [ { id: "ranakpur-temple", name: "Ranakpur Jain Temple", nameRu: "Джайнский храм Ранакпур", image: "images/monuments/ranakpur_jain_temple_01.jpeg" } ],
-  "chittorgarh": [ { id: "chittorgarh-fort", name: "Chittorgarh Fort", nameRu: "Форт Читторгарх", image: "images/monuments/chittorgarh_chittorgarh_fort_01.jpeg" } ],
   "bikaner": [
     { id: "junagarh-fort", name: "Junagarh Fort", nameRu: "Форт Джунагарх", image: "images/monuments/bikaner_junagarh_fort_01.jpeg" },
     { id: "karni-mata", name: "Karni Mata Temple", nameRu: "Храм Карни Мата", image: "images/monuments/bikaner_karni_mata_01.jpeg" },
     { id: "rampura-havelis", name: "Rampuria Havelis", nameRu: "Хавели Рампурия", image: "images/monuments/bikaner_rampuria_havelis_01.jpeg" }
   ],
-  "amritsar": [ { id: "golden-temple", name: "Golden Temple", nameRu: "Золотой храм", image: "images/monuments/amritsar_golden_temple_01.jpeg" } ],
-  "shimla": [ { id: "christ-church", name: "Christ Church", nameRu: "Церковь Христа", image: "images/monuments/shimla_christ_church_01.jpeg" } ],
-  "manali": [ { id: "hadimba", name: "Hadimba Temple", nameRu: "Храм Хадимба", image: "images/monuments/manali_hadimba_temple_01.jpeg" } ],
-  "dharamshala": [ { id: "mcleod-ganj", name: "McLeod Ganj Monastery", nameRu: "Монастырь Мак-Леод Гандж", image: "images/monuments/dharamshala_mcleod_ganj_01.jpeg" } ],
-  "kalimpong": [
-    { id: "zang-dhok-palri", name: "Zang Dhok Palri Monastery", nameRu: "Монастырь Занг Дхок Палри", image: "images/monuments/kalimpong_zang_dhok_palri_01.jpeg" },
-    { id: "deolo-hill", name: "Deolo Hill Viewpoint", nameRu: "Смотровая площадка Деоло-Хилл", image: "images/monuments/kalimpong_deolo_hill_01.jpeg" }
+  "udaipur": [
+    { id: "city-palace", name: "City Palace", nameRu: "Городской дворец", image: "images/monuments/udaipur_city_palace_01.jpeg" },
+    { id: "lake-pichola", name: "Lake Pichola", nameRu: "Озеро Пичола", image: "images/monuments/udaipur_lake_pichola_01.jpeg" },
+    { id: "jag-mandir", name: "Jag Mandir", nameRu: "Джаг Мандир", image: "images/monuments/udaipur_jag_mandir_01.jpeg" }
   ],
-  "mandi": [ { id: "bhotnath-temple", name: "Bhootnath Temple", nameRu: "Храм Бхутнатх", image: "images/monuments/mandi_bhootnath_temple_01.jpeg" } ],
-  "bir": [ { id: "bir-paragliding", name: "Bir-Billing Paragliding", nameRu: "Парапланеризм Бир-Биллинг", image: "images/monuments/bir_paragliding_01.jpeg" } ],
+  "chittorgarh": [
+    { id: "chittorgarh-fort", name: "Chittorgarh Fort", nameRu: "Форт Читторгарх", image: "images/monuments/chittorgarh_chittorgarh_fort_01.jpeg" },
+    { id: "vijay-stambh", name: "Vijay Stambh", nameRu: "Виджай Стамбх", image: "images/monuments/chittorgarh_vijay_stambh_01.jpeg" }
+  ],
+  "kumbhalgarh": [
+    { id: "kumbhalgarh-fort", name: "Kumbhalgarh Fort", nameRu: "Форт Кумбхалгарх", image: "images/monuments/kumbhalgarh_fort_01.jpeg" }
+  ],
+  "ranakpur": [
+    { id: "ranakpur-temple", name: "Ranakpur Jain Temple", nameRu: "Джайнский храм Ранакпур", image: "images/monuments/ranakpur_jain_temple_01.jpeg" },
+    { id: "ranakpur-pillars", name: "Ranakpur Pillars", nameRu: "Колонны Ранакпура", image: "images/monuments/ranakpur_pillars_01.jpeg" }
+  ],
+  "amritsar": [
+    { id: "golden-temple", name: "Golden Temple", nameRu: "Золотой храм", image: "images/monuments/amritsar_golden_temple_01.jpeg" },
+    { id: "wagah-border", name: "Wagah Border", nameRu: "Граница Вагах", image: "images/monuments/amritsar_wagah_border_01.jpeg" }
+  ],
+  "shimla": [
+    { id: "christ-church", name: "Christ Church", nameRu: "Церковь Христа", image: "images/monuments/shimla_christ_church_01.jpeg" },
+    { id: "the-ridge", name: "The Ridge", nameRu: "Ридж", image: "images/monuments/shimla_ridge_01.jpeg" }
+  ],
+  "mandi": [
+    { id: "bhotnath-temple", name: "Bhootnath Temple", nameRu: "Храм Бхутнатх", image: "images/monuments/mandi_bhootnath_temple_01.jpeg" }
+  ],
+  "manali": [
+    { id: "hadimba", name: "Hadimba Temple", nameRu: "Храм Хадимба", image: "images/monuments/manali_hadimba_temple_01.jpeg" },
+    { id: "solang-valley", name: "Solang Valley", nameRu: "Долина Соланг", image: "images/monuments/manali_solang_valley_01.jpeg" }
+  ],
   "naggar": [
     { id: "naggar-castle", name: "Naggar Castle", nameRu: "Замок Наггар", image: "images/monuments/naggar_castle_01.jpeg" },
     { id: "roerich-estate", name: "Roerich Art Estate", nameRu: "Художественная усадьба Рериха", image: "images/monuments/naggar_roerich_estate_01.jpeg" }
   ],
-  "khuldabad": [ { id: "aurangzeb-tomb", name: "Aurangzeb's Tomb", nameRu: "Гробница Аурангзеба", image: "images/monuments/khuldabad_aurangzeb_tomb_01.jpeg" } ],
-  "murud": [ { id: "murud-janjira-fort", name: "Murud-Janjira Sea Fort", nameRu: "Морской форт Муруд-Джанджира", image: "images/monuments/murud_janjira_fort_01.jpeg" } ],
-  "darjeeling": [ { id: "ghoom-monastery", name: "Ghoom Monastery", nameRu: "Монастырь Гум", image: "images/monuments/darjeeling_ghoom_monastery_01.jpeg" } ],
-  "gangtok": [ { id: "rumtek-monastery", name: "Rumtek Monastery", nameRu: "Монастырь Румтек", image: "images/monuments/gangtok_rumtek_monastery_01.jpeg" } ],
-  "nashik": [ { id: "trimbakeshwar", name: "Trimbakeshwar Temple", nameRu: "Храм Тримбакешвар", image: "images/monuments/nashik_trimbakeshwar_01.jpeg" } ],
-  "aurangabad": [ { id: "bibi-ka-maqbara", name: "Bibi Ka Maqbara", nameRu: "Биби Ка Макбара", image: "images/monuments/aurangabad_bibi_ka_maqbara_01.jpeg" } ],
-  "ellora": [ { id: "kailash-temple", name: "Kailash Temple Ellora", nameRu: "Храм Кайлаш Эллора", image: "images/monuments/ellora_kailash_temple_01.jpeg" } ],
-  "ajanta": [ { id: "ajanta-caves", name: "Ajanta Caves", nameRu: "Пещеры Аджанты", image: "images/monuments/ajanta_ajanta_caves_01.jpeg" } ],
-  "mumbai": [ { id: "gateway-of-india", name: "Gateway of India", nameRu: "Ворота Индии", image: "images/monuments/mumbai_gateway_of_india_01.jpeg" } ],
-  "pune": [ { id: "shaniwar-wada", name: "Shaniwar Wada", nameRu: "Шанивар Вада", image: "images/monuments/pune_shaniwar_wada_01.jpeg" } ],
-  "daulatabad": [ { id: "daulatabad-fort", name: "Daulatabad Fort", nameRu: "Форт Даулатабад", image: "images/monuments/daulatabad_daulatabad_fort_01.jpeg" } ],
-  "lonavala": [ { id: "karla-caves", name: "Karla Caves", nameRu: "Пещеры Карла", image: "images/monuments/lonavala_karla_caves_01.jpeg" } ],
-  "raigad": [ { id: "raigad-fort", name: "Raigad Fort", nameRu: "Форт Райгад", image: "images/monuments/raigad_raigad_fort_01.jpeg" } ],
-  "alibaug": [ { id: "murud-janjira", name: "Murud-Janjira Sea Fort", nameRu: "Морской форт Муруд-Джанджира", image: "images/monuments/alibaug_murud_janjira_01.jpeg" } ],
-  "lonar": [ { id: "lonar-crater", name: "Lonar Meteorite Crater", nameRu: "Метеоритный кратер Лонар", image: "images/monuments/lonar_lonar_crater_01.jpeg" } ],
-  "vrindavan": [ { id: "prem-mandir", name: "Prem Mandir", nameRu: "Прем Мандир", image: "images/monuments/vrindavan_prem_mandir_01.jpeg" } ],
-  "bundi": [ { id: "taragarh-fort", name: "Taragarh Fort Bundi", nameRu: "Форт Тарагарх Бунди", image: "images/monuments/bundi_taragarh_fort_01.jpeg" } ],
-  "orchha": [ { id: "orchha-palace", name: "Orchha Palace", nameRu: "Дворец Орчха", image: "images/monuments/orchha_orchha_palace_01.jpeg" } ],
-  "gwalior": [ { id: "gwalior-fort", name: "Gwalior Fort", nameRu: "Форт Гвалиор", image: "images/monuments/gwalior_gwalior_fort_01.jpeg" } ],
-  "morena": [ { id: "mitawali", name: "Mitawali Temple", nameRu: "Храм Митавали", image: "images/monuments/morena_mitawali_01.jpeg" } ],
-  "patna": [ { id: "patna-sahib", name: "Takht Sri Patna Sahib", nameRu: "Патна Сахиб", image: "images/monuments/patna_patna_sahib_01.jpeg" } ],
-  "gaya": [ { id: "vishnupad", name: "Vishnupad Temple", nameRu: "Храм Вишнупада", image: "images/monuments/gaya_vishnupad_temple_01.jpeg" } ],
-  "sikandra": [ { id: "akbars-tomb", name: "Akbar's Tomb Sikandra", nameRu: "Гробница Акбара", image: "images/monuments/sikandra_akbars_tomb_01.jpeg" } ],
-  "mehtab-bagh": [ { id: "mehtab-bagh", name: "Mehtab Bagh", nameRu: "Мехтаб-Багх", image: "images/monuments/mehtab_bagh_taj_view_01.jpeg" } ]
+  "vashisht": [
+    { id: "vashisht-springs", name: "Vashisht Hot Springs", nameRu: "Горячие источники Вашишт", image: "images/monuments/vashisht_springs_01.jpeg" }
+  ],
+  "dharamshala": [
+    { id: "mcleod-ganj", name: "McLeod Ganj Monastery", nameRu: "Монастырь Мак-Леод Гандж", image: "images/monuments/dharamshala_mcleod_ganj_01.jpeg" }
+  ],
+  "bir": [
+    { id: "bir-paragliding", name: "Bir-Billing Paragliding", nameRu: "Парапланеризм Бир-Биллинг", image: "images/monuments/bir_paragliding_01.jpeg" }
+  ],
+  "darjeeling": [
+    { id: "ghoom-monastery", name: "Ghoom Monastery", nameRu: "Монастырь Гум", image: "images/monuments/darjeeling_ghoom_monastery_01.jpeg" },
+    { id: "tea-garden", name: "Tea Gardens", nameRu: "Чайные плантации", image: "images/monuments/darjeeling_tea_garden_01.jpeg" },
+    { id: "toy-train", name: "Toy Train", nameRu: "Игрушечный поезд", image: "images/monuments/darjeeling_toy_train_01.jpeg" }
+  ],
+  "kalimpong": [
+    { id: "zang-dhok-palri", name: "Zang Dhok Palri Monastery", nameRu: "Монастырь Занг Дхок Палри", image: "images/monuments/kalimpong_zang_dhok_palri_01.jpeg" },
+    { id: "deolo-hill", name: "Deolo Hill Viewpoint", nameRu: "Смотровая площадка Деоло-Хилл", image: "images/monuments/kalimpong_deolo_hill_01.jpeg" }
+  ],
+  "gangtok": [
+    { id: "rumtek-monastery", name: "Rumtek Monastery", nameRu: "Монастырь Румтек", image: "images/monuments/gangtok_rumtek_monastery_01.jpeg" }
+  ],
+  "mumbai": [
+    { id: "gateway-of-india", name: "Gateway of India", nameRu: "Ворота Индии", image: "images/monuments/mumbai_gateway_of_india_01.jpeg" },
+    { id: "elephanta-caves", name: "Elephanta Caves", nameRu: "Пещеры Элефанта", image: "images/monuments/mumbai_elephanta_caves_01.jpeg" },
+    { id: "marine-drive", name: "Marine Drive", nameRu: "Марин Драйв", image: "images/monuments/mumbai_marine_drive_01.jpeg" }
+  ],
+  "alibaug": [
+    { id: "murud-janjira", name: "Murud-Janjira Sea Fort", nameRu: "Морской форт Муруд-Джанджира", image: "images/monuments/alibaug_murud_janjira_01.jpeg" }
+  ],
+  "murud": [
+    { id: "murud-janjira-1", name: "Murud-Janjira Sea Fort", nameRu: "Морской форт Муруд-Джанджира", image: "images/monuments/murud_janjira_fort_01.jpeg" },
+    { id: "murud-janjira-2", name: "Murud-Janjira Sea Fort", nameRu: "Морской форт Муруд-Джанджира", image: "images/monuments/murud_janjira_02.jpeg" }
+  ],
+  "aurangabad": [
+    { id: "bibi-ka-maqbara", name: "Bibi Ka Maqbara", nameRu: "Биби Ка Макбара", image: "images/monuments/aurangabad_bibi_ka_maqbara_01.jpeg" }
+  ],
+  "daulatabad": [
+    { id: "daulatabad-fort", name: "Daulatabad Fort", nameRu: "Форт Даулатабад", image: "images/monuments/daulatabad_daulatabad_fort_01.jpeg" }
+  ],
+  "khuldabad": [
+    { id: "aurangzeb-tomb", name: "Aurangzeb's Tomb", nameRu: "Гробница Аурангзеба", image: "images/monuments/khuldabad_aurangzeb_tomb_01.jpeg" }
+  ],
+  "pune": [
+    { id: "shaniwar-wada", name: "Shaniwar Wada", nameRu: "Шанивар Вада", image: "images/monuments/pune_shaniwar_wada_01.jpeg" }
+  ],
+  "lonavala": [
+    { id: "karla-caves", name: "Karla Caves", nameRu: "Пещеры Карла", image: "images/monuments/lonavala_karla_caves_01.jpeg" }
+  ],
+  "nashik": [
+    { id: "trimbakeshwar", name: "Trimbakeshwar Temple", nameRu: "Храм Тримбакешвар", image: "images/monuments/nashik_trimbakeshwar_01.jpeg" }
+  ],
+  "ellora": [
+    { id: "kailash-temple", name: "Kailash Temple", nameRu: "Храм Кайлаш", image: "images/monuments/ellora_kailash_temple_01.jpeg" }
+  ],
+  "ajanta": [
+    { id: "ajanta-caves", name: "Ajanta Caves", nameRu: "Пещеры Аджанты", image: "images/monuments/ajanta_ajanta_caves_01.jpeg" }
+  ],
+  "raigad": [
+    { id: "raigad-fort", name: "Raigad Fort", nameRu: "Форт Райгад", image: "images/monuments/raigad_raigad_fort_01.jpeg" }
+  ],
+  "lonar": [
+    { id: "lonar-crater", name: "Lonar Meteorite Crater", nameRu: "Метеоритный кратер Лонар", image: "images/monuments/lonar_lonar_crater_01.jpeg" }
+  ],
+  "vrindavan": [
+    { id: "prem-mandir", name: "Prem Mandir", nameRu: "Прем Мандир", image: "images/monuments/vrindavan_prem_mandir_01.jpeg" }
+  ],
+  "gwalior": [
+    { id: "gwalior-fort", name: "Gwalior Fort", nameRu: "Форт Гвалиор", image: "images/monuments/gwalior_gwalior_fort_01.jpeg" }
+  ],
+  "morena": [
+    { id: "mitawali", name: "Mitawali Temple", nameRu: "Храм Митавали", image: "images/monuments/morena_mitawali_01.jpeg" }
+  ]
 };
 
 /* ============================================================
@@ -738,14 +858,27 @@ const MONUMENTS = {
    ============================================================ */
 function monumentImage(m) { return m && m.image ? m.image : ''; }
 
-function getMonumentsForJourney(journey) {
+function getExpandedDestIds(journey) {
   const ids = journey.sightseeingIds || journey.destinationIds || [];
+  const expanded = new Set();
+  ids.forEach(id => {
+    const d = getDestination(id);
+    if (d) {
+      getGroupDestinations(d.groupId).forEach(gd => expanded.add(gd.id));
+    } else {
+      expanded.add(id);
+    }
+  });
+  return Array.from(expanded);
+}
+
+function getMonumentsForJourney(journey) {
+  const ids = getExpandedDestIds(journey);
   const seen = new Set();
   const list = [];
   ids.forEach(destId => {
     (MONUMENTS[destId] || []).forEach(m => {
-      const key = destId + '/' + m.id;
-      if (!seen.has(key)) { seen.add(key); list.push({ ...m, destinationId: destId }); }
+      if (!seen.has(m.id)) { seen.add(m.id); list.push({ ...m, destinationId: destId }); }
     });
   });
   return list;
@@ -788,7 +921,7 @@ function getMonumentsForCollection(collectionId) {
   const list = [];
   getJourneysByCollection(collectionId).forEach(j => {
     getMonumentsForJourney(j).forEach(m => {
-      const key = m.destinationId + '/' + m.id;
+      const key = m.id;
       if (!seen.has(key)) { seen.add(key); list.push(m); }
     });
   });
@@ -797,8 +930,33 @@ function getMonumentsForCollection(collectionId) {
 
 function getMonumentsForDestination(destId) { return MONUMENTS[destId] || []; }
 
-function getDestinationHeroImage(destId) {
-  const list = getMonumentsForDestination(destId);
+/* ============================================================
+   DESTINATION CLUSTERING HELPERS
+   ============================================================ */
+function destDescription(d) { return currentLang === 'ru' && d.descriptionRu ? d.descriptionRu : d.description; }
+
+function getPrimaryDestinations() {
+  return DESTINATIONS.filter(d => d.id === d.groupId);
+}
+function getGroupDestinations(groupId) {
+  return DESTINATIONS.filter(d => d.groupId === groupId);
+}
+function getMonumentsForGroup(groupId) {
+  const seen = new Set();
+  const list = [];
+  getGroupDestinations(groupId).forEach(d => {
+    (MONUMENTS[d.id] || []).forEach(m => {
+      if (!seen.has(m.id)) { seen.add(m.id); list.push({ ...m, destinationId: d.id }); }
+    });
+  });
+  return list;
+}
+function getJourneysByGroup(groupId) {
+  const groupDestIds = getGroupDestinations(groupId).map(d => d.id);
+  return JOURNEYS.filter(j => j.destinationIds.some(did => groupDestIds.includes(did)));
+}
+function getGroupHeroImage(groupId) {
+  const list = getMonumentsForGroup(groupId);
   const withImg = list.find(m => m.image && m.image.trim() !== '');
   return withImg ? withImg.image : '';
 }
@@ -817,67 +975,199 @@ const COLLECTIONS = [
 ];
 
 /* ============================================================
-   DESTINATIONS
+   DESTINATIONS (Clustered with specific labels)
    ============================================================ */
 const DESTINATIONS = [
-  { id: "delhi", title: "Delhi", titleRu: "Дели", description: "India's capital where Mughal heritage meets modern life." },
-  { id: "agra", title: "Agra", titleRu: "Агра", description: "Home of the Taj Mahal and Mughal marvels." },
-  { id: "jaipur", title: "Jaipur", titleRu: "Джайпур", description: "The Pink City — forts, palaces and Rajput heritage." },
-  { id: "varanasi", title: "Varanasi", titleRu: "Варанаси", description: "The spiritual heart of India on the Ganges." },
-  { id: "khajuraho", title: "Khajuraho", titleRu: "Кхаджурахо", description: "UNESCO temples with exquisite sculptures." },
-  { id: "bodh-gaya", title: "Bodh Gaya", titleRu: "Бодх-Гая", description: "The place of Buddha's enlightenment." },
-  { id: "gaya", title: "Gaya", titleRu: "Гая", description: "Ancient pilgrimage city in Bihar." },
-  { id: "rajgir", title: "Rajgir", titleRu: "Раджгир", description: "Ancient capital of the Magadha kingdom." },
-  { id: "nalanda", title: "Nalanda", titleRu: "Наланда", description: "Ruins of the world's oldest university." },
-  { id: "patna", title: "Patna", titleRu: "Патна", description: "Capital of Bihar on the Ganges." },
-  { id: "panna", title: "Panna", titleRu: "Панна", description: "Tiger reserve and diamond mining region." },
-  { id: "udaipur", title: "Udaipur", titleRu: "Удайпур", description: "The City of Lakes — romantic Rajasthan." },
-  { id: "jodhpur", title: "Jodhpur", titleRu: "Джодхпур", description: "The Blue City beneath Mehrangarh Fort." },
-  { id: "ranthambore", title: "Ranthambore", titleRu: "Рантхамбор", description: "India's premier tiger reserve." },
-  { id: "bharatpur", title: "Bharatpur", titleRu: "Бхаратпур", description: "Home of Keoladeo National Park (UNESCO)." },
-  { id: "gwalior", title: "Gwalior", titleRu: "Гвалиор", description: "Majestic hill fort and princely heritage." },
-  { id: "orchha", title: "Orchha", titleRu: "Орчха", description: "Medieval Bundela palaces and temples." },
-  { id: "kumbhalgarh", title: "Kumbhalgarh", titleRu: "Кумбхалгарх", description: "Hill fort with the world's second-longest wall." },
-  { id: "chittorgarh", title: "Chittorgarh", titleRu: "Читторгарх", description: "Legendary Rajput fortress of valour." },
-  { id: "jaisalmer", title: "Jaisalmer", titleRu: "Джайсалмер", description: "The Golden City in the Thar Desert." },
-  { id: "darjeeling", title: "Darjeeling", titleRu: "Дарджилинг", description: "Tea estates and Himalayan vistas." },
-  { id: "gangtok", title: "Gangtok", titleRu: "Гангток", description: "Capital of Sikkim in the Eastern Himalayas." },
-  { id: "shimla", title: "Shimla", titleRu: "Шимла", description: "Colonial-era hill station of Himachal." },
-  { id: "manali", title: "Manali", titleRu: "Манали", description: "Mountain resort in the Kullu Valley." },
-  { id: "dharamshala", title: "Dharamshala", titleRu: "Дхарамшала", description: "Home of the Dalai Lama and Tibetan culture." },
-  { id: "amritsar", title: "Amritsar", titleRu: "Амритсар", description: "The Golden Temple and Sikh heritage." },
-  { id: "bikaner", title: "Bikaner", titleRu: "Биканер", description: "Desert city with Junagarh Fort." },
-  { id: "bundi", title: "Bundi", titleRu: "Бунди", description: "Blue-washed town with stepwells and palaces." },
-  { id: "vrindavan", title: "Vrindavan", titleRu: "Вриндаван", description: "Krishna's sacred town of temples." },
-  { id: "fatehpur-sikri", title: "Fatehpur Sikri", titleRu: "Фатехпур-Сикри", description: "Abandoned Mughal capital (UNESCO)." },
-  { id: "abhaneri", title: "Abhaneri", titleRu: "Абханери", description: "Home of the Chand Baori stepwell." },
-  { id: "morena", title: "Morena", titleRu: "Морена", description: "Tantric sites and ancient temples." },
-  { id: "kalimpong", title: "Kalimpong", titleRu: "Калимпонг", description: "Hill station of monasteries and flowers." },
-  { id: "mandi", title: "Mandi", titleRu: "Манди", description: "Temple town on the Beas River." },
-  { id: "vashisht", title: "Vashisht", titleRu: "Вашишт", description: "Hot springs near Manali." },
-  { id: "bir", title: "Bir", titleRu: "Бир", description: "Paragliding capital of India." },
-  { id: "naggar", title: "Naggar", titleRu: "Наггар", description: "Historic castle and Roerich estate." },
-  { id: "ranakpur", title: "Ranakpur", titleRu: "Ранакпур", description: "Magnificent Jain temple complex." },
-  { id: "sarnath", title: "Sarnath", titleRu: "Сарнатх", description: "Where Buddha gave his first sermon." },
-  { id: "mumbai", title: "Mumbai", titleRu: "Мумбаи", description: "India's financial capital and coastal metropolis." },
-  { id: "lonavala", title: "Lonavala", titleRu: "Лонавала", description: "Sahyadri hill station with ancient caves." },
-  { id: "pune", title: "Pune", titleRu: "Пуна", description: "Maratha heritage city of the Deccan." },
-  { id: "nashik", title: "Nashik", titleRu: "Нашик", description: "Sacred city on the Godavari with vineyards." },
-  { id: "daulatabad", title: "Daulatabad", titleRu: "Даулатабад", description: "Formidable medieval Deccan fortress." },
-  { id: "khuldabad", title: "Khuldabad", titleRu: "Хулдабад", description: "Walled town of Sufi tombs near Ellora." },
-  { id: "aurangabad", title: "Aurangabad", titleRu: "Аурангабад", description: "Gateway to Ajanta & Ellora caves." },
-  { id: "ellora", title: "Ellora", titleRu: "Эллора", description: "Rock-cut cave complex (UNESCO)." },
-  { id: "ajanta", title: "Ajanta", titleRu: "Аджанта", description: "Ancient Buddhist painted caves (UNESCO)." },
-  { id: "alibaug", title: "Alibaug", titleRu: "Алибаг", description: "Coastal town with Maratha sea forts." },
-  { id: "murud", title: "Murud", titleRu: "Муруд", description: "Home of the island fortress Murud-Janjira." },
-  { id: "raigad", title: "Raigad", titleRu: "Райгад", description: "Shivaji's mountain capital citadel." },
-  { id: "lonar", title: "Lonar", titleRu: "Лонар", description: "Rare meteorite crater lake sanctuary." },
-  { id: "sikandra", title: "Sikandra", titleRu: "Сикандра", description: "Site of Emperor Akbar's tomb." },
-  { id: "mehtab-bagh", title: "Mehtab Bagh", titleRu: "Мехтаб-Багх", description: "Moonlight garden facing the Taj Mahal." }
+  { id: "delhi", groupId: "delhi", title: "Delhi", titleRu: "Дели",
+    description: "India's capital where Mughal heritage meets modern life.",
+    descriptionRu: "Столица Индии, где могольское наследие встречается с современностью." },
+  
+  { id: "agra", groupId: "agra", title: "Agra & Fatehpur Sikri", titleRu: "Агра и Фатехпур-Сикри",
+    description: "Home of the Taj Mahal, Agra Fort, and the abandoned Mughal capital of Fatehpur Sikri.",
+    descriptionRu: "Тадж-Махал, Агра-Форт и заброшенная могольская столица Фатехпур-Сикри." },
+  { id: "sikandra", groupId: "agra", title: "Sikandra", titleRu: "Сикандра",
+    description: "Site of Emperor Akbar's grand tomb.",
+    descriptionRu: "Место величественной усыпальницы императора Акбара." },
+  { id: "mehtab-bagh", groupId: "agra", title: "Mehtab Bagh", titleRu: "Мехтаб-Багх",
+    description: "The 'Moonlight Garden' facing the Taj Mahal across the Yamuna.",
+    descriptionRu: "«Лунный сад» напротив Тадж-Махала через Ямуну." },
+  { id: "fatehpur-sikri", groupId: "agra", title: "Fatehpur Sikri", titleRu: "Фатехпур-Сикри",
+    description: "Akbar's abandoned red-sandstone capital, a UNESCO World Heritage Site.",
+    descriptionRu: "Заброшенная столица Акбара из красного песчаника, объект ЮНЕСКО." },
+
+  { id: "jaipur", groupId: "jaipur", title: "Jaipur & Abhaneri", titleRu: "Джайпур и Абханери",
+    description: "The Pink City of Rajasthan with its UNESCO forts, palaces, and the ancient Chand Baori stepwell nearby.",
+    descriptionRu: "Розовый город Раджастана: форты ЮНЕСКО, дворцы и древний колодец Чанд-Баори." },
+  { id: "abhaneri", groupId: "jaipur", title: "Abhaneri", titleRu: "Абханери",
+    description: "Village home to the 1,000-year-old Chand Baori stepwell.",
+    descriptionRu: "Деревня, где находится тысячелетний ступенчатый колодец Чанд-Баори." },
+
+  { id: "khajuraho", groupId: "khajuraho", title: "Khajuraho, Panna & Orchha", titleRu: "Кхаджурахо, Панна и Орчха",
+    description: "UNESCO temple complex, tiger reserve, and medieval Bundela palaces in Central India.",
+    descriptionRu: "Храмовый комплекс ЮНЕСКО, тигровый заповедник и средневековые дворцы Бундела." },
+  { id: "panna", groupId: "khajuraho", title: "Panna", titleRu: "Панна",
+    description: "Tiger reserve and diamond mining region near Khajuraho.",
+    descriptionRu: "Тигровый заповедник и алмазный регион рядом с Кхаджурахо." },
+  { id: "orchha", groupId: "khajuraho", title: "Orchha", titleRu: "Орчха",
+    description: "Bundela palaces and temples on the Betwa River.",
+    descriptionRu: "Дворцы и храмы Бундела на реке Бетва." },
+
+  { id: "varanasi", groupId: "varanasi", title: "Varanasi & Sarnath", titleRu: "Варанаси и Сарнатх",
+    description: "The spiritual heart of India on the Ganges, with Buddha's first sermon site at Sarnath.",
+    descriptionRu: "Духовное сердце Индии на Ганге и место первой проповеди Будды в Сарнатхе." },
+  { id: "sarnath", groupId: "varanasi", title: "Sarnath", titleRu: "Сарнатх",
+    description: "Where Buddha gave his first sermon after enlightenment.",
+    descriptionRu: "Место первой проповеди Будды после просветления." },
+
+  { id: "bodh-gaya", groupId: "bodh-gaya", title: "Bodh Gaya & Buddhist Circuit", titleRu: "Бодх-Гая и буддийский маршрут",
+    description: "Buddha's enlightenment site plus the ancient pilgrimage sites of Rajgir, Nalanda, Gaya, and Patna.",
+    descriptionRu: "Место просветления Будды и древние паломнические центры Раджгир, Наланда, Гая и Патна." },
+  { id: "gaya", groupId: "bodh-gaya", title: "Gaya", titleRu: "Гая",
+    description: "Ancient city of Hindu ancestral rites.",
+    descriptionRu: "Древний город индуистских обрядов." },
+  { id: "rajgir", groupId: "bodh-gaya", title: "Rajgir", titleRu: "Раджгир",
+    description: "First capital of the Magadha kingdom.",
+    descriptionRu: "Первая столица царства Магадха." },
+  { id: "nalanda", groupId: "bodh-gaya", title: "Nalanda", titleRu: "Наланда",
+    description: "Ruins of the world's oldest residential university.",
+    descriptionRu: "Руины старейшего в мире университета-общежития." },
+  { id: "patna", groupId: "bodh-gaya", title: "Patna", titleRu: "Патна",
+    description: "Capital of Bihar and the Sikh shrine of Patna Sahib.",
+    descriptionRu: "Столица Бихара и сикхская святыня Патна Сахиб." },
+
+  { id: "jodhpur", groupId: "jodhpur", title: "Jodhpur, Ranakpur & Kumbhalgarh", titleRu: "Джодхпур, Ранакпур и Кумбхалгарх",
+    description: "The Blue City, its UNESCO hill fort at Kumbhalgarh, and the marble Jain temple at Ranakpur.",
+    descriptionRu: "Голубой город, форт ЮНЕСКО Кумбхалгарх и мраморный джайнский храм в Ранакпуре." },
+  { id: "ranakpur", groupId: "jodhpur", title: "Ranakpur", titleRu: "Ранакпур",
+    description: "Marble Jain temple with 1,444 uniquely carved pillars.",
+    descriptionRu: "Мраморный джайнский храм с 1 444 уникальными колоннами." },
+  { id: "kumbhalgarh", groupId: "jodhpur", title: "Kumbhalgarh", titleRu: "Кумбхалгарх",
+    description: "Hill fort with the world's second-longest continuous wall.",
+    descriptionRu: "Горный форт со второй по длине стеной в мире." },
+
+  { id: "udaipur", groupId: "udaipur", title: "Udaipur & Chittorgarh", titleRu: "Удайпур и Читторгарх",
+    description: "The City of Lakes and the legendary Rajput fortress of Chittorgarh.",
+    descriptionRu: "Город озёр и легендарная раджпутская крепость Читторгарх." },
+  { id: "chittorgarh", groupId: "udaipur", title: "Chittorgarh", titleRu: "Читторгарх",
+    description: "Legendary Rajput fortress of valour, India's largest hill fort.",
+    descriptionRu: "Легендарная раджпутская крепость, крупнейший горный форт Индии." },
+
+  { id: "jaisalmer", groupId: "jaisalmer", title: "Jaisalmer & Bikaner", titleRu: "Джайсалмер и Биканер",
+    description: "Golden desert cities of the Thar, with sand dunes and ornate sandstone havelis.",
+    descriptionRu: "Золотые пустынные города Тар: песчаные дюны и резные хавели." },
+  { id: "bikaner", groupId: "jaisalmer", title: "Bikaner", titleRu: "Биканер",
+    description: "Desert city with the impressive Junagarh Fort.",
+    descriptionRu: "Пустынный город с величественным фортом Джунагарх." },
+
+  { id: "ranthambore", groupId: "ranthambore", title: "Ranthambore & Bundi", titleRu: "Рантхамбор и Бунди",
+    description: "India's premier tiger reserve and the blue-washed town of Bundi with its stepwells.",
+    descriptionRu: "Главный тигровый заповедник Индии и синий город Бунди со ступенчатыми колодцами." },
+  { id: "bundi", groupId: "ranthambore", title: "Bundi", titleRu: "Бунди",
+    description: "Blue-washed town with ornate palaces and stepwells.",
+    descriptionRu: "Город в синих тонах с дворцами и ступенчатыми колодцами." },
+
+  { id: "bharatpur", groupId: "bharatpur", title: "Bharatpur & Keoladeo", titleRu: "Бхаратпур и Кеоладео",
+    description: "Home of the UNESCO Keoladeo National Park bird sanctuary.",
+    descriptionRu: "Дом птичьего заповедника Кеоладео (ЮНЕСКО)." },
+
+  { id: "shimla", groupId: "shimla", title: "Shimla, Manali & Vashisht", titleRu: "Шимла, Манали и Вашишт",
+    description: "Colonial hill stations, mountain temples, and the UNESCO toy train of Himachal Pradesh.",
+    descriptionRu: "Колониальные горные курорты, храмы и игрушечный поезд ЮНЕСКО в Химачал-Прадеше." },
+  { id: "mandi", groupId: "shimla", title: "Mandi", titleRu: "Манди",
+    description: "Temple town on the Beas River.",
+    descriptionRu: "Храмовый город на реке Беас." },
+  { id: "naggar", groupId: "shimla", title: "Naggar", titleRu: "Наггар",
+    description: "Historic castle and Roerich art estate.",
+    descriptionRu: "Исторический замок и художественная усадьба Рериха." },
+  { id: "manali", groupId: "shimla", title: "Manali", titleRu: "Манали",
+    description: "Mountain resort in the Kullu Valley.",
+    descriptionRu: "Горный курорт в долине Куллу." },
+  { id: "vashisht", groupId: "shimla", title: "Vashisht", titleRu: "Вашишт",
+    description: "Hot springs village near Manali.",
+    descriptionRu: "Деревня с горячими источниками рядом с Манали." },
+
+  { id: "dharamshala", groupId: "dharamshala", title: "Dharamshala & Kangra Valley", titleRu: "Дхарамшала и долина Кангра",
+    description: "Home of the Dalai Lama, Tibetan monasteries, and paragliding at Bir-Billing.",
+    descriptionRu: "Резиденция Далай-ламы, тибетские монастыри и парапланеризм в Бир-Биллинге." },
+  { id: "bir", groupId: "dharamshala", title: "Bir", titleRu: "Бир",
+    description: "Paragliding capital of India.",
+    descriptionRu: "Столица парапланеризма Индии." },
+
+  { id: "amritsar", groupId: "amritsar", title: "Amritsar", titleRu: "Амритсар",
+    description: "Sikhism's holiest shrine, the Golden Temple, and the Wagah border ceremony.",
+    descriptionRu: "Главная святыня сикхизма — Золотой храм — и церемония на границе Вагах." },
+
+  { id: "darjeeling", groupId: "darjeeling", title: "Sikkim & Darjeeling", titleRu: "Сикким и Дарджилинг",
+    description: "Eastern Himalayan tea estates, Buddhist monasteries, and Kanchenjunga sunrise.",
+    descriptionRu: "Чайные плантации Восточных Гималаев, буддийские монастыри и рассвет на Канченджанге." },
+  { id: "kalimpong", groupId: "darjeeling", title: "Kalimpong", titleRu: "Калимпонг",
+    description: "Hill station of monasteries and flower nurseries.",
+    descriptionRu: "Горная станция с монастырями и цветочными питомниками." },
+  { id: "gangtok", groupId: "darjeeling", title: "Gangtok", titleRu: "Гангток",
+    description: "Capital of Sikkim with Tibetan Buddhist monasteries.",
+    descriptionRu: "Столица Сиккима с тибетскими буддийскими монастырями." },
+
+  { id: "mumbai", groupId: "mumbai", title: "Mumbai, Alibaug & Murud", titleRu: "Мумбаи, Алибаг и Муруд",
+    description: "India's coastal metropolis, its Maratha sea forts, and Elephanta Island.",
+    descriptionRu: "Прибрежный мегаполис Индии, морские форты маратхов и остров Элефанта." },
+  { id: "alibaug", groupId: "mumbai", title: "Alibaug", titleRu: "Алибаг",
+    description: "Coastal town with Maratha sea forts.",
+    descriptionRu: "Прибрежный город с морскими фортами маратхов." },
+  { id: "murud", groupId: "mumbai", title: "Murud", titleRu: "Муруд",
+    description: "Home of the unconquered island fortress Murud-Janjira.",
+    descriptionRu: "Дом неприступной островной крепости Муруд-Джанджира." },
+
+  { id: "aurangabad", groupId: "aurangabad", title: "Aurangabad, Daulatabad & Khuldabad", titleRu: "Аурангабад, Даулатабад и Хулдабад",
+    description: "Deccan heritage city with the formidable Daulatabad Fort, Sufi tombs of Khuldabad, and Bibi Ka Maqbara.",
+    descriptionRu: "Город наследия Декана с фортом Даулатабад, суфийскими гробницами Хулдабада и Биби Ка Макбара." },
+  { id: "daulatabad", groupId: "aurangabad", title: "Daulatabad", titleRu: "Даулатабад",
+    description: "Formidable medieval Deccan fortress with a dark maze passage.",
+    descriptionRu: "Грозная средневековая крепость Декана с тёмным лабиринтом." },
+  { id: "khuldabad", groupId: "aurangabad", title: "Khuldabad", titleRu: "Хулдабад",
+    description: "Walled town of Sufi tombs, including Aurangzeb's simple grave.",
+    descriptionRu: "Город суфийских гробниц, включая простую могилу Аурангзеба." },
+
+  { id: "ellora", groupId: "ellora", title: "Ellora Caves", titleRu: "Пещеры Эллора",
+    description: "UNESCO rock-cut cave complex, home to the monolithic Kailasa Temple.",
+    descriptionRu: "Пещерный комплекс ЮНЕСКО с монолитным храмом Кайласа." },
+
+  { id: "ajanta", groupId: "ajanta", title: "Ajanta Caves", titleRu: "Пещеры Аджанта",
+    description: "Ancient Buddhist painted caves, UNESCO World Heritage Site.",
+    descriptionRu: "Древние буддийские расписные пещеры, объект ЮНЕСКО." },
+
+  { id: "pune", groupId: "pune", title: "Pune & Lonavala", titleRu: "Пуна и Лонавала",
+    description: "Maratha heritage city and the Sahyadri hill station with ancient Buddhist caves.",
+    descriptionRu: "Город наследия маратхов и горная станция Сахьядри с древними буддийскими пещерами." },
+  { id: "lonavala", groupId: "pune", title: "Lonavala", titleRu: "Лонавала",
+    description: "Sahyadri hill station with Karla and Bhaja caves.",
+    descriptionRu: "Горная станция Сахьядри с пещерами Карла и Бхаджа." },
+
+  { id: "nashik", groupId: "nashik", title: "Nashik", titleRu: "Нашик",
+    description: "Sacred city on the Godavari with the Trimbakeshwar Jyotirlinga.",
+    descriptionRu: "Священный город на Годавари с джьотирлингой Тримбакешвар." },
+
+  { id: "raigad", groupId: "raigad", title: "Raigad", titleRu: "Райгад",
+    description: "Shivaji's mountain capital citadel in the Sahyadri range.",
+    descriptionRu: "Горная столица Шиваджи в хребте Сахьядри." },
+
+  { id: "lonar", groupId: "lonar", title: "Lonar Crater", titleRu: "Кратер Лонар",
+    description: "Rare meteorite crater lake with Chalukya-era temple ruins.",
+    descriptionRu: "Редкое озеро-кратер от метеорита с руинами храмов эпохи Чалукья." },
+
+  { id: "vrindavan", groupId: "vrindavan", title: "Vrindavan", titleRu: "Вриндаван",
+    description: "Krishna's sacred town of temples on the Yamuna.",
+    descriptionRu: "Священный город Кришны с храмами на Ямуне." },
+
+  { id: "gwalior", groupId: "gwalior", title: "Gwalior & Morena", titleRu: "Гвалиор и Морена",
+    description: "Majestic hill fort and the Tantric circular temple of Mitawali.",
+    descriptionRu: "Величественный горный форт и тантрический круглый храм Митавали." },
+  { id: "morena", groupId: "gwalior", title: "Morena", titleRu: "Морена",
+    description: "Tantric circular temple of Mitawali and the Bateshwar temples.",
+    descriptionRu: "Тантрический круглый храм Митавали и храмы Батешвар." }
 ];
 
 /* ============================================================
-   JOURNEYS — featured flags updated per request
+   JOURNEYS
    ============================================================ */
 const JOURNEYS = [
   { slug:"taj-mahal-agra-fort-day", tourCode:"IND-01", title:"Taj Mahal & Agra Fort Private Day Journey", titleRu:"Однодневный частный тур: Тадж-Махал и Агра-Форт", days:1, nights:0, type:"Heritage", destinationIds:["delhi","agra"], sightseeingIds:["agra"], collectionIds:["express-escapes","unesco-heritage","royal-fortresses"], featured:true, shortDescription:"Two UNESCO World Heritage monuments in one efficient private day trip from Delhi.", shortDescriptionRu:"Два объекта ЮНЕСКО за одну однодневную поездку из Дели.", overview:"Experience the timeless beauty of the Mughal Empire on an expertly guided private day tour from Delhi covering the Taj Mahal and Agra Fort.", overviewRu:"Ощутите вневременную красоту империи Великих Моголов в частном туре из Дели.", highlights:["Taj Mahal","Agra Fort","Mughal Architecture","Sunrise at Taj"], highlightsRu:["Тадж-Махал","Агра-Форт","Могольская архитектура","Рассвет у Таджа"], itinerary:["Day 1: Delhi – Agra (approx. 3.5 hrs). Visit the Taj Mahal at sunrise, then Agra Fort. Return to Delhi in the evening."], itineraryRu:["День 1: Дели – Агра. Тадж-Махал на рассвете, Агра-Форт. Возвращение в Дели."], included:["Private AC vehicle","English-speaking guide","Entry fees","Bottled water"], includedRu:["Автомобиль с кондиционером","Гид","Входные билеты","Вода"], notIncluded:["Meals","Tips","Insurance"], notIncludedRu:["Питание","Чаевые","Страховка"], notes:"Departure at 5:00 AM for sunrise at the Taj.", notesRu:"Выезд в 5:00 утра.", pace:"Fast but Comfortable" },
@@ -899,7 +1189,7 @@ const JOURNEYS = [
   { slug:"himalayan-panorama-9d", tourCode:"IND-17", title:"9-Day Himalayan Panorama & Golden Temple Traverse", titleRu:"9-дневный Гималайский панорамный тур и Золотой храм", days:9, nights:8, type:"Spiritual", destinationIds:["shimla","naggar","manali","bir","dharamshala","amritsar"], collectionIds:["himalayan-escapes","spiritual-multifaith"], featured:false, shortDescription:"Sikhism's holiest shrine, Tibetan monasteries, and Himalayan towns.", shortDescriptionRu:"Золотой храм, тибетские монастыри и Гималаи.", overview:"A deeply immersive journey through colonial mountain capitals, Tibetan spiritual enclaves, and the majestic Sikh heritage of Punjab.", overviewRu:"Горные столицы, тибетские анклавы и сикхское наследие.", highlights:["Golden Temple","Wagah Border Ceremony","McLeod Ganj","Naggar Castle","Manali Temples"], highlightsRu:["Золотой храм","Вагах","Мак-Леод Гандж","Наггар","Храмы Манали"], itinerary:["Day 1: Delhi – Shimla.","Day 2: Shimla – Manali.","Day 3-4: Manali.","Day 5: Bir – Dharamshala.","Day 6: McLeod Ganj.","Day 7: Amritsar.","Day 8: Wagah Border.","Day 9: Amritsar – Delhi."], itineraryRu:["День 1: Дели – Шимла.","День 2: Шимла – Манали.","День 3-4: Манали.","День 5: Дхарамшала.","День 6: Мак-Леод Гандж.","День 7: Амритсар.","День 8: Вагах.","День 9: Дели."], included:["Private AC vehicle","Guide","Entry fees","Hotel (8 nights)"], includedRu:["Автомобиль","Гид","Входные билеты","Отель (8 ночей)"], notIncluded:["Flights","Meals"], notIncludedRu:["Авиабилеты","Питание"], notes:"Golden Temple requires head covering.", notesRu:"В Золотом храме нужно покрыть голову.", pace:"Relaxed / Immersive" },
   { slug:"taj-tiger-forts-16d", tourCode:"IND-18", title:"16-Day Taj, Tiger & Forts: The Ultimate Indian Odyssey", titleRu:"16-дневная одиссея: Тадж, тигры и форты", days:16, nights:15, type:"Wildlife", destinationIds:["delhi","abhaneri","jaipur","bikaner","jaisalmer","jodhpur","ranakpur","kumbhalgarh","udaipur","chittorgarh","bundi","ranthambore","bharatpur","fatehpur-sikri","agra","vrindavan"], collectionIds:["royal-fortresses","unesco-heritage","wildlife-eco-safaris"], featured:false, shortDescription:"7+ UNESCO monuments, Ranthambore tiger safaris, Keoladeo wetland, Thar Desert camp.", shortDescriptionRu:"ЮНЕСКО, тигры в Рантхамборе, Кеоладео и пустыня Тар.", overview:"The ultimate 16-day odyssey combining tiger safaris, desert camps, and all major UNESCO forts and monuments.", overviewRu:"Главная 16-дневная одиссея: сафари, пустыня и ЮНЕСКО.", highlights:["5 UNESCO Hill Forts","Thar Desert Camp","Ranthambore Tiger Safaris","Keoladeo Bird Sanctuary","Taj Mahal","Lake Pichola"], highlightsRu:["5 фортов ЮНЕСКО","Пустыня Тар","Сафари Рантхамбор","Кеоладео","Тадж-Махал","Пичола"], itinerary:["Day 1-16: Comprehensive Rajasthan + Golden Triangle odyssey."], itineraryRu:["День 1-16: Полная одиссея по Раджастану и Золотому треугольнику."], included:["Private AC vehicle","Guide","Entry fees","Safaris","Desert camp","Hotel (15 nights)"], includedRu:["Автомобиль","Гид","Входные билеты","Сафари","Лагерь","Отель (15 ночей)"], notIncluded:["Flights","Meals","Tips"], notIncludedRu:["Авиабилеты","Питание","Чаевые"], notes:"Comprehensive Rajasthan + Golden Triangle journey.", notesRu:"Комплексная одиссея по Раджастану и Золотому треугольнику.", pace:"Relaxed" },
   { slug:"agra-fatehpur-sikri-2d", tourCode:"IND-19", title:"2-Day Agra, Fatehpur Sikri & Imperial Mughal Retreat", titleRu:"2-дневный имперский Могольский тур: Агра и Фатехпур-Сикри", days:2, nights:1, type:"Heritage", destinationIds:["delhi","sikandra","agra","mehtab-bagh","fatehpur-sikri"], sightseeingIds:["sikandra","agra","mehtab-bagh","fatehpur-sikri"], collectionIds:["express-escapes","unesco-heritage","royal-fortresses"], featured:false, shortDescription:"Four UNESCO & imperial Mughal monuments: Taj, Agra Fort, Fatehpur Sikri, Sikandra.", shortDescriptionRu:"Четыре могольских памятника: Тадж, Агра-Форт, Фатехпур-Сикри, Сикандра.", overview:"Features four UNESCO World Heritage & imperial Mughal monuments (Taj Mahal, Agra Fort, Fatehpur Sikri, Sikandra) in an unhurried 2-day private retreat.", overviewRu:"Четыре объекта ЮНЕСКО за неторопливый 2-дневный тур.", highlights:["Taj Mahal at Sunrise & Sunset","Agra Fort","Fatehpur Sikri (Buland Darwaza)","Akbar's Tomb at Sikandra","Itmad-ud-Daulah (Baby Taj)"], highlightsRu:["Тадж-Махал на рассвете и закате","Агра-Форт","Фатехпур-Сикри","Гробница Акбара","Малый Тадж"], itinerary:["Day 1: Delhi – Sikandra – Agra. Taj at sunset.","Day 2: Taj at sunrise, Agra Fort, Fatehpur Sikri – Delhi."], itineraryRu:["День 1: Дели – Сикандра – Агра. Тадж на закате.","День 2: Тадж на рассвете, Агра-Форт, Фатехпур-Сикри – Дели."], included:["Private AC vehicle","Guide","Entry fees","Hotel (1 night)"], includedRu:["Автомобиль","Гид","Входные билеты","Отель (1 ночь)"], notIncluded:["Meals","Tips"], notIncludedRu:["Питание","Чаевые"], notes:"Taj closed Fridays.", notesRu:"Тадж закрыт по пятницам.", pace:"Relaxed" },
-  { slug:"jaipur-pink-city-abhaneri-2d", tourCode:"IND-20", title:"2-Day Jaipur Royal Pink City & Abhaneri Stepwell Escape", titleRu:"2-дневный тур: Джайпур и Чанд-Баори", days:2, nights:1, type:"Heritage", destinationIds:["delhi","abhaneri","jaipur"], sightseeingIds:["abhaneri","jaipur"], collectionIds:["express-escapes","unesco-heritage","royal-fortresses"], featured:false, shortDescription:"Chand Baori stepwell + UNESCO Jantar Mantar, Amber Fort, Jaigarh & Nahargarh.", shortDescriptionRu:"Чанд-Баори + ЮНЕСКО Джантар-Мантар, Амбер, Джайгарх и Нахаргарх.", overview:"Connects the ancient 1,000-year-old stepwell of Abhaneri with Jaipur's UNESCO World Heritage sites, hilltop fortresses, and royal palace quarter.", overviewRu:"Соединяет древний колодец Абханери с объектами ЮНЕСКО Джайпура.", highlights:["Chand Baori Stepwell","Amber Fort","Jaigarh Fort","Nahargarh Fort","City Palace","Jantar Mantar (UNESCO)","Hawa Mahal"], highlightsRu:["Чанд-Баори","Амбер-Форт","Джайгарх","Нахаргарх","Городской дворец","Джантар-Мантар","Хава-Махал"], itinerary:["Day 1: Delhi – Abhaneri – Jaipur. Chand Baori.","Day 2: Amber Fort, Jaigarh, Nahargarh, City Palace, Jantar Mantar – Delhi."], itineraryRu:["День 1: Дели – Абханери – Джайпур.","День 2: Форты Джайпура – Дели."], included:["Private AC vehicle","Guide","Entry fees","Hotel (1 night)"], includedRu:["Автомобиль","Гид","Входные билеты","Отель (1 ночь)"], notIncluded:["Meals","Tips"], notIncludedRu:["Питание","Чаевые"], notes:"Abhaneri is 1.5 hrs from Jaipur.", notesRu:"Абханери в 1,5 часах от Джайпура.", pace:"Moderate" },
+  { slug:"jaipur-pink-city-abhaneri-2d", tourCode:"IND-20", title:"2-Day Jaipur Royal Pink City & Abhaneri Stepwell Escape", titleRu:"2-дневный тур: Джайпур и Чанд-Баори", days:2, nights:1, type:"Heritage", destinationIds:["delhi","abhaneri","jaipur"], sightseeingIds:["abhaneri","jaipur"], collectionIds:["express-escapes","unesco-heritage","royal-fortresses"], featured:false, shortDescription:"Chand Baori stepwell + UNESCO Jantar Mantar, Amber Fort, Jaipur", shortDescriptionRu:"Чанд-Баори + ЮНЕСКО Джантар-Мантар, Амбер, Джайгарх и Нахаргарх.", overview:"Connects the ancient 1,000-year-old stepwell of Abhaneri with Jaipur's UNESCO World Heritage sites, hilltop fortresses, and royal palace quarter.", overviewRu:"Соединяет древний колодец Абханери с объектами ЮНЕСКО Джайпура.", highlights:["Chand Baori Stepwell","Amber Fort","Jaigarh Fort","Nahargarh Fort","City Palace","Jantar Mantar (UNESCO)","Hawa Mahal"], highlightsRu:["Чанд-Баори","Амбер-Форт","Джайгарх","Нахаргарх","Городской дворец","Джантар-Мантар","Хава-Махал"], itinerary:["Day 1: Delhi – Abhaneri – Jaipur. Chand Baori.","Day 2: Amber Fort, Jaigarh, Nahargarh, City Palace, Jantar Mantar – Delhi."], itineraryRu:["День 1: Дели – Абханери – Джайпур.","День 2: Форты Джайпура – Дели."], included:["Private AC vehicle","Guide","Entry fees","Hotel (1 night)"], includedRu:["Автомобиль","Гид","Входные билеты","Отель (1 ночь)"], notIncluded:["Meals","Tips"], notIncludedRu:["Питание","Чаевые"], notes:"Abhaneri is 1.5 hrs from Jaipur.", notesRu:"Абханери в 1,5 часах от Джайпура.", pace:"Moderate" },
   { slug:"deccan-citadel-caves-9d", tourCode:"IND-21", title:"9-Day Deccan Citadel & Cave Odyssey: Rock-Cut Caves & Deccan Forts", titleRu:"9-дневная одиссея по Декану: пещеры и форты", days:9, nights:8, type:"Heritage", destinationIds:["mumbai","lonavala","pune","nashik","daulatabad","khuldabad","aurangabad","ellora","ajanta"], collectionIds:["deccan-rock-cut","unesco-heritage","royal-fortresses","spiritual-multifaith"], featured:true, shortDescription:"UNESCO Ajanta & Ellora caves, Kailash Temple, Daulatabad Fort, Karla & Bhaja caves.", shortDescriptionRu:"Пещеры ЮНЕСКО Аджанта и Эллора, храм Кайлаш, форт Даулатабад.", overview:"Highlights premier UNESCO rock-cut cave sanctuaries (Ajanta & Ellora) combined with formidable Deccan fortresses and sacred pilgrimage shrines across Maharashtra.", overviewRu:"Пещерные святилища ЮНЕСКО (Аджанта и Эллора), форты Декана и храмы Махараштры.", highlights:["Ajanta Caves (UNESCO)","Ellora Caves (UNESCO)","Kailash Temple","Daulatabad Fort","Bibi Ka Maqbara","Trimbakeshwar Shiva Temple","Karla & Bhaja Caves"], highlightsRu:["Аджанта","Эллора","Храм Кайлаш","Даулатабад","Биби Ка Макбара","Тримбакешвар","Карла и Бхаджа"], itinerary:["Day 1: Mumbai arrival.","Day 2: Mumbai – Lonavala. Karla & Bhaja caves.","Day 3: Lonavala – Pune.","Day 4: Pune – Nashik. Trimbakeshwar.","Day 5: Nashik – Aurangabad.","Day 6: Ellora Caves.","Day 7: Ajanta Caves.","Day 8: Daulatabad Fort, Bibi Ka Maqbara.","Day 9: Aurangabad – Mumbai departure."], itineraryRu:["День 1: Прибытие в Мумбаи.","День 2: Лонавала. Карла и Бхаджа.","День 3: Пуна.","День 4: Нашик. Тримбакешвар.","День 5: Аурангабад.","День 6: Эллора.","День 7: Аджанта.","День 8: Даулатабад.","День 9: Отъезд."], included:["Private AC vehicle","Guide","Entry fees","Hotel (8 nights)"], includedRu:["Автомобиль","Гид","Входные билеты","Отель (8 ночей)"], notIncluded:["Flights","Meals"], notIncludedRu:["Авиабилеты","Питание"], notes:"Ajanta closed Mondays; Ellora closed Tuesdays.", notesRu:"Аджанта закрыта по понедельникам, Эллора по вторникам.", pace:"Moderate" },
   { slug:"sahyadri-empires-13d", tourCode:"IND-22", title:"13-Day Empires of the Sahyadri: Marine Forts, Cave Temples & Meteor Crater", titleRu:"13-дневная империя Сахьядри: морские форты и пещеры", days:13, nights:12, type:"Heritage", destinationIds:["mumbai","alibaug","murud","raigad","lonavala","pune","nashik","daulatabad","khuldabad","aurangabad","ellora","ajanta","lonar"], collectionIds:["deccan-rock-cut","unesco-heritage","royal-fortresses","wildlife-eco-safaris"], featured:false, shortDescription:"Murud-Janjira Sea Fort, Raigad Citadel, UNESCO Ajanta & Ellora, Lonar Meteor Crater.", shortDescriptionRu:"Морской форт Муруд-Джанджира, Райгад, Аджанта и Эллора, кратер Лонар.", overview:"Unites coastal island sea forts, Shivaji's Maratha mountain capital, UNESCO rock-cut cave complexes, and the rare geological Lonar crater into an expansive Sahyadri odyssey.", overviewRu:"Морские форты, столица Шиваджи, пещеры ЮНЕСКО и кратер Лонар.", highlights:["Murud-Janjira Sea Fort","Raigad Citadel","Ajanta Caves (UNESCO)","Ellora Caves (UNESCO)","Lonar Meteorite Crater Lake","Daulatabad Fort","Bibi Ka Maqbara"], highlightsRu:["Муруд-Джанджира","Райгад","Аджанта","Эллора","Кратер Лонар","Даулатабад","Биби Ка Макбара"], itinerary:["Day 1-13: Comprehensive Maharashtra odyssey: sea forts, Maratha citadels, UNESCO caves, wildlife crater."], itineraryRu:["День 1-13: Полная одиссея по Махараштре."], included:["Private AC vehicle","Guide","Entry fees","Hotel (12 nights)"], includedRu:["Автомобиль","Гид","Входные билеты","Отель (12 ночей)"], notIncluded:["Flights","Meals"], notIncludedRu:["Авиабилеты","Питание"], notes:"Includes optional Lonar crater wildlife viewing.", notesRu:"Включает просмотр кратера Лонар.", pace:"Relaxed" }
 ];
@@ -917,7 +1207,7 @@ const LUXURY_SLUGS = [
 ];
 
 /* ============================================================
-   TESTIMONIALS — bilingual
+   TESTIMONIALS
    ============================================================ */
 const TESTIMONIALS = [
   { name: 'Elena Sokolova', country: 'Russia', countryRu: 'Россия', journey: 'Golden Triangle · 4 Days', journeyRu: 'Золотой треугольник · 4 дня', rating: 5,
@@ -941,7 +1231,7 @@ const TESTIMONIALS = [
 ];
 
 /* ============================================================
-   EXPLORE INDIA — filter definitions (bilingual labels)
+   EXPLORE INDIA
    ============================================================ */
 const EXPLORE_THEMES = [
   { id: 'all', label: 'All', labelRu: 'Все' },
@@ -1356,8 +1646,13 @@ function renderHome() {
         <p>${t('final_cta_desc')}</p>
         <div class="final-cta-buttons">
           <a href="#/plan" class="btn-gold">${t('hero_cta_primary')}</a>
-          <a href="https://wa.me/919711349497" target="_blank" class="btn-outline-gold"><i class="fab fa-whatsapp"></i> WhatsApp</a>
-          <a href="mailto:info@indiaprivateguide.com" class="btn-outline-gold"><i class="fas fa-envelope"></i> Email</a>
+          <a href="https://wa.me/919711349497" target="_blank" class="btn-whatsapp" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+          <a href="https://t.me/indiaprivateguide" target="_blank" class="btn-telegram" aria-label="Telegram"><i class="fab fa-telegram-plane"></i> Telegram</a>
+        </div>
+        <div class="final-cta-contact">
+          <span><i class="fas fa-envelope"></i> <a href="mailto:info@indiaprivateguide.com">info@indiaprivateguide.com</a></span>
+          <span><i class="fab fa-whatsapp"></i> +91 97113 49497</span>
+          <span><i class="fab fa-telegram-plane"></i> @indiaprivateguide</span>
         </div>
       </div>
     </section>
@@ -1386,7 +1681,7 @@ function renderJourneysCatalogue() {
         </div>
         <div class="filter-group">
           <label>${t('filter_destination')}</label>
-          <select id="fDest"><option value="all">${t('filter_all')}</option>${DESTINATIONS.map(d => `<option value="${d.id}">${destTitle(d)}</option>`).join('')}</select>
+          <select id="fDest"><option value="all">${t('filter_all')}</option>${DESTINATIONS.filter(d=>d.id===d.groupId).map(d => `<option value="${d.id}">${destTitle(d)}</option>`).join('')}</select>
         </div>
         <div class="filter-group">
           <label>${t('filter_collection')}</label>
@@ -1406,11 +1701,20 @@ function applyFilters() {
   const days = document.getElementById('fDays')?.value || 'all';
   const dest = document.getElementById('fDest')?.value || 'all';
   const coll = document.getElementById('fColl')?.value || 'all';
-  const filtered = JOURNEYS.filter(j =>
-    (days === 'all' || j.days === parseInt(days)) &&
-    (dest === 'all' || j.destinationIds.includes(dest)) &&
-    (coll === 'all' || j.collectionIds.includes(coll))
-  );
+  
+  const filtered = JOURNEYS.filter(j => {
+    if (days !== 'all' && j.days !== parseInt(days)) return false;
+    
+    if (dest !== 'all') {
+      const groupDests = getGroupDestinations(dest).map(d=>d.id);
+      if (!j.destinationIds.some(id => groupDests.includes(id))) return false;
+    }
+    
+    if (coll !== 'all' && !j.collectionIds.includes(coll)) return false;
+    
+    return true;
+  });
+
   const grid = document.getElementById('journeyGrid');
   if (!grid) return;
   grid.innerHTML = filtered.length === 0
@@ -1478,7 +1782,7 @@ function renderJourneyDetail(slug) {
           <button class="btn-secondary" onclick="window.open('https://t.me/indiaprivateguide','_blank')"><i class="fab fa-telegram-plane" style="color:#0088cc;"></i> Telegram</button>
         </div>
         ${collections.length ? `<div class="info-strip"><h4><i class="fas fa-layer-group"></i> ${t('part_of_collection')}</h4><div class="chip-row">${collections.map(c => `<a class="chip" href="#/collections/${c.id}"><i class="fas fa-bookmark"></i> ${collectionTitle(c)}</a>`).join('')}</div></div>` : ''}
-        ${destinations.length ? `<div class="info-strip"><h4><i class="fas fa-map-marker-alt"></i> ${t('destinations_visited')}</h4><div class="chip-row">${destinations.map(d => `<a class="chip" href="#/destinations/${d.id}"><i class="fas fa-location-dot"></i> ${destTitle(d)}</a>`).join('')}</div></div>` : ''}
+        ${destinations.length ? `<div class="info-strip"><h4><i class="fas fa-map-marker-alt"></i> ${t('destinations_visited')}</h4><div class="chip-row">${destinations.map(d => `<a class="chip" href="#/destinations/${d.groupId}"><i class="fas fa-location-dot"></i> ${destTitle(d)}</a>`).join('')}</div></div>` : ''}
       </div>
 
       ${monuments.length ? `
@@ -1491,14 +1795,15 @@ function renderJourneyDetail(slug) {
           ${monuments.map((m, i) => {
             const d = getDestination(m.destinationId);
             const fallback = generatePlaceholderSVG(monumentName(m), i);
+            const specificTitle = d ? destTitle(d) : '';
             return `
-            <a class="monument-float-card" href="#/destinations/${m.destinationId}">
+            <a class="monument-float-card" href="#/destinations/${d ? d.groupId : m.destinationId}">
               <img src="${m.image}" alt="${esc(monumentName(m))}" loading="lazy"
                    onerror="this.onerror=null;this.src='${fallback}'">
               <div class="float-gradient"></div>
               <div class="float-info">
                 <h3>${monumentName(m)}</h3>
-                <p>${d ? destTitle(d) : ''}</p>
+                <p>${specificTitle}</p>
               </div>
             </a>`;
           }).join('')}
@@ -1563,18 +1868,26 @@ function renderCollection(collectionId) {
   scrollTopIfRouteChange();
 }
 
+/* ============================================================
+   DESTINATIONS INDEX (CLUSTERED)
+   ============================================================ */
 function renderDestinationsIndex() {
   document.getElementById('app').innerHTML = `
     <section class="page-hero"><div class="container"><div class="eyebrow">${t('nav_destinations')}</div><h1>${t('all_destinations_title')}</h1><p>${t('all_destinations_sub')}</p></div></section>
     <section class="container" style="padding: 40px 0 60px;">
       <div class="category-grid">
-        ${DESTINATIONS.map(d => {
-          const journeys = getJourneysByDestination(d.id);
+        ${getPrimaryDestinations().map(d => {
+          const journeys = getJourneysByGroup(d.id);
           if (journeys.length === 0) return '';
           const title = destTitle(d);
-          const heroImage = getDestinationHeroImage(d.id);
+          const heroImage = getGroupHeroImage(d.id);
           const img = heroImage || generatePlaceholderSVG(title, d.id.length);
-          return `<a class="category-card" href="#/destinations/${d.id}" style="min-height:260px;"><img src="${img}" alt="${esc(title)}" loading="lazy" onerror="this.onerror=null;this.src='${generatePlaceholderSVG(title, d.id.length)}'"><div class="gradient"></div><span class="count-pill">${journeys.length}</span><div class="info"><h3>${title}</h3><p>${d.description}</p></div></a>`;
+          return `<a class="category-card" href="#/destinations/${d.id}" style="min-height:260px;">
+            <img src="${img}" alt="${esc(title)}" loading="lazy" onerror="this.onerror=null;this.src='${generatePlaceholderSVG(title, d.id.length)}'">
+            <div class="gradient"></div>
+            <span class="count-pill">${journeys.length}</span>
+            <div class="info"><h3>${title}</h3><p>${destDescription(d)}</p></div>
+          </a>`;
         }).filter(Boolean).join('')}
       </div>
     </section>
@@ -1582,21 +1895,42 @@ function renderDestinationsIndex() {
   scrollTopIfRouteChange();
 }
 
+/* ============================================================
+   DESTINATION PAGE (CLUSTERED with specific labels)
+   ============================================================ */
 function renderDestination(destId) {
   const d = getDestination(destId);
   if (!d) { document.getElementById('app').innerHTML = `<div class="empty-state"><h3>Destination not found</h3></div>`; return; }
-  const journeys = getJourneysByDestination(destId);
+
+  const isGroup = d.id === d.groupId;
+  const journeySource = isGroup ? getJourneysByGroup(d.id) : getJourneysByDestination(d.id);
+  const monumentSource = isGroup ? getMonumentsForGroup(d.id) : getMonumentsForDestination(d.id);
   const title = destTitle(d);
-  const monuments = getMonumentsForDestination(destId);
+  const subDestinations = isGroup ? getGroupDestinations(d.id).filter(x => x.id !== d.id) : [];
+
+  const subDestChips = subDestinations.length ? `
+    <div class="info-strip" style="padding:22px 0;border-top:1px solid #eeeae5;">
+      <h4><i class="fas fa-map-pin"></i> ${currentLang === 'ru' ? 'Также в этом направлении' : 'Also part of this destination'}</h4>
+      <div class="chip-row">
+        ${subDestinations.map(sd => `<span class="chip" style="cursor:default;"><i class="fas fa-location-dot"></i> ${destTitle(sd)}</span>`).join('')}
+      </div>
+    </div>` : '';
 
   document.getElementById('app').innerHTML = `
-    <section class="page-hero"><div class="container"><div class="eyebrow">${t('nav_destinations')}</div><h1>${title}</h1><p>${d.description}</p><div class="breadcrumb"><a href="#/journeys">${t('back_to_journeys')}</a> · <a href="#/destinations">${t('nav_destinations')}</a> · ${title}</div></div></section>
-    ${monuments.length ? `
+    <section class="page-hero"><div class="container">
+      <div class="eyebrow">${t('nav_destinations')}</div>
+      <h1>${title}</h1>
+      <p>${destDescription(d)}</p>
+      <div class="breadcrumb"><a href="#/journeys">${t('back_to_journeys')}</a> · <a href="#/destinations">${t('nav_destinations')}</a> · ${title}</div>
+    </div></section>
+    ${monumentSource.length ? `
     <section class="container" style="padding:30px 0 0;">
       <div class="section-header" style="padding-bottom:20px;"><h2>${t('monuments_gallery')}</h2><p>${t('monuments_gallery_sub')}</p></div>
       <div class="monument-float-grid">
-        ${monuments.map((m, i) => {
+        ${monumentSource.map((m, i) => {
           const fallback = generatePlaceholderSVG(monumentName(m), i);
+          const specificDest = getDestination(m.destinationId);
+          const specificTitle = specificDest ? destTitle(specificDest) : title;
           return `
           <div class="monument-float-card" style="cursor:default;">
             <img src="${m.image}" alt="${esc(monumentName(m))}" loading="lazy"
@@ -1604,15 +1938,16 @@ function renderDestination(destId) {
             <div class="float-gradient"></div>
             <div class="float-info">
               <h3>${monumentName(m)}</h3>
-              <p>${title}</p>
+              <p>${specificTitle}</p>
             </div>
           </div>`;
         }).join('')}
       </div>
     </section>` : ''}
     <section class="container" style="padding: 20px 0 60px;">
-      <div class="section-header" style="padding-top:20px;"><h2>${t('journeys_visiting')} ${title}</h2><p>${journeys.length}</p></div>
-      <div class="journey-grid">${journeys.map(journeyCardHTML).join('')}</div>
+      ${subDestChips}
+      <div class="section-header" style="padding-top:20px;"><h2>${t('journeys_visiting')} ${title}</h2><p>${journeySource.length}</p></div>
+      <div class="journey-grid">${journeySource.map(journeyCardHTML).join('')}</div>
       <div style="text-align:center; padding: 20px 0 40px;"><a href="#/journeys" class="btn-outline-gold">${t('back_to_journeys')}</a></div>
     </section>
   `;
@@ -1839,7 +2174,18 @@ function renderPlanForm(prefillTourSlug) {
         body: fd,
         headers: { 'Accept': 'application/json' }
       });
+      
+      const rawText = await res.text();
+      console.log('[FormSubmit] status:', res.status, 'response:', rawText);
+      
       if (!res.ok) throw new Error('HTTP ' + res.status);
+
+      let parsed = null;
+      try { parsed = JSON.parse(rawText); } catch (err) {}
+      
+      if (parsed && (parsed.success === 'false' || parsed.success === false)) {
+        throw new Error(parsed.message || 'Form rejected');
+      }
 
       document.getElementById('formWrap').style.display = 'none';
       document.getElementById('formSuccess').classList.add('show');
@@ -1849,7 +2195,7 @@ function renderPlanForm(prefillTourSlug) {
       btn.disabled    = false;
       errEl.innerHTML =
         (currentLang === 'ru'
-          ? 'Не удалось отправить форму. Напишите нам напрямую:'
+          ? 'Не удалось отправить форму. Пожалуйста, напишите нам напрямую:'
           : 'Could not send the form. Please reach us directly:')
         + ' <a href="https://wa.me/919711349497" target="_blank" style="color:#c39a4a;text-decoration:underline;">WhatsApp</a>'
         + ' · <a href="https://t.me/indiaprivateguide" target="_blank" style="color:#c39a4a;text-decoration:underline;">Telegram</a>'
