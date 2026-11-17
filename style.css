@@ -57,3 +57,4 @@ a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible,s
 @media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
 .rmap{width:100%;height:auto;color:var(--ink);background:#fff;border:1px solid var(--line);border-radius:6px;padding:8px}
 .pt{width:100%;border-collapse:collapse;margin:8px 0 10px;font-size:.9rem}.pt th,.pt td{border:1px solid var(--line);padding:10px 12px;text-align:center}.pt th{background:#fff;font-weight:500}.pt tr th:first-child{text-align:left}
+.lang{border:1px solid var(--gold);color:var(--gold);padding:5px 11px;border-radius:30px;font-size:.72rem;font-weight:600;letter-spacing:.08em}.lang:hover{background:var(--gold);color:var(--ink)}
